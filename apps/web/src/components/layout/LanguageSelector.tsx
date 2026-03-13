@@ -12,7 +12,13 @@ export default function LanguageSelector() {
     <select
       value={locale}
       onChange={(e) => router.replace(pathname, { locale: e.target.value })}
-      className="rounded border border-gray-300 bg-white px-2 py-1 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      style={{
+        fontFamily: 'var(--font-secondary)',
+        color: 'var(--color-navy)',
+        backgroundColor: 'transparent',
+        letterSpacing: '0.08em',
+      }}
+      className="cursor-pointer appearance-none border-none bg-transparent text-[11px] font-bold uppercase outline-none transition-opacity hover:opacity-70"
     >
       <option value="es">ES</option>
       <option value="en">EN</option>

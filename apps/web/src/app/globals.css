@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+/* ── Custom Fonts ──────────────────────────────────────────────────────────── */
+/* Place font files in /public/fonts/ */
+@font-face {
+  font-family: 'Mahek Demo';
+  src: url('/fonts/MahekDemo.woff2') format('woff2'),
+       url('/fonts/MahekDemo.woff') format('woff'),
+       url('/fonts/MahekDemo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minion Variable Concept';
+  src: url('/fonts/MinionVariableConcept.woff2') format('woff2'),
+       url('/fonts/MinionVariableConcept.woff') format('woff'),
+       url('/fonts/MinionVariableConcept.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Design Tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --color-navy: #010A49;
+  --color-orange: #FE5100;
+  --color-cream: #F6F4F1;
+  --font-primary: 'Mahek Demo', Georgia, serif;
+  --font-secondary: 'Minion Variable Concept', Georgia, serif;
+}
+
 /* ── TipTap / ProseMirror editor styles ───────────────────────────────────── */
 .ProseMirror { outline: none; }
 .ProseMirror > * + * { margin-top: 0.75rem; }

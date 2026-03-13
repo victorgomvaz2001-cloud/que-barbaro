@@ -1,9 +1,29 @@
 {
   "home": {
-    "title": "Bienvenido a Falcanna",
-    "description": "Genética de cannabis premium en Washington y Oklahoma."
+    "title": "Que Bárbaro",
+    "description": "Tu barbería y centro de belleza de confianza."
   },
   "nav": {
-    "home": "Inicio"
+    "inicio": "Inicio",
+    "sobreNosotros": "Sobre Nosotros",
+    "servicios": "Servicios",
+    "tratamientos": "Tratamientos",
+    "marcas": "Marcas",
+    "galeria": "Galería",
+    "equipo": "Equipo",
+    "reservarCita": "Reservar Cita",
+    "blog": "Blog",
+    "contacto": "Contacto"
+  },
+  "pages": {
+    "sobreNosotros": { "title": "Sobre Nosotros" },
+    "servicios": { "title": "Servicios" },
+    "tratamientos": { "title": "Tratamientos" },
+    "marcas": { "title": "Marcas" },
+    "galeria": { "title": "Galería" },
+    "equipo": { "title": "Equipo" },
+    "reservarCita": { "title": "Reservar Cita" },
+    "blog": { "title": "Blog" },
+    "contacto": { "title": "Contacto" }
   }
 }
