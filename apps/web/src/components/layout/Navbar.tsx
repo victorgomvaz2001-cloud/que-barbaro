@@ -25,20 +25,12 @@ export default function Navbar() {
     href === '/' ? pathname === '/' : pathname.startsWith(href)
 
   return (
-    <header
-      style={{ backgroundColor: 'var(--color-cream)' }}
-      className="relative z-50"
-    >
+    <header className="relative z-50 bg-cream">
       <nav className="mx-auto flex max-w-[1680px] items-center justify-between px-8 py-4">
         {/* Logo */}
         <Link
           href="/"
-          style={{
-            fontFamily: 'var(--font-primary)',
-            color: 'var(--color-navy)',
-            letterSpacing: '0.04em',
-          }}
-          className="text-2xl font-bold uppercase tracking-wide select-none"
+          className="font-primary text-2xl font-bold uppercase tracking-wide text-navy select-none"
         >
           Que Bárbaro
         </Link>
@@ -51,23 +43,13 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                style={{
-                  fontFamily: 'var(--font-secondary)',
-                  letterSpacing: '0.08em',
-                  ...(active
-                    ? {
-                        backgroundColor: 'var(--color-navy)',
-                        color: 'var(--color-cream)',
-                      }
-                    : {
-                        color: 'var(--color-navy)',
-                      }),
-                }}
-                className={`
-                  rounded-full px-3 py-1.5 text-[11px] font-bold uppercase
-                  transition-colors duration-150 whitespace-nowrap
-                  ${active ? '' : 'hover:bg-[#010A49]/8'}
-                `}
+                className={[
+                  'font-secondary rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em]',
+                  'transition-colors duration-150 whitespace-nowrap',
+                  active
+                    ? 'bg-navy text-cream'
+                    : 'text-navy hover:bg-navy/8',
+                ].join(' ')}
               >
                 {t(item.key)}
               </Link>
@@ -75,21 +57,14 @@ export default function Navbar() {
           })}
 
           {/* Divider */}
-          <span
-            className="mx-3 h-4 w-px opacity-30"
-            style={{ backgroundColor: 'var(--color-navy)' }}
-            aria-hidden
-          />
+          <span className="mx-3 h-4 w-px bg-navy opacity-30" aria-hidden />
 
           <LanguageSelector />
         </div>
       </nav>
 
       {/* Bottom border */}
-      <div
-        className="h-px w-full opacity-20"
-        style={{ backgroundColor: 'var(--color-navy)' }}
-      />
+      <div className="h-px w-full bg-navy opacity-20" />
     </header>
   )
 }

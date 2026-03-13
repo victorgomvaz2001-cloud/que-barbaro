@@ -72,7 +72,7 @@ export default async function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer style={{ backgroundColor: 'var(--color-navy)' }}>
+    <footer className="bg-navy">
       {/* Main grid */}
       <div className="mx-auto max-w-[1680px] px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
@@ -81,47 +81,27 @@ export default async function Footer() {
           <div className="flex flex-col gap-6">
             <Link
               href="/"
-              style={{
-                fontFamily: 'var(--font-primary)',
-                color: 'var(--color-cream)',
-                letterSpacing: '0.04em',
-              }}
-              className="text-3xl font-bold uppercase leading-none"
+              className="font-primary text-3xl font-bold uppercase leading-none tracking-[0.04em] text-cream"
             >
               Que Bárbaro
             </Link>
 
-            <p
-              style={{
-                fontFamily: 'var(--font-secondary)',
-                color: 'var(--color-cream)',
-                letterSpacing: '0.06em',
-              }}
-              className="text-xs uppercase opacity-50 tracking-widest"
-            >
+            <p className="font-secondary text-xs uppercase tracking-widest text-cream opacity-50">
               {tFooter('tagline')}
             </p>
 
-            <address
-              style={{
-                fontFamily: 'var(--font-secondary)',
-                color: 'var(--color-cream)',
-              }}
-              className="not-italic flex flex-col gap-2 text-sm opacity-70 leading-relaxed"
-            >
+            <address className="font-secondary not-italic flex flex-col gap-2 text-sm leading-relaxed text-cream opacity-70">
               <span>{tFooter('address')}</span>
               <span>{tFooter('city')}</span>
               <a
                 href={`tel:${tFooter('phone')}`}
                 className="transition-opacity hover:opacity-100 hover:underline underline-offset-2"
-                style={{ color: 'var(--color-cream)' }}
               >
                 {tFooter('phone')}
               </a>
               <a
                 href={`mailto:${tFooter('email')}`}
-                className="transition-opacity hover:opacity-100 hover:underline underline-offset-2"
-                style={{ color: 'var(--color-orange)' }}
+                className="text-orange transition-opacity hover:opacity-100 hover:underline underline-offset-2"
               >
                 {tFooter('email')}
               </a>
@@ -130,14 +110,7 @@ export default async function Footer() {
 
           {/* Col 2 — Secciones */}
           <div>
-            <h3
-              style={{
-                fontFamily: 'var(--font-secondary)',
-                color: 'var(--color-cream)',
-                letterSpacing: '0.12em',
-              }}
-              className="mb-6 text-[10px] font-bold uppercase opacity-40 tracking-[0.2em]"
-            >
+            <h3 className="font-secondary mb-6 text-[10px] font-bold uppercase tracking-[0.2em] text-cream opacity-40">
               {tFooter('sections')}
             </h3>
             <ul className="flex flex-col gap-3">
@@ -145,11 +118,7 @@ export default async function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    style={{
-                      fontFamily: 'var(--font-secondary)',
-                      color: 'var(--color-cream)',
-                    }}
-                    className="text-sm opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
+                    className="font-secondary text-sm text-cream opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
                   >
                     {tNav(item.key)}
                   </Link>
@@ -160,14 +129,7 @@ export default async function Footer() {
 
           {/* Col 3 — Redes sociales */}
           <div>
-            <h3
-              style={{
-                fontFamily: 'var(--font-secondary)',
-                color: 'var(--color-cream)',
-                letterSpacing: '0.12em',
-              }}
-              className="mb-6 text-[10px] font-bold uppercase opacity-40 tracking-[0.2em]"
-            >
+            <h3 className="font-secondary mb-6 text-[10px] font-bold uppercase tracking-[0.2em] text-cream opacity-40">
               {tFooter('followUs')}
             </h3>
             <ul className="flex flex-col gap-4">
@@ -177,13 +139,9 @@ export default async function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      fontFamily: 'var(--font-secondary)',
-                      color: 'var(--color-cream)',
-                    }}
-                    className="flex items-center gap-3 text-sm opacity-70 transition-opacity hover:opacity-100 group"
+                    className="font-secondary group flex items-center gap-3 text-sm text-cream opacity-70 transition-opacity hover:opacity-100"
                   >
-                    <span className="transition-colors group-hover:text-[#FE5100]">
+                    <span className="transition-colors group-hover:text-orange">
                       {s.icon}
                     </span>
                     {s.name}
@@ -195,22 +153,14 @@ export default async function Footer() {
 
           {/* Col 4 — Legal */}
           <div>
-            <h3
-              style={{
-                fontFamily: 'var(--font-secondary)',
-                color: 'var(--color-cream)',
-                letterSpacing: '0.12em',
-              }}
-              className="mb-6 text-[10px] font-bold uppercase opacity-40 tracking-[0.2em]"
-            >
+            <h3 className="font-secondary mb-6 text-[10px] font-bold uppercase tracking-[0.2em] text-cream opacity-40">
               {tFooter('legal')}
             </h3>
             <ul className="flex flex-col gap-3">
               <li>
                 <Link
                   href="/aviso-legal"
-                  style={{ fontFamily: 'var(--font-secondary)', color: 'var(--color-cream)' }}
-                  className="text-sm opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
+                  className="font-secondary text-sm text-cream opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
                 >
                   {tFooter('legalPages.avisoLegal')}
                 </Link>
@@ -218,8 +168,7 @@ export default async function Footer() {
               <li>
                 <Link
                   href="/politica-privacidad"
-                  style={{ fontFamily: 'var(--font-secondary)', color: 'var(--color-cream)' }}
-                  className="text-sm opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
+                  className="font-secondary text-sm text-cream opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
                 >
                   {tFooter('legalPages.privacidad')}
                 </Link>
@@ -227,8 +176,7 @@ export default async function Footer() {
               <li>
                 <Link
                   href="/politica-cookies"
-                  style={{ fontFamily: 'var(--font-secondary)', color: 'var(--color-cream)' }}
-                  className="text-sm opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
+                  className="font-secondary text-sm text-cream opacity-70 transition-opacity hover:opacity-100 hover:underline underline-offset-2"
                 >
                   {tFooter('legalPages.cookies')}
                 </Link>
@@ -240,18 +188,8 @@ export default async function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div
-        className="mx-auto max-w-[1680px] px-8 py-5"
-        style={{ borderTop: '1px solid rgba(246,244,241,0.12)' }}
-      >
-        <p
-          style={{
-            fontFamily: 'var(--font-secondary)',
-            color: 'var(--color-cream)',
-            letterSpacing: '0.06em',
-          }}
-          className="text-xs opacity-40 uppercase tracking-widest"
-        >
+      <div className="mx-auto max-w-[1680px] border-t border-cream/10 px-8 py-5">
+        <p className="font-secondary text-xs uppercase tracking-widest text-cream opacity-40">
           © {year} Que Bárbaro. {tFooter('rights')}
         </p>
       </div>

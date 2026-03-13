@@ -23,7 +23,8 @@
 }
 
 /* ── Design Tokens ─────────────────────────────────────────────────────────── */
-:root {
+/* Tailwind v4 @theme: genera bg-navy, text-navy, bg-cream, font-primary, etc. */
+@theme {
   --color-navy: #010A49;
   --color-orange: #FE5100;
   --color-cream: #F6F4F1;

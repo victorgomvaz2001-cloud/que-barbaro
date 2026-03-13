@@ -10,10 +10,7 @@ export default async function HomePage() {
   return (
     <div className="mx-auto max-w-7xl px-8 py-24">
       <SEOHead route={seoRoute} fallback={{ title: 'Que Bárbaro' }} />
-      <h1
-        style={{ fontFamily: 'var(--font-primary)', color: 'var(--color-navy)' }}
-        className="text-5xl uppercase tracking-wide"
-      >
+      <h1 className="font-primary text-5xl uppercase tracking-wide text-navy">
         Inicio
       </h1>
     </div>
