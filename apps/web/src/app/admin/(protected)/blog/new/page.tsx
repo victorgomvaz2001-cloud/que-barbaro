@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { apiClient } from '@/lib/api-client'
 import { Button } from '@/components/admin/Button'
 import { useToast } from '@/components/admin/Toast'
+import { MediaPickerModal } from '@/components/admin/MediaPickerModal'
 import type { ApiResponse, IBlogPostCreate, IBlogPost, ISEOPage } from '@falcanna/types'
 
 const inputCls =
@@ -31,6 +32,8 @@ export default function NewBlogPostPage() {
 
   const [loading, setLoading] = useState(false)
   const [loadingContent, setLoadingContent] = useState(false)
+  const [headerImage, setHeaderImage] = useState('')
+  const [mediaPickerOpen, setMediaPickerOpen] = useState(false)
 
   const [title, setTitle] = useState('')
   const [slug, setSlug] = useState('')
@@ -55,6 +58,7 @@ export default function NewBlogPostPage() {
       title,
       slug,
       content: '',
+      image: headerImage || undefined,
       author: get('author'),
       publishedAt: get('publishedAt'),
       draft: (form.elements.namedItem('draft') as HTMLInputElement)?.checked ?? true,
@@ -140,6 +144,13 @@ export default function NewBlogPostPage() {
 
   return (
     <div className="flex flex-col">
+      <MediaPickerModal
+        open={mediaPickerOpen}
+        folder="blog"
+        onClose={() => setMediaPickerOpen(false)}
+        onSelect={(url) => { setHeaderImage(url); setMediaPickerOpen(false) }}
+      />
+
       <div className="mb-6 flex items-center justify-between gap-4">
         <h1 className="text-2xl font-bold text-gray-900">New Blog Post</h1>
         <div className="flex shrink-0 gap-3">
@@ -200,6 +211,37 @@ export default function NewBlogPostPage() {
                   />
                   <span className="text-sm font-medium text-gray-700">Draft</span>
                 </label>
+              </div>
+            </section>
+
+            {/* Header image */}
+            <section className={sectionCls}>
+              <h2 className={sectionTitle}>Imagen de cabecera</h2>
+              <div className="flex items-start gap-4">
+                {headerImage ? (
+                  <div className="relative h-28 w-44 shrink-0 overflow-hidden rounded-lg border border-gray-200">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={headerImage} alt="Cabecera" className="h-full w-full object-cover" />
+                  </div>
+                ) : (
+                  <div className="flex h-28 w-44 shrink-0 items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50">
+                    <svg className="h-8 w-8 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                      <rect x="3" y="3" width="18" height="18" rx="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/>
+                      <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                  </div>
+                )}
+                <div className="flex flex-col gap-2">
+                  <Button type="button" variant="secondary" size="sm" onClick={() => setMediaPickerOpen(true)}>
+                    {headerImage ? 'Cambiar imagen' : 'Seleccionar imagen'}
+                  </Button>
+                  {headerImage && (
+                    <Button type="button" variant="ghost" size="sm" onClick={() => setHeaderImage('')}>
+                      Quitar imagen
+                    </Button>
+                  )}
+                </div>
               </div>
             </section>
 

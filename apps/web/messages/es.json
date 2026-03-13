@@ -25,5 +25,21 @@
     "reservarCita": { "title": "Reservar Cita" },
     "blog": { "title": "Blog" },
     "contacto": { "title": "Contacto" }
+  },
+  "footer": {
+    "tagline": "Barbería & centro de belleza",
+    "address": "Calle Principal, 1",
+    "city": "Madrid, España",
+    "phone": "+34 600 000 000",
+    "email": "hola@quebarbaro.es",
+    "sections": "Secciones",
+    "followUs": "Síguenos",
+    "legal": "Legal",
+    "legalPages": {
+      "avisoLegal": "Aviso Legal",
+      "privacidad": "Política de Privacidad",
+      "cookies": "Política de Cookies"
+    },
+    "rights": "Todos los derechos reservados."
   }
 }

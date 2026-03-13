@@ -11,3 +11,13 @@ export async function getPresignedUrl(req: Request, res: Response, next: NextFun
     next(err)
   }
 }
+
+export async function listMedia(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const prefix = typeof req.query.prefix === 'string' ? req.query.prefix : undefined
+    const items = await s3Service.listObjects(prefix)
+    res.json({ data: items })
+  } catch (err) {
+    next(err)
+  }
+}

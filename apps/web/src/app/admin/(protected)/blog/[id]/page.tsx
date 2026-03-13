@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation'
 import { apiClient } from '@/lib/api-client'
 import { Button } from '@/components/admin/Button'
 import { Modal } from '@/components/admin/Modal'
+import { MediaPickerModal } from '@/components/admin/MediaPickerModal'
 import { useToast } from '@/components/admin/Toast'
 import type { ApiResponse, IBlogPost, ISEOPage } from '@falcanna/types'
 
@@ -28,6 +29,8 @@ export default function EditBlogPostPage() {
   const [deleting, setDeleting] = useState(false)
   const [showUnsavedModal, setShowUnsavedModal] = useState(false)
   const [showCancelModal, setShowCancelModal] = useState(false)
+  const [headerImage, setHeaderImage] = useState('')
+  const [mediaPickerOpen, setMediaPickerOpen] = useState(false)
 
   const formRef = useRef<HTMLFormElement>(null)
   const isDirtyRef = useRef(false)
@@ -37,6 +40,7 @@ export default function EditBlogPostPage() {
       .get<ApiResponse<IBlogPost>>(`/blog/admin/${id}`)
       .then((res) => {
         setPost(res.data)
+        setHeaderImage(res.data.image ?? '')
         apiClient
           .get<ApiResponse<ISEOPage>>(
             `/seo?route=${encodeURIComponent(`/blog/${res.data.slug}`)}`,
@@ -69,6 +73,7 @@ export default function EditBlogPostPage() {
       blog: {
         title: get('title'),
         content: post?.content ?? '',
+        image: headerImage || undefined,
         author: get('author'),
         publishedAt: get('publishedAt'),
         draft: (form.elements.namedItem('draft') as HTMLInputElement)?.checked ?? false,
@@ -189,6 +194,13 @@ export default function EditBlogPostPage() {
 
   return (
     <>
+      <MediaPickerModal
+        open={mediaPickerOpen}
+        folder="blog"
+        onClose={() => setMediaPickerOpen(false)}
+        onSelect={(url) => { setHeaderImage(url); setMediaPickerOpen(false) }}
+      />
+
       <div className="flex flex-col">
         <div className="mb-6 flex items-center justify-between gap-4">
           <h1 className="shrink-0 text-2xl font-bold text-gray-900">
@@ -257,6 +269,37 @@ export default function EditBlogPostPage() {
                     />
                     <span className="text-sm font-medium text-gray-700">Draft</span>
                   </label>
+                </div>
+              </section>
+
+              {/* Header image */}
+              <section className={sectionCls}>
+                <h2 className={sectionTitle}>Imagen de cabecera</h2>
+                <div className="flex items-start gap-4">
+                  {headerImage ? (
+                    <div className="relative h-28 w-44 shrink-0 overflow-hidden rounded-lg border border-gray-200">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={headerImage} alt="Cabecera" className="h-full w-full object-cover" />
+                    </div>
+                  ) : (
+                    <div className="flex h-28 w-44 shrink-0 items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-50">
+                      <svg className="h-8 w-8 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                      </svg>
+                    </div>
+                  )}
+                  <div className="flex flex-col gap-2">
+                    <Button type="button" variant="secondary" size="sm" onClick={() => setMediaPickerOpen(true)}>
+                      {headerImage ? 'Cambiar imagen' : 'Seleccionar imagen'}
+                    </Button>
+                    {headerImage && (
+                      <Button type="button" variant="ghost" size="sm" onClick={() => setHeaderImage('')}>
+                        Quitar imagen
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </section>
 

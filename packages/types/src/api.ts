@@ -47,3 +47,10 @@ export interface PresignedUrlResponse {
   fileUrl: string
   key: string
 }
+
+export interface IMediaItem {
+  key: string
+  url: string
+  size: number
+  lastModified: string
+}

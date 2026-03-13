@@ -1,23 +1,25 @@
 'use client'
 
 import { usePathname, Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import LanguageSelector from './LanguageSelector'
 
 const NAV_ITEMS = [
-  { href: '/',              label: 'Inicio' },
-  { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
-  { href: '/servicios',     label: 'Servicios' },
-  { href: '/tratamientos',  label: 'Tratamientos' },
-  { href: '/marcas',        label: 'Marcas' },
-  { href: '/galeria',       label: 'Galería' },
-  { href: '/equipo',        label: 'Equipo' },
-  { href: '/reservar-cita', label: 'Reservar Cita' },
-  { href: '/blog',          label: 'Blog' },
-  { href: '/contacto',      label: 'Contacto' },
-]
+  { href: '/',               key: 'inicio' },
+  { href: '/sobre-nosotros', key: 'sobreNosotros' },
+  { href: '/servicios',      key: 'servicios' },
+  { href: '/tratamientos',   key: 'tratamientos' },
+  { href: '/marcas',         key: 'marcas' },
+  { href: '/galeria',        key: 'galeria' },
+  { href: '/equipo',         key: 'equipo' },
+  { href: '/reservar-cita',  key: 'reservarCita' },
+  { href: '/blog',           key: 'blog' },
+  { href: '/contacto',       key: 'contacto' },
+] as const
 
 export default function Navbar() {
   const pathname = usePathname()
+  const t = useTranslations('nav')
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href)
@@ -67,7 +69,7 @@ export default function Navbar() {
                   ${active ? '' : 'hover:bg-[#010A49]/8'}
                 `}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             )
           })}

@@ -25,5 +25,21 @@
     "reservarCita": { "title": "Book Appointment" },
     "blog": { "title": "Blog" },
     "contacto": { "title": "Contact" }
+  },
+  "footer": {
+    "tagline": "Barbershop & beauty center",
+    "address": "Calle Principal, 1",
+    "city": "Madrid, Spain",
+    "phone": "+34 600 000 000",
+    "email": "hola@quebarbaro.es",
+    "sections": "Sections",
+    "followUs": "Follow us",
+    "legal": "Legal",
+    "legalPages": {
+      "avisoLegal": "Legal Notice",
+      "privacidad": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    },
+    "rights": "All rights reserved."
   }
 }

@@ -4,10 +4,12 @@ import { useEditor, EditorContent, Extension } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
 import Link from '@tiptap/extension-link'
+import Image from '@tiptap/extension-image'
 import Placeholder from '@tiptap/extension-placeholder'
 import { TextStyle } from '@tiptap/extension-text-style'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import type { Editor } from '@tiptap/react'
+import { MediaPickerModal } from './MediaPickerModal'
 
 // ─── FontSize extension ───────────────────────────────────────────────────────
 
@@ -100,6 +102,8 @@ export function RichTextEditor({
   placeholder = 'Start writing…',
   className,
 }: RichTextEditorProps) {
+  const [mediaPickerOpen, setMediaPickerOpen] = useState(false)
+
   const handleUpdate = useCallback(
     ({ editor }: { editor: Editor | null }) => {
       if (!editor) return
@@ -125,6 +129,7 @@ export function RichTextEditor({
         HTMLAttributes: { rel: 'noopener noreferrer' },
       }),
       Placeholder.configure({ placeholder }),
+      Image.configure({ inline: false, HTMLAttributes: { class: 'max-w-full rounded-lg' } }),
     ],
     content,
     onUpdate: handleUpdate,
@@ -158,6 +163,16 @@ export function RichTextEditor({
 
   return (
     <div className={['flex flex-col', className].filter(Boolean).join(' ')}>
+      <MediaPickerModal
+        open={mediaPickerOpen}
+        folder="blog"
+        onClose={() => setMediaPickerOpen(false)}
+        onSelect={(url) => {
+          editor.chain().focus().setImage({ src: url }).run()
+          setMediaPickerOpen(false)
+        }}
+      />
+
       {/* ── Toolbar ──────────────────────────────────────────────────────── */}
       <div className="flex shrink-0 flex-wrap items-center gap-0.5 border-b border-gray-200 bg-gray-50 px-3 py-2">
 
@@ -298,6 +313,19 @@ export function RichTextEditor({
         >
           <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
             <rect x="2" y="9" width="16" height="2" rx="1" />
+          </svg>
+        </ToolBtn>
+
+        <Divider />
+
+        {/* Image */}
+        <ToolBtn
+          title="Insertar imagen"
+          active={false}
+          onClick={() => setMediaPickerOpen(true)}
+        >
+          <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 5 2-2 3 5z" clipRule="evenodd" />
           </svg>
         </ToolBtn>
 
