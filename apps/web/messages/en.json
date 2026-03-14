@@ -6,12 +6,14 @@
   "nav": {
     "inicio": "Home",
     "sobreNosotros": "About Us",
+    "elSalon": "The Salon",
     "servicios": "Services",
     "tratamientos": "Treatments",
     "marcas": "Brands",
     "galeria": "Gallery",
     "equipo": "Team",
     "reservarCita": "Book Appointment",
+    "reservar": "Book",
     "blog": "Blog",
     "contacto": "Contact"
   },
@@ -27,7 +29,7 @@
     "contacto": { "title": "Contact" }
   },
   "footer": {
-    "tagline": "Barbershop & beauty center",
+    "tagline": "Barbershop & Beauty Centre",
     "address": "Calle Principal, 1",
     "city": "Madrid, Spain",
     "phone": "+34 600 000 000",

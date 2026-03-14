@@ -6,12 +6,14 @@
   "nav": {
     "inicio": "Inicio",
     "sobreNosotros": "Sobre Nosotros",
+    "elSalon": "El Salón",
     "servicios": "Servicios",
     "tratamientos": "Tratamientos",
     "marcas": "Marcas",
     "galeria": "Galería",
     "equipo": "Equipo",
     "reservarCita": "Reservar Cita",
+    "reservar": "Reservar",
     "blog": "Blog",
     "contacto": "Contacto"
   },
@@ -27,7 +29,7 @@
     "contacto": { "title": "Contacto" }
   },
   "footer": {
-    "tagline": "Barbería & centro de belleza",
+    "tagline": "Barbería & Centro de Belleza",
     "address": "Calle Principal, 1",
     "city": "Madrid, España",
     "phone": "+34 600 000 000",

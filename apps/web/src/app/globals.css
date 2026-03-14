@@ -1,35 +1,79 @@
 @import "tailwindcss";
 
 /* ── Custom Fonts ──────────────────────────────────────────────────────────── */
-/* Place font files in /public/fonts/ */
+
+/* Mahek Demo — display/logo */
 @font-face {
   font-family: 'Mahek Demo';
-  src: url('/fonts/MahekDemo.woff2') format('woff2'),
-       url('/fonts/MahekDemo.woff') format('woff'),
-       url('/fonts/MahekDemo.otf') format('opentype');
-  font-weight: normal;
+  src: url('/fonts/mahek-demo-version.regular.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+/* Minion Pro — body/secondary */
 @font-face {
-  font-family: 'Minion Variable Concept';
-  src: url('/fonts/MinionVariableConcept.woff2') format('woff2'),
-       url('/fonts/MinionVariableConcept.woff') format('woff'),
-       url('/fonts/MinionVariableConcept.otf') format('opentype');
-  font-weight: 100 900;
+  font-family: 'Minion Pro';
+  src: url('/fonts/MinionPro-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Minion Pro';
+  src: url('/fonts/MinionPro-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Minion Pro';
+  src: url('/fonts/MinionPro-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Minion Pro';
+  src: url('/fonts/MinionPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Neue Montreal — social/descriptive */
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Light.otf') format('opentype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 /* ── Design Tokens ─────────────────────────────────────────────────────────── */
-/* Tailwind v4 @theme: genera bg-navy, text-navy, bg-cream, font-primary, etc. */
 @theme {
   --color-navy: #010A49;
   --color-orange: #FE5100;
   --color-cream: #F6F4F1;
-  --font-primary: 'Mahek Demo', Georgia, serif;
-  --font-secondary: 'Minion Variable Concept', Georgia, serif;
+  --font-primary:   'Mahek Demo',      Georgia, serif;
+  --font-secondary: 'Minion Pro',      Georgia, serif;
+  --font-neue:      'Neue Montreal',   sans-serif;
+}
+
+/* ── Animations ────────────────────────────────────────────────────────────── */
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes slide-out-right {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-slide-out-right {
+  animation: slide-out-right 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* ── TipTap / ProseMirror editor styles ───────────────────────────────────── */

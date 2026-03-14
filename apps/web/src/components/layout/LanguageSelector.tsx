@@ -8,14 +8,31 @@ export default function LanguageSelector() {
   const router = useRouter()
   const pathname = usePathname()
 
+  const switchTo = (next: string) => {
+    if (next !== locale) router.replace(pathname, { locale: next })
+  }
+
   return (
-    <select
-      value={locale}
-      onChange={(e) => router.replace(pathname, { locale: e.target.value })}
-      className="font-secondary cursor-pointer appearance-none border-none bg-transparent text-[11px] font-bold uppercase tracking-[0.08em] text-navy outline-none transition-opacity hover:opacity-70"
-    >
-      <option value="es">ES</option>
-      <option value="en">EN</option>
-    </select>
+    <div className="font-secondary flex items-center gap-3 text-[13px] uppercase tracking-[0.12em] select-none">
+      <button
+        onClick={() => switchTo('es')}
+        className={[
+          'transition-all duration-150 cursor-pointer',
+          locale === 'es' ? 'text-navy' : 'text-navy/40 hover:text-navy',
+        ].join(' ')}
+      >
+        ES
+      </button>
+      <span className="h-4 w-px bg-navy opacity-30" aria-hidden />
+      <button
+        onClick={() => switchTo('en')}
+        className={[
+          'transition-all duration-150 cursor-pointer',
+          locale === 'en' ? 'text-navy' : 'text-navy/40 hover:text-navy',
+        ].join(' ')}
+      >
+        EN
+      </button>
+    </div>
   )
 }
