@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { usePathname, Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import LanguageSelector from './LanguageSelector'
+import Logo from '@/components/Logo'
 
 const NAV_ITEMS = [
   { href: '/',          key: 'inicio' },
@@ -31,7 +32,7 @@ export default function Navbar() {
   return (
     <>
       <header className="relative z-50 bg-cream">
-        <div className="mx-auto grid max-w-[1680px] grid-cols-3 items-center px-6 py-6">
+        <div className="mx-auto flex items-center justify-between max-w-[1680px] px-6 py-6 md:grid md:grid-cols-3">
           {/* Left: Instagram */}
           <div className="flex items-center">
             <a
@@ -116,27 +117,32 @@ export default function Navbar() {
       {open && (
         <div className={`${closing ? 'animate-slide-out-right' : 'animate-slide-in-right'} fixed inset-0 z-[100] bg-cream flex flex-col`}>
           {/* Top bar */}
-          <div className="flex flex-col px-6 pt-8 pb-4 gap-4">
-            <div className="flex items-center justify-between">
-              <Link
-                href="/reservar-cita"
-                onClick={() => closeMenu()}
-                className="bg-navy text-cream font-secondary text-[12px] uppercase tracking-[0.12em] px-4 py-3 transition-opacity duration-150 hover:opacity-80"
-              >
-                {t('reservar')}
-              </Link>
+          <div className="relative flex flex-col items-center px-6 pt-8 pb-4 gap-4">
+            {/* Close button — top right */}
+            <button
+              onClick={() => closeMenu()}
+              aria-label="Cerrar menú"
+              className="absolute top-8 right-6 text-navy opacity-75 hover:opacity-100 transition-opacity"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
 
-              <button
-                onClick={() => closeMenu()}
-                aria-label="Cerrar menú"
-                className="text-navy opacity-75 hover:opacity-100 transition-opacity"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </button>
-            </div>
+            {/* Logo centrado */}
+            <Link href="/" onClick={() => closeMenu()} aria-label="Que Bárbaro" className="text-navy transition-opacity hover:opacity-70">
+              <Logo className="h-20 w-auto" />
+            </Link>
+
+            {/* Reservar */}
+            <Link
+              href="/reservar-cita"
+              onClick={() => closeMenu()}
+              className="bg-navy text-cream font-secondary text-[12px] uppercase tracking-[0.12em] px-6 py-3 transition-opacity duration-150 hover:opacity-80"
+            >
+              {t('reservar')}
+            </Link>
           </div>
 
           {/* Nav links */}
