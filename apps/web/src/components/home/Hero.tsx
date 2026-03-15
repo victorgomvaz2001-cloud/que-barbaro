@@ -1,30 +1,25 @@
 import Image from 'next/image'
-import { Link } from '@/i18n/navigation'
 
 export default function Hero() {
   return (
-    <section className="mx-auto grid max-w-[1680px] grid-cols-1 items-center gap-12 px-8 py-16 md:grid-cols-2 md:gap-20 md:py-20">
-      {/* ── Left: text ─────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-10">
-        <h1 className="font-primary text-[clamp(2.6rem,5.5vw,5.2rem)] leading-[1.05] tracking-tight text-navy">
-          El Santuario de Belleza que Estabas Buscando
+    <section className="mx-auto max-w-[1680px] px-6 pt-4 pb-6 flex flex-col items-center text-center gap-12">
+      {/* ── Title + Subtitle ─────────────────────────────────────────── */}
+      <div className="flex flex-col items-center gap-3">
+        <h1 className="font-primary text-[clamp(4rem,14vw,11rem)] leading-[0.95] tracking-tight text-navy uppercase">
+          Qué Bárbaro
         </h1>
-
-        <Link
-          href="/reservar-cita"
-          className="font-secondary inline-flex w-fit items-center bg-navy px-6 py-5 text-[22px] font-bold uppercase tracking-[0.15em] text-cream transition-all duration-200 hover:opacity-80"
-        >
-          Reservar Cita
-        </Link>
+        <p className="font-secondary text-[clamp(0.75rem,1.4vw,1rem)] uppercase tracking-[0.22em] text-navy/60">
+          Salón de belleza · Torremolinos
+        </p>
       </div>
 
-      {/* ── Right: image ───────────────────────────────────────────── */}
-      <div className="relative aspect-square w-full overflow-hidden">
+      {/* ── Image 4:3 ─────────────────────────────────────────────────── */}
+      <div className="relative w-full max-w-xl aspect-[3/4] overflow-hidden">
         <Image
           src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/hero.jpg"
           alt="Salón de belleza Que Bárbaro — interior del espacio"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 768px"
           quality={85}
           priority
           className="object-cover object-center"

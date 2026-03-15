@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import Image from 'next/image'
+import Logo from '@/components/Logo'
 import BackToTopButton from './BackToTopButton'
 
 const NAV_LINKS = [
@@ -29,21 +29,14 @@ export default async function Footer() {
     <footer>
       {/* ── Navy container ──────────────────────────────────────────────────── */}
       <div className="bg-cream px-8">
-        <div className="bg-navy mx-auto max-w-[1680px] px-8 pt-10 pb-0">
+        <div className="bg-cream mx-auto max-w-[1680px] px-8 pt-10 pb-0">
 
           {/* Top row: Logo · Slogan */}
           <div className="flex items-start justify-between mb-16">
-            <Link href="/" className="transition-opacity hover:opacity-70">
-              <Image
-                src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/logo.png"
-                alt="Que Bárbaro"
-                width={320}
-                height={104}
-                className="h-24 w-auto object-contain"
-                style={{ filter: 'brightness(0) saturate(100%) invert(40%) sepia(99%) saturate(800%) hue-rotate(358deg) brightness(103%) contrast(104%)' }}
-              />
+            <Link href="/" className="text-navy transition-opacity hover:opacity-70" aria-label="Que Bárbaro">
+              <Logo className="h-24 w-auto" />
             </Link>
-            <p className="font-neue text-orange text-right text-[clamp(1.2rem,2.5vw,1.5rem)] leading-tight max-w-xs">
+            <p className="font-neue text-navy text-right text-[clamp(1.2rem,2.5vw,1.5rem)] leading-tight max-w-xs">
               {tFoot('tagline')}
             </p>
           </div>
@@ -57,7 +50,7 @@ export default async function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="font-primary text-orange text-[clamp(1.6rem,2.5vw,2.4rem)] leading-tight transition-opacity hover:opacity-60"
+                  className="font-primary text-navy text-[clamp(1.6rem,2.5vw,2.4rem)] leading-tight transition-opacity hover:opacity-60"
                 >
                   {tNav(item.key)}
                 </Link>
@@ -67,31 +60,31 @@ export default async function Footer() {
             {/* Center: Contact + Location */}
             <div className="flex flex-col justify-center items-center text-center gap-8">
               <div>
-                <h3 className="font-primary text-orange text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[0.18em] mb-3">
+                <h3 className="font-primary text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[0.18em] mb-3">
                   Contacto
                 </h3>
                 <a
                   href={`mailto:${tFoot('email')}`}
-                  className="font-neue block text-orange/55 text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-orange"
+                  className="font-neue block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
                 >
                   {tFoot('email')}
                 </a>
                 <a
                   href={`tel:${tFoot('phone')}`}
-                  className="font-neue block text-orange/55 text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-orange"
+                  className="font-neue block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
                 >
                   {tFoot('phone')}
                 </a>
               </div>
 
               <div>
-                <h3 className="font-primary text-orange text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[0.18em] mb-3">
+                <h3 className="font-primary text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[0.18em] mb-3">
                   El Salón
                 </h3>
-                <p className="font-neue text-orange/55 text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
+                <p className="font-neue text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
                   {tFoot('address')}
                 </p>
-                <p className="font-neue text-orange/55 text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
+                <p className="font-neue text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
                   {tFoot('city')}
                 </p>
               </div>
@@ -105,7 +98,7 @@ export default async function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-neue text-orange text-[clamp(1.6rem,2.5vw,2.4rem)] leading-tight transition-opacity hover:opacity-60"
+                  className="font-neue text-navy text-[clamp(1.6rem,2.5vw,2.4rem)] leading-tight transition-opacity hover:opacity-60"
                 >
                   {s.name}
                 </a>
@@ -114,27 +107,27 @@ export default async function Footer() {
           </div>
 
           {/* Bottom bar: copyright · legal · back to top */}
-          <div className="border-t border-orange/15 mt-12 py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <p className="font-neue text-orange/35 text-xs">
+          <div className="border-t border-navy/15 mt-12 py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p className="font-neue text-navy/35 text-xs">
               © {year} Que Bárbaro. {tFoot('rights')}
             </p>
 
             <div className="flex flex-wrap gap-5">
               <Link
                 href="/aviso-legal"
-                className="font-neue text-orange/35 text-xs transition-colors hover:text-orange"
+                className="font-neue text-navy/35 text-xs transition-colors hover:text-navy"
               >
                 {tFoot('legalPages.avisoLegal')}
               </Link>
               <Link
                 href="/politica-privacidad"
-                className="font-neue text-orange/35 text-xs transition-colors hover:text-orange"
+                className="font-neue text-navy/35 text-xs transition-colors hover:text-navy"
               >
                 {tFoot('legalPages.privacidad')}
               </Link>
               <Link
                 href="/politica-cookies"
-                className="font-neue text-orange/35 text-xs transition-colors hover:text-orange"
+                className="font-neue text-navy/35 text-xs transition-colors hover:text-navy"
               >
                 {tFoot('legalPages.cookies')}
               </Link>
