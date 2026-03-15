@@ -55,26 +55,29 @@ export default function FeaturedServices() {
         {/* ── Grid ───────────────────────────────────────────────────── */}
         {/* Desktop: 5 cols, row 1 = 3+2, row 2 = 2+1+2              */}
         {/* Mobile:  2 cols, row 1 = full, rows 2-3 = half+half       */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-2 gap-y-8">
           {SERVICES.map((s) => (
             <Link
               key={s.title}
               href="/servicios"
-              className={`${s.colClass} ${s.heightClass} relative overflow-hidden group`}
+              className={`${s.colClass} group block relative`}
             >
-              <Image
-                src={s.src}
-                alt={s.title}
-                fill
-                sizes="(max-width: 768px) 50vw, 33vw"
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/65 via-navy/10 to-transparent" />
-              {/* Title */}
-              <span className="absolute bottom-5 left-5 font-primary text-[clamp(1.2rem,2.5vw,2rem)] uppercase leading-none text-cream">
+              {/* Image */}
+              <div className={`${s.heightClass} relative overflow-hidden`}>
+                <Image
+                  src={s.src}
+                  alt={s.title}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-cream/60 to-transparent" />
+              </div>
+
+              {/* Title — z-10 so it renders above the image */}
+              <p className="relative z-10 -mt-[0.5em] pl-3 font-primary text-[clamp(1.3rem,2.4vw,2rem)] leading-none uppercase text-navy">
                 {s.title}
-              </span>
+              </p>
             </Link>
           ))}
         </div>
