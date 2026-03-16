@@ -40,13 +40,13 @@ export default function FeaturedServices() {
       <div className="mx-auto max-w-[1680px]">
 
         {/* ── Header ─────────────────────────────────────────────────── */}
-        <div className="flex items-end justify-between py-10 gap-6">
-          <h2 className="font-primary text-[clamp(2rem,5vw,4rem)] leading-none tracking-tight text-navy uppercase">
+        <div className="flex items-center justify-between pt-10 pb-4 gap-6">
+          <h2 className="font-primary text-[clamp(2rem,5vw,4rem)] leading-none tracking-[0.05em] text-navy uppercase">
             Servicios
           </h2>
           <Link
             href="/servicios"
-            className="bg-navy text-cream font-secondary text-[12px] uppercase tracking-[0.12em] px-5 py-3 mb-1 transition-opacity duration-150 hover:opacity-80 whitespace-nowrap"
+            className="bg-navy text-cream font-neue text-[13px] uppercase tracking-[0.14em] px-6 py-3.5 transition-opacity duration-150 hover:opacity-80 whitespace-nowrap"
           >
             Ver todos
           </Link>
@@ -55,7 +55,7 @@ export default function FeaturedServices() {
         {/* ── Grid ───────────────────────────────────────────────────── */}
         {/* Desktop: 5 cols, row 1 = 3+2, row 2 = 2+1+2              */}
         {/* Mobile:  2 cols, row 1 = full, rows 2-3 = half+half       */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-2 gap-y-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-2 gap-y-2">
           {SERVICES.map((s) => (
             <Link
               key={s.title}
@@ -71,13 +71,19 @@ export default function FeaturedServices() {
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-cream/60 to-transparent" />
-              </div>
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50" />
 
-              {/* Title — z-10 so it renders above the image */}
-              <p className="relative z-10 -mt-[0.5em] pl-3 font-primary text-[clamp(1.3rem,2.4vw,2rem)] leading-none uppercase text-navy">
-                {s.title}
-              </p>
+                {/* Centered text */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center px-4">
+                  <p className="font-neue text-white uppercase text-[clamp(1.1rem,1.9vw,1.6rem)] leading-none tracking-normal">
+                    {s.title}
+                  </p>
+                  <p className="font-neue font-light text-white/60 uppercase text-[clamp(0.6rem,0.8vw,0.7rem)] tracking-[0.18em]">
+                    Consultar catálogo de precios
+                  </p>
+                </div>
+              </div>
             </Link>
           ))}
         </div>

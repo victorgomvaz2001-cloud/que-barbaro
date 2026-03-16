@@ -2,7 +2,7 @@
 
 /* ── Custom Fonts ──────────────────────────────────────────────────────────── */
 
-/* Mahek Demo — display/logo */
+/* Mahek Demo - display/logo */
 @font-face {
   font-family: 'Mahek Demo';
   src: url('/fonts/mahek-demo-version.regular.otf') format('opentype');
@@ -11,7 +11,7 @@
   font-display: swap;
 }
 
-/* Minion Pro — body/secondary */
+/* Minion Pro - body/secondary */
 @font-face {
   font-family: 'Minion Pro';
   src: url('/fonts/MinionPro-Regular.otf') format('opentype');
@@ -41,11 +41,32 @@
   font-display: swap;
 }
 
-/* Neue Montreal — social/descriptive */
+/* Neue Montreal - social/descriptive */
 @font-face {
   font-family: 'Neue Montreal';
   src: url('/fonts/NeueMontreal-Light.otf') format('opentype');
   font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -74,6 +95,13 @@
 }
 .animate-slide-out-right {
   animation: slide-out-right 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Treatwell widget height ────────────────────────────────────────────────── */
+#wahanda-online-booking-widget-iframe,
+#wahanda-online-booking-widget-iframe iframe {
+  min-height: 900px !important;
+  height: 900px !important;
 }
 
 /* ── TipTap / ProseMirror editor styles ───────────────────────────────────── */

@@ -269,7 +269,7 @@ export default function NewBlogPostPage() {
               <div className="mb-4 rounded bg-gray-50 px-3 py-2 text-xs text-gray-500">
                 Route:{' '}
                 <span className="font-mono font-medium text-gray-700">
-                  {slug ? `/blog/${slug}` : '—'}
+                  {slug ? `/blog/${slug}` : '-'}
                 </span>
               </div>
               <div className="space-y-4">

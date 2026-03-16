@@ -36,7 +36,7 @@ export default async function Footer() {
             <Link href="/" className="text-navy transition-opacity hover:opacity-70" aria-label="Que Bárbaro">
               <Logo className="h-24 w-auto" />
             </Link>
-            <p className="hidden md:block font-neue text-navy text-right text-[clamp(1.2rem,2.5vw,1.5rem)] leading-tight max-w-xs">
+            <p className="hidden md:block font-neue font-light text-navy text-right text-[clamp(1.2rem,2.5vw,1.5rem)] leading-tight max-w-xs">
               {tFoot('tagline')}
             </p>
           </div>
@@ -65,13 +65,13 @@ export default async function Footer() {
                 </h3>
                 <a
                   href={`mailto:${tFoot('email')}`}
-                  className="font-neue block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
+                  className="font-neue font-light block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
                 >
                   {tFoot('email')}
                 </a>
                 <a
                   href={`tel:${tFoot('phone')}`}
-                  className="font-neue block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
+                  className="font-neue font-light block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
                 >
                   {tFoot('phone')}
                 </a>
@@ -81,10 +81,10 @@ export default async function Footer() {
                 <h3 className="font-primary text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[0.18em] mb-3">
                   El Salón
                 </h3>
-                <p className="font-neue text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
+                <p className="font-neue font-light text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
                   {tFoot('address')}
                 </p>
-                <p className="font-neue text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
+                <p className="font-neue font-light text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
                   {tFoot('city')}
                 </p>
               </div>
@@ -98,7 +98,7 @@ export default async function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-neue text-navy text-[clamp(1.6rem,2.5vw,2.4rem)] leading-tight transition-opacity hover:opacity-60"
+                  className="font-neue font-light text-navy text-[clamp(1.6rem,2.5vw,2.4rem)] leading-tight transition-opacity hover:opacity-60"
                 >
                   {s.name}
                 </a>
@@ -108,26 +108,26 @@ export default async function Footer() {
 
           {/* Bottom bar: copyright · legal · back to top */}
           <div className="border-t border-navy/15 mt-12 py-5 flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
-            <p className="font-neue text-navy/35 text-xs text-center md:text-left">
+            <p className="font-neue font-light font-light text-navy/35 text-xs text-center md:text-left">
               © {year} Que Bárbaro. {tFoot('rights')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-5">
               <Link
                 href="/aviso-legal"
-                className="font-neue text-navy/35 text-xs transition-colors hover:text-navy"
+                className="font-neue font-light text-navy/35 text-xs transition-colors hover:text-navy"
               >
                 {tFoot('legalPages.avisoLegal')}
               </Link>
               <Link
                 href="/politica-privacidad"
-                className="font-neue text-navy/35 text-xs transition-colors hover:text-navy"
+                className="font-neue font-light text-navy/35 text-xs transition-colors hover:text-navy"
               >
                 {tFoot('legalPages.privacidad')}
               </Link>
               <Link
                 href="/politica-cookies"
-                className="font-neue text-navy/35 text-xs transition-colors hover:text-navy"
+                className="font-neue font-light text-navy/35 text-xs transition-colors hover:text-navy"
               >
                 {tFoot('legalPages.cookies')}
               </Link>

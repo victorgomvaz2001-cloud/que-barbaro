@@ -104,7 +104,7 @@ export default function EditSEOPage() {
   return (
     <div className="max-w-3xl">
       <h1 className="mb-6 text-2xl font-bold text-gray-900">
-        Edit SEO —{' '}
+        Edit SEO -{' '}
         <span className="font-mono text-lg text-gray-500">{seo.route}</span>
       </h1>
 
@@ -175,7 +175,7 @@ export default function EditSEOPage() {
                 defaultValue={seo.twitterCard?.card ?? ''}
                 className={inputCls}
               >
-                <option value="">— None —</option>
+                <option value="">- None -</option>
                 <option value="summary">summary</option>
                 <option value="summary_large_image">summary_large_image</option>
                 <option value="app">app</option>

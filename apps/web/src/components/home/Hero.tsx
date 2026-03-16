@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative w-full max-w-xl aspect-[3/4] overflow-hidden">
         <Image
           src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/hero.jpg"
-          alt="Salón de belleza Que Bárbaro — interior del espacio"
+          alt="Salón de belleza Que Bárbaro - interior del espacio"
           fill
           sizes="(max-width: 768px) 100vw, 768px"
           quality={85}

@@ -9,7 +9,7 @@ export default async function ServiciosPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-8 py-24">
-      <SEOHead route={seoRoute} fallback={{ title: 'Servicios — Que Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Servicios - Que Bárbaro' }} />
       <h1
         className="font-primary text-5xl uppercase tracking-wide text-navy"
       >

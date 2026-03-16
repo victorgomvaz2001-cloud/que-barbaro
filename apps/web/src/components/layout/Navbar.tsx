@@ -31,33 +31,13 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative z-50 bg-cream">
-        <div className="mx-auto flex items-center justify-between max-w-[1680px] px-6 py-6 md:grid md:grid-cols-3">
-          {/* Left: Instagram */}
+      <header className="relative z-50 bg-cream after:absolute after:bottom-0 after:left-0 after:right-0 after:translate-y-full after:h-10 after:bg-gradient-to-b after:from-cream after:to-transparent after:pointer-events-none after:content-['']">
+        <div className="mx-auto flex items-center justify-between max-w-[1680px] px-6 py-3 md:grid md:grid-cols-3">
+          {/* Left: Logo */}
           <div className="flex items-center">
-            <a
-              href="https://www.instagram.com/quebarbaro.es"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-navy opacity-75 transition-opacity duration-200 hover:opacity-100"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
+            <Link href="/" aria-label="Que Bárbaro" className="text-navy transition-opacity hover:opacity-70">
+              <Logo className="h-14 w-auto" />
+            </Link>
           </div>
 
           {/* Center: Nav links (desktop only) */}
@@ -87,7 +67,7 @@ export default function Navbar() {
 
           {/* Right: Reservar + Lang (desktop) · Hamburger (mobile) */}
           <div className="flex items-center justify-end gap-3">
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-6">
               <LanguageSelector />
               <Link
                 href="/reservar-cita"
@@ -97,7 +77,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Hamburger — visible only on mobile */}
+            {/* Hamburger - visible only on mobile */}
             <button
               onClick={() => setOpen(true)}
               aria-label="Abrir menú"
@@ -118,7 +98,7 @@ export default function Navbar() {
         <div className={`${closing ? 'animate-slide-out-right' : 'animate-slide-in-right'} fixed inset-0 z-[100] bg-cream flex flex-col`}>
           {/* Top bar */}
           <div className="relative flex flex-col items-center px-6 pt-8 pb-4 gap-4">
-            {/* Close button — top right */}
+            {/* Close button - top right */}
             <button
               onClick={() => closeMenu()}
               aria-label="Cerrar menú"

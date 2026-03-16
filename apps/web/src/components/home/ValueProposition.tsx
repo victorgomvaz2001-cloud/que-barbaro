@@ -7,10 +7,10 @@ export default function ValueProposition() {
 
         {/* ── Headline ──────────────────────────────────────────────── */}
         <div className="flex flex-col items-center gap-0">
-          <h2 className="font-primary text-[clamp(2.8rem,7vw,6.5rem)] leading-[1] tracking-tight text-navy uppercase">
+          <h2 className="font-primary text-[clamp(2.8rem,7vw,6.5rem)] leading-[1] tracking-[0.05em] text-navy uppercase">
             No vendrás solo<br />a cortarte el pelo.
           </h2>
-          <p className="font-primary italic text-[clamp(1.2rem,3vw,2.4rem)] leading-snug text-orange-500 -mt-1">
+          <p className="font-neue font-light text-[clamp(1rem,2.2vw,1.8rem)] leading-snug text-navy mt-3">
             Vendrás a desconectar. A que te mimen. A salir siendo más tú.
           </p>
         </div>
@@ -19,8 +19,8 @@ export default function ValueProposition() {
         <p className="font-secondary text-[clamp(0.85rem,1.3vw,1rem)] leading-relaxed tracking-wide text-navy/60 max-w-2xl">
           ¡Qué Bárbaro! nació para demostrar que una peluquería puede ser mucho más que un servicio.
           Es un refugio donde la estética, la hospitalidad y el diseño conviven para crear algo que
-          no habías vivido antes. Cada detalle — la fragancia, la música, la toalla fría al llegar,
-          la bebida que te espera — existe por una razón: hacerte sentir que eres lo más importante.
+          no habías vivido antes. Cada detalle - la fragancia, la música, la toalla fría al llegar,
+          la bebida que te espera existe por una razón: hacerte sentir que eres lo más importante.
         </p>
 
         {/* ── CTAs ──────────────────────────────────────────────────── */}
