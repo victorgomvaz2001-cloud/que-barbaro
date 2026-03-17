@@ -5,6 +5,7 @@ import blogRoutes from './blog.routes'
 import locationRoutes from './location.routes'
 import userRoutes from './user.routes'
 import uploadRoutes from './upload.routes'
+import galleryRoutes from './gallery.routes'
 
 const router: IRouter = Router()
 
@@ -12,6 +13,7 @@ router.use('/auth', authRoutes)
 router.use('/seo', seoRoutes)
 router.use('/blog', blogRoutes)
 router.use('/locations', locationRoutes)
+router.use('/gallery', galleryRoutes)
 router.use('/admin/users', userRoutes)
 router.use('/admin/upload', uploadRoutes)
 

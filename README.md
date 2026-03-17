@@ -1,6 +1,6 @@
-# Falcanna US — Monorepo
+# Que Bárbaro — Monorepo
 
-TypeScript monorepo powered by **Turborepo** + **pnpm workspaces**.
+TypeScript monorepo powered by **Turborepo** + **Yarn workspaces**.
 
 ## Stack
 
@@ -11,26 +11,25 @@ TypeScript monorepo powered by **Turborepo** + **pnpm workspaces**.
 | Database | MongoDB + Mongoose |
 | Storage | AWS S3 (presigned URLs) |
 | Auth | JWT + httpOnly cookies |
-| Types | Shared `@falcanna/types` package |
+| Types | Shared types package |
 | Build | Turborepo |
-| Package manager | pnpm 9 |
+| Package manager | yarn (Berry) |
 
 ---
 
 ## Structure
 
 ```
-falcanna-us/
+que-barbaro/
 ├── apps/
-│   ├── web/          # Next.js 15 — public site + admin
+│   ├── web/          # Next.js 15 — sitio público + admin
 │   └── api/          # Express.js REST API
 ├── packages/
-│   ├── types/        # @falcanna/types — shared TS interfaces
-│   ├── tsconfig/     # @falcanna/tsconfig — TS base configs
-│   └── eslint-config/ # @falcanna/eslint-config
+│   ├── tsconfig/     # TS base configs
+│   └── eslint-config/ # ESLint config compartida
 ├── turbo.json
-├── pnpm-workspace.yaml
-└── package.json
+├── package.json
+└── yarn.lock
 ```
 
 ---
@@ -38,7 +37,6 @@ falcanna-us/
 ## Prerequisites
 
 - Node.js >= 20
-- pnpm >= 9 (`npm install -g pnpm@9`)
 - MongoDB running locally (or set `MONGODB_URI` to an Atlas URL)
 
 ---
@@ -47,7 +45,7 @@ falcanna-us/
 
 ```bash
 # 1. Install dependencies
-pnpm install
+yarn install
 
 # 2. Configure environment variables
 cp apps/api/.env.example apps/api/.env
@@ -83,7 +81,7 @@ NEXT_PUBLIC_API_URL=http://localhost:4000/api
 
 ```bash
 # Start both api (port 4000) and web (port 3000) in parallel
-pnpm dev
+yarn dev
 ```
 
 ---
@@ -91,7 +89,7 @@ pnpm dev
 ## Build
 
 ```bash
-pnpm build
+yarn build
 ```
 
 ---
@@ -100,10 +98,10 @@ pnpm build
 
 ```bash
 # Run all tests with coverage
-pnpm test
+yarn test
 
 # CI mode
-pnpm test:ci
+yarn test:ci
 ```
 
 ---
@@ -111,32 +109,28 @@ pnpm test:ci
 ## Lint
 
 ```bash
-pnpm lint
+yarn lint
 ```
 
 ---
 
 ## Public routes (`apps/web`)
 
-| Route | Description |
+El sitio usa rutas con `locale` (`/es`, `/en`, ...). A continuación se listan las rutas principales en castellano; para otros idiomas se antepone el locale, por ejemplo `/en/...`.
+
+| Route (ES) | Description |
 |---|---|
-| `/` | Home |
-| `/about-us` | About |
-| `/strains` | All strains |
-| `/strains/[slug]` | Strain detail |
-| `/product-line` | Product line |
-| `/blog` | Blog listing |
-| `/blog/[slug]` | Blog post |
-| `/press` | Press listing |
-| `/press/[slug]` | Press article |
-| `/locations` | All locations |
-| `/contact-us` | Contact |
-| `/us-wa` | Washington home |
-| `/us-wa/strains` | WA strains (region filtered) |
-| `/us-wa/locations` | WA locations |
-| `/us-ok` | Oklahoma home |
-| `/us-ok/strains` | OK strains (region filtered) |
-| `/us-ok/locations` | OK locations |
+| `/` o `/es` | Inicio |
+| `/es/el-salon` | Página \"El Salón\" |
+| `/es/servicios` | Listado de servicios |
+| `/es/galeria` | Galería de fotos |
+| `/es/blog` | Blog |
+| `/es/blog/[slug]` | Detalle de post |
+| `/es/contacto` | Contacto |
+| `/es/reservar-cita` | Reserva online (Treatwell) |
+| `/es/aviso-legal` | Aviso legal |
+| `/es/politica-privacidad` | Política de privacidad |
+| `/es/politica-cookies` | Política de cookies |
 
 ---
 
@@ -166,7 +160,7 @@ Protected by `middleware.ts` — redirects to `/admin/login` if no `token` cooki
 
 ---
 
-## API endpoints (`apps/api`)
+## API endpoints (`apps/api`) — legacy
 
 Base: `http://localhost:4000/api`
 
@@ -175,7 +169,7 @@ Base: `http://localhost:4000/api`
 | Method | Endpoint | Description |
 |---|---|---|
 | GET | `/health` | Health check |
-| GET | `/seo?route=/us-wa/strains` | SEO by route |
+| GET | `/seo?route=/es/servicios` | SEO by route |
 | GET | `/blog` | Published blog posts |
 | GET | `/blog/:slug` | Blog post by slug |
 | GET | `/press` | Published press posts |
@@ -226,8 +220,8 @@ Every public `page.tsx` exports `generateMetadata` that fetches SEO from the API
 
 ```ts
 export async function generateMetadata(): Promise<Metadata> {
-  const seo = await fetchSEO('/us-wa/strains')
-  return buildMetadata(seo, { title: 'Strains — Washington' })
+  const seo = await fetchSEO('/es/servicios')
+  return buildMetadata(seo, { title: 'Servicios' })
 }
 ```
 
@@ -239,12 +233,12 @@ Two services:
 
 **API service**
 - Root directory: `apps/api`
-- Build: `pnpm --filter api build`
-- Start: `pnpm --filter api start`
+- Build: `yarn workspace api build`
+- Start: `yarn workspace api start`
 - Environment variables: all from `.env` above
 
 **Web service**
 - Root directory: `apps/web`
-- Build: `pnpm --filter web build`
-- Start: `pnpm --filter web start`
+- Build: `yarn workspace web build`
+- Start: `yarn workspace web start`
 - `NEXT_PUBLIC_API_URL`: set to the public URL of the API service

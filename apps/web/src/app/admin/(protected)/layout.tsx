@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { href: '/admin/dashboard', label: 'Dashboard' },
   { href: '/admin/seo', label: 'SEO' },
   { href: '/admin/blog', label: 'Blog' },
-  { href: '/admin/locations', label: 'Locations' },
+  { href: '/admin/galeria', label: 'Galería' },
   { href: '/admin/users', label: 'Users' },
 ]
 

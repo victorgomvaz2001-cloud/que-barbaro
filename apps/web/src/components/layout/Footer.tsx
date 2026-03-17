@@ -64,16 +64,16 @@ export default async function Footer() {
                   Contacto
                 </h3>
                 <a
-                  href={`mailto:${tFoot('email')}`}
-                  className="font-neue font-light block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
-                >
-                  {tFoot('email')}
-                </a>
-                <a
                   href={`tel:${tFoot('phone')}`}
                   className="font-neue font-light block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
                 >
                   {tFoot('phone')}
+                </a>
+                <a
+                  href={`tel:${tFoot('phone2')}`}
+                  className="font-neue font-light block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
+                >
+                  {tFoot('phone2')}
                 </a>
               </div>
 

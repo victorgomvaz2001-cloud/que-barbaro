@@ -2,7 +2,7 @@ export default function DashboardPage() {
   const cards = [
     { href: '/admin/seo', label: 'Manage SEO' },
     { href: '/admin/blog', label: 'Manage Blog Posts' },
-    { href: '/admin/locations', label: 'Manage Locations' },
+    { href: '/admin/galeria', label: 'Manage Galería' },
     { href: '/admin/users', label: 'Manage Users' },
   ]
 
