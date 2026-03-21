@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative z-50 bg-cream after:absolute after:bottom-0 after:left-0 after:right-0 after:translate-y-full after:h-10 after:bg-gradient-to-b after:from-cream after:to-transparent after:pointer-events-none after:content-['']">
+      <header className="sticky top-0 z-50 bg-cream">
         <div className="mx-auto flex items-center justify-between max-w-[1680px] px-6 py-3 md:grid md:grid-cols-3">
           {/* Left: Logo */}
           <div className="flex items-center">

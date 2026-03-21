@@ -65,7 +65,11 @@
     "maquillaje": "Makeup & Beauty"
   },
   "blog": {
-    "eyebrow": "Trends · Care · Inspiration"
+    "eyebrow": "Trends · Care · Inspiration",
+    "backToBlog": "← Back to blog",
+    "by": "By",
+    "notFound": "Article not found.",
+    "notFoundDesc": "The article you're looking for doesn't exist or has been removed."
   },
   "galeria": {
     "eyebrow": "Our work",

@@ -65,7 +65,11 @@
     "maquillaje": "Maquillaje y belleza"
   },
   "blog": {
-    "eyebrow": "Tendencias · Cuidado · Inspiración"
+    "eyebrow": "Tendencias · Cuidado · Inspiración",
+    "backToBlog": "← Volver al blog",
+    "by": "Por",
+    "notFound": "Artículo no encontrado.",
+    "notFoundDesc": "El artículo que buscas no existe o ha sido eliminado."
   },
   "galeria": {
     "eyebrow": "Nuestro trabajo",
