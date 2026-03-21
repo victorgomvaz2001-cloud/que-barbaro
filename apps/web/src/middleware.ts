@@ -7,6 +7,10 @@ const intlMiddleware = createIntlMiddleware(routing)
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
+  if (pathname.startsWith('/api/')) {
+    return NextResponse.next()
+  }
+
   if (pathname.startsWith('/admin')) {
     const token = request.cookies.get('token')
 
