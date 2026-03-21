@@ -13,7 +13,7 @@ export async function login(req: Request, res: Response, next: NextFunction): Pr
     const { email, password } = req.body as { email: string; password: string }
     const { token, user } = await authService.login(email, password)
     res.cookie('token', token, COOKIE_OPTIONS)
-    res.json({ data: { user } })
+    res.json({ data: { user, token } })
   } catch (err) {
     next(err)
   }

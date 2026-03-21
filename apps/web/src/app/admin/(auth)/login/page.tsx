@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { apiClient } from '@/lib/api-client'
-import type { ApiResponse, LoginResponse } from '@falcanna/types'
 
 export default function AdminLoginPage() {
   const router = useRouter()
@@ -20,7 +18,16 @@ export default function AdminLoginPage() {
     const password = (form.elements.namedItem('password') as HTMLInputElement).value
 
     try {
-      await apiClient.post<ApiResponse<LoginResponse>>('/auth/login', { email, password })
+      await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      }).then(async (r) => {
+        if (!r.ok) {
+          const err = await r.json().catch(() => ({ message: r.statusText }))
+          throw new Error(err?.message ?? 'Login failed')
+        }
+      })
       router.push('/admin/dashboard')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Login failed')

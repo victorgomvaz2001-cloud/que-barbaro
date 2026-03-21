@@ -2,7 +2,6 @@
 
 import { useRouter } from 'next/navigation'
 import { ToastProvider } from '@/components/admin/Toast'
-import { apiClient } from '@/lib/api-client'
 
 interface NavLink {
   href: string
@@ -19,7 +18,7 @@ export function AdminLayoutClient({
   const router = useRouter()
 
   async function handleLogout() {
-    await apiClient.post('/auth/logout', {}).catch(() => {})
+    await fetch('/api/auth/logout', { method: 'POST' }).catch(() => {})
     router.push('/admin/login')
   }
 

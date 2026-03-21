@@ -4,13 +4,21 @@ type RequestOptions = Omit<RequestInit, 'body'> & {
   body?: unknown
 }
 
+function getTokenFromCookie(): string | null {
+  if (typeof document === 'undefined') return null
+  const match = document.cookie.match(/(?:^|;\s*)token=([^;]+)/)
+  return match?.[1] ? decodeURIComponent(match[1]) : null
+}
+
 async function apiFetch<T>(path: string, options: RequestOptions = {}): Promise<T> {
   const { body, ...rest } = options
+  const token = getTokenFromCookie()
 
   const res = await fetch(`${API_URL}${path}`, {
     ...rest,
     headers: {
       'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...(rest.headers ?? {}),
     },
     body: body !== undefined ? JSON.stringify(body) : undefined,

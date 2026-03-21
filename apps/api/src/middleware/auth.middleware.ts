@@ -19,7 +19,10 @@ export function requireAdmin(req: Request, res: Response, next: NextFunction): v
 }
 
 export function authMiddleware(req: Request, res: Response, next: NextFunction): void {
-  const token = req.cookies?.token as string | undefined
+  const authHeader = req.headers.authorization
+  const token =
+    (req.cookies?.token as string | undefined) ??
+    (authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : undefined)
 
   if (!token) {
     res.status(401).json({ error: 'Unauthorized', message: 'No token provided', statusCode: 401 })
