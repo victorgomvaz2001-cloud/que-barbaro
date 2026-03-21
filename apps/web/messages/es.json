@@ -62,7 +62,8 @@
     "coloracion": "Coloración y rubios",
     "tratamientos": "Tratamientos capilares",
     "barberia": "Barbería",
-    "maquillaje": "Maquillaje y belleza"
+    "maquillaje": "Maquillaje y belleza",
+    "eventos": "Eventos"
   },
   "blog": {
     "eyebrow": "Tendencias · Cuidado · Inspiración",
@@ -125,6 +126,13 @@
         "description": "Realzamos tu belleza natural con técnicas profesionales. Para el gran día, una noche especial o simplemente para ti.",
         "treatments": ["Maquillaje nupcial", "Maquillaje social", "Diseño de cejas", "Semipermanente", "Pestaña a pestaña"],
         "price": "Desde 30€"
+      },
+      {
+        "tab": "Eventos",
+        "name": "Eventos\nEspeciales",
+        "description": "Convertimos cada ocasión en un recuerdo imborrable. Desde bodas hasta celebraciones corporativas, nuestro equipo se desplaza o te recibe para que brilles en tu momento más especial.",
+        "treatments": ["Peinado nupcial y cortejo", "Maquillaje para eventos", "Servicio a domicilio", "Reserva de grupo", "Asesoría de imagen previa"],
+        "price": "Consultar"
       }
     ]
   },

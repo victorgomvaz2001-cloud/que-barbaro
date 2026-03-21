@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 
 const SERVICE_KEYS = ['corte', 'coloracion', 'tratamientos', 'barberia', 'maquillaje'] as const
+const SERVICE_SLUGS = ['corte', 'coloracion', 'tratamientos', 'barberia', 'maquillaje'] as const
 
 const SERVICE_IMAGES = [
   'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/service1.jpg',
@@ -33,7 +34,7 @@ export default async function FeaturedServices() {
             {t('sectionTitle')}
           </h2>
           <Link
-            href="/servicios"
+            href="/servicios/corte"
             className="bg-navy text-cream font-neue text-[13px] uppercase tracking-[0.14em] px-6 py-3.5 transition-opacity duration-150 hover:opacity-80 whitespace-nowrap"
           >
             {t('viewAll')}
@@ -45,7 +46,7 @@ export default async function FeaturedServices() {
           {SERVICE_KEYS.map((key, i) => (
             <Link
               key={key}
-              href="/servicios"
+              href={`/servicios/${SERVICE_SLUGS[i]}`}
               className={`${LAYOUT[i]!.colClass} group block relative`}
             >
               <div className={`${LAYOUT[i]!.heightClass} relative overflow-hidden`}>

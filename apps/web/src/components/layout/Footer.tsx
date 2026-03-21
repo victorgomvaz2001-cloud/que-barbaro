@@ -6,7 +6,7 @@ import BackToTopButton from './BackToTopButton'
 const NAV_LINKS = [
   { href: '/',              key: 'inicio' },
   { href: '/el-salon',      key: 'elSalon' },
-  { href: '/servicios',     key: 'servicios' },
+  { href: '/servicios/corte', key: 'servicios' },
   { href: '/galeria',       key: 'galeria' },
   { href: '/blog',          key: 'blog' },
   { href: '/contacto',      key: 'contacto' },
@@ -31,14 +31,11 @@ export default async function Footer() {
       <div className="bg-cream px-8">
         <div className="bg-cream mx-auto max-w-[1680px] px-8 pt-10 pb-0">
 
-          {/* Top row: Logo · Slogan */}
-          <div className="flex flex-col items-center mb-16 md:flex-row md:items-start md:justify-between">
+          {/* Top row: Logo centrado */}
+          <div className="flex justify-center mb-16">
             <Link href="/" className="text-navy transition-opacity hover:opacity-70" aria-label="Que Bárbaro">
               <Logo className="h-24 w-auto" />
             </Link>
-            <p className="hidden md:block font-neue font-light text-navy text-right text-[clamp(1.2rem,2.5vw,1.5rem)] leading-tight max-w-xs">
-              {tFoot('tagline')}
-            </p>
           </div>
 
           {/* Middle: Nav · Contact · Social */}

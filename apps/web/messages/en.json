@@ -62,7 +62,8 @@
     "coloracion": "Colour & Blondes",
     "tratamientos": "Hair Treatments",
     "barberia": "Barbershop",
-    "maquillaje": "Makeup & Beauty"
+    "maquillaje": "Makeup & Beauty",
+    "eventos": "Events"
   },
   "blog": {
     "eyebrow": "Trends · Care · Inspiration",
@@ -125,6 +126,13 @@
         "description": "We enhance your natural beauty with professional techniques. For the big day, a special evening, or simply for yourself.",
         "treatments": ["Bridal makeup", "Social makeup", "Brow design", "Semi-permanent", "Lash by lash"],
         "price": "From €30"
+      },
+      {
+        "tab": "Events",
+        "name": "Special\nEvents",
+        "description": "We turn every occasion into an unforgettable memory. From weddings to corporate celebrations, our team travels to you or welcomes you in-salon so you shine on your most special day.",
+        "treatments": ["Bridal & party styling", "Event makeup", "At-home service", "Group bookings", "Pre-event image consultation"],
+        "price": "On request"
       }
     ]
   },
