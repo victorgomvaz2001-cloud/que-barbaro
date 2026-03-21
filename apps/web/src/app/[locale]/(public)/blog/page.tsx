@@ -1,4 +1,4 @@
-import { getLocale } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
 import FeaturedPosts from '@/components/blog/FeaturedPosts'
 import CategoryFilter from '@/components/blog/CategoryFilter'
@@ -10,10 +10,10 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
 const POSTS_PER_PAGE = 9
 const FEATURED_COUNT = 3
 
-async function fetchFeatured(): Promise<IBlogPost[]> {
+async function fetchFeatured(locale: string): Promise<IBlogPost[]> {
   try {
     const res = await fetch(
-      `${API_URL}/blog/page?offset=0&limit=${FEATURED_COUNT}&featured=true`,
+      `${API_URL}/blog/page?offset=0&limit=${FEATURED_COUNT}&featured=true&locale=${locale}`,
       { next: { revalidate: 60 } },
     )
     if (!res.ok) return []
@@ -27,11 +27,13 @@ async function fetchFeatured(): Promise<IBlogPost[]> {
 async function fetchPage(
   page: number,
   category: string | null,
+  locale: string,
 ): Promise<BlogPageResponse> {
   const offset = (page - 1) * POSTS_PER_PAGE
   const params = new URLSearchParams({
     offset: String(offset),
     limit: String(POSTS_PER_PAGE),
+    locale,
   })
   if (category) params.set('category', category)
 
@@ -47,9 +49,9 @@ async function fetchPage(
   }
 }
 
-async function fetchCategories(): Promise<string[]> {
+async function fetchCategories(locale: string): Promise<string[]> {
   try {
-    const res = await fetch(`${API_URL}/blog/categories`, {
+    const res = await fetch(`${API_URL}/blog/categories?locale=${locale}`, {
       next: { revalidate: 300 },
     })
     if (!res.ok) return []
@@ -65,7 +67,7 @@ interface BlogPageProps {
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const locale = await getLocale()
+  const [locale, t] = await Promise.all([getLocale(), getTranslations('blog')])
   const seoRoute = locale === 'es' ? '/blog' : `/${locale}/blog`
 
   const { category, page: pageParam } = await searchParams
@@ -73,9 +75,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const page = Math.max(1, parseInt(pageParam ?? '1', 10))
 
   const [featured, pageResult, categories] = await Promise.all([
-    fetchFeatured(),
-    fetchPage(page, activeCategory),
-    fetchCategories(),
+    fetchFeatured(locale),
+    fetchPage(page, activeCategory, locale),
+    fetchCategories(locale),
   ])
 
   const totalPages = Math.ceil(pageResult.total / POSTS_PER_PAGE)
@@ -88,7 +90,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <div className="border-b border-navy/10 px-8 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="mb-4 text-xs uppercase tracking-[0.25em] text-navy/40">
-            Tendencias · Cuidado · Inspiración
+            {t('eyebrow')}
           </p>
           <h1 className="font-primary text-6xl uppercase tracking-wide text-navy md:text-8xl">
             Blog

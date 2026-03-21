@@ -66,6 +66,7 @@ export default function NewBlogPostPage() {
       author: get('author'),
       authorImage: authorImage || undefined,
       featured: (form.elements.namedItem('featured') as HTMLInputElement)?.checked ?? false,
+      locale: get('locale') || 'es',
       publishedAt: get('publishedAt'),
       draft: (form.elements.namedItem('draft') as HTMLInputElement)?.checked ?? true,
     }
@@ -231,7 +232,7 @@ export default function NewBlogPostPage() {
                     <span className="text-sm font-medium text-gray-700">Destacado</span>
                   </label>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <div>
                     <label className={labelCls}>Extracto</label>
                     <textarea name="excerpt" rows={2} placeholder="Breve descripción (opcional)" className={inputCls} />
@@ -239,6 +240,13 @@ export default function NewBlogPostPage() {
                   <div>
                     <label className={labelCls}>Categoría</label>
                     <input name="category" placeholder="ej. Tendencias, Cuidado…" className={inputCls} />
+                  </div>
+                  <div>
+                    <label className={labelCls}>Idioma</label>
+                    <select name="locale" defaultValue="es" className={inputCls}>
+                      <option value="es">Español</option>
+                      <option value="en">English</option>
+                    </select>
                   </div>
                 </div>
               </div>

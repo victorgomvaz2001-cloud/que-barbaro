@@ -1,6 +1,9 @@
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 
-export default function Hero() {
+export default async function Hero() {
+  const t = await getTranslations('hero')
+
   return (
     <section className="mx-auto max-w-[1680px] px-6 pt-4 pb-6 flex flex-col items-center text-center gap-12">
       {/* ── Title + Subtitle ─────────────────────────────────────────── */}
@@ -9,7 +12,7 @@ export default function Hero() {
           Qué Bárbaro
         </h1>
         <p className="font-secondary text-[clamp(0.75rem,1.4vw,1rem)] uppercase tracking-[0.22em] text-navy/60">
-          Salón de belleza · Torremolinos
+          {t('subtitle')}
         </p>
       </div>
 

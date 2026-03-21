@@ -9,6 +9,7 @@ export interface IBlogPost {
   authorImage?: string
   featured?: boolean
   category?: string
+  locale: string
   publishedAt: string
   draft: boolean
   createdAt: string

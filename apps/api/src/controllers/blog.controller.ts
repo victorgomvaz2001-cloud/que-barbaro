@@ -11,6 +11,7 @@ export async function getPage(req: Request, res: Response, next: NextFunction): 
       category: req.query['category'] as string | undefined,
       date:     req.query['date']     as string | undefined,
       featured: req.query['featured'] === 'true' ? true : undefined,
+      locale:   req.query['locale']   as string | undefined,
     }
     const result = await blogService.getPage(offset, limit, filters)
     res.json(result)
@@ -21,7 +22,8 @@ export async function getPage(req: Request, res: Response, next: NextFunction): 
 
 export async function getCategories(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const categories = await blogService.getCategories()
+    const locale = req.query['locale'] as string | undefined
+    const categories = await blogService.getCategories(locale)
     res.json({ data: categories })
   } catch (err) {
     next(err)

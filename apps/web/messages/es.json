@@ -43,5 +43,143 @@
       "cookies": "Política de Cookies"
     },
     "rights": "Todos los derechos reservados."
+  },
+  "hero": {
+    "subtitle": "Salón de belleza · Torremolinos"
+  },
+  "valueProposition": {
+    "headline": "No vendrás solo\na cortarte el pelo.",
+    "subheadline": "Vendrás a desconectar. A que te mimen. A salir siendo más tú.",
+    "body": "¡Qué Bárbaro! nació para demostrar que una peluquería puede ser mucho más que un servicio. Es un refugio donde la estética, la hospitalidad y el diseño conviven para crear algo que no habías vivido antes. Cada detalle — la fragancia, la música, la toalla fría al llegar, la bebida que te espera — existe por una razón: hacerte sentir que eres lo más importante.",
+    "ctaSalon": "Conoce el salón",
+    "ctaBook": "Reservar cita"
+  },
+  "featuredServices": {
+    "sectionTitle": "Servicios",
+    "viewAll": "Ver todos",
+    "priceGuide": "Consultar catálogo de precios",
+    "corte": "Corte y peinado",
+    "coloracion": "Coloración y rubios",
+    "tratamientos": "Tratamientos capilares",
+    "barberia": "Barbería",
+    "maquillaje": "Maquillaje y belleza"
+  },
+  "blog": {
+    "eyebrow": "Tendencias · Cuidado · Inspiración"
+  },
+  "galeria": {
+    "eyebrow": "Nuestro trabajo",
+    "title": "Galería"
+  },
+  "contacto": {
+    "eyebrow": "Encuéntranos",
+    "title": "Contacto",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "social": "Redes sociales",
+    "bookCta": "Reservar cita",
+    "mapsTitle": "Ubicación de Que Bárbaro en Google Maps"
+  },
+  "serviciosPage": {
+    "eyebrow": "— Qué Bárbaro",
+    "title": "Servicios",
+    "serviceLabel": "Servicio",
+    "priceNote": "Precio orientativo",
+    "bookCta": "Reservar cita",
+    "services": [
+      {
+        "tab": "Corte & Peinado",
+        "name": "Corte\n& Peinado",
+        "description": "El arte del corte ejecutado con precisión milimétrica. Analizamos tu morfología y estilo de vida para crear un corte que te defina.",
+        "treatments": ["Corte clásico", "Corte moderno", "Peinado de novia", "Acabado con plancha", "Rulos y ondas"],
+        "price": "Desde 25€"
+      },
+      {
+        "tab": "Coloración & Rubios",
+        "name": "Coloración\n& Rubios",
+        "description": "Maestros del color. Desde rubios naturales a transformaciones radicales, siempre con técnicas de última generación y productos premium.",
+        "treatments": ["Balayage", "Mechas californianas", "Tinte completo", "Decoloración", "Tonos fantasía"],
+        "price": "Desde 55€"
+      },
+      {
+        "tab": "Tratamientos",
+        "name": "Tratamientos\nCapilares",
+        "description": "Tu cabello merece el mejor cuidado. Nuestros tratamientos reparan, nutren y protegen para devolver brillo y salud a cada hebra.",
+        "treatments": ["Keratina brasileña", "Hidratación profunda", "Botox capilar", "Tratamiento anticaída", "Nutrición con aceites"],
+        "price": "Desde 40€"
+      },
+      {
+        "tab": "Barbería",
+        "name": "Barbería",
+        "description": "La barbería de caballero elevada a ritual. Tradición y modernidad se fusionan en cada visita para el hombre que cuida cada detalle.",
+        "treatments": ["Afeitado clásico con navaja", "Perfilado de barba", "Corte y arreglo", "Mascarilla hidratante", "Diseño de bigote"],
+        "price": "Desde 18€"
+      },
+      {
+        "tab": "Maquillaje & Belleza",
+        "name": "Maquillaje\n& Belleza",
+        "description": "Realzamos tu belleza natural con técnicas profesionales. Para el gran día, una noche especial o simplemente para ti.",
+        "treatments": ["Maquillaje nupcial", "Maquillaje social", "Diseño de cejas", "Semipermanente", "Pestaña a pestaña"],
+        "price": "Desde 30€"
+      }
+    ]
+  },
+  "elSalon": {
+    "intro": {
+      "label": "El Concepto",
+      "title": ["Un espacio", "para sentirte", "tú mismo."],
+      "text": "Un refugio donde el cuidado personal se convierte en ritual. Cada detalle ha sido pensado para que entres como cliente y salgas como protagonista."
+    },
+    "historia": {
+      "label": "La Historia",
+      "title": "Torremolinos,\n1 de julio\nde 2025.",
+      "text": "Missael Lundqvist y Aurelio Tabares fundaron ¡Qué Bárbaro! con una convicción clara: Málaga merecía un salón de otro nivel. Juntos crearon en Torremolinos un espacio donde la belleza, el diseño y la hospitalidad se viven de otra manera."
+    },
+    "filosofia": {
+      "label": "Filosofía",
+      "quote": "¡Qué Bárbaro! reinventa la forma de vivir un servicio de peluquería, desde que cruzas la puerta hasta mucho después de marcharte.",
+      "sub": "Un refugio para quienes buscan cuidarse, sentirse únicos y vivir una experiencia sensorial inolvidable."
+    },
+    "vision": {
+      "label": "Visión & Valores",
+      "title": "Una marca\nque deja\nhuella.",
+      "text": "Existimos porque creemos que la peluquería puede ser mucho más que un corte o un color.",
+      "values": [
+        ["Belleza con propósito", "cada detalle busca emocionar"],
+        ["Atención 5 estrellas", "cada cliente es VIP"],
+        ["Diseño e identidad", "estética que cuenta historias"],
+        ["Calidez y humanidad", "cercanía real, sin poses"],
+        ["Formación constante", "el talento se alimenta cada día"]
+      ]
+    },
+    "experiencia": {
+      "label": "La Experiencia",
+      "title": "Cada visita,\nun ritual.",
+      "text": "Lujo emocional asequible.",
+      "rituals": [
+        { "n": "01", "name": "Bienvenida sensorial", "desc": "Sonrisa y toalla fría aromatizada" },
+        { "n": "02", "name": "Cuidado exclusivo", "desc": "Menú de bebidas especiales" },
+        { "n": "03", "name": "Espacio emocional", "desc": "Decoración, música y aromas propios" },
+        { "n": "04", "name": "Atención única", "desc": "Por tu nombre, por tu historia" },
+        { "n": "05", "name": "Despedida memorable", "desc": "Con seguimiento y agradecimiento" }
+      ]
+    },
+    "fundadores": {
+      "label": "Los Fundadores",
+      "founders": [
+        { "name": "Missael Lundqvist", "role": "Co-Founder & CEO" },
+        { "name": "Aurelio Tabares", "role": "Co-Founder & Creative Director" }
+      ]
+    },
+    "equipo": {
+      "label": "El Equipo",
+      "title": "Talento que\nse nota en\ncada corte.",
+      "text": "Profesionales con formación continua, criterio propio y una dedicación genuina hacia cada persona que pasa por nuestra puerta."
+    },
+    "marcas": {
+      "label": "Las Marcas",
+      "title": "Solo lo mejor\nsobre tu cabello.",
+      "text": "Trabajamos exclusivamente con marcas que comparten nuestra filosofía: rendimiento real, ingredientes de calidad y resultados que se mantienen."
+    }
   }
 }

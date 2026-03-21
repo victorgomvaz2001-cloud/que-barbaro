@@ -31,7 +31,7 @@
   "footer": {
     "tagline": "Barbershop & Beauty Centre",
     "address": "Calle Principal, 1",
-    "city": "Madrid, Spain",
+    "city": "Torremolinos, Spain",
     "phone": "+34 600 000 000",
     "phone2": "+34 611 222 333",
     "sections": "Sections",
@@ -43,5 +43,143 @@
       "cookies": "Cookie Policy"
     },
     "rights": "All rights reserved."
+  },
+  "hero": {
+    "subtitle": "Beauty salon · Torremolinos"
+  },
+  "valueProposition": {
+    "headline": "You won't just come\nto get a haircut.",
+    "subheadline": "You'll come to unwind. To be pampered. To leave feeling more yourself.",
+    "body": "Qué Bárbaro! was born to prove that a hair salon can be so much more than a service. It's a refuge where aesthetics, hospitality and design come together to create something you've never experienced before. Every detail — the fragrance, the music, the cool towel when you arrive, the drink waiting for you — exists for one reason: to make you feel like you matter most.",
+    "ctaSalon": "Discover the salon",
+    "ctaBook": "Book an appointment"
+  },
+  "featuredServices": {
+    "sectionTitle": "Services",
+    "viewAll": "View all",
+    "priceGuide": "View price catalogue",
+    "corte": "Cut & Styling",
+    "coloracion": "Colour & Blondes",
+    "tratamientos": "Hair Treatments",
+    "barberia": "Barbershop",
+    "maquillaje": "Makeup & Beauty"
+  },
+  "blog": {
+    "eyebrow": "Trends · Care · Inspiration"
+  },
+  "galeria": {
+    "eyebrow": "Our work",
+    "title": "Gallery"
+  },
+  "contacto": {
+    "eyebrow": "Find us",
+    "title": "Contact",
+    "address": "Address",
+    "phone": "Phone",
+    "social": "Social media",
+    "bookCta": "Book an appointment",
+    "mapsTitle": "Qué Bárbaro location on Google Maps"
+  },
+  "serviciosPage": {
+    "eyebrow": "— Qué Bárbaro",
+    "title": "Services",
+    "serviceLabel": "Service",
+    "priceNote": "Guide price",
+    "bookCta": "Book an appointment",
+    "services": [
+      {
+        "tab": "Cut & Styling",
+        "name": "Cut\n& Styling",
+        "description": "The art of the cut executed with millimetric precision. We analyse your face shape and lifestyle to create a cut that defines you.",
+        "treatments": ["Classic cut", "Modern cut", "Bridal styling", "Straightening finish", "Curls & waves"],
+        "price": "From €25"
+      },
+      {
+        "tab": "Colour & Blondes",
+        "name": "Colour\n& Blondes",
+        "description": "Masters of colour. From natural blondes to radical transformations, always using the latest techniques and premium products.",
+        "treatments": ["Balayage", "Californian highlights", "Full colour", "Bleaching", "Fantasy tones"],
+        "price": "From €55"
+      },
+      {
+        "tab": "Hair Treatments",
+        "name": "Hair\nTreatments",
+        "description": "Your hair deserves the very best care. Our treatments repair, nourish and protect to restore shine and health to every strand.",
+        "treatments": ["Brazilian keratin", "Deep hydration", "Hair botox", "Anti-hair loss treatment", "Oil nutrition"],
+        "price": "From €40"
+      },
+      {
+        "tab": "Barbershop",
+        "name": "Barbershop",
+        "description": "The gentleman's barbershop elevated to a ritual. Tradition and modernity merge on every visit for the man who cares about every detail.",
+        "treatments": ["Classic straight-razor shave", "Beard sculpting", "Cut & tidy", "Hydrating mask", "Moustache design"],
+        "price": "From €18"
+      },
+      {
+        "tab": "Makeup & Beauty",
+        "name": "Makeup\n& Beauty",
+        "description": "We enhance your natural beauty with professional techniques. For the big day, a special evening, or simply for yourself.",
+        "treatments": ["Bridal makeup", "Social makeup", "Brow design", "Semi-permanent", "Lash by lash"],
+        "price": "From €30"
+      }
+    ]
+  },
+  "elSalon": {
+    "intro": {
+      "label": "The Concept",
+      "title": ["A space", "to feel", "yourself."],
+      "text": "A refuge where personal care becomes a ritual. Every detail has been thought through so you walk in as a client and leave as the protagonist."
+    },
+    "historia": {
+      "label": "The Story",
+      "title": "Torremolinos,\n1st July\n2025.",
+      "text": "Missael Lundqvist and Aurelio Tabares founded Qué Bárbaro! with one clear conviction: Málaga deserved a salon at a different level. Together they created a space in Torremolinos where beauty, design and hospitality are experienced in a different way."
+    },
+    "filosofia": {
+      "label": "Philosophy",
+      "quote": "Qué Bárbaro! reinvents the way you experience a hair salon, from the moment you walk through the door to long after you leave.",
+      "sub": "A refuge for those who seek to take care of themselves, feel unique and live an unforgettable sensory experience."
+    },
+    "vision": {
+      "label": "Vision & Values",
+      "title": "A brand\nthat leaves\na mark.",
+      "text": "We exist because we believe hair care can be so much more than a cut or a colour.",
+      "values": [
+        ["Beauty with purpose", "every detail is designed to move you"],
+        ["5-star attention", "every client is VIP"],
+        ["Design & identity", "aesthetics that tell stories"],
+        ["Warmth & humanity", "genuine closeness, no pretence"],
+        ["Constant learning", "talent is nourished every day"]
+      ]
+    },
+    "experiencia": {
+      "label": "The Experience",
+      "title": "Every visit,\na ritual.",
+      "text": "Affordable emotional luxury.",
+      "rituals": [
+        { "n": "01", "name": "Sensory welcome", "desc": "Smile and scented cold towel" },
+        { "n": "02", "name": "Exclusive care", "desc": "Special drinks menu" },
+        { "n": "03", "name": "Emotional space", "desc": "Unique décor, music and scents" },
+        { "n": "04", "name": "Personal attention", "desc": "By your name, by your story" },
+        { "n": "05", "name": "Memorable farewell", "desc": "With follow-up and gratitude" }
+      ]
+    },
+    "fundadores": {
+      "label": "The Founders",
+      "founders": [
+        { "name": "Missael Lundqvist", "role": "Co-Founder & CEO" },
+        { "name": "Aurelio Tabares", "role": "Co-Founder & Creative Director" }
+      ]
+    },
+    "equipo": {
+      "label": "The Team",
+      "title": "Talent you\nnotice in\nevery cut.",
+      "text": "Professionals with continuous training, their own vision and a genuine dedication to every person who walks through our door."
+    },
+    "marcas": {
+      "label": "The Brands",
+      "title": "Only the best\non your hair.",
+      "text": "We work exclusively with brands that share our philosophy: real performance, quality ingredients and results that last."
+    }
   }
 }

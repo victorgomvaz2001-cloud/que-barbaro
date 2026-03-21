@@ -12,8 +12,11 @@ const SOCIAL = [
 ]
 
 export default async function ContactoPage() {
-  const locale   = await getLocale()
-  const tFoot    = await getTranslations('footer')
+  const [locale, tFoot, t] = await Promise.all([
+    getLocale(),
+    getTranslations('footer'),
+    getTranslations('contacto'),
+  ])
   const seoRoute = locale === 'es' ? '/contacto' : `/${locale}/contacto`
 
   return (
@@ -25,10 +28,10 @@ export default async function ContactoPage() {
         {/* ── Título ───────────────────────────────────────────────────────── */}
         <div className="text-center">
           <p className="font-neue text-[10px] tracking-[0.3em] uppercase text-navy/45 mb-3">
-            Encuéntranos
+            {t('eyebrow')}
           </p>
           <h1 className="font-primary text-[clamp(3rem,8vw,7rem)] uppercase leading-none text-navy mb-5">
-            Contacto
+            {t('title')}
           </h1>
           <div className="w-10 h-[2px] bg-orange mx-auto" />
         </div>
@@ -42,7 +45,7 @@ export default async function ContactoPage() {
             {/* Dirección */}
             <div>
               <p className="font-neue text-[9px] tracking-[0.28em] uppercase text-navy/40 mb-2">
-                Dirección
+                {t('address')}
               </p>
               <address className="not-italic">
                 <p className="font-secondary text-navy text-xl leading-relaxed">{tFoot('address')}</p>
@@ -53,7 +56,7 @@ export default async function ContactoPage() {
             {/* Teléfonos */}
             <div>
               <p className="font-neue text-[9px] tracking-[0.28em] uppercase text-navy/40 mb-2">
-                Teléfono
+                {t('phone')}
               </p>
               <a href={`tel:${tFoot('phone')}`} className="font-secondary text-navy text-xl block hover:text-orange transition-colors duration-200">
                 {tFoot('phone')}
@@ -66,7 +69,7 @@ export default async function ContactoPage() {
             {/* Redes sociales */}
             <div>
               <p className="font-neue text-[9px] tracking-[0.28em] uppercase text-navy/40 mb-2">
-                Redes sociales
+                {t('social')}
               </p>
               <div className="grid grid-cols-2 gap-x-8 gap-y-1">
                 {SOCIAL.map((s) => (
@@ -89,7 +92,7 @@ export default async function ContactoPage() {
             href="/reservar-cita"
             className="inline-flex items-center gap-3 bg-navy text-cream font-neue text-[11px] tracking-[0.2em] uppercase px-6 py-3.5 hover:bg-orange transition-colors duration-300"
           >
-            Reservar cita
+            {t('bookCta')}
             <span className="text-base leading-none">→</span>
           </a>
         </div>
@@ -104,7 +107,7 @@ export default async function ContactoPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Ubicación de Que Bárbaro en Google Maps"
+            title={t('mapsTitle')}
           />
         </div>
 

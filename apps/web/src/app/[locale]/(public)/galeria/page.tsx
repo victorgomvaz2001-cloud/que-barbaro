@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 
-import { getLocale } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
 import GalleryGrid from '@/components/gallery/GalleryGrid'
 import type { IGalleryPhoto, GalleryPageResponse } from '@falcanna/types'
@@ -20,7 +20,7 @@ async function fetchInitialPhotos(): Promise<{ photos: IGalleryPhoto[]; hasMore:
 }
 
 export default async function GaleriaPage() {
-  const locale = await getLocale()
+  const [locale, t] = await Promise.all([getLocale(), getTranslations('galeria')])
   const seoRoute = locale === 'es' ? '/galeria' : `/${locale}/galeria`
   const { photos, hasMore } = await fetchInitialPhotos()
 
@@ -31,10 +31,10 @@ export default async function GaleriaPage() {
       {/* Header */}
       <div className="px-8 pt-16 pb-6">
         <p className="font-neue text-[10px] tracking-[0.3em] uppercase text-navy/45 mb-2">
-          Nuestro trabajo
+          {t('eyebrow')}
         </p>
         <h1 className="font-primary text-[clamp(3rem,8vw,7rem)] uppercase leading-none text-navy mb-4">
-          Galería
+          {t('title')}
         </h1>
         <div className="w-10 h-[2px] bg-orange" />
       </div>

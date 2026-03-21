@@ -10,7 +10,7 @@ export class BlogService {
   async getPage(
     offset: number,
     limit: number,
-    filters: { q?: string; author?: string; category?: string; date?: string; featured?: boolean } = {},
+    filters: { q?: string; author?: string; category?: string; date?: string; featured?: boolean; locale?: string } = {},
   ) {
     const query: Record<string, unknown> = { draft: false }
     if (filters.q)        query['title']    = { $regex: filters.q, $options: 'i' }
@@ -18,6 +18,7 @@ export class BlogService {
     if (filters.category) query['category'] = filters.category
     if (filters.date)     query['publishedAt'] = { $regex: `^${filters.date}` }
     if (filters.featured) query['featured'] = true
+    if (filters.locale)   query['locale']   = filters.locale
 
     const [data, total] = await Promise.all([
       Blog.find(query).sort({ publishedAt: -1 }).skip(offset).limit(limit).lean(),
@@ -26,8 +27,10 @@ export class BlogService {
     return { data, total, hasMore: offset + data.length < total }
   }
 
-  async getCategories() {
-    return Blog.distinct('category', { draft: false, category: { $exists: true, $nin: [null, ''] } })
+  async getCategories(locale?: string) {
+    const filter: Record<string, unknown> = { draft: false, category: { $exists: true, $nin: [null, ''] } }
+    if (locale) filter['locale'] = locale
+    return Blog.distinct('category', filter)
   }
 
   async getBySlug(slug: string, includeDraft = false) {
