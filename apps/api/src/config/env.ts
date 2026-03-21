@@ -11,6 +11,8 @@ const envSchema = z.object({
   AWS_REGION: z.string().default('us-east-1'),
   AWS_S3_BUCKET: z.string().min(1),
   FRONTEND_URL: z.string().url().default('http://localhost:3000'),
+  GOOGLE_CONSOLE_API_KEY: z.string().default(''),
+  PLACE_ID: z.string().default(''),
 })
 
 const parsed = envSchema.safeParse(process.env)

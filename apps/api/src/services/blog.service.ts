@@ -7,6 +7,29 @@ export class BlogService {
     return Blog.find(filter).sort({ publishedAt: -1 }).lean()
   }
 
+  async getPage(
+    offset: number,
+    limit: number,
+    filters: { q?: string; author?: string; category?: string; date?: string; featured?: boolean } = {},
+  ) {
+    const query: Record<string, unknown> = { draft: false }
+    if (filters.q)        query['title']    = { $regex: filters.q, $options: 'i' }
+    if (filters.author)   query['author']   = { $regex: filters.author, $options: 'i' }
+    if (filters.category) query['category'] = filters.category
+    if (filters.date)     query['publishedAt'] = { $regex: `^${filters.date}` }
+    if (filters.featured) query['featured'] = true
+
+    const [data, total] = await Promise.all([
+      Blog.find(query).sort({ publishedAt: -1 }).skip(offset).limit(limit).lean(),
+      Blog.countDocuments(query),
+    ])
+    return { data, total, hasMore: offset + data.length < total }
+  }
+
+  async getCategories() {
+    return Blog.distinct('category', { draft: false, category: { $exists: true, $nin: [null, ''] } })
+  }
+
   async getBySlug(slug: string, includeDraft = false) {
     const filter = includeDraft ? { slug } : { slug, draft: false }
     const post = await Blog.findOne(filter).lean()

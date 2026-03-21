@@ -6,6 +6,8 @@ const router: IRouter = Router()
 
 // Public
 router.get('/', blogController.getAll)
+router.get('/page', blogController.getPage)
+router.get('/categories', blogController.getCategories)
 router.get('/:slug', blogController.getBySlug)
 
 // Admin

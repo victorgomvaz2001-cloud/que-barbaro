@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react'
-import Link from 'next/link'
 
 /* ─── Data ─────────────────────────────────────────────────────────────── */
 
@@ -59,8 +58,10 @@ const SECTIONS = [
   {
     id: 'fundadores',
     label: 'Los Fundadores',
-    names: ['Missael', 'Lundqvist', '&', 'Aurelio', 'Tabares'],
-    text: 'Dos profesionales que unieron visión, oficio y carácter para construir algo que no existía en Torremolinos. Siguen presentes en el salón cada día.',
+    founders: [
+      { name: 'Missael Lundqvist', role: 'Co-Founder & CEO', image: '/founders/missael.png' },
+      { name: 'Aurelio Tabares',   role: 'Co-Founder & Creative Director', image: '/founders/aurelio.png' },
+    ],
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1920&q=80',
   },
   {
@@ -76,21 +77,6 @@ const SECTIONS = [
     title: 'Solo lo mejor\nsobre tu cabello.',
     text: 'Trabajamos exclusivamente con marcas que comparten nuestra filosofía: rendimiento real, ingredientes de calidad y resultados que se mantienen.',
     image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1920&q=80',
-  },
-  {
-    id: 'opiniones',
-    label: 'Lo que dicen',
-    quote: 'Llevo años viniendo y nunca me han decepcionado. Es el único sitio donde confío plenamente.',
-    author: 'Cliente habitual',
-    image: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1920&q=80',
-  },
-  {
-    id: 'cta',
-    label: 'Reserva',
-    title: '¿Listo para\nla experiencia?',
-    text: 'Tu cita te está esperando.',
-    image: 'https://images.unsplash.com/photo-1633681122182-adcba53ef06a?auto=format&fit=crop&w=1920&q=80',
-    cta: true,
   },
 ]
 
@@ -221,7 +207,7 @@ export default function ElSalonSlider() {
             {/* Left text */}
             <div className="relative z-10 mx-auto w-full max-w-[1680px] px-10 md:px-24 flex flex-col justify-center">
               <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-6" style={t(active, 150, mounted)}>- {section.label}</p>
-              <h2 className="font-primary text-white uppercase leading-[0.9] mb-8 max-w-md" style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)', whiteSpace: 'pre-line', ...t(active, 280, mounted) }}>
+              <h2 className="font-neue font-light text-white uppercase leading-[0.9] mb-8 max-w-md" style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)', whiteSpace: 'pre-line', ...t(active, 280, mounted) }}>
                 {'title' in section && section.title as string}
               </h2>
               <div className="h-px bg-white/25 mb-8" style={{ width: active ? '56px' : '0px', transition: 'width 0.65s cubic-bezier(0.16,1,0.3,1)', transitionDelay: active ? '400ms' : '0ms' }}/>
@@ -247,7 +233,7 @@ export default function ElSalonSlider() {
                 style={{ fontSize: 'clamp(6rem,14vw,12rem)', opacity: active ? 1 : 0, transform: active ? 'rotate(0deg)' : 'rotate(-12deg) scale(0.8)', transition: 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)', transitionDelay: active ? '100ms' : '0ms' }}>
                 "
               </div>
-              <blockquote className="font-primary text-white uppercase leading-[1.1] mb-8"
+              <blockquote className="font-neue font-light text-white leading-[1.1] mb-8"
                 style={{ fontSize: 'clamp(1.8rem, 4vw, 3.8rem)', ...t(active, 350, mounted) }}>
                 {'quote' in section && section.quote}
               </blockquote>
@@ -268,7 +254,7 @@ export default function ElSalonSlider() {
               {/* Left */}
               <div>
                 <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-6" style={t(active, 150, mounted)}>- {section.label}</p>
-                <h2 className="font-primary text-white uppercase leading-[0.9] mb-6" style={{ fontSize: 'clamp(3rem,6vw,5.5rem)', whiteSpace: 'pre-line', ...t(active, 260, mounted) }}>
+                <h2 className="font-neue font-light text-white uppercase leading-[0.9] mb-6" style={{ fontSize: 'clamp(3rem,6vw,5.5rem)', whiteSpace: 'pre-line', ...t(active, 260, mounted) }}>
                   {'title' in section && section.title as string}
                 </h2>
                 <p className="font-secondary text-white/65 leading-relaxed" style={{ fontSize: 'clamp(0.9rem,1.2vw,1rem)', maxWidth: '36ch', ...t(active, 380, mounted) }}>
@@ -300,7 +286,7 @@ export default function ElSalonSlider() {
             {/* Top-left title */}
             <div className="relative z-10 mx-auto w-full max-w-[1680px] px-10 md:px-24 pt-20">
               <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-4" style={t(active, 150, mounted)}>- {section.label}</p>
-              <h2 className="font-primary text-white uppercase leading-[0.9]" style={{ fontSize: 'clamp(3rem,6.5vw,5.5rem)', whiteSpace: 'pre-line', ...t(active, 260, mounted) }}>
+              <h2 className="font-neue font-light text-white uppercase leading-[0.9]" style={{ fontSize: 'clamp(3rem,6.5vw,5.5rem)', whiteSpace: 'pre-line', ...t(active, 260, mounted) }}>
                 {'title' in section && section.title as string}
               </h2>
               <p className="font-secondary text-white/60 mt-3" style={{ fontSize: 'clamp(0.85rem,1.1vw,0.95rem)', ...t(active, 360, mounted) }}>
@@ -326,32 +312,38 @@ export default function ElSalonSlider() {
           </section>
         )
 
-        /* ── 6. FUNDADORES - names fill the screen ── */
+        /* ── 6. FUNDADORES - two founder photos centered ── */
         if (section.id === 'fundadores') return (
-          <section key={section.id} id={section.id} ref={el => { sectionRefs.current[i] = el }} className="relative flex h-screen w-full items-center overflow-hidden" aria-label={section.label}>
+          <section key={section.id} id={section.id} ref={el => { sectionRefs.current[i] = el }} className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden" aria-label={section.label}>
             {bg}
             <div className="absolute inset-0 bg-black/70"/>
-            <div className="relative z-10 w-full overflow-hidden">
-              <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 px-10 md:px-24 mb-6" style={t(active, 100, mounted)}>- {section.label}</p>
-              {/* Names as massive type */}
-              {'names' in section && section.names?.map((name, ni) => (
-                <div key={ni} className="overflow-hidden leading-[0.85]">
-                  <div className="font-primary text-white uppercase px-10 md:px-24"
-                    style={{
-                      fontSize: name === '&' ? 'clamp(2rem,5vw,4rem)' : 'clamp(3.5rem,9vw,8rem)',
-                      ...(mounted ? { opacity: active ? 1 : 0, transform: active ? 'translateY(0)' : 'translateY(100%)' } : {}),
-                      transition: 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-                      transitionDelay: active ? `${150 + ni * 100}ms` : '0ms',
-                      color: name === '&' ? 'rgba(255,255,255,0.4)' : 'white',
-                    }}>
-                    {name}
+            <div className="relative z-10 flex flex-col items-center w-full px-8">
+              <p className="font-neue font-light uppercase text-white mb-12" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', letterSpacing: '0.08em', ...t(active, 100, mounted) }}>{section.label}</p>
+              {/* Founder cards */}
+              <div className="flex flex-row items-end justify-center gap-12 md:gap-24 w-full">
+                {'founders' in section && Array.isArray(section.founders) && section.founders.map((f: { name: string; role: string; image: string }, fi: number) => (
+                  <div key={fi} className="flex flex-col items-center"
+                    style={mounted ? { opacity: active ? 1 : 0, transform: active ? 'translateY(0)' : 'translateY(30px)', transition: 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)', transitionDelay: active ? `${250 + fi * 200}ms` : '0ms' } : {}}>
+                    {/* Photo */}
+                    <img
+                      src={f.image}
+                      alt={f.name}
+                      className="object-contain w-auto"
+                      style={{ height: 'clamp(260px, 48vh, 460px)', maxWidth: '280px' }}
+                    />
+                    {/* Divider */}
+                    <div className="h-px bg-white/25 mt-6 mb-4" style={{ width: active ? '48px' : '0px', transition: 'width 0.6s ease', transitionDelay: active ? `${500 + fi * 200}ms` : '0ms' }}/>
+                    {/* Name */}
+                    <p className="font-neue font-light text-white uppercase text-center" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)' }}>
+                      {f.name}
+                    </p>
+                    {/* Role */}
+                    <p className="font-neue text-white/50 uppercase tracking-[0.22em] text-center mt-1" style={{ fontSize: '10px' }}>
+                      {f.role}
+                    </p>
                   </div>
-                </div>
-              ))}
-              <p className="font-secondary text-white/55 leading-relaxed px-10 md:px-24 mt-8 max-w-lg"
-                style={{ fontSize: 'clamp(0.9rem,1.2vw,1rem)', ...t(active, 700, mounted) }}>
-                {section.text}
-              </p>
+                ))}
+              </div>
             </div>
           </section>
         )
@@ -364,7 +356,7 @@ export default function ElSalonSlider() {
             <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-transparent to-transparent"/>
             <div className="relative z-10 ml-auto w-full max-w-lg px-10 md:px-16 pb-20 text-right">
               <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-4" style={t(active, 200, mounted)}>- {section.label}</p>
-              <h2 className="font-primary text-white uppercase leading-[0.9] mb-6"
+              <h2 className="font-neue font-light text-white uppercase leading-[0.9] mb-6"
                 style={{ fontSize: 'clamp(3rem,6vw,5rem)', whiteSpace: 'pre-line', ...t(active, 300, mounted) }}>
                 {'title' in section && section.title as string}
               </h2>
@@ -384,7 +376,7 @@ export default function ElSalonSlider() {
             <div className="relative z-10 text-center px-8 max-w-3xl mx-auto">
               <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-8" style={t(active, 150, mounted)}>- {section.label}</p>
               <div className="h-px bg-white/20 mx-auto mb-8" style={{ width: active ? '80px' : '0px', transition: 'width 0.7s ease', transitionDelay: active ? '200ms' : '0ms' }}/>
-              <h2 className="font-primary text-white uppercase leading-[0.9] mb-8"
+              <h2 className="font-neue font-light text-white uppercase leading-[0.9] mb-8"
                 style={{ fontSize: 'clamp(3.5rem,8vw,7rem)', whiteSpace: 'pre-line', ...t(active, 320, mounted) }}>
                 {'title' in section && section.title as string}
               </h2>
@@ -396,56 +388,6 @@ export default function ElSalonSlider() {
           </section>
         )
 
-        /* ── 9. OPINIONES - giant quote, rotates in ── */
-        if (section.id === 'opiniones') return (
-          <section key={section.id} id={section.id} ref={el => { sectionRefs.current[i] = el }} className="relative flex h-screen w-full items-center overflow-hidden" aria-label={section.label}>
-            {bg}
-            <div className="absolute inset-0 bg-black/70"/>
-            <div className="relative z-10 mx-auto w-full max-w-[1680px] px-10 md:px-24">
-              {/* Huge decorative quote mark */}
-              <div className="font-primary text-white/10 leading-none select-none mb-2" aria-hidden
-                style={{ fontSize: 'clamp(8rem, 18vw, 16rem)', lineHeight: 1, opacity: active ? 1 : 0, transform: active ? 'rotate(0deg)' : 'rotate(-15deg)', transition: 'opacity 0.8s ease, transform 0.9s cubic-bezier(0.16,1,0.3,1)', transitionDelay: active ? '100ms' : '0ms' }}>
-                "
-              </div>
-              <blockquote className="font-primary text-white uppercase leading-[1.05] mb-8 max-w-4xl"
-                style={{ fontSize: 'clamp(2rem,5vw,4.5rem)', ...t(active, 350, mounted) }}>
-                {'quote' in section && section.quote}
-              </blockquote>
-              <div className="flex items-center gap-4" style={t(active, 580, mounted)}>
-                <div className="h-px w-12 bg-white/30"/>
-                <p className="font-neue text-[11px] uppercase tracking-[0.22em] text-white/50">
-                  {'author' in section && section.author}
-                </p>
-              </div>
-            </div>
-          </section>
-        )
-
-        /* ── 10. CTA - full center, maximum breathing room ── */
-        if (section.id === 'cta') return (
-          <section key={section.id} id={section.id} ref={el => { sectionRefs.current[i] = el }} className="relative flex h-screen w-full items-center justify-center overflow-hidden" aria-label={section.label}>
-            {bg}
-            <div className="absolute inset-0 bg-black/65"/>
-            <div className="relative z-10 text-center px-8">
-              <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-8" style={t(active, 150, mounted)}>- {section.label}</p>
-              <h2 className="font-primary text-white uppercase leading-[0.9] mb-4"
-                style={{ fontSize: 'clamp(4rem,10vw,9rem)', whiteSpace: 'pre-line', ...t(active, 280, mounted) }}>
-                {'title' in section && section.title as string}
-              </h2>
-              <p className="font-secondary text-white/60 mb-12 tracking-widest uppercase text-sm" style={t(active, 420, mounted)}>
-                {'text' in section && section.text}
-              </p>
-              <Link href="/reservar-cita"
-                className="inline-flex items-center gap-4 font-neue font-bold text-[11px] uppercase tracking-[0.3em] text-white border border-white/50 px-10 py-5 transition-all duration-300 hover:bg-white hover:text-navy"
-                style={mounted ? { opacity: active ? 1 : 0, transform: active ? 'translateY(0) scale(1)' : 'translateY(12px) scale(0.97)', transition: 'opacity 0.7s ease, transform 0.7s ease, background-color 0.3s, color 0.3s', transitionDelay: active ? '540ms' : '0ms' } : {}}>
-                Reservar cita
-                <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-                  <path d="M1 5h14M10 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-            </div>
-          </section>
-        )
 
         return null
       })}

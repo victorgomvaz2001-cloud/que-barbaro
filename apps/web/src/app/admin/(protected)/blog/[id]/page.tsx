@@ -30,7 +30,9 @@ export default function EditBlogPostPage() {
   const [showUnsavedModal, setShowUnsavedModal] = useState(false)
   const [showCancelModal, setShowCancelModal] = useState(false)
   const [headerImage, setHeaderImage] = useState('')
+  const [authorImage, setAuthorImage] = useState('')
   const [mediaPickerOpen, setMediaPickerOpen] = useState(false)
+  const [mediaPickerTarget, setMediaPickerTarget] = useState<'header' | 'author'>('header')
 
   const formRef = useRef<HTMLFormElement>(null)
   const isDirtyRef = useRef(false)
@@ -41,6 +43,7 @@ export default function EditBlogPostPage() {
       .then((res) => {
         setPost(res.data)
         setHeaderImage(res.data.image ?? '')
+        setAuthorImage(res.data.authorImage ?? '')
         apiClient
           .get<ApiResponse<ISEOPage>>(
             `/seo?route=${encodeURIComponent(`/blog/${res.data.slug}`)}`,
@@ -74,7 +77,11 @@ export default function EditBlogPostPage() {
         title: get('title'),
         content: post?.content ?? '',
         image: headerImage || undefined,
+        excerpt: get('excerpt') || undefined,
+        category: get('category') || undefined,
         author: get('author'),
+        authorImage: authorImage || undefined,
+        featured: (form.elements.namedItem('featured') as HTMLInputElement)?.checked ?? false,
         publishedAt: get('publishedAt'),
         draft: (form.elements.namedItem('draft') as HTMLInputElement)?.checked ?? false,
       },
@@ -198,7 +205,11 @@ export default function EditBlogPostPage() {
         open={mediaPickerOpen}
         folder="blog"
         onClose={() => setMediaPickerOpen(false)}
-        onSelect={(url) => { setHeaderImage(url); setMediaPickerOpen(false) }}
+        onSelect={(url) => {
+          if (mediaPickerTarget === 'header') setHeaderImage(url)
+          else setAuthorImage(url)
+          setMediaPickerOpen(false)
+        }}
       />
 
       <div className="flex flex-col">
@@ -260,15 +271,36 @@ export default function EditBlogPostPage() {
                       />
                     </div>
                   </div>
-                  <label className="flex cursor-pointer items-center gap-2">
-                    <input
-                      name="draft"
-                      type="checkbox"
-                      defaultChecked={post.draft}
-                      className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                    />
-                    <span className="text-sm font-medium text-gray-700">Draft</span>
-                  </label>
+                  <div className="flex gap-6">
+                    <label className="flex cursor-pointer items-center gap-2">
+                      <input
+                        name="draft"
+                        type="checkbox"
+                        defaultChecked={post.draft}
+                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      />
+                      <span className="text-sm font-medium text-gray-700">Draft</span>
+                    </label>
+                    <label className="flex cursor-pointer items-center gap-2">
+                      <input
+                        name="featured"
+                        type="checkbox"
+                        defaultChecked={post.featured ?? false}
+                        className="h-4 w-4 rounded border-gray-300 text-orange-500 focus:ring-orange-400"
+                      />
+                      <span className="text-sm font-medium text-gray-700">Destacado</span>
+                    </label>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className={labelCls}>Extracto</label>
+                      <textarea name="excerpt" rows={2} defaultValue={post.excerpt ?? ''} placeholder="Breve descripción (opcional)" className={inputCls} />
+                    </div>
+                    <div>
+                      <label className={labelCls}>Categoría</label>
+                      <input name="category" defaultValue={post.category ?? ''} placeholder="ej. Tendencias, Cuidado…" className={inputCls} />
+                    </div>
+                  </div>
                 </div>
               </section>
 
@@ -291,12 +323,41 @@ export default function EditBlogPostPage() {
                     </div>
                   )}
                   <div className="flex flex-col gap-2">
-                    <Button type="button" variant="secondary" size="sm" onClick={() => setMediaPickerOpen(true)}>
+                    <Button type="button" variant="secondary" size="sm" onClick={() => { setMediaPickerTarget('header'); setMediaPickerOpen(true) }}>
                       {headerImage ? 'Cambiar imagen' : 'Seleccionar imagen'}
                     </Button>
                     {headerImage && (
                       <Button type="button" variant="ghost" size="sm" onClick={() => setHeaderImage('')}>
                         Quitar imagen
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </section>
+
+              {/* Author image */}
+              <section className={sectionCls}>
+                <h2 className={sectionTitle}>Foto del autor</h2>
+                <div className="flex items-start gap-4">
+                  {authorImage ? (
+                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-gray-200">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={authorImage} alt="Autor" className="h-full w-full object-cover" />
+                    </div>
+                  ) : (
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-dashed border-gray-300 bg-gray-50">
+                      <svg className="h-5 w-5 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                      </svg>
+                    </div>
+                  )}
+                  <div className="flex flex-col gap-2">
+                    <Button type="button" variant="secondary" size="sm" onClick={() => { setMediaPickerTarget('author'); setMediaPickerOpen(true) }}>
+                      {authorImage ? 'Cambiar foto' : 'Seleccionar foto'}
+                    </Button>
+                    {authorImage && (
+                      <Button type="button" variant="ghost" size="sm" onClick={() => setAuthorImage('')}>
+                        Quitar foto
                       </Button>
                     )}
                   </div>

@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: '/admin/seo', label: 'SEO' },
   { href: '/admin/blog', label: 'Blog' },
   { href: '/admin/galeria', label: 'Galería' },
+  { href: '/admin/resenas', label: 'Reseñas' },
   { href: '/admin/users', label: 'Users' },
 ]
 

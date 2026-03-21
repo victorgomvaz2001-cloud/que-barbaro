@@ -1,20 +1,118 @@
-export const dynamic = 'force-dynamic'
-
 import { getLocale } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
+import FeaturedPosts from '@/components/blog/FeaturedPosts'
+import CategoryFilter from '@/components/blog/CategoryFilter'
+import BlogGrid from '@/components/blog/BlogGrid'
+import Pagination from '@/components/blog/Pagination'
+import type { IBlogPost, BlogPageResponse } from '@falcanna/types'
 
-export default async function BlogPage() {
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
+const POSTS_PER_PAGE = 9
+const FEATURED_COUNT = 3
+
+async function fetchFeatured(): Promise<IBlogPost[]> {
+  try {
+    const res = await fetch(
+      `${API_URL}/blog/page?offset=0&limit=${FEATURED_COUNT}&featured=true`,
+      { next: { revalidate: 60 } },
+    )
+    if (!res.ok) return []
+    const json: BlogPageResponse = await res.json()
+    return json.data
+  } catch {
+    return []
+  }
+}
+
+async function fetchPage(
+  page: number,
+  category: string | null,
+): Promise<BlogPageResponse> {
+  const offset = (page - 1) * POSTS_PER_PAGE
+  const params = new URLSearchParams({
+    offset: String(offset),
+    limit: String(POSTS_PER_PAGE),
+  })
+  if (category) params.set('category', category)
+
+  try {
+    const res = await fetch(`${API_URL}/blog/page?${params.toString()}`, {
+      next: { revalidate: 60 },
+    })
+    if (!res.ok) return { data: [], total: 0, hasMore: false }
+    const result: BlogPageResponse = await res.json()
+    return result
+  } catch {
+    return { data: [], total: 0, hasMore: false }
+  }
+}
+
+async function fetchCategories(): Promise<string[]> {
+  try {
+    const res = await fetch(`${API_URL}/blog/categories`, {
+      next: { revalidate: 300 },
+    })
+    if (!res.ok) return []
+    const json: { data: string[] } = await res.json()
+    return json.data
+  } catch {
+    return []
+  }
+}
+
+interface BlogPageProps {
+  searchParams: Promise<{ category?: string; page?: string }>
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
   const locale = await getLocale()
   const seoRoute = locale === 'es' ? '/blog' : `/${locale}/blog`
 
+  const { category, page: pageParam } = await searchParams
+  const activeCategory = category ?? null
+  const page = Math.max(1, parseInt(pageParam ?? '1', 10))
+
+  const [featured, pageResult, categories] = await Promise.all([
+    fetchFeatured(),
+    fetchPage(page, activeCategory),
+    fetchCategories(),
+  ])
+
+  const totalPages = Math.ceil(pageResult.total / POSTS_PER_PAGE)
+
   return (
-    <div className="mx-auto max-w-7xl px-8 py-24">
+    <>
       <SEOHead route={seoRoute} fallback={{ title: 'Blog - Que Bárbaro' }} />
-      <h1
-        className="font-primary text-5xl uppercase tracking-wide text-navy"
-      >
-        Blog
-      </h1>
-    </div>
+
+      {/* Hero */}
+      <div className="border-b border-navy/10 px-8 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-4 text-xs uppercase tracking-[0.25em] text-navy/40">
+            Tendencias · Cuidado · Inspiración
+          </p>
+          <h1 className="font-primary text-6xl uppercase tracking-wide text-navy md:text-8xl">
+            Blog
+          </h1>
+        </div>
+      </div>
+
+      {/* Featured editorial grid */}
+      {!activeCategory && page === 1 && featured.length > 0 && (
+        <div className="px-8 pt-16 md:px-12">
+          <div className="mx-auto max-w-7xl">
+            <FeaturedPosts posts={featured} />
+          </div>
+        </div>
+      )}
+
+      {/* Grid + filters */}
+      <div className="px-8 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <CategoryFilter categories={categories} active={activeCategory} />
+          <BlogGrid posts={pageResult.data} />
+          <Pagination page={page} totalPages={totalPages} />
+        </div>
+      </div>
+    </>
   )
 }

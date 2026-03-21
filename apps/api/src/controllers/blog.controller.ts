@@ -1,6 +1,33 @@
 import type { Request, Response, NextFunction } from 'express'
 import { blogService } from '../services/blog.service'
 
+export async function getPage(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const offset = Math.max(parseInt(req.query['offset'] as string) || 0, 0)
+    const limit = Math.min(parseInt(req.query['limit'] as string) || 9, 50)
+    const filters = {
+      q:        req.query['q']        as string | undefined,
+      author:   req.query['author']   as string | undefined,
+      category: req.query['category'] as string | undefined,
+      date:     req.query['date']     as string | undefined,
+      featured: req.query['featured'] === 'true' ? true : undefined,
+    }
+    const result = await blogService.getPage(offset, limit, filters)
+    res.json(result)
+  } catch (err) {
+    next(err)
+  }
+}
+
+export async function getCategories(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const categories = await blogService.getCategories()
+    res.json({ data: categories })
+  } catch (err) {
+    next(err)
+  }
+}
+
 export async function getAll(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const isAdmin = !!req.user
