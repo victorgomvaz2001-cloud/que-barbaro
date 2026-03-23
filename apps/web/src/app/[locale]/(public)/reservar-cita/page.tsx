@@ -8,7 +8,8 @@ import TreatwellCard from '@/components/TreatwellCard'
 const BOOKSY_URL =
   'https://booksy.com/es-es/144807_que-barbaro-hair-care-salon_peluqueria_29275_torremolinos'
 
-const PHONE = '+34 600 000 000'
+const INSTAGRAM_URL = 'https://www.instagram.com/que.barbaro_estilistas/'
+const INSTAGRAM_HANDLE = '@que.barbaro_estilistas'
 const WHATSAPP_URL = 'https://wa.me/34644817835'
 
 export default async function ReservarCitaPage() {
@@ -33,16 +34,18 @@ export default async function ReservarCitaPage() {
       {/* 4 booking channels */}
       <div className="mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-px bg-navy/10">
 
-        {/* ── Teléfono ── */}
+        {/* ── Instagram ── */}
         <a
-          href={`tel:${PHONE.replace(/\s/g, '')}`}
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative flex flex-col items-center text-center gap-5 px-10 py-12 bg-cream transition-colors duration-300 hover:bg-navy"
         >
           <span
             className="absolute top-0 left-0 right-0 h-[3px]"
             style={{ backgroundColor: 'rgb(1,10,73)' }}
           />
-          {/* Phone icon */}
+          {/* Instagram icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="42" height="42"
@@ -55,21 +58,23 @@ export default async function ReservarCitaPage() {
             className="text-navy transition-colors duration-300 group-hover:text-cream"
             aria-hidden="true"
           >
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" />
           </svg>
           <div>
             <p className="font-primary text-[1.6rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
-              Teléfono
+              Instagram
             </p>
             <p className="font-neue text-[11px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
-              Llamada directa
+              Perfil oficial
             </p>
           </div>
           <p className="font-secondary font-semibold text-[14px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
-            {PHONE}
+            {INSTAGRAM_HANDLE}
           </p>
           <span className="font-neue font-bold text-[10px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
-            Llamar ahora →
+            Ver perfil →
           </span>
         </a>
 

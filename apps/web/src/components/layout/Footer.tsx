@@ -14,11 +14,12 @@ const NAV_LINKS = [
 ] as const
 
 const SOCIAL = [
-  { name: 'Instagram', href: 'https://www.instagram.com/quebarbaro.es' },
-  { name: 'Facebook',  href: 'https://facebook.com/quebarbaro' },
-  { name: 'TikTok',    href: 'https://tiktok.com/@quebarbaro' },
-  { name: 'YouTube',   href: 'https://youtube.com/@quebarbaro' },
+  { name: 'Instagram', href: 'https://www.instagram.com/que.barbaro_estilistas/' },
+  { name: 'TikTok',    href: 'https://www.tiktok.com/@que.barbaro_estilistas' },
+  { name: 'WhatsApp',  href: 'https://wa.me/34644817835' },
 ]
+const WHATSAPP_URL = 'https://wa.me/34644817835'
+const SALON_MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Que+Barbaro+Hair+%26+Care+Salon+Torremolinos'
 
 export default async function Footer() {
   const tNav  = await getTranslations('nav')
@@ -61,16 +62,12 @@ export default async function Footer() {
                   Contacto
                 </h3>
                 <a
-                  href={`tel:${tFoot('phone')}`}
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-neue font-light block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
                 >
                   {tFoot('phone')}
-                </a>
-                <a
-                  href={`tel:${tFoot('phone2')}`}
-                  className="font-neue font-light block text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed transition-colors hover:text-navy"
-                >
-                  {tFoot('phone2')}
                 </a>
               </div>
 
@@ -78,12 +75,19 @@ export default async function Footer() {
                 <h3 className="font-primary text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[0.18em] mb-3">
                   El Salón
                 </h3>
-                <p className="font-neue font-light text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
-                  {tFoot('address')}
-                </p>
-                <p className="font-neue font-light text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
-                  {tFoot('city')}
-                </p>
+                <a
+                  href={SALON_MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block transition-opacity hover:opacity-70"
+                >
+                  <p className="font-neue font-light text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
+                    {tFoot('address')}
+                  </p>
+                  <p className="font-neue font-light text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] leading-relaxed">
+                    {tFoot('city')}
+                  </p>
+                </a>
               </div>
             </div>
 

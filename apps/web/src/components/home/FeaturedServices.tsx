@@ -2,23 +2,25 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 
-const SERVICE_KEYS = ['corte', 'coloracion', 'tratamientos', 'barberia', 'maquillaje'] as const
-const SERVICE_SLUGS = ['corte', 'coloracion', 'tratamientos', 'barberia', 'maquillaje'] as const
+const SERVICE_KEYS = ['cortes', 'peinados', 'maquillaje', 'goa', 'rubios', 'evento'] as const
+const SERVICE_SLUGS = ['cortes', 'peinados', 'maquillaje', 'goa', 'rubios', 'evento'] as const
 
 const SERVICE_IMAGES = [
   'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/service1.jpg',
   'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/service2.jpg',
+  'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/manicura.jpg',
   'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/service3.jpg',
   'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/service4.jpg',
-  'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/service5.jpg',
+  'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/service6.jpg',
 ]
 
 const LAYOUT = [
   { colClass: 'col-span-2 md:col-span-3', heightClass: 'h-[55vw] md:h-[52vh]' },
-  { colClass: 'col-span-1 md:col-span-2', heightClass: 'h-[62vw] md:h-[52vh]' },
+  { colClass: 'col-span-2 md:col-span-2', heightClass: 'h-[62vw] md:h-[52vh]' },
   { colClass: 'col-span-1 md:col-span-2', heightClass: 'h-[62vw] md:h-[38vh]' },
   { colClass: 'col-span-1 md:col-span-1', heightClass: 'h-[55vw] md:h-[38vh]' },
-  { colClass: 'col-span-1 md:col-span-2', heightClass: 'h-[55vw] md:h-[38vh]' },
+  { colClass: 'col-span-1 md:col-span-1', heightClass: 'h-[55vw] md:h-[38vh]' },
+  { colClass: 'col-span-1 md:col-span-1', heightClass: 'h-[55vw] md:h-[38vh]' },
 ]
 
 export default async function FeaturedServices() {
@@ -34,7 +36,7 @@ export default async function FeaturedServices() {
             {t('sectionTitle')}
           </h2>
           <Link
-            href="/servicios/corte"
+            href="/servicios/cortes"
             className="bg-navy text-cream font-neue text-[13px] uppercase tracking-[0.14em] px-6 py-3.5 transition-opacity duration-150 hover:opacity-80 whitespace-nowrap"
           >
             {t('viewAll')}

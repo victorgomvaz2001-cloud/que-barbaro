@@ -30,10 +30,9 @@
   },
   "footer": {
     "tagline": "Barbershop & Beauty Centre",
-    "address": "Calle Principal, 1",
-    "city": "Torremolinos, Spain",
-    "phone": "+34 600 000 000",
-    "phone2": "+34 611 222 333",
+    "address": "Av. Joan Miró, 15, 29620",
+    "city": "Torremolinos, Málaga, Spain",
+    "phone": "+34 644 81 78 35",
     "sections": "Sections",
     "followUs": "Follow us",
     "legal": "Legal",
@@ -58,12 +57,12 @@
     "sectionTitle": "Services",
     "viewAll": "View all",
     "priceGuide": "View price catalogue",
-    "corte": "Cut & Styling",
-    "coloracion": "Colour & Blondes",
-    "tratamientos": "Hair Treatments",
-    "barberia": "Barbershop",
-    "maquillaje": "Makeup & Beauty",
-    "eventos": "Events"
+    "cortes": "Haircuts",
+    "peinados": "Styling",
+    "maquillaje": "Makeup",
+    "goa": "Goa Organics",
+    "rubios": "Blondes",
+    "evento": "Events"
   },
   "blog": {
     "eyebrow": "Trends · Care · Inspiration",
@@ -79,6 +78,7 @@
   "contacto": {
     "eyebrow": "Find us",
     "title": "Contact",
+    "intro": "We're here to help. Whether you have questions, need support, or want to learn more about our services, our team will be happy to assist you.",
     "address": "Address",
     "phone": "Phone",
     "social": "Social media",
@@ -91,50 +91,71 @@
     "serviceLabel": "Service",
     "priceNote": "Guide price",
     "bookCta": "Book an appointment",
-    "services": [
-      {
-        "tab": "Cut & Styling",
-        "name": "Cut\n& Styling",
-        "description": "The art of the cut executed with millimetric precision. We analyse your face shape and lifestyle to create a cut that defines you.",
-        "treatments": ["Classic cut", "Modern cut", "Bridal styling", "Straightening finish", "Curls & waves"],
-        "price": "From €25"
-      },
-      {
-        "tab": "Colour & Blondes",
-        "name": "Colour\n& Blondes",
-        "description": "Masters of colour. From natural blondes to radical transformations, always using the latest techniques and premium products.",
-        "treatments": ["Balayage", "Californian highlights", "Full colour", "Bleaching", "Fantasy tones"],
-        "price": "From €55"
-      },
-      {
-        "tab": "Hair Treatments",
-        "name": "Hair\nTreatments",
-        "description": "Your hair deserves the very best care. Our treatments repair, nourish and protect to restore shine and health to every strand.",
-        "treatments": ["Brazilian keratin", "Deep hydration", "Hair botox", "Anti-hair loss treatment", "Oil nutrition"],
-        "price": "From €40"
-      },
-      {
-        "tab": "Barbershop",
-        "name": "Barbershop",
-        "description": "The gentleman's barbershop elevated to a ritual. Tradition and modernity merge on every visit for the man who cares about every detail.",
-        "treatments": ["Classic straight-razor shave", "Beard sculpting", "Cut & tidy", "Hydrating mask", "Moustache design"],
-        "price": "From €18"
-      },
-      {
-        "tab": "Makeup & Beauty",
-        "name": "Makeup\n& Beauty",
-        "description": "We enhance your natural beauty with professional techniques. For the big day, a special evening, or simply for yourself.",
-        "treatments": ["Bridal makeup", "Social makeup", "Brow design", "Semi-permanent", "Lash by lash"],
-        "price": "From €30"
-      },
-      {
-        "tab": "Events",
-        "name": "Special\nEvents",
-        "description": "We turn every occasion into an unforgettable memory. From weddings to corporate celebrations, our team travels to you or welcomes you in-salon so you shine on your most special day.",
-        "treatments": ["Bridal & party styling", "Event makeup", "At-home service", "Group bookings", "Pre-event image consultation"],
-        "price": "On request"
-      }
-    ]
+    "cortes": {
+      "index": "01",
+      "tab": "Haircuts",
+      "name": "Design\nHaircuts",
+      "description": "Every cut is a masterpiece designed for you. We analyse your face shape, hair texture and lifestyle to craft a cut that truly represents you.",
+      "treatments": [
+        { "name": "Artistic Design Cut", "description": "A signature cut that blends advanced technique with artistic vision. Every line, volume and texture is crafted with precision to create a unique result that defines your identity." },
+        { "name": "Curly Method \"Dance of Curls\"", "description": "A specialist method designed to unlock the natural beauty of your curly hair. We work with your hair's own curves to activate the curl, add definition and eliminate frizz." }
+      ]
+    },
+    "peinados": {
+      "index": "02",
+      "tab": "Styling",
+      "name": "Styling",
+      "description": "The art of transforming hair into a style statement. From haute couture updos to cinematic waves, every style is a moment in itself.",
+      "treatments": [
+        { "name": "Updo \"Glamour Heights\"", "description": "Haute couture updos that elevate any look to another level. From elegant buns to elaborate braided styles, every updo is designed with your silhouette and occasion in mind." },
+        { "name": "Hollywood Waves \"Red Carpet\"", "description": "Soft, luminous Hollywood waves that evoke the elegance of classic cinema. A style that combines timeless glamour with a sophistication that never goes unnoticed." }
+      ]
+    },
+    "maquillaje": {
+      "index": "03",
+      "tab": "Makeup",
+      "name": "Makeup",
+      "description": "We enhance your natural beauty with professional techniques tailored to every occasion — from mesmerising evening looks to the perfect makeup for the most important day of your life.",
+      "treatments": [
+        { "name": "Glamour Night Makeup", "description": "An intense and sophisticated evening look that enhances your features and makes you shine in any setting. Contouring techniques, vivid pigments and long-lasting finishes." },
+        { "name": "\"I'm getting married!\" Makeup", "description": "The most special bridal makeup. We create the look you'll wear on the most important day of your life: perfect on camera, all-day lasting and true to who you are." },
+        { "name": "\"Let's party!\" Makeup", "description": "A festive, fun and personality-filled makeup look to make you the most radiant person at every celebration. Tailored to your style, your skin and the moment." }
+      ]
+    },
+    "goa": {
+      "index": "04",
+      "tab": "Goa Organics",
+      "name": "Goa\nOrganics",
+      "description": "Premium hair treatments using the Goa Organics range. Advanced formulas that transform, repair and beautify hair with the highest-quality organic ingredients.",
+      "treatments": [
+        { "name": "Keratin Infusion Goa Organics", "description": "An intensive smoothing and nourishing treatment with Goa Organics keratin. Reduces volume, eliminates frizz and leaves hair soft, straight and shiny for weeks." },
+        { "name": "Softy Mood Goa Organics", "description": "A silky-effect nourishing treatment for damaged, dry or dull hair. It repairs the hair fibre from within and transforms the texture into an incredibly soft finish." },
+        { "name": "Sublime 10.31 Goa Organics", "description": "A colour and nourishment formula in one. Golden and beige tones that illuminate the hair with a sublime, natural and long-lasting result." },
+        { "name": "Bae Berry Goa Organics", "description": "A treatment with reddish and violet pigments that bring life, colour and shine to dull hair. A cocktail of nourishment and colour that transforms hair with a unique attitude." }
+      ]
+    },
+    "rubios": {
+      "index": "05",
+      "tab": "Blondes",
+      "name": "Blondes",
+      "description": "We are specialists in highlighting and colouring techniques for blondes that turn heads. From dreamy Brazilian balayages to silk babylights, we create the blonde of your life.",
+      "treatments": [
+        { "name": "Brazilian Style Balayage", "description": "The most natural highlighting technique in the world, hand-painted to achieve perfect colour transitions. A vibrant, luminous blonde with no visible roots." },
+        { "name": "Babylights \"Silk Shine\"", "description": "Ultra-fine highlights that mimic the natural blonde of childhood. A soft result, full of silky shimmer and shine that looks sun-kissed." },
+        { "name": "Dazzling Blonde Balayage", "description": "A high-intensity balayage for those who want a striking, luminous and impactful blonde. Perfect contrast between base and tips for a cinematic result." }
+      ]
+    },
+    "evento": {
+      "index": "06",
+      "tab": "Events",
+      "name": "Events",
+      "description": "We turn your most special moments into eternal memories. Our team gives everything to make sure you and your loved ones shine the way you deserve.",
+      "treatments": [
+        { "name": "Brides & Grooms Package", "description": "The most complete package for your big day. Hair, makeup and all the care you and your wedding party deserve. Pre-event consultation included so everything goes perfectly." },
+        { "name": "Hen & Stag Party Packages", "description": "A moment to celebrate, enjoy and feel incredible. Group packages with hair and makeup so the whole squad arrives ready to party." },
+        { "name": "Birthday Packages", "description": "Because birthdays deserve to be celebrated in style. Personalised beauty packages so the birthday person and their group shine at the celebration." }
+      ]
+    }
   },
   "elSalon": {
     "intro": {

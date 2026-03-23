@@ -30,10 +30,9 @@
   },
   "footer": {
     "tagline": "Barbería & Centro de Belleza",
-    "address": "Calle Principal, 1",
-    "city": "Madrid, España",
-    "phone": "+34 600 000 000",
-    "phone2": "+34 611 222 333",
+    "address": "Av. Joan Miró, 15, 29620",
+    "city": "Torremolinos, Málaga, España",
+    "phone": "+34 644 81 78 35",
     "sections": "Secciones",
     "followUs": "Síguenos",
     "legal": "Legal",
@@ -58,12 +57,12 @@
     "sectionTitle": "Servicios",
     "viewAll": "Ver todos",
     "priceGuide": "Consultar catálogo de precios",
-    "corte": "Corte y peinado",
-    "coloracion": "Coloración y rubios",
-    "tratamientos": "Tratamientos capilares",
-    "barberia": "Barbería",
-    "maquillaje": "Maquillaje y belleza",
-    "eventos": "Eventos"
+    "cortes": "Cortes",
+    "peinados": "Peinados",
+    "maquillaje": "Maquillaje",
+    "goa": "Goa Organics",
+    "rubios": "Rubios",
+    "evento": "Evento"
   },
   "blog": {
     "eyebrow": "Tendencias · Cuidado · Inspiración",
@@ -79,6 +78,7 @@
   "contacto": {
     "eyebrow": "Encuéntranos",
     "title": "Contacto",
+    "intro": "Estamos aquí para ayudarte. Si tienes preguntas, necesitas soporte o quieres saber más sobre nuestros servicios, nuestro equipo estará encantado de atenderte.",
     "address": "Dirección",
     "phone": "Teléfono",
     "social": "Redes sociales",
@@ -91,50 +91,71 @@
     "serviceLabel": "Servicio",
     "priceNote": "Precio orientativo",
     "bookCta": "Reservar cita",
-    "services": [
-      {
-        "tab": "Corte & Peinado",
-        "name": "Corte\n& Peinado",
-        "description": "El arte del corte ejecutado con precisión milimétrica. Analizamos tu morfología y estilo de vida para crear un corte que te defina.",
-        "treatments": ["Corte clásico", "Corte moderno", "Peinado de novia", "Acabado con plancha", "Rulos y ondas"],
-        "price": "Desde 25€"
-      },
-      {
-        "tab": "Coloración & Rubios",
-        "name": "Coloración\n& Rubios",
-        "description": "Maestros del color. Desde rubios naturales a transformaciones radicales, siempre con técnicas de última generación y productos premium.",
-        "treatments": ["Balayage", "Mechas californianas", "Tinte completo", "Decoloración", "Tonos fantasía"],
-        "price": "Desde 55€"
-      },
-      {
-        "tab": "Tratamientos",
-        "name": "Tratamientos\nCapilares",
-        "description": "Tu cabello merece el mejor cuidado. Nuestros tratamientos reparan, nutren y protegen para devolver brillo y salud a cada hebra.",
-        "treatments": ["Keratina brasileña", "Hidratación profunda", "Botox capilar", "Tratamiento anticaída", "Nutrición con aceites"],
-        "price": "Desde 40€"
-      },
-      {
-        "tab": "Barbería",
-        "name": "Barbería",
-        "description": "La barbería de caballero elevada a ritual. Tradición y modernidad se fusionan en cada visita para el hombre que cuida cada detalle.",
-        "treatments": ["Afeitado clásico con navaja", "Perfilado de barba", "Corte y arreglo", "Mascarilla hidratante", "Diseño de bigote"],
-        "price": "Desde 18€"
-      },
-      {
-        "tab": "Maquillaje & Belleza",
-        "name": "Maquillaje\n& Belleza",
-        "description": "Realzamos tu belleza natural con técnicas profesionales. Para el gran día, una noche especial o simplemente para ti.",
-        "treatments": ["Maquillaje nupcial", "Maquillaje social", "Diseño de cejas", "Semipermanente", "Pestaña a pestaña"],
-        "price": "Desde 30€"
-      },
-      {
-        "tab": "Eventos",
-        "name": "Eventos\nEspeciales",
-        "description": "Convertimos cada ocasión en un recuerdo imborrable. Desde bodas hasta celebraciones corporativas, nuestro equipo se desplaza o te recibe para que brilles en tu momento más especial.",
-        "treatments": ["Peinado nupcial y cortejo", "Maquillaje para eventos", "Servicio a domicilio", "Reserva de grupo", "Asesoría de imagen previa"],
-        "price": "Consultar"
-      }
-    ]
+    "cortes": {
+      "index": "01",
+      "tab": "Cortes",
+      "name": "Cortes\nde Diseño",
+      "description": "Cada corte es una obra maestra pensada para ti. Analizamos tu morfología facial, tu textura capilar y tu estilo de vida para diseñar un corte que te represente.",
+      "treatments": [
+        { "name": "Corte de diseño \"Artístico Design\"", "description": "Un corte de autor que combina técnica avanzada con visión artística. Cada línea, cada volumen y cada textura se trabajan con precisión para crear un resultado único que define tu identidad." },
+        { "name": "Método Curly \"Danza de Rizos\"", "description": "Método especializado para potenciar la belleza natural de tu cabello rizado. Trabajamos con las curvas de tu melena para activar el rizo, aportar definición y eliminar el encrespamiento." }
+      ]
+    },
+    "peinados": {
+      "index": "02",
+      "tab": "Peinados",
+      "name": "Peinados",
+      "description": "El arte de transformar el cabello en una declaración de estilo. Desde recogidos de alta costura hasta ondas cinematográficas, cada peinado es un momento.",
+      "treatments": [
+        { "name": "Recogidos \"Glamour en Altura\"", "description": "Recogidos de alta costura que elevan cualquier look a otro nivel. Desde moños elegantes hasta trenzados elaborados, cada recogido es una obra pensada para tu silueta y tu ocasión." },
+        { "name": "Ondas Hollywood \"Alfombra Roja\"", "description": "Ondas suaves y luminosas que evocan la elegancia del cine clásico. Un peinado que combina glamour atemporal con una sofisticación que no pasa desapercibida." }
+      ]
+    },
+    "maquillaje": {
+      "index": "03",
+      "tab": "Maquillaje",
+      "name": "Maquillaje",
+      "description": "Realzamos tu belleza natural con técnicas profesionales que se adaptan a cada ocasión. Desde looks de noche que hipnotizan hasta el maquillaje perfecto para el día más importante de tu vida.",
+      "treatments": [
+        { "name": "Maquillaje Glamour Noche", "description": "Un look de noche intenso y sofisticado que realza tus rasgos y te hace brillar en cualquier ambiente. Técnicas de contouring, pigmentos vivos y acabados de larga duración." },
+        { "name": "Maquillaje \"Ay que me caso!\"", "description": "El maquillaje nupcial más especial. Creamos el look que llevarás en el día más importante de tu vida: perfecto ante la cámara, duradero todo el día y fiel a quien eres tú." },
+        { "name": "Maquillaje \"Me voy de fiesta!\"", "description": "Un maquillaje festivo, divertido y lleno de personalidad para que seas la más radiante en cada celebración. Adaptado a tu estilo, tu piel y el momento." }
+      ]
+    },
+    "goa": {
+      "index": "04",
+      "tab": "Goa Organics",
+      "name": "Goa\nOrganics",
+      "description": "Tratamientos capilares de alta gama con la línea Goa Organics. Fórmulas avanzadas que transforman, reparan y embellecen el cabello con ingredientes orgánicos de máxima calidad.",
+      "treatments": [
+        { "name": "Keratin Infusion Goa Organics", "description": "Tratamiento de alisado y nutrición intensiva con keratina de la línea Goa Organics. Reduce el volumen, elimina el frizz y deja el cabello suave, liso y brillante durante semanas." },
+        { "name": "Softy Mood Goa Organics", "description": "Tratamiento nutritivo de efecto sedoso para cabellos dañados, secos o con falta de brillo. Repara la fibra capilar desde el interior y transforma la textura en un acabado increíblemente suave." },
+        { "name": "Sublime 10.31 Goa Organics", "description": "Fórmula de color y nutrición en uno. Tonos dorados y beige que iluminan el cabello con un resultado sublime, natural y de alta duración." },
+        { "name": "Bae Berry Goa Organics", "description": "Tratamiento con pigmentos rojizos y violetas que aportan vida, color y brillo a cabellos apagados. Un cóctel de nutrición y color que transforma el cabello con una actitud única." }
+      ]
+    },
+    "rubios": {
+      "index": "05",
+      "tab": "Rubios",
+      "name": "Rubios",
+      "description": "Somos especialistas en técnicas de iluminación y coloración para rubios que enamoran. Desde balayages brasileños de ensueño hasta babylights de seda, creamos el rubio de tu vida.",
+      "treatments": [
+        { "name": "Balayages Estilo Brasileño", "description": "La técnica de iluminación más natural del mundo, pintada a mano para conseguir transiciones de color perfectas. Un rubio vivo, luminoso y sin raíces marcadas." },
+        { "name": "Babylights \"Silk Shine\"", "description": "Mechas ultrafinas que imitan el rubio natural de la infancia. Un resultado suave, lleno de reflejos y brillo sedoso que parece hecho por el sol." },
+        { "name": "Balayage Rubio Deslumbrante", "description": "Un balayage de alta intensidad para quienes quieren un rubio impactante, luminoso y con presencia. Contraste perfecto entre base y puntas para un resultado cinematográfico." }
+      ]
+    },
+    "evento": {
+      "index": "06",
+      "tab": "Evento",
+      "name": "Evento",
+      "description": "Convertimos tus momentos más especiales en recuerdos eternos. Nuestro equipo se vuelca al completo para que tú, y todos los tuyos, brilléis como merecéis.",
+      "treatments": [
+        { "name": "Pack novias y novios", "description": "El pack más completo para el día B. Peinado, maquillaje y todo el cuidado que merecéis vosotros y vuestro séquito. Asesoría previa incluida para que todo salga perfecto." },
+        { "name": "Despedidas de solteras y solteros", "description": "Un momento para celebrar, disfrutar y sentirte increíble. Packs grupales con peinado y maquillaje para que toda la banda llegue en modo fiesta." },
+        { "name": "Packs cumpleaños", "description": "Porque los cumpleaños se celebran a lo grande. Packs personalizados de belleza para que el homenajeado y su grupo brillen en la celebración." }
+      ]
+    }
   },
   "elSalon": {
     "intro": {

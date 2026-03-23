@@ -7,12 +7,12 @@ import LanguageSelector from './LanguageSelector'
 import Logo from '@/components/Logo'
 
 const SERVICE_SUB_ITEMS = [
-  { slug: 'corte',        key: 'corte' },
-  { slug: 'coloracion',   key: 'coloracion' },
-  { slug: 'tratamientos', key: 'tratamientos' },
-  { slug: 'barberia',     key: 'barberia' },
-  { slug: 'maquillaje',   key: 'maquillaje' },
-  { slug: 'eventos',      key: 'eventos' },
+  { slug: 'cortes',     key: 'cortes' },
+  { slug: 'peinados',   key: 'peinados' },
+  { slug: 'maquillaje', key: 'maquillaje' },
+  { slug: 'goa',        key: 'goa' },
+  { slug: 'rubios',     key: 'rubios' },
+  { slug: 'evento',     key: 'evento' },
 ] as const
 
 const NAV_ITEMS = [
@@ -107,7 +107,7 @@ export default function Navbar() {
               <LanguageSelector />
               <Link
                 href="/reservar-cita"
-                className="bg-navy text-cream font-secondary text-[12px] uppercase tracking-[0.12em] px-4 py-2 transition-opacity duration-150 hover:opacity-80"
+                className="bg-navy text-cream font-secondary text-[13px] uppercase tracking-[0.12em] px-6 py-2.5 transition-opacity duration-150 hover:opacity-80"
               >
                 {t('reservar')}
               </Link>
@@ -184,7 +184,7 @@ export default function Navbar() {
             <Link
               href="/reservar-cita"
               onClick={() => closeMenu()}
-              className="bg-navy text-cream font-secondary text-[12px] uppercase tracking-[0.12em] px-6 py-3 transition-opacity duration-150 hover:opacity-80"
+              className="bg-navy text-cream font-secondary text-[13px] uppercase tracking-[0.12em] px-7 py-3.5 transition-opacity duration-150 hover:opacity-80"
             >
               {t('reservar')}
             </Link>
