@@ -4,6 +4,7 @@ import { getLocale } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
 import Hero from '@/components/home/Hero'
 import ValueProposition from '@/components/home/ValueProposition'
+import ExperienceSection from '@/components/home/ExperienceSection'
 import FeaturedServices from '@/components/home/FeaturedServices'
 
 export default async function HomePage() {
@@ -15,6 +16,7 @@ export default async function HomePage() {
       <SEOHead route={seoRoute} fallback={{ title: 'Que Bárbaro' }} />
       <Hero />
       <ValueProposition />
+      <ExperienceSection />
       <FeaturedServices />
     </>
   )

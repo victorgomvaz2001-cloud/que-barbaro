@@ -10,10 +10,10 @@ export default async function Hero() {
       <div className="flex flex-col items-center gap-3">
         <h1 className="font-primary text-[clamp(4rem,14vw,11rem)] leading-[0.95] tracking-tight text-navy uppercase">
           Qué Bárbaro
-        </h1>
-        <p className="font-secondary text-[clamp(0.75rem,1.4vw,1rem)] uppercase tracking-[0.22em] text-navy/60">
+          <p className="font-secondary text-[clamp(0.75rem,1.4vw,1rem)] uppercase tracking-[0.22em] text-navy/60">
           {t('subtitle')}
         </p>
+        </h1>
       </div>
 
       {/* ── Image 4:3 ─────────────────────────────────────────────────── */}
@@ -27,6 +27,16 @@ export default async function Hero() {
           priority
           className="object-cover object-center"
         />
+      </div>
+
+      {/* ── Intro text ────────────────────────────────────────────────── */}
+      <div className="max-w-2xl flex flex-col gap-5 text-center">
+        <p className="font-secondary text-[clamp(0.85rem,1.3vw,1rem)] leading-relaxed tracking-wide text-navy/60">
+          En Qué Bárbaro entendemos la peluquería de otra manera. No como una cita rápida para salir del paso, sino como un servicio donde el criterio, la técnica y la atención al detalle marcan la diferencia. Estamos en Torremolinos y trabajamos para quienes quieren que su cabello esté bien, no solo en el momento de salir del salón, sino también al día siguiente, y al otro.
+        </p>
+        <p className="font-secondary text-[clamp(0.85rem,1.3vw,1rem)] leading-relaxed tracking-wide text-navy/60">
+          Nos especializamos en peluquería con atención personalizada: estudiamos cada cabello, escuchamos lo que busca cada persona y proponemos soluciones reales. Por eso muchos clientes que llegan buscando un salón de belleza en Torremolinos encuentran en nosotros algo diferente: un espacio donde se trabaja con tiempo, con intención y con un estándar alto en cada servicio.
+        </p>
       </div>
     </section>
   )
