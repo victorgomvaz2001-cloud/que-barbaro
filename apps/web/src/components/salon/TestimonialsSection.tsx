@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import type { IReview } from '@falcanna/types'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
@@ -33,6 +34,7 @@ function Stars({ size = 16, gap = 3 }: { size?: number; gap?: number }) {
 /* ─── Component ─────────────────────────────────────────────────────────── */
 
 export default function TestimonialsSection() {
+  const tl = useTranslations('testimonials')
   const [visible, setVisible] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [reviews, setReviews] = useState<IReview[]>([])
@@ -95,7 +97,7 @@ export default function TestimonialsSection() {
               className="font-neue font-light uppercase tracking-[0.2em] mb-6"
               style={{ fontSize: 'clamp(1rem, 1.6vw, 1.4rem)', color: '#1a1f3a', ...t(visible, 0, mounted) }}
             >
-              Lo que dicen nuestros clientes
+              {tl('label')}
             </p>
 
             <div className="flex items-baseline gap-4" style={t(visible, 120, mounted)}>
@@ -136,10 +138,10 @@ export default function TestimonialsSection() {
             </svg>
             <div>
               <p className="font-neue font-light text-[11px] uppercase tracking-[0.18em]" style={{ color: '#1a1f3a' }}>
-                +60 reseñas
+                {tl('reviewCount')}
               </p>
               <p className="font-neue font-light text-[10px] uppercase tracking-[0.14em]" style={{ color: 'rgba(26,31,58,0.4)' }}>
-                verificadas
+                {tl('verified')}
               </p>
             </div>
           </a>
@@ -167,7 +169,7 @@ export default function TestimonialsSection() {
         {/* ── Footer CTA ── */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6" style={t(visible, 900, mounted)}>
           <p className="font-neue font-light text-[13px] tracking-[0.08em]" style={{ color: 'rgba(26,31,58,0.5)' }}>
-            Únete a nuestros clientes satisfechos
+            {tl('joinUs')}
           </p>
           <a
             href="https://g.page/r/CZB0xjaUuYRfEBM/review"
@@ -177,7 +179,7 @@ export default function TestimonialsSection() {
             style={{ color: '#1a1f3a' }}
           >
             <span className="h-px w-8 transition-all duration-300 group-hover:w-14" style={{ backgroundColor: '#e8632a' }} />
-            Deja tu reseña en Google
+            {tl('leaveReview')}
           </a>
         </div>
       </div>

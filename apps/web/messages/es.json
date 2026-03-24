@@ -44,9 +44,14 @@
     "rights": "Todos los derechos reservados."
   },
   "hero": {
-    "subtitle": "Salón de belleza · Torremolinos"
+    "subtitle": "Salón de belleza · Torremolinos",
+    "intro1": "En Qué Bárbaro entendemos la peluquería de otra manera. No como una cita rápida para salir del paso, sino como un servicio donde el criterio, la técnica y la atención al detalle marcan la diferencia. Estamos en Torremolinos y trabajamos para quienes quieren que su cabello esté bien, no solo en el momento de salir del salón, sino también al día siguiente, y al otro.",
+    "intro2": "Nos especializamos en peluquería con atención personalizada: estudiamos cada cabello, escuchamos lo que busca cada persona y proponemos soluciones reales. Por eso muchos clientes que llegan buscando un salón de belleza en Torremolinos encuentran en nosotros algo diferente: un espacio donde se trabaja con tiempo, con intención y con un estándar alto en cada servicio."
   },
   "valueProposition": {
+    "title": "Peluquería personalizada para quienes saben lo que quieren",
+    "body1": "No todos los cabellos necesitan lo mismo, y no todos los clientes buscan lo mismo. En Qué Bárbaro esa diversidad es el punto de partida. Antes de empezar cualquier servicio, nos tomamos el tiempo de entender la textura, el historial, el estilo de vida y las expectativas de cada persona. Así el resultado no solo queda bien en el salón, también funciona en casa.",
+    "body2": "Ese enfoque es lo que nos distingue como referencia de alta peluquería en Torremolinos para quienes valoran una atención de verdad personalizada.",
     "headline": "No vendrás solo\na cortarte el pelo.",
     "subheadline": "Vendrás a desconectar. A que te mimen. A salir siendo más tú.",
     "body": "¡Qué Bárbaro! nació para demostrar que una peluquería puede ser mucho más que un servicio. Es un refugio donde la estética, la hospitalidad y el diseño conviven para crear algo que no habías vivido antes. Cada detalle — la fragancia, la música, la toalla fría al llegar, la bebida que te espera — existe por una razón: hacerte sentir que eres lo más importante.",
@@ -214,5 +219,56 @@
       "title": "Solo lo mejor\nsobre tu cabello.",
       "text": "Trabajamos exclusivamente con marcas que comparten nuestra filosofía: rendimiento real, ingredientes de calidad y resultados que se mantienen."
     }
+  },
+  "testimonials": {
+    "label": "Lo que dicen nuestros clientes",
+    "reviewCount": "+60 reseñas",
+    "verified": "verificadas",
+    "joinUs": "Únete a nuestros clientes satisfechos",
+    "leaveReview": "Deja tu reseña en Google"
+  },
+  "ctaSection": {
+    "eyebrow": "Reserva",
+    "headline": "¿Listo para\nla experiencia?",
+    "sub": "Tu cita te está esperando.",
+    "cta": "Reservar cita"
+  },
+  "homeBrands": {
+    "label": "Las Marcas",
+    "title": "Solo lo mejor\nsobre tu cabello.",
+    "text": "Trabajamos exclusivamente con marcas que comparten nuestra filosofía: rendimiento real, ingredientes de calidad y resultados que se mantienen.",
+    "viewAll": "Ver todas las marcas →"
+  },
+  "experienceSection": {
+    "label": "El espacio · Qué Bárbaro",
+    "h2L1": "Un espacio",
+    "h2L2": "pensado para",
+    "h2L3": "que el cuidado",
+    "h2L4": "personal sea",
+    "h2L5": "una experiencia",
+    "ticker": "Calidad · Técnica · Atención personalizada · Torremolinos · Peluquería boutique · Alta peluquería · ",
+    "body1": "Qué Bárbaro no es solo una peluquería boutique. Es un espacio elegante, tranquilo y con criterio estético propio, donde cada detalle del proceso forma parte del resultado. Desde la bienvenida hasta el acabado final, cuidamos el ritmo, el ambiente y el trato para que venir al salón sea una pausa que merece la pena.",
+    "body2": "Esa combinación de técnica y experiencia es lo que nos convierte en uno de los salones de referencia en Torremolinos para quienes buscan calidad, no volumen."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Trabajáis con cita previa?",
+        "a": "Sí. Recomendamos reservar con antelación para poder dedicar a cada cliente el tiempo que necesita y ofrecer una atención realmente personalizada."
+      },
+      {
+        "q": "¿Hacéis balayage y rubios?",
+        "a": "Sí. En Qué Bárbaro trabajamos Balayage Estilo Brasileño, Babylights Silk Shine y Balayage Rubio Deslumbrante, siempre con un enfoque profesional y respetuoso con el cabello."
+      },
+      {
+        "q": "¿Tenéis tratamientos capilares?",
+        "a": "Sí. Trabajamos con GOA Organics y sus tratamientos Keratin Infusion, Softy Mood, Sublime 10.31 y Bae Berry, según lo que necesite cada cabello."
+      },
+      {
+        "q": "¿Hacéis packs para eventos?",
+        "a": "Sí. Tenemos packs especiales para novias y novios, despedidas de soltera y soltero, y cumpleaños. Consúltanos y lo organizamos todo para que el día sea perfecto."
+      }
+    ]
   }
 }

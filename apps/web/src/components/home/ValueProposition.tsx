@@ -1,6 +1,9 @@
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 
-export default function ValueProposition() {
+export default async function ValueProposition() {
+  const t = await getTranslations('valueProposition')
+
   return (
     <section className="relative w-full overflow-hidden">
 
@@ -23,14 +26,14 @@ export default function ValueProposition() {
         {/* Left: text */}
         <div className="flex-1 flex flex-col gap-8">
           <h2 className="font-primary text-[clamp(2.2rem,5vw,4rem)] leading-[1.05] tracking-[0.04em] text-cream uppercase">
-            Peluquería personalizada para quienes saben lo que quieren
+            {t('title')}
           </h2>
           <div className="flex flex-col gap-5">
             <p className="font-neue font-light text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-cream/75 text-justify">
-              No todos los cabellos necesitan lo mismo, y no todos los clientes buscan lo mismo. En Qué Bárbaro esa diversidad es el punto de partida. Antes de empezar cualquier servicio, nos tomamos el tiempo de entender la textura, el historial, el estilo de vida y las expectativas de cada persona. Así el resultado no solo queda bien en el salón, también funciona en casa.
+              {t('body1')}
             </p>
             <p className="font-neue font-light text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-cream/75 text-justify">
-              Ese enfoque es lo que nos distingue como referencia de alta peluquería en Torremolinos para quienes valoran una atención de verdad personalizada.
+              {t('body2')}
             </p>
           </div>
         </div>

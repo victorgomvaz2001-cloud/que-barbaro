@@ -32,10 +32,10 @@ export default async function Hero() {
       {/* ── Intro text ────────────────────────────────────────────────── */}
       <div className="max-w-2xl flex flex-col gap-5 text-center">
         <p className="font-secondary text-[clamp(0.85rem,1.3vw,1rem)] leading-relaxed tracking-wide text-navy/60">
-          En Qué Bárbaro entendemos la peluquería de otra manera. No como una cita rápida para salir del paso, sino como un servicio donde el criterio, la técnica y la atención al detalle marcan la diferencia. Estamos en Torremolinos y trabajamos para quienes quieren que su cabello esté bien, no solo en el momento de salir del salón, sino también al día siguiente, y al otro.
+          {t('intro1')}
         </p>
         <p className="font-secondary text-[clamp(0.85rem,1.3vw,1rem)] leading-relaxed tracking-wide text-navy/60">
-          Nos especializamos en peluquería con atención personalizada: estudiamos cada cabello, escuchamos lo que busca cada persona y proponemos soluciones reales. Por eso muchos clientes que llegan buscando un salón de belleza en Torremolinos encuentran en nosotros algo diferente: un espacio donde se trabaja con tiempo, con intención y con un estándar alto en cada servicio.
+          {t('intro2')}
         </p>
       </div>
     </section>

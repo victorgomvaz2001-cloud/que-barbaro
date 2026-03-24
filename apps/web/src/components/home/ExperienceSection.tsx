@@ -1,7 +1,8 @@
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 
-export default function ExperienceSection() {
-  const ticker = 'Calidad · Técnica · Atención personalizada · Torremolinos · Peluquería boutique · Alta peluquería · '
+export default async function ExperienceSection() {
+  const t = await getTranslations('experienceSection')
 
   return (
     <>
@@ -21,19 +22,19 @@ export default function ExperienceSection() {
 
           {/* ── Label ─────────────────────────────────────────────────── */}
           <p className="font-secondary text-[10px] uppercase tracking-[0.3em] text-navy/35 mb-14">
-            El espacio · Qué Bárbaro
+            {t('label')}
           </p>
 
-          {/* ── H2 cascading ──────────────────────────────────────────── */}
+          {/* ── H2 cascading + image right ────────────────────────────── */}
           <div className="flex flex-col md:flex-row md:items-center w-full">
 
             {/* H2 */}
             <h2 className="flex-1 font-primary text-[clamp(2.6rem,7.5vw,6.5rem)] leading-[0.93] tracking-tight text-navy uppercase">
-              <span className="block" style={{ paddingLeft: '0' }}>Un espacio</span>
-              <span className="block" style={{ paddingLeft: '7vw' }}>pensado para</span>
-              <span className="block" style={{ paddingLeft: '1vw' }}>que el cuidado</span>
-              <span className="block" style={{ paddingLeft: '11vw' }}>personal sea</span>
-              <span className="block text-navy/25" style={{ paddingLeft: '3vw' }}>una experiencia</span>
+              <span className="block" style={{ paddingLeft: '0' }}>{t('h2L1')}</span>
+              <span className="block" style={{ paddingLeft: '7vw' }}>{t('h2L2')}</span>
+              <span className="block" style={{ paddingLeft: '1vw' }}>{t('h2L3')}</span>
+              <span className="block" style={{ paddingLeft: '11vw' }}>{t('h2L4')}</span>
+              <span className="block text-navy/25" style={{ paddingLeft: '3vw' }}>{t('h2L5')}</span>
             </h2>
 
             {/* Divider */}
@@ -61,10 +62,10 @@ export default function ExperienceSection() {
         <div className="mt-16 mb-16 border-t border-b border-navy/10 py-[14px] overflow-hidden">
           <div className="experience-marquee flex whitespace-nowrap">
             <span className="font-secondary text-[10px] uppercase tracking-[0.28em] text-navy/30">
-              {ticker.repeat(6)}
+              {t('ticker').repeat(6)}
             </span>
             <span className="font-secondary text-[10px] uppercase tracking-[0.28em] text-navy/30" aria-hidden>
-              {ticker.repeat(6)}
+              {t('ticker').repeat(6)}
             </span>
           </div>
         </div>
@@ -92,10 +93,10 @@ export default function ExperienceSection() {
           {/* Párrafos apilados */}
           <div className="flex-1 flex flex-col gap-8 px-8 md:pr-16">
             <p className="font-neue font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-navy/60">
-              Qué Bárbaro no es solo una peluquería boutique. Es un espacio elegante, tranquilo y con criterio estético propio, donde cada detalle del proceso forma parte del resultado. Desde la bienvenida hasta el acabado final, cuidamos el ritmo, el ambiente y el trato para que venir al salón sea una pausa que merece la pena.
+              {t('body1')}
             </p>
             <p className="font-neue font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-navy/60">
-              Esa combinación de técnica y experiencia es lo que nos convierte en uno de los salones de referencia en Torremolinos para quienes buscan calidad, no volumen.
+              {t('body2')}
             </p>
           </div>
 

@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export default function CtaSection() {
+  const tCta = useTranslations('ctaSection')
   const [visible, setVisible] = useState(false)
   const [mounted, setMounted] = useState(false)
   const ref = useRef<HTMLElement>(null)
@@ -50,19 +52,19 @@ export default function CtaSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-8">
         <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-8" style={t(150)}>
-          - Reserva
+          {tCta('eyebrow')}
         </p>
         <h2
           className="font-neue font-light text-white uppercase leading-[0.9] mb-4"
           style={{ fontSize: 'clamp(4rem,10vw,9rem)', whiteSpace: 'pre-line', ...t(280) }}
         >
-          {'¿Listo para\nla experiencia?'}
+          {tCta('headline')}
         </h2>
         <p
           className="font-secondary text-white/60 mb-12 tracking-widest uppercase text-sm"
           style={t(420)}
         >
-          Tu cita te está esperando.
+          {tCta('sub')}
         </p>
         <Link
           href="/reservar-cita"
@@ -74,7 +76,7 @@ export default function CtaSection() {
             transitionDelay: visible ? '540ms' : '0ms',
           } : {}}
         >
-          Reservar cita
+          {tCta('cta')}
           <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
             <path d="M1 5h14M10 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>

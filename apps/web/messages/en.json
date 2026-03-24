@@ -44,9 +44,14 @@
     "rights": "All rights reserved."
   },
   "hero": {
-    "subtitle": "Beauty salon · Torremolinos"
+    "subtitle": "Beauty salon · Torremolinos",
+    "intro1": "At Qué Bárbaro we see hairdressing differently. Not as a quick appointment to get out of the way, but as a service where judgement, technique and attention to detail make the difference. We are in Torremolinos and we work for those who want their hair to look good — not just when they leave the salon, but the day after, and the one after that.",
+    "intro2": "We specialise in hairdressing with a personal approach: we study each head of hair, listen to what each person is looking for and propose real solutions. That is why many clients who come looking for a hair salon in Torremolinos find something different with us: a space where work is done with time, intention and a high standard in every service."
   },
   "valueProposition": {
+    "title": "Personalised hairdressing for those who know what they want",
+    "body1": "Not every head of hair needs the same thing, and not every client is looking for the same thing. At Qué Bárbaro that diversity is the starting point. Before beginning any service, we take the time to understand the texture, history, lifestyle and expectations of each person. That way the result not only looks good in the salon — it works at home too.",
+    "body2": "That approach is what sets us apart as a reference for high-end hairdressing in Torremolinos for those who value truly personalised care.",
     "headline": "You won't just come\nto get a haircut.",
     "subheadline": "You'll come to unwind. To be pampered. To leave feeling more yourself.",
     "body": "Qué Bárbaro! was born to prove that a hair salon can be so much more than a service. It's a refuge where aesthetics, hospitality and design come together to create something you've never experienced before. Every detail — the fragrance, the music, the cool towel when you arrive, the drink waiting for you — exists for one reason: to make you feel like you matter most.",
@@ -214,5 +219,56 @@
       "title": "Only the best\non your hair.",
       "text": "We work exclusively with brands that share our philosophy: real performance, quality ingredients and results that last."
     }
+  },
+  "testimonials": {
+    "label": "What our clients say",
+    "reviewCount": "+60 reviews",
+    "verified": "verified",
+    "joinUs": "Join our satisfied clients",
+    "leaveReview": "Leave your review on Google"
+  },
+  "ctaSection": {
+    "eyebrow": "Book",
+    "headline": "Ready for\nthe experience?",
+    "sub": "Your appointment is waiting.",
+    "cta": "Book an appointment"
+  },
+  "homeBrands": {
+    "label": "Brands",
+    "title": "Only the best\non your hair.",
+    "text": "We work exclusively with brands that share our philosophy: real performance, quality ingredients and results that last.",
+    "viewAll": "View all brands →"
+  },
+  "experienceSection": {
+    "label": "The space · Qué Bárbaro",
+    "h2L1": "A space",
+    "h2L2": "designed so that",
+    "h2L3": "personal care",
+    "h2L4": "becomes",
+    "h2L5": "an experience",
+    "ticker": "Quality · Technique · Personalised care · Torremolinos · Boutique salon · High-end hairdressing · ",
+    "body1": "Qué Bárbaro is not just a boutique hair salon. It is an elegant, calm space with its own aesthetic vision, where every detail of the process is part of the result. From the welcome to the final finish, we take care of the pace, the atmosphere and the treatment so that coming to the salon is a pause worth taking.",
+    "body2": "That combination of technique and experience is what makes us one of the reference salons in Torremolinos for those who seek quality, not volume."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "Do you work by appointment?",
+        "a": "Yes. We recommend booking in advance so we can dedicate the time each client needs and offer a truly personalised experience."
+      },
+      {
+        "q": "Do you do balayage and blonde services?",
+        "a": "Yes. At Qué Bárbaro we offer Brazilian Style Balayage, Babylights Silk Shine and Dazzling Blonde Balayage, always with a professional approach that respects your hair."
+      },
+      {
+        "q": "Do you offer hair treatments?",
+        "a": "Yes. We work with GOA Organics and their treatments: Keratin Infusion, Softy Mood, Sublime 10.31 and Bae Berry, chosen according to what each head of hair needs."
+      },
+      {
+        "q": "Do you have packages for events?",
+        "a": "Yes. We have special packages for brides and grooms, hen and stag dos, and birthdays. Get in touch and we will organise everything so the day is perfect."
+      }
+    ]
   }
 }
