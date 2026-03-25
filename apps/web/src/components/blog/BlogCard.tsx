@@ -41,12 +41,12 @@ export default function BlogCard({ post }: { post: IBlogPost }) {
         </h3>
 
         {post.excerpt && (
-          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-navy/50">
+          <p className="mt-2 line-clamp-3 font-neue font-light text-sm leading-relaxed text-navy/50">
             {post.excerpt}
           </p>
         )}
 
-        <div className="mt-auto flex items-center gap-2 pt-4 text-xs uppercase tracking-widest text-navy/40">
+        <div className="mt-auto flex items-center gap-2 pt-4 font-neue font-light text-xs uppercase tracking-widest text-navy/40">
           {post.author && <span>{post.author}</span>}
           {post.author && <span>·</span>}
           <span>{formatDate(post.publishedAt)}</span>

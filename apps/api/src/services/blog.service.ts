@@ -10,18 +10,36 @@ export class BlogService {
   async getPage(
     offset: number,
     limit: number,
-    filters: { q?: string; author?: string; category?: string; date?: string; featured?: boolean; locale?: string } = {},
+    filters: {
+      q?: string
+      author?: string
+      category?: string
+      date?: string
+      featured?: boolean
+      locale?: string
+      sort?: string
+    } = {},
   ) {
     const query: Record<string, unknown> = { draft: false }
-    if (filters.q)        query['title']    = { $regex: filters.q, $options: 'i' }
-    if (filters.author)   query['author']   = { $regex: filters.author, $options: 'i' }
+    if (filters.q) {
+      query['$or'] = [
+        { title:  { $regex: filters.q, $options: 'i' } },
+        { slug:   { $regex: filters.q, $options: 'i' } },
+        { author: { $regex: filters.q, $options: 'i' } },
+      ]
+    }
     if (filters.category) query['category'] = filters.category
     if (filters.date)     query['publishedAt'] = { $regex: `^${filters.date}` }
     if (filters.featured) query['featured'] = true
     if (filters.locale)   query['locale']   = filters.locale
 
+    let sortOption: Record<string, 1 | -1> = { publishedAt: -1 }
+    if (filters.sort === 'date-asc')   sortOption = { publishedAt: 1 }
+    if (filters.sort === 'alpha-asc')  sortOption = { title: 1 }
+    if (filters.sort === 'alpha-desc') sortOption = { title: -1 }
+
     const [data, total] = await Promise.all([
-      Blog.find(query).sort({ publishedAt: -1 }).skip(offset).limit(limit).lean(),
+      Blog.find(query).sort(sortOption).skip(offset).limit(limit).lean(),
       Blog.countDocuments(query),
     ])
     return { data, total, hasMore: offset + data.length < total }

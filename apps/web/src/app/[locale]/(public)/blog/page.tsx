@@ -1,21 +1,33 @@
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
-import FeaturedPosts from '@/components/blog/FeaturedPosts'
-import CategoryFilter from '@/components/blog/CategoryFilter'
-import BlogGrid from '@/components/blog/BlogGrid'
-import Pagination from '@/components/blog/Pagination'
+import CategoryCarousel from '@/components/blog/CategoryCarousel'
+import AllPostsSection from '@/components/blog/AllPostsSection'
 import type { IBlogPost, BlogPageResponse } from '@falcanna/types'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
-const POSTS_PER_PAGE = 9
-const FEATURED_COUNT = 3
+const HERO_IMAGE = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/hero.jpg'
+const CATEGORY_LIMIT = 5
 
-async function fetchFeatured(locale: string): Promise<IBlogPost[]> {
+const CATEGORIES = [
+  'Cuidado capilar',
+  'Coloración',
+  'Rizos y método curly',
+  'Tendencias',
+  'Eventos y ocasiones especiales',
+  'Noticias de Qué Bárbaro',
+] as const
+
+async function fetchCategoryPosts(category: string, locale: string): Promise<IBlogPost[]> {
   try {
-    const res = await fetch(
-      `${API_URL}/blog/page?offset=0&limit=${FEATURED_COUNT}&featured=true&locale=${locale}`,
-      { next: { revalidate: 60 } },
-    )
+    const params = new URLSearchParams({
+      offset: '0',
+      limit: String(CATEGORY_LIMIT),
+      locale,
+      category,
+    })
+    const res = await fetch(`${API_URL}/blog/page?${params.toString()}`, {
+      next: { revalidate: 60 },
+    })
     if (!res.ok) return []
     const json: BlogPageResponse = await res.json()
     return json.data
@@ -24,97 +36,79 @@ async function fetchFeatured(locale: string): Promise<IBlogPost[]> {
   }
 }
 
-async function fetchPage(
-  page: number,
-  category: string | null,
-  locale: string,
-): Promise<BlogPageResponse> {
-  const offset = (page - 1) * POSTS_PER_PAGE
-  const params = new URLSearchParams({
-    offset: String(offset),
-    limit: String(POSTS_PER_PAGE),
-    locale,
-  })
-  if (category) params.set('category', category)
-
-  try {
-    const res = await fetch(`${API_URL}/blog/page?${params.toString()}`, {
-      next: { revalidate: 60 },
-    })
-    if (!res.ok) return { data: [], total: 0, hasMore: false }
-    const result: BlogPageResponse = await res.json()
-    return result
-  } catch {
-    return { data: [], total: 0, hasMore: false }
-  }
-}
-
-async function fetchCategories(locale: string): Promise<string[]> {
-  try {
-    const res = await fetch(`${API_URL}/blog/categories?locale=${locale}`, {
-      next: { revalidate: 300 },
-    })
-    if (!res.ok) return []
-    const json: { data: string[] } = await res.json()
-    return json.data
-  } catch {
-    return []
-  }
-}
-
-interface BlogPageProps {
-  searchParams: Promise<{ category?: string; page?: string }>
-}
-
-export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const [locale, t] = await Promise.all([getLocale(), getTranslations('blog')])
+export default async function BlogPage() {
+  const [locale, t, messages] = await Promise.all([getLocale(), getTranslations('blog'), getMessages()])
   const seoRoute = locale === 'es' ? '/blog' : `/${locale}/blog`
 
-  const { category, page: pageParam } = await searchParams
-  const activeCategory = category ?? null
-  const page = Math.max(1, parseInt(pageParam ?? '1', 10))
+  // Fetch all categories in parallel
+  const categoryResults = await Promise.all(
+    CATEGORIES.map((cat) => fetchCategoryPosts(cat, locale)),
+  )
 
-  const [featured, pageResult, categories] = await Promise.all([
-    fetchFeatured(locale),
-    fetchPage(page, activeCategory, locale),
-    fetchCategories(locale),
-  ])
+  const blogCategories = (messages as Record<string, unknown>)['blog'] as Record<string, Record<string, Record<string, string>>>
+  const catDescriptions = blogCategories['categories'] ?? {}
 
-  const totalPages = Math.ceil(pageResult.total / POSTS_PER_PAGE)
+  const categoryData = CATEGORIES.map((cat, i) => ({
+    key: cat,
+    title: cat,
+    description: catDescriptions[cat]?.['description'] ?? '',
+    posts: categoryResults[i] ?? [],
+  }))
+
+  const allPostsLabels = {
+    title: t('allPostsTitle'),
+    searchPlaceholder: t('searchPlaceholder'),
+    filterDate: t('filterDate'),
+    sortLabel: t('sortLabel'),
+    sortDateDesc: t('sortDateDesc'),
+    sortDateAsc: t('sortDateAsc'),
+    sortAlphaAsc: t('sortAlphaAsc'),
+    sortAlphaDesc: t('sortAlphaDesc'),
+    loadMore: t('loadMore'),
+    noResults: t('noResults'),
+  }
 
   return (
     <>
       <SEOHead route={seoRoute} fallback={{ title: 'Blog - Que Bárbaro' }} />
 
       {/* Hero */}
-      <div className="border-b border-navy/10 px-8 py-16 md:px-12 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-xs uppercase tracking-[0.25em] text-navy/40">
+      <div className="relative overflow-hidden border-b border-navy/10 bg-navy px-8 py-24 md:px-12 md:py-36">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${HERO_IMAGE})` }}
+        />
+
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/30" />
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <p className="mb-4 font-neue font-light text-xs uppercase tracking-[0.25em] text-white/50">
             {t('eyebrow')}
           </p>
-          <h1 className="font-primary text-6xl uppercase tracking-wide text-navy md:text-8xl">
-            Blog
+          <h1 className="font-primary max-w-3xl text-4xl uppercase tracking-wide text-white md:text-6xl">
+            {t('heroTitle')}
           </h1>
+          <p className="mt-6 max-w-xl font-neue font-light text-sm leading-relaxed text-white/70">
+            {t('heroDescription')}
+          </p>
         </div>
       </div>
 
-      {/* Featured editorial grid */}
-      {!activeCategory && page === 1 && featured.length > 0 && (
-        <div className="px-8 pt-16 md:px-12">
-          <div className="mx-auto max-w-7xl">
-            <FeaturedPosts posts={featured} />
-          </div>
-        </div>
-      )}
+      {/* Category carousels */}
+      {categoryData.map(({ key, title, description, posts }) => (
+        <CategoryCarousel
+          key={key}
+          title={title}
+          description={description}
+          posts={posts}
+        />
+      ))}
 
-      {/* Grid + filters */}
-      <div className="px-8 py-16 md:px-12 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <CategoryFilter categories={categories} active={activeCategory} />
-          <BlogGrid posts={pageResult.data} />
-          <Pagination page={page} totalPages={totalPages} />
-        </div>
-      </div>
+      {/* All posts section — client component with filters + load more */}
+      <AllPostsSection locale={locale} labels={allPostsLabels} />
     </>
   )
 }

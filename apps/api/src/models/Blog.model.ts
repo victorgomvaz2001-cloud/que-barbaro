@@ -13,7 +13,7 @@ const blogSchema = new Schema<IBlogDocument>(
     author: { type: String, required: true },
     authorImage: String,
     featured: { type: Boolean, default: false },
-    category: String,
+    category: { type: String, required: true },
     locale: { type: String, default: 'es' },
     publishedAt: { type: String, required: true },
     draft: { type: Boolean, default: true },

@@ -78,7 +78,7 @@ export default function EditBlogPostPage() {
         content: post?.content ?? '',
         image: headerImage || undefined,
         excerpt: get('excerpt') || undefined,
-        category: get('category') || undefined,
+        category: get('category'),
         author: get('author'),
         authorImage: authorImage || undefined,
         featured: (form.elements.namedItem('featured') as HTMLInputElement)?.checked ?? false,
@@ -298,8 +298,16 @@ export default function EditBlogPostPage() {
                       <textarea name="excerpt" rows={2} defaultValue={post.excerpt ?? ''} placeholder="Breve descripción (opcional)" className={inputCls} />
                     </div>
                     <div>
-                      <label className={labelCls}>Categoría</label>
-                      <input name="category" defaultValue={post.category ?? ''} placeholder="ej. Tendencias, Cuidado…" className={inputCls} />
+                      <label className={labelCls}>Categoría <span className="text-red-500">*</span></label>
+                      <select name="category" required defaultValue={post.category ?? ''} className={inputCls}>
+                        <option value="" disabled>Selecciona una categoría</option>
+                        <option value="Cuidado capilar">Cuidado capilar</option>
+                        <option value="Coloración">Coloración</option>
+                        <option value="Rizos y método curly">Rizos y método curly</option>
+                        <option value="Tendencias">Tendencias</option>
+                        <option value="Eventos y ocasiones especiales">Eventos y ocasiones especiales</option>
+                        <option value="Noticias de Qué Bárbaro">Noticias de Qué Bárbaro</option>
+                      </select>
                     </div>
                     <div>
                       <label className={labelCls}>Idioma</label>

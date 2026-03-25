@@ -71,10 +71,42 @@
   },
   "blog": {
     "eyebrow": "Trends · Care · Inspiration",
+    "heroTitle": "Qué Bárbaro Blog: hairdressing, beauty and hair care",
+    "heroDescription": "At Qué Bárbaro we want this space to be genuinely useful. Not a blog of generic content, but a place to find clear information about hairdressing, colouring, hair treatments and beauty, written by people who work with hair every day.",
     "backToBlog": "← Back to blog",
     "by": "By",
     "notFound": "Article not found.",
-    "notFoundDesc": "The article you're looking for doesn't exist or has been removed."
+    "notFoundDesc": "The article you're looking for doesn't exist or has been removed.",
+    "allPostsTitle": "All articles",
+    "searchPlaceholder": "Search by name, slug or author…",
+    "filterDate": "Date",
+    "sortLabel": "Sort",
+    "sortDateDesc": "Newest first",
+    "sortDateAsc": "Oldest first",
+    "sortAlphaAsc": "A → Z",
+    "sortAlphaDesc": "Z → A",
+    "loadMore": "Load more articles",
+    "noResults": "No articles found.",
+    "categories": {
+      "Cuidado capilar": {
+        "description": "Common questions about hydration, repair, frizz and home routines. We'll also cover GOA Organics, Keratin Infusion, Softy Mood, Sublime 10.31 and Bae Berry treatments, and how to know which one your hair really needs."
+      },
+      "Coloración": {
+        "description": "Everything about balayage, blondes, highlights and colour correction. How to maintain the Brazilian Style and extend the time between salon visits so your colour keeps looking as good as the first day."
+      },
+      "Rizos y método curly": {
+        "description": "Content specifically for curly hair: how to care for curls at home, which products work and why the Danza de Rizos cut makes a difference over a conventional cut."
+      },
+      "Tendencias": {
+        "description": "Styles, shapes and changes that define the moment, always with a realistic eye on what actually works in the salon and in everyday life."
+      },
+      "Eventos y ocasiones especiales": {
+        "description": "Tips for brides, hen parties, evening looks. How to prepare for a big event and get the most from Qué Bárbaro's services when the day really matters."
+      },
+      "Noticias de Qué Bárbaro": {
+        "description": "Salon news, new services, new team members and everything that reinforces Qué Bárbaro's identity as a reference hairdresser in Torremolinos."
+      }
+    }
   },
   "galeria": {
     "eyebrow": "Our work",

@@ -71,10 +71,42 @@
   },
   "blog": {
     "eyebrow": "Tendencias · Cuidado · Inspiración",
+    "heroTitle": "Blog de Qué Bárbaro: peluquería, belleza y cuidado capilar",
+    "heroDescription": "En Qué Bárbaro queremos que este espacio sea útil de verdad. No un blog de contenido genérico, sino un lugar donde encontrar información clara sobre peluquería, coloración, tratamientos capilares y belleza, escrita por gente que trabaja con el cabello todos los días.",
     "backToBlog": "← Volver al blog",
     "by": "Por",
     "notFound": "Artículo no encontrado.",
-    "notFoundDesc": "El artículo que buscas no existe o ha sido eliminado."
+    "notFoundDesc": "El artículo que buscas no existe o ha sido eliminado.",
+    "allPostsTitle": "Todos los artículos",
+    "searchPlaceholder": "Buscar por nombre, slug o autor…",
+    "filterDate": "Fecha",
+    "sortLabel": "Ordenar",
+    "sortDateDesc": "Más reciente primero",
+    "sortDateAsc": "Más antiguo primero",
+    "sortAlphaAsc": "A → Z",
+    "sortAlphaDesc": "Z → A",
+    "loadMore": "Cargar más artículos",
+    "noResults": "No se encontraron artículos.",
+    "categories": {
+      "Cuidado capilar": {
+        "description": "Dudas habituales sobre hidratación, reparación, encrespamiento y rutinas en casa. También hablaremos de los tratamientos GOA Organics, Keratin Infusion, Softy Mood, Sublime 10.31 y Bae Berry, y cómo saber cuál necesita realmente tu cabello."
+      },
+      "Coloración": {
+        "description": "Todo sobre balayage, rubios, mechas y corrección de color. Cómo mantener el Estilo Brasileño, cómo alargar el volver al salón para que el color siga luciendo como el primer día."
+      },
+      "Rizos y método curly": {
+        "description": "Contenido específico para cabellos rizados: cómo cuidar los rizos en casa, qué productos funcionan y por qué la Danza de Rizos marca la diferencia frente a un corte convencional."
+      },
+      "Tendencias": {
+        "description": "Estilos, formas y cambios que marcan el momento, siempre con una mirada realista sobre lo que de verdad funciona en el salón y en la vida diaria."
+      },
+      "Eventos y ocasiones especiales": {
+        "description": "Consejos para novias, para despedidas, para looks de noche. Cómo prepararse para un evento grande y sacarle el máximo partido a los servicios de Qué Bárbaro cuando el día importa de verdad."
+      },
+      "Noticias de Qué Bárbaro": {
+        "description": "Novedades del salón, nuevos servicios, incorporaciones y todo lo que ayude a reforzar la identidad de Qué Bárbaro como peluquería de referencia en Torremolinos."
+      }
+    }
   },
   "galeria": {
     "eyebrow": "Nuestro trabajo",
