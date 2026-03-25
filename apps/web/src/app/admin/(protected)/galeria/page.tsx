@@ -14,7 +14,7 @@ import type {
 
 // ── Photo form modal (create + edit) ──────────────────────────────────────────
 
-const CATEGORIES = ['Estilismo', 'Color', 'Corte', 'Tratamientos', 'Barbería', 'Beauty', 'Espacio', 'Otro']
+const CATEGORIES = ['Estilismo', 'Color', 'Corte', 'Tratamientos', 'Barbería', 'Beauty', 'Espacio', 'Antes-Después', 'Otro']
 
 function PhotoFormModal({
   url,
