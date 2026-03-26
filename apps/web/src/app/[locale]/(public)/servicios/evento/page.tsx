@@ -6,9 +6,9 @@ import SEOHead from '@/components/SEOHead'
 const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 
 const IMAGES = [
-  `${S3}/service6.jpg`,
-  `${S3}/service2.jpg`,
-  `${S3}/service5.jpg`,
+  `${S3}/packnovianovio.webp`,
+  `${S3}/packdespedida.webp`,
+  `${S3}/packcumplean%CC%83os.webp`,
 ]
 
 type Treatment = { name: string; description: string }

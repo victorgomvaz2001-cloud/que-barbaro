@@ -295,22 +295,128 @@ export default function ElSalonSlider() {
 
         /* ── 7. EQUIPO ── */
         if (id === 'equipo') {
-          const s = tRaw.raw('equipo') as { label: string; title: string; text: string }
+          const people: { name: string; role?: string; desc: string }[] = [
+            {
+              name: 'Antonio',
+              role: 'estilista Senior',
+              desc: 'Todos los servicios excepto maquillaje, manicura y pedicura',
+            },
+            {
+              name: 'Carmen',
+              role: 'estilista Junior',
+              desc: 'Ademas de todos los servicios de corte, peinados y técnicos de color así como los tratamientos de Goa Organics, realiza maquillaje, manicura y pedicura',
+            },
+            {
+              name: 'Aurelio',
+              desc: 'Realiza los tratamientos de Goa Organics: Sublime 10.31, Bae Berry, Softy Mood y Keratin Infusión',
+            },
+          ]
           return (
-            <section key={id} id={id} ref={el => { sectionRefs.current[i] = el }} className="relative flex h-screen w-full items-end overflow-hidden" aria-label={s.label}>
+            <section
+              key={id}
+              id={id}
+              ref={el => {
+                sectionRefs.current[i] = el
+              }}
+              className="relative flex h-screen w-full flex-col items-center overflow-hidden"
+              aria-label="El equipo de Qué Bárbaro"
+            >
               {bg}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"/>
               <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-transparent to-transparent"/>
-              <div className="relative z-10 ml-auto w-full max-w-lg px-10 md:px-16 pb-20 text-right">
-                <p className="font-neue text-[11px] uppercase tracking-[0.3em] text-white/50 mb-4" style={anim(active, 200, mounted)}>- {s.label}</p>
-                <h2 className="font-neue font-light text-white uppercase leading-[0.9] mb-6"
-                  style={{ fontSize: 'clamp(3rem,6vw,5rem)', whiteSpace: 'pre-line', ...anim(active, 300, mounted) }}>
-                  {s.title}
+              <div className="relative z-10 w-full max-w-[1680px] px-10 md:px-24 pt-16">
+                <h2
+                  className="font-neue font-light text-white uppercase leading-[0.9] mb-6 text-center"
+                  style={{ fontSize: 'clamp(3rem,6vw,5rem)', ...anim(active, 300, mounted) }}
+                >
+                  El equipo de Qué Bárbaro
                 </h2>
-                <div className="ml-auto h-px bg-white/25 mb-6" style={{ width: active ? '48px' : '0px', transition: 'width 0.6s ease', transitionDelay: active ? '460ms' : '0ms' }}/>
-                <p className="font-secondary text-white/65 leading-relaxed" style={{ fontSize: 'clamp(0.9rem,1.2vw,1rem)', ...anim(active, 440, mounted) }}>
-                  {s.text}
+                <div
+                  className="mx-auto h-px bg-white/25 mb-6"
+                  style={{ width: active ? '48px' : '0px', transition: 'width 0.6s ease', transitionDelay: active ? '460ms' : '0ms' }}
+                />
+                <p
+                  className="font-secondary text-white/65 leading-relaxed text-center"
+                  style={{ fontSize: 'clamp(0.9rem,1.2vw,1rem)', ...anim(active, 440, mounted) }}
+                >
+                  Detrás del salón hay profesionales que entienden la peluquería como oficio, como sensibilidad estética y como trabajo bien hecho. Reunimos perfiles especializados en corte, coloración, tratamientos y estilismo para poder dar respuesta a distintos tipos de cliente y distintas necesidades capilares. Nuestra forma de trabajar se basa en el criterio compartido, la actualización constante y el compromiso con el detalle.
                 </p>
+              </div>
+              <div className="relative z-10 w-full flex flex-row items-start justify-center gap-12 md:gap-24 pb-16 px-8">
+                {people.map((p, pi) => (
+                  <div
+                    key={p.name}
+                    className="flex flex-col items-center w-full max-w-[340px]"
+                    style={
+                      mounted
+                        ? {
+                            opacity: active ? 1 : 0,
+                            transform: active ? 'translateY(0)' : 'translateY(30px)',
+                            transition: 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)',
+                            transitionDelay: active ? `${250 + pi * 200}ms` : '0ms',
+                          }
+                        : {}
+                    }
+                  >
+                    <svg
+                      viewBox="0 0 400 500"
+                      role="img"
+                      aria-label={p.name}
+                      className="w-auto"
+                      style={{ height: 'clamp(180px, 34vh, 360px)', maxWidth: '280px' }}
+                    >
+                      <defs>
+                        <linearGradient id="teamSvgGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.22" />
+                          <stop offset="100%" stopColor="#ffffff" stopOpacity="0.05" />
+                        </linearGradient>
+                      </defs>
+                      <rect x="0" y="0" width="400" height="500" fill="url(#teamSvgGrad)" opacity="0.55" rx="28" />
+                      <path
+                        d="M200 175c36.5 0 66-29.5 66-66S236.5 43 200 43s-66 29.5-66 66 29.5 66 66 66Z"
+                        fill="#ffffff"
+                        opacity="0.22"
+                      />
+                      <path
+                        d="M70 360c18-92 78-156 130-156s112 64 130 156H70Z"
+                        fill="#ffffff"
+                        opacity="0.20"
+                      />
+                      <path
+                        d="M200 240c-46 0-82 33-104 76 26 34 62 56 104 56s78-22 104-56c-22-43-58-76-104-76Z"
+                        fill="#ffffff"
+                        opacity="0.08"
+                      />
+                      <path
+                        d="M120 406h160"
+                        stroke="#ffffff"
+                        strokeOpacity="0.16"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <div
+                      className="h-px bg-white/25 mt-2 mb-1"
+                      style={{ width: active ? '48px' : '0px', transition: 'width 0.6s ease', transitionDelay: active ? `${500 + pi * 200}ms` : '0ms' }}
+                    />
+                    <p className="font-neue font-light text-white uppercase text-center" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)' }}>
+                      {p.name}
+                    </p>
+                    <p
+                      className="font-neue text-white/50 uppercase tracking-[0.22em] text-center mt-1"
+                      style={{ fontSize: '10px', opacity: p.role ? 1 : 0 }}
+                      aria-hidden={p.role ? undefined : true}
+                    >
+                      {p.role ?? ''}
+                    </p>
+                    <p
+                      className="font-secondary text-white/70 leading-relaxed text-center mt-3"
+                      style={{ fontSize: 'clamp(0.9rem,1.15vw,1rem)', maxWidth: '30ch', lineHeight: 1.45 }}
+                    >
+                      {p.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </section>
           )
