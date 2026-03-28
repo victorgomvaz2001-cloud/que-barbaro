@@ -212,24 +212,12 @@ export default function ServiciosColor() {
                 }}
               >
                 <div
-                  className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12"
+                  className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-start"
                   style={{ paddingTop: 'clamp(1.75rem, 2.5vw, 2.5rem)', paddingBottom: 'clamp(1.75rem, 2.5vw, 2.5rem)' }}
                 >
 
-                  {/* ── Thumbnail ─────────────────────────────────── */}
-                  {ROW_IMAGES[i] && (
-                    <div className="hidden md:block relative shrink-0 overflow-hidden"
-                         style={{ width: '72px', height: '96px' }}>
-                      <Image
-                        src={ROW_IMAGES[i]!}
-                        alt={service.name}
-                        fill
-                        sizes="72px"
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-navy/20" aria-hidden />
-                    </div>
-                  )}
+                  {/* ── Text block ────────────────────────────────── */}
+                  <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 flex-1 min-w-0">
 
                   {/* ── Left: index + name + tagline ──────────────── */}
                   <div className="flex items-start gap-5 md:gap-7 flex-1 min-w-0">
@@ -302,6 +290,25 @@ export default function ServiciosColor() {
                     </span>
 
                   </div>
+
+                  </div>{/* end text block */}
+
+                  {/* ── Large image panel ─────────────────────────── */}
+                  {ROW_IMAGES[i] && (
+                    <div
+                      className="hidden md:block relative shrink-0 overflow-hidden self-stretch"
+                      style={{ width: 'clamp(180px, 22vw, 300px)', minHeight: '220px' }}
+                    >
+                      <Image
+                        src={ROW_IMAGES[i]!}
+                        alt={service.name}
+                        fill
+                        sizes="(max-width: 1280px) 22vw, 300px"
+                        className="object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-navy/15" aria-hidden />
+                    </div>
+                  )}
 
                 </div>
               </div>
