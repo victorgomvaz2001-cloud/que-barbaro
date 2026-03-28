@@ -42,7 +42,7 @@ export default async function Hero() {
         style={{ aspectRatio: '16 / 9', minHeight: '320px', maxHeight: '780px' }}
       >
         <Image
-          src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/hero.jpg"
+          src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp"
           alt="Interior del salón Qué Bárbaro en Torremolinos"
           fill
           sizes="100vw"
