@@ -107,8 +107,8 @@
   },
   "blog": {
     "eyebrow": "Trends · Care · Inspiration",
-    "heroTitle": "Qué Bárbaro Blog: hairdressing, beauty and hair care",
-    "heroDescription": "At Qué Bárbaro we want this space to be genuinely useful. Not a blog of generic content, but a place to find clear information about hairdressing, colouring, hair treatments and beauty, written by people who work with hair every day.",
+    "heroTitle": "Qué Bárbaro Blog",
+    "heroDescription": "Hairdressing, colour, hair care and trends. Written by the salon team.",
     "backToBlog": "← Back to blog",
     "by": "By",
     "notFound": "Article not found.",
@@ -142,39 +142,80 @@
       "Noticias de Qué Bárbaro": {
         "description": "Salon news, new services, new team members and everything that reinforces Qué Bárbaro's identity as a reference hairdresser in Torremolinos."
       }
-    }
+    },
+    "allCategories": "All",
+    "filterCategory": "Category"
   },
   "galeria": {
-    "eyebrow": "Gallery",
-    "title": "The work of Qué Bárbaro, in images",
-    "intro1": "The Qué Bárbaro gallery shows a part of what we do every day in the salon. Real results, colouring details, cuts, finishes, transformations and the atmosphere of the space. We don't chase eye-catching effects that only work in photos. We pursue beautiful work, well-crafted and coherent with the person wearing it.",
-    "intro2": "This page is the best way to understand how we work and what kind of result you can expect when you come to see us.",
-    "resultsTitle": "Real results, no artifice",
-    "resultsText": "Each image reflects our way of working: with detail, personalisation and aesthetic honesty. Nothing is forced or edited to look like something it isn't.",
-    "cortesTitle": "Cuts & styling",
-    "cortesText": "The Artístico Design, the Danza de Rizos, Glamour en Altura, the Alfombra Roja. Shape, movement and style in every piece, for every person.",
-    "colorTitle": "Colour & blondes",
-    "colorText": "Balayage Estilo Brasileño, Babylights Silk Shine, Balayage Rubio Deslumbrante. The luminosity and naturalness we pursue in every colour.",
-    "tratTitle": "Treatments & finishes",
-    "tratText": "The visible effect of GOA Organics: texture transformation, restored shine, healthier and more manageable hair from root to tip.",
-    "makeupTitle": "Make-up & events",
-    "makeupText": "Glamour Noche, brides, hen parties and birthdays. The magic of special days, documented with all the care it deserves.",
-    "beforeAfterTitle": "Before & after",
-    "beforeAfterText": "Real evolution, real improvement and real transformation, always from a clean and credible aesthetic perspective. Because changes that last are the ones built well.",
-    "espacioTitle": "The Qué Bárbaro space",
-    "espacioText": "The salon atmosphere is part of the experience. This section shows the interior of Qué Bárbaro: the space where we work every day and the care with which it has been designed so that every visit feels different.",
-    "ctaTitle": "Book if you like what you see",
-    "ctaText": "If the gallery convinces you, we invite you to experience it in person. Book your appointment and let the Qué Bárbaro team advise you personally.",
-    "bookCta": "Book an appointment",
-    "comingSoon": "Coming soon"
+    "hero": {
+      "eyebrow": "Gallery · Qué Bárbaro",
+      "title": "Gallery",
+      "subtitle": "— Qué Bárbaro",
+      "description": "Real results: colour, cuts, treatments, events and the salon interior. The best way to understand how we work.",
+      "allCategories": "All",
+      "categories": [
+        "Cuts & styling",
+        "Colour & blondes",
+        "Treatments",
+        "Make-up",
+        "Before & after",
+        "The salon",
+        "Packs & events"
+      ]
+    },
+    "grid": {
+      "eyebrow": "Recent work",
+      "title": "Real results",
+      "noImages": "Coming soon"
+    },
+    "antesYDespues": {
+      "eyebrow": "Transformations",
+      "title": "Before & after",
+      "before": "Before",
+      "after": "After"
+    },
+    "espacio": {
+      "eyebrow": "The salon",
+      "title": "The Qué Bárbaro space",
+      "description": "The salon atmosphere is part of the experience."
+    },
+    "eventos": {
+      "eyebrow": "Packs & events",
+      "title": "Weddings, hen parties & celebrations",
+      "description": "Weddings, hen and stag parties, birthdays. We coordinate hair, make-up and treatments so the whole group looks perfect.",
+      "cta": "Have an event? We'll organise everything.",
+      "whatsapp": "Ask on WhatsApp"
+    },
+    "cta": {
+      "eyebrow": "Like what you see?",
+      "title": "Book your appointment",
+      "description": "Let the Qué Bárbaro team guide you.",
+      "button": "Book an appointment",
+      "watermark": "Book"
+    }
   },
   "contacto": {
-    "title": "Write to us or come and see us, we're in Torremolinos",
-    "intro": "If you want to get in touch with Qué Bárbaro, have questions about a service, or want to know how the salon works before booking, you'll find all the information here. We want the process to be simple and for you to arrive at your first appointment with everything clear and ready to enjoy.",
+    "title": "Contact — Qué Bárbaro",
+    "intro": "All the information to get in touch or find your way to the salon.",
     "whereTitle": "Where we are",
     "whereText": "Our salon is in Torremolinos, Málaga. The location is convenient and accessible for local clients as well as people from surrounding areas looking for a salon with a more considered and personal approach.",
     "hoursTitle": "Opening hours",
-    "hoursText": "We work by appointment to ensure personalised attention and the time each service requires. Check our updated hours and choose the option that works best for you.",
+    "hoursText": "We work by appointment to ensure personalised attention and the time each service requires.",
+    "hoursNote": "By appointment only.",
+    "schedule": [
+      {
+        "days": "Tuesday to Friday",
+        "hours": "10:00–19:00"
+      },
+      {
+        "days": "Saturday",
+        "hours": "10:00–14:00"
+      },
+      {
+        "days": "Sunday & Monday",
+        "hours": "Closed"
+      }
+    ],
     "phoneTitle": "Phone & WhatsApp",
     "phoneText": "For questions about services, availability or event packages, write to us or call us directly. We're here to help you find what you need.",
     "followTitle": "Follow us",
@@ -309,106 +350,107 @@
     }
   },
   "elSalon": {
-    "intro": {
-      "label": "The Concept",
-      "title": [
-        "A space",
-        "to feel",
-        "yourself."
-      ],
-      "text": "A refuge where personal care becomes a ritual. Every detail has been thought through so you walk in as a client and leave as the protagonist."
+    "hero": {
+      "location": "Torremolinos, Málaga",
+      "title": "The salon",
+      "brand": "Qué Bárbaro",
+      "body": "A salon with its own identity in Torremolinos: elegant without being cold, technical without feeling distant. Born from a simple idea: that hairdressing can be done better."
     },
     "historia": {
-      "label": "The Story",
-      "title": "Torremolinos,\n1st July\n2025.",
-      "text": "Missael Lundqvist and Aurelio Tabares founded Qué Bárbaro! with one clear conviction: Málaga deserved a salon at a different level. Together they created a space in Torremolinos where beauty, design and hospitality are experienced in a different way."
-    },
-    "filosofia": {
-      "label": "Philosophy",
-      "quote": "Qué Bárbaro! reinvents the way you experience a hair salon, from the moment you walk through the door to long after you leave.",
-      "sub": "A refuge for those who seek to take care of themselves, feel unique and live an unforgettable sensory experience."
-    },
-    "vision": {
-      "label": "Vision & Values",
-      "title": "A brand\nthat leaves\na mark.",
-      "text": "We exist because we believe hair care can be so much more than a cut or a colour.",
-      "values": [
-        [
-          "Beauty with purpose",
-          "every detail is designed to move you"
-        ],
-        [
-          "5-star attention",
-          "every client is VIP"
-        ],
-        [
-          "Design & identity",
-          "aesthetics that tell stories"
-        ],
-        [
-          "Warmth & humanity",
-          "genuine closeness, no pretence"
-        ],
-        [
-          "Constant learning",
-          "talent is nourished every day"
-        ]
-      ]
+      "eyebrow": "How Qué Bárbaro came to be",
+      "title": "Story",
+      "body": "We built the salon from a constant pursuit of quality: in the cut, colouring, hair diagnosis, the treatment and the atmosphere. In an industry where speed often wins, we chose to work with time, listening and judgement.",
+      "foundedBy": "Founded by",
+      "founders": "Missael Lundqvist & Aurelio Tabares"
     },
     "experiencia": {
-      "label": "The Experience",
-      "title": "Every visit,\na ritual.",
-      "text": "Affordable emotional luxury.",
-      "rituals": [
+      "eyebrow": "The experience",
+      "titleLine1": "The Qué Bárbaro",
+      "titleLine2": "experience",
+      "body": "We want every visit to the salon to be a real pause. We take care of the atmosphere, the pace of the appointment and the guidance from the very first moment.",
+      "quote1": "The result matters.",
+      "quote2": "So does how you get there.",
+      "pillars": [
         {
           "n": "01",
-          "name": "Sensory welcome",
-          "desc": "Smile and scented cold towel"
+          "title": "The atmosphere",
+          "desc": "A space designed to make you feel comfortable from the moment you walk in."
         },
         {
           "n": "02",
-          "name": "Exclusive care",
-          "desc": "Special drinks menu"
+          "title": "The pace",
+          "desc": "Unhurried appointments. Every service has its time."
         },
         {
           "n": "03",
-          "name": "Emotional space",
-          "desc": "Unique décor, music and scents"
-        },
-        {
-          "n": "04",
-          "name": "Personal attention",
-          "desc": "By your name, by your story"
-        },
-        {
-          "n": "05",
-          "name": "Memorable farewell",
-          "desc": "With follow-up and gratitude"
-        }
-      ]
-    },
-    "fundadores": {
-      "label": "The Founders",
-      "founders": [
-        {
-          "name": "Missael Lundqvist",
-          "role": "Co-Founder & CEO"
-        },
-        {
-          "name": "Aurelio Tabares",
-          "role": "Co-Founder & Creative Director"
+          "title": "The guidance",
+          "desc": "We guide you from diagnosis to the final result."
         }
       ]
     },
     "equipo": {
-      "label": "The Team",
-      "title": "Talent you\nnotice in\nevery cut.",
-      "text": "Professionals with continuous training, their own vision and a genuine dedication to every person who walks through our door."
+      "eyebrow": "The team",
+      "title": "Who we are",
+      "intro": "Behind the salon are professionals who understand hairdressing as a craft, as aesthetic sensibility and as work done well.",
+      "members": [
+        {
+          "name": "Missael Lundqvist",
+          "role": "Co-founder & Director",
+          "bio": "Leads the salon's vision with an eye for detail and an obsession with quality service."
+        },
+        {
+          "name": "Aurelio Tabares",
+          "role": "Co-founder & GOA Organics Specialist",
+          "bio": "Expert in hair treatments: Sublime 10.31, Bae Berry, Softy Mood and Keratin Infusion."
+        },
+        {
+          "name": "Antonio",
+          "role": "Senior Stylist",
+          "bio": "Masters all cut and colour services. The team's technical reference."
+        },
+        {
+          "name": "Carmen",
+          "role": "Junior Stylist",
+          "bio": "Specialised in cuts, styling, colour techniques, GOA treatments, make-up, manicure and pedicure."
+        }
+      ]
     },
     "marcas": {
-      "label": "The Brands",
-      "title": "Only the best\non your hair.",
-      "text": "We work exclusively with brands that share our philosophy: real performance, quality ingredients and results that last."
+      "eyebrow": "The brands we work with",
+      "title": "Brands",
+      "goa": {
+        "index": "01",
+        "nameLines": [
+          "GOA",
+          "Organics"
+        ],
+        "products": [
+          "Keratin Infusion",
+          "Softy Mood",
+          "Sublime 10.31",
+          "Bae Berry"
+        ],
+        "desc": "To address every hair need with precision and visible results from the very first session."
+      },
+      "oribe": {
+        "index": "02",
+        "nameLines": [
+          "ORIBE"
+        ],
+        "products": [],
+        "desc": "A more luxurious, sensorial dimension for those seeking a more exclusive salon experience."
+      }
+    },
+    "opiniones": {
+      "eyebrow": "What our clients say",
+      "title": "Reviews"
+    },
+    "cta": {
+      "title": "Book your appointment",
+      "subtitle": "We will be delighted to advise you from the very first moment and help you find the service that best suits you.",
+      "button": "Book now",
+      "location": "Torremolinos, Málaga",
+      "watermark": "Appointment"
     }
   },
   "testimonials": {
@@ -537,5 +579,193 @@
         "hours": "Closed"
       }
     ]
+  },
+  "servicios": {
+    "hero": {
+      "eyebrow": "Torremolinos, Málaga",
+      "title": "Hair and beauty services",
+      "location": "in Torremolinos",
+      "body": "A selection of services focused on results and hair health. We work with a prior diagnosis, premium products and the time each service requires."
+    },
+    "nav": {
+      "cortes": "Cuts",
+      "color": "Colour",
+      "tratamientos": "Treatments",
+      "maquillaje": "Make-up",
+      "manicura": "Manicure",
+      "eventos": "Events"
+    },
+    "cortes": {
+      "anchor": "corte-peinado",
+      "eyebrow": "Cuts",
+      "title": "Cuts & styling",
+      "intro": "Every cut is thought through before it is executed: face structure, hair texture, lifestyle and upkeep. The result has to be yours.",
+      "services": [
+        {
+          "name": "Artístico Design",
+          "tagline": "Bespoke cut",
+          "desc": "Advanced, creative, fully personalised design cut. We find a shape that suits you, defines you and works effortlessly every day.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Danza de Rizos",
+          "tagline": "Curly method",
+          "desc": "Curly method for wavy and curly hair. Well-defined curls with structure, movement and no frizz. Fully personalised to each client's curl pattern.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Glamour en Altura",
+          "tagline": "Event styling · updo",
+          "desc": "Elegant, well-constructed updos for weddings, events, galas or any special occasion.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Alfombra Roja",
+          "tagline": "Event styling · waves",
+          "desc": "Hollywood waves: cinematic, luminous finish, silky hair, controlled volume and visible shine.",
+          "price": "from [X]€"
+        }
+      ]
+    },
+    "color": {
+      "anchor": "color-rubios",
+      "eyebrow": "Colour & blondes",
+      "title": "Colour",
+      "intro": "We start with diagnosis: base, hair history, skin tone and end goal. Colour looks better when there is thinking behind it.",
+      "services": [
+        {
+          "name": "Balayage Estilo Brasileño",
+          "tagline": "by length",
+          "desc": "Sun-kissed hair effect with soft transitions and a natural result that suits almost any base tone.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Babylights Silk Shine",
+          "tagline": "by length",
+          "desc": "Ultra-fine highlights applied with precision for subtle luminosity and a silky finish. For those who want shine and dimension without a drastic change.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Balayage Rubio Deslumbrante",
+          "tagline": "by length and base",
+          "desc": "Luminous, bold and well-executed blonde. Controlled bleaching and precise toning for a blonde that shines without looking artificial.",
+          "price": "from [X]€"
+        }
+      ]
+    },
+    "tratamientos": {
+      "anchor": "tratamientos",
+      "eyebrow": "GOA Organics hair treatments",
+      "title": "Treatments",
+      "intro": "We always start with a diagnosis. Visible results from the first session.",
+      "brand": "GOA Organics",
+      "services": [
+        {
+          "name": "Keratin Infusion",
+          "tagline": "GOA Organics",
+          "desc": "Progressively smooths, softens and reduces frizz. More manageable, shinier hair with a noticeably improved texture.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Softy Mood",
+          "tagline": "GOA Organics",
+          "desc": "Deep hydration. Restores the hair's elasticity, silky feel and the sensation of healthy hair from the first wash.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Sublime 10.31",
+          "tagline": "GOA Organics",
+          "desc": "Intensive hair reconstruction for damaged or weakened hair. Reinforces the fibre, restores consistency and improves heat response.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Bae Berry",
+          "tagline": "GOA Organics",
+          "desc": "Nutrition, shine and scalp wellbeing. A treatment that also works on your senses.",
+          "price": "from [X]€"
+        }
+      ]
+    },
+    "maquillaje": {
+      "anchor": "maquillaje-belleza",
+      "eyebrow": "Make-up",
+      "title": "Make-up",
+      "intro": "Part of the complete image concept. The same criteria and level of detail as with hair.",
+      "services": [
+        {
+          "name": "Glamour Noche",
+          "tagline": "",
+          "desc": "Intensity, impeccable finish and presence that lasts from start to finish of the night.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "¡Ay que me caso!",
+          "tagline": "includes pre-trial",
+          "desc": "Bridal make-up: long-lasting, luminous and fully adapted to your style. So you recognise yourself in every photograph.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "¡Me voy de fiesta!",
+          "tagline": "",
+          "desc": "Fresh, fun and full of personality. To shine effortlessly at nights out, events or celebrations.",
+          "price": "from [X]€"
+        }
+      ]
+    },
+    "manicura": {
+      "anchor": "manicura-belleza",
+      "eyebrow": "Manicure & beauty",
+      "title": "Manicure",
+      "intro": "Hand and foot care with the same quality standard we apply to every service.",
+      "services": [
+        {
+          "name": "Manicure",
+          "tagline": "",
+          "desc": "Complete hand care: filing, cuticles and polish. An impeccable finish that lasts.",
+          "price": "from [X]€"
+        },
+        {
+          "name": "Pedicure",
+          "tagline": "",
+          "desc": "Full foot treatment: exfoliation, hydration and polish. The care they deserve.",
+          "price": "from [X]€"
+        }
+      ]
+    },
+    "reserva": {
+      "anchor": "reservar",
+      "eyebrow": "Book your appointment",
+      "title": "Ready to start?",
+      "body": "Looking for a thoughtful cut, well-crafted colour or a treatment to improve your hair? Book your appointment and let the team guide you.",
+      "buttonPrimary": "Book now",
+      "buttonWhatsapp": "WhatsApp"
+    },
+    "eventos": {
+      "eyebrow": "Celebrate with us",
+      "title": "Events",
+      "description": "We make every special moment shine. We design bespoke beauty experiences for the most important days of your life.",
+      "packs": [
+        {
+          "tag": "Weddings",
+          "title": "Bridal Pack",
+          "description": "A unique day deserves unique preparation. Bridal hair and make-up with a prior trial included, so you arrive at the altar feeling perfect.",
+          "detail": "Trial + bridal hair + make-up"
+        },
+        {
+          "tag": "Hen Parties",
+          "title": "Hen Party Pack",
+          "description": "Because the last night of being single has to be memorable. Hair, make-up and special touches for the whole group.",
+          "detail": "Hair + make-up + surprise detail"
+        },
+        {
+          "tag": "Birthdays",
+          "title": "Celebration Pack",
+          "description": "Treat yourself or someone you love to a full beauty session to celebrate in style. Perfect for birthdays, anniversaries or any special occasion.",
+          "detail": "Hair + make-up + VIP attention"
+        }
+      ],
+      "cta": "Have something to celebrate?",
+      "whatsapp": "Tell us about your event"
+    }
   }
 }

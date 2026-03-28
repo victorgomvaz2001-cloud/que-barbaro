@@ -82,6 +82,20 @@ export default async function ContactoPage() {
               <p className="font-secondary text-base leading-relaxed text-navy/70 mb-5">
                 {t('hoursText')}
               </p>
+              <div className="mb-5">
+                {(t.raw('schedule') as { days: string; hours: string }[]).map(({ days, hours }) => (
+                  <div
+                    key={days}
+                    className="flex items-baseline justify-between gap-4 border-b border-navy/8 py-3 first:border-t"
+                  >
+                    <span className="font-neue font-light text-sm text-navy/60 uppercase tracking-[0.12em]">{days}</span>
+                    <span className="font-neue text-sm text-navy tabular-nums shrink-0">{hours}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="font-neue font-light text-xs uppercase tracking-[0.18em] text-orange mb-6">
+                {t('hoursNote')}
+              </p>
               <a
                 href="/reservar-cita"
                 className="inline-flex items-center gap-3 bg-navy text-cream font-neue text-[11px] tracking-[0.2em] uppercase px-6 py-3.5 hover:bg-orange transition-colors duration-300"

@@ -1,12 +1,8 @@
-import { getLocale, getMessages, getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
-import CategoryCarousel from '@/components/blog/CategoryCarousel'
 import AllPostsSection from '@/components/blog/AllPostsSection'
-import type { IBlogPost, BlogPageResponse } from '@falcanna/types'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
 const HERO_IMAGE = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/hero.jpg'
-const CATEGORY_LIMIT = 5
 
 const CATEGORIES = [
   'Cuidado capilar',
@@ -15,48 +11,15 @@ const CATEGORIES = [
   'Tendencias',
   'Eventos y ocasiones especiales',
   'Noticias de Qué Bárbaro',
-] as const
-
-async function fetchCategoryPosts(category: string, locale: string): Promise<IBlogPost[]> {
-  try {
-    const params = new URLSearchParams({
-      offset: '0',
-      limit: String(CATEGORY_LIMIT),
-      locale,
-      category,
-    })
-    const res = await fetch(`${API_URL}/blog/page?${params.toString()}`, {
-      next: { revalidate: 60 },
-    })
-    if (!res.ok) return []
-    const json: BlogPageResponse = await res.json()
-    return json.data
-  } catch {
-    return []
-  }
-}
+]
 
 export default async function BlogPage() {
-  const [locale, t, messages] = await Promise.all([getLocale(), getTranslations('blog'), getMessages()])
+  const [locale, t] = await Promise.all([getLocale(), getTranslations('blog')])
   const seoRoute = locale === 'es' ? '/blog' : `/${locale}/blog`
-
-  // Fetch all categories in parallel
-  const categoryResults = await Promise.all(
-    CATEGORIES.map((cat) => fetchCategoryPosts(cat, locale)),
-  )
-
-  const blogCategories = (messages as Record<string, unknown>)['blog'] as Record<string, Record<string, Record<string, string>>>
-  const catDescriptions = blogCategories['categories'] ?? {}
-
-  const categoryData = CATEGORIES.map((cat, i) => ({
-    key: cat,
-    title: cat,
-    description: catDescriptions[cat]?.['description'] ?? '',
-    posts: categoryResults[i] ?? [],
-  }))
 
   const allPostsLabels = {
     title: t('allPostsTitle'),
+    allCategories: t('allCategories'),
     searchPlaceholder: t('searchPlaceholder'),
     filterDate: t('filterDate'),
     sortLabel: t('sortLabel'),
@@ -97,18 +60,8 @@ export default async function BlogPage() {
         </div>
       </div>
 
-      {/* Category carousels */}
-      {categoryData.map(({ key, title, description, posts }) => (
-        <CategoryCarousel
-          key={key}
-          title={title}
-          description={description}
-          posts={posts}
-        />
-      ))}
-
-      {/* All posts section — client component with filters + load more */}
-      <AllPostsSection locale={locale} labels={allPostsLabels} />
+      {/* All posts — unified grid with category filter pills */}
+      <AllPostsSection locale={locale} categories={CATEGORIES} labels={allPostsLabels} />
     </>
   )
 }

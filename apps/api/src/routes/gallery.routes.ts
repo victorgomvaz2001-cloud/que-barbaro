@@ -4,13 +4,14 @@ import { authMiddleware } from '../middleware/auth.middleware'
 
 const router: IRouter = Router()
 
-// Public — paginated
-router.get('/', galleryController.getPage)
+// Public
+router.get('/',                galleryController.getPage)
+router.get('/section/:section', galleryController.getBySection)
 
 // Admin
-router.get('/admin/list', authMiddleware, galleryController.getAll)
-router.post('/admin',     authMiddleware, galleryController.create)
-router.put('/admin/:id',  authMiddleware, galleryController.update)
-router.delete('/admin/:id', authMiddleware, galleryController.remove)
+router.get('/admin/list',      authMiddleware, galleryController.getAll)
+router.post('/admin',          authMiddleware, galleryController.create)
+router.put('/admin/:id',       authMiddleware, galleryController.update)
+router.delete('/admin/:id',    authMiddleware, galleryController.remove)
 
 export default router

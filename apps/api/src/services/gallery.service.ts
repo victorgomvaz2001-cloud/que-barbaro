@@ -1,24 +1,34 @@
 import { Gallery } from '../models/Gallery.model'
-import type { IGalleryPhotoCreate, IGalleryPhotoUpdate } from '@falcanna/types'
+import type { GallerySection, IGalleryPhotoCreate, IGalleryPhotoUpdate } from '@falcanna/types'
 
 const DEFAULT_LIMIT = 16
 
 export class GalleryService {
-  async getPage(page: number, limit = DEFAULT_LIMIT) {
+  async getPage(page: number, limit = DEFAULT_LIMIT, section?: GallerySection) {
     const skip = (page - 1) * limit
+    const filter: Record<string, unknown> = { visible: true }
+    if (section) filter['section'] = section
+
     const [data, total] = await Promise.all([
-      Gallery.find({ visible: true })
+      Gallery.find(filter)
         .sort({ order: 1, createdAt: -1 })
         .skip(skip)
         .limit(limit)
         .lean(),
-      Gallery.countDocuments({ visible: true }),
+      Gallery.countDocuments(filter),
     ])
     return { data, total, page, hasMore: skip + data.length < total }
   }
 
-  async getAll() {
-    return Gallery.find().sort({ order: 1, createdAt: -1 }).lean()
+  async getBySection(section: GallerySection) {
+    return Gallery.find({ visible: true, section })
+      .sort({ order: 1, createdAt: -1 })
+      .lean()
+  }
+
+  async getAll(section?: GallerySection) {
+    const filter = section ? { section } : {}
+    return Gallery.find(filter).sort({ order: 1, createdAt: -1 }).lean()
   }
 
   async getById(id: string) {

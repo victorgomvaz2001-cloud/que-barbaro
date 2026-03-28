@@ -7,12 +7,12 @@ import LanguageSelector from './LanguageSelector'
 import Logo from '@/components/Logo'
 
 const SERVICE_SUB_ITEMS = [
-  { slug: 'cortes',     key: 'cortes' },
-  { slug: 'peinados',   key: 'peinados' },
-  { slug: 'maquillaje', key: 'maquillaje' },
-  { slug: 'goa',        key: 'goa' },
-  { slug: 'rubios',     key: 'rubios' },
-  { slug: 'evento',     key: 'evento' },
+  { anchor: 'corte-peinado',    key: 'cortes' },
+  { anchor: 'color-rubios',     key: 'color' },
+  { anchor: 'tratamientos',     key: 'tratamientos' },
+  { anchor: 'maquillaje-belleza', key: 'maquillaje' },
+  { anchor: 'manicura-belleza', key: 'manicura' },
+  { anchor: 'eventos',           key: 'eventos' },
 ] as const
 
 const NAV_ITEMS = [
@@ -27,7 +27,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const pathname = usePathname()
   const t = useTranslations('nav')
-  const tServices = useTranslations('featuredServices')
+  const tServices = useTranslations('servicios.nav')
   const [open, setOpen]                     = useState(false)
   const [closing, setClosing]               = useState(false)
   const [serviciosOpen, setServiciosOpen]   = useState(false)
@@ -148,7 +148,7 @@ export default function Navbar() {
           {SERVICE_SUB_ITEMS.map((sub) => (
             <Link
               key={sub.key}
-              href={`/servicios/${sub.slug}`}
+              href={`/servicios#${sub.anchor}`}
               onClick={() => setServiciosOpen(false)}
               className="font-secondary whitespace-nowrap text-[11px] uppercase tracking-[0.12em] text-cream/70 hover:text-cream transition-colors duration-150"
             >
@@ -236,7 +236,7 @@ export default function Navbar() {
                       {item.subItems.map((sub) => (
                         <Link
                           key={sub.key}
-                          href={`/servicios/${sub.slug}`}
+                          href={`/servicios#${sub.anchor}`}
                           onClick={() => closeMenu()}
                           className="font-secondary text-[clamp(0.875rem,3.5vw,1.125rem)] uppercase tracking-[0.1em] text-navy/55 hover:text-navy transition-colors duration-150 py-2"
                         >

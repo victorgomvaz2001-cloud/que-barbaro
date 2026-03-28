@@ -107,8 +107,8 @@
   },
   "blog": {
     "eyebrow": "Tendencias · Cuidado · Inspiración",
-    "heroTitle": "Blog de Qué Bárbaro: peluquería, belleza y cuidado capilar",
-    "heroDescription": "En Qué Bárbaro queremos que este espacio sea útil de verdad. No un blog de contenido genérico, sino un lugar donde encontrar información clara sobre peluquería, coloración, tratamientos capilares y belleza, escrita por gente que trabaja con el cabello todos los días.",
+    "heroTitle": "Blog de Qué Bárbaro",
+    "heroDescription": "Peluquería, coloración, cuidado capilar y tendencias. Escrito por el equipo del salón.",
     "backToBlog": "← Volver al blog",
     "by": "Por",
     "notFound": "Artículo no encontrado.",
@@ -142,39 +142,80 @@
       "Noticias de Qué Bárbaro": {
         "description": "Novedades del salón, nuevos servicios, incorporaciones y todo lo que ayude a reforzar la identidad de Qué Bárbaro como peluquería de referencia en Torremolinos."
       }
-    }
+    },
+    "allCategories": "Todos",
+    "filterCategory": "Categoría"
   },
   "galeria": {
-    "eyebrow": "Galería",
-    "title": "El trabajo de Qué Bárbaro, en imágenes",
-    "intro1": "La galería de Qué Bárbaro muestra una parte de lo que hacemos cada día en el salón. Resultados reales, detalles de coloración, cortes, acabados, transformaciones y el ambiente del espacio. No buscamos efectos llamativos que solo funcionen en foto. Buscamos trabajos bonitos, bien construidos y coherentes con la persona que los lleva.",
-    "intro2": "Esta página es la mejor manera de entender cómo trabajamos y qué tipo de resultado puedes esperar cuando vienes a vernos.",
-    "resultsTitle": "Resultados reales, sin artificios",
-    "resultsText": "Cada imagen es un reflejo de nuestra forma de trabajar: con detalle, con personalización y con honestidad estética. Nada está forzado ni editado para parecer lo que no es.",
-    "cortesTitle": "Cortes y peinados",
-    "cortesText": "El Artístico Design, la Danza de Rizos, el Glamour en Altura, la Alfombra Roja. Forma, movimiento y estilo en cada trabajo, para cada persona.",
-    "colorTitle": "Coloración y rubios",
-    "colorText": "Balayage Estilo Brasileño, Babylights Silk Shine, Balayage Rubio Deslumbrante. La luminosidad, la naturalidad que perseguimos en cada coloración.",
-    "tratTitle": "Tratamientos y acabados",
-    "tratText": "El efecto visible de GOA Organics: cambio de textura, brillo recuperado, cabello más sano y mejor comportado desde la raíz hasta las puntas.",
-    "makeupTitle": "Maquillaje y eventos",
-    "makeupText": "Glamour Noche, novias, despedidas y cumpleaños. La magia de los días especiales, documentada con todo el cuidado que merece.",
-    "beforeAfterTitle": "Antes y después",
-    "beforeAfterText": "Evolución real, mejora real y transformación real, siempre desde una perspectiva estética limpia y creíble. Porque los cambios que duran son los que se construyen bien.",
-    "espacioTitle": "El espacio de Qué Bárbaro",
-    "espacioText": "El ambiente del salón forma parte de la experiencia. Esta sección muestra el interior de Qué Bárbaro: el espacio donde trabajamos cada día y el cuidado con el que está pensado para que cada visita sea diferente.",
-    "ctaTitle": "Reserva si te gusta lo que ves",
-    "ctaText": "Si la galería te convence, te invitamos a vivirlo en persona. Reserva tu cita y déjate asesorar de forma personalizada por el equipo de Qué Bárbaro.",
-    "bookCta": "Reservar cita",
-    "comingSoon": "Próximamente"
+    "hero": {
+      "eyebrow": "Galería · Qué Bárbaro",
+      "title": "Galería",
+      "subtitle": "— Qué Bárbaro",
+      "description": "Resultados reales: coloración, cortes, tratamientos, eventos y el interior del salón. La mejor manera de entender cómo trabajamos.",
+      "allCategories": "Todos",
+      "categories": [
+        "Cortes y peinados",
+        "Coloración y rubios",
+        "Tratamientos",
+        "Maquillaje",
+        "Antes y después",
+        "El salón",
+        "Packs y eventos"
+      ]
+    },
+    "grid": {
+      "eyebrow": "Trabajos recientes",
+      "title": "Resultados reales",
+      "noImages": "Próximamente"
+    },
+    "antesYDespues": {
+      "eyebrow": "Transformaciones",
+      "title": "Antes y después",
+      "before": "Antes",
+      "after": "Después"
+    },
+    "espacio": {
+      "eyebrow": "El salón",
+      "title": "El espacio de Qué Bárbaro",
+      "description": "El ambiente del salón forma parte de la experiencia."
+    },
+    "eventos": {
+      "eyebrow": "Packs y eventos",
+      "title": "Bodas, despedidas y celebraciones",
+      "description": "Bodas, despedidas de soltera y soltero, cumpleaños. Coordinamos peinado, maquillaje y tratamientos para que todo el grupo esté perfecto.",
+      "cta": "¿Tienes un evento? Lo organizamos todo.",
+      "whatsapp": "Consultar por WhatsApp"
+    },
+    "cta": {
+      "eyebrow": "¿Te convence lo que ves?",
+      "title": "Reserva tu cita",
+      "description": "Déjate asesorar por el equipo de Qué Bárbaro.",
+      "button": "Reservar cita",
+      "watermark": "Reserva"
+    }
   },
   "contacto": {
-    "title": "Escríbenos o ven a vernos, estamos en Torremolinos",
-    "intro": "Si quieres ponerte en contacto con Qué Bárbaro, tienes dudas sobre algún servicio o quieres saber cómo funciona el salón antes de reservar, en esta página tienes toda la información. Queremos que el proceso sea sencillo y que llegues a tu primera cita con todo claro y con ganas de estar aquí.",
+    "title": "Contacto — Qué Bárbaro",
+    "intro": "Toda la información para ponerte en contacto o llegar al salón.",
     "whereTitle": "Dónde estamos",
     "whereText": "Nuestro salón está en Torremolinos, Málaga. La ubicación es cómoda y accesible tanto para clientes locales como para personas de los alrededores que buscan un salón con una propuesta más cuidada y personal.",
     "hoursTitle": "Horarios",
-    "hoursText": "Trabajamos con cita previa para garantizar una atención personalizada y el tiempo necesario en cada servicio. Consulta nuestros horarios actualizados y elige la opción que mejor te encaje.",
+    "hoursText": "Trabajamos con cita previa para garantizar una atención personalizada y el tiempo necesario en cada servicio.",
+    "hoursNote": "Trabajamos con cita previa.",
+    "schedule": [
+      {
+        "days": "Martes a Viernes",
+        "hours": "10:00–19:00"
+      },
+      {
+        "days": "Sábado",
+        "hours": "10:00–14:00"
+      },
+      {
+        "days": "Domingo y Lunes",
+        "hours": "Cerrado"
+      }
+    ],
     "phoneTitle": "Teléfono y WhatsApp",
     "phoneText": "Para dudas sobre servicios, disponibilidad o packs de eventos, escríbenos o llámanos directamente. Estamos aquí para ayudarte a encontrar lo que necesitas.",
     "followTitle": "Síguenos",
@@ -309,106 +350,107 @@
     }
   },
   "elSalon": {
-    "intro": {
-      "label": "El Concepto",
-      "title": [
-        "Un espacio",
-        "para sentirte",
-        "tú mismo."
-      ],
-      "text": "Un refugio donde el cuidado personal se convierte en ritual. Cada detalle ha sido pensado para que entres como cliente y salgas como protagonista."
+    "hero": {
+      "location": "Torremolinos, Málaga",
+      "title": "El salón",
+      "brand": "Qué Bárbaro",
+      "body": "Un salón con identidad propia en Torremolinos: elegante sin ser frío, técnico sin resultar distante. Nació de una idea sencilla: que la peluquería puede hacerse mejor."
     },
     "historia": {
-      "label": "La Historia",
-      "title": "Torremolinos,\n1 de julio\nde 2025.",
-      "text": "Missael Lundqvist y Aurelio Tabares fundaron ¡Qué Bárbaro! con una convicción clara: Málaga merecía un salón de otro nivel. Juntos crearon en Torremolinos un espacio donde la belleza, el diseño y la hospitalidad se viven de otra manera."
-    },
-    "filosofia": {
-      "label": "Filosofía",
-      "quote": "¡Qué Bárbaro! reinventa la forma de vivir un servicio de peluquería, desde que cruzas la puerta hasta mucho después de marcharte.",
-      "sub": "Un refugio para quienes buscan cuidarse, sentirse únicos y vivir una experiencia sensorial inolvidable."
-    },
-    "vision": {
-      "label": "Visión & Valores",
-      "title": "Una marca\nque deja\nhuella.",
-      "text": "Existimos porque creemos que la peluquería puede ser mucho más que un corte o un color.",
-      "values": [
-        [
-          "Belleza con propósito",
-          "cada detalle busca emocionar"
-        ],
-        [
-          "Atención 5 estrellas",
-          "cada cliente es VIP"
-        ],
-        [
-          "Diseño e identidad",
-          "estética que cuenta historias"
-        ],
-        [
-          "Calidez y humanidad",
-          "cercanía real, sin poses"
-        ],
-        [
-          "Formación constante",
-          "el talento se alimenta cada día"
-        ]
-      ]
+      "eyebrow": "Cómo surgió Qué Bárbaro",
+      "title": "Historia",
+      "body": "Construimos el salón desde la búsqueda constante de calidad: en el corte, la coloración, el diagnóstico capilar, el trato y el ambiente. En un sector donde muchas veces prima la rapidez, elegimos trabajar con tiempo, escucha y criterio.",
+      "foundedBy": "Fundado por",
+      "founders": "Missael Lundqvist & Aurelio Tabares"
     },
     "experiencia": {
-      "label": "La Experiencia",
-      "title": "Cada visita,\nun ritual.",
-      "text": "Lujo emocional asequible.",
-      "rituals": [
+      "eyebrow": "La experiencia",
+      "titleLine1": "La experiencia en",
+      "titleLine2": "Qué Bárbaro",
+      "body": "Queremos que venir al salón sea una pausa de verdad. Cuidamos la atmósfera, el ritmo de la cita y el acompañamiento desde el primer momento.",
+      "quote1": "El resultado importa.",
+      "quote2": "También importa cómo se llega a él.",
+      "pillars": [
         {
           "n": "01",
-          "name": "Bienvenida sensorial",
-          "desc": "Sonrisa y toalla fría aromatizada"
+          "title": "La atmósfera",
+          "desc": "Un espacio pensado para que te sientas cómodo desde que entras."
         },
         {
           "n": "02",
-          "name": "Cuidado exclusivo",
-          "desc": "Menú de bebidas especiales"
+          "title": "El ritmo",
+          "desc": "Citas sin prisas. Cada servicio tiene su tiempo."
         },
         {
           "n": "03",
-          "name": "Espacio emocional",
-          "desc": "Decoración, música y aromas propios"
-        },
-        {
-          "n": "04",
-          "name": "Atención única",
-          "desc": "Por tu nombre, por tu historia"
-        },
-        {
-          "n": "05",
-          "name": "Despedida memorable",
-          "desc": "Con seguimiento y agradecimiento"
-        }
-      ]
-    },
-    "fundadores": {
-      "label": "Los Fundadores",
-      "founders": [
-        {
-          "name": "Missael Lundqvist",
-          "role": "Co-Founder & CEO"
-        },
-        {
-          "name": "Aurelio Tabares",
-          "role": "Co-Founder & Creative Director"
+          "title": "El acompañamiento",
+          "desc": "Te guiamos desde el diagnóstico hasta el resultado final."
         }
       ]
     },
     "equipo": {
-      "label": "El Equipo",
-      "title": "Talento que\nse nota en\ncada corte.",
-      "text": "Profesionales con formación continua, criterio propio y una dedicación genuina hacia cada persona que pasa por nuestra puerta."
+      "eyebrow": "El equipo",
+      "title": "Quiénes somos",
+      "intro": "Detrás del salón hay profesionales que entienden la peluquería como oficio, como sensibilidad estética y como trabajo bien hecho.",
+      "members": [
+        {
+          "name": "Missael Lundqvist",
+          "role": "Co-fundador & Director",
+          "bio": "Lidera la visión del salón con un ojo para el detalle y una obsesión por el servicio bien hecho."
+        },
+        {
+          "name": "Aurelio Tabares",
+          "role": "Co-fundador & Especialista GOA Organics",
+          "bio": "Experto en tratamientos capilares: Sublime 10.31, Bae Berry, Softy Mood y Keratin Infusión."
+        },
+        {
+          "name": "Antonio",
+          "role": "Estilista Senior",
+          "bio": "Domina todos los servicios de corte y color. Referente técnico del equipo."
+        },
+        {
+          "name": "Carmen",
+          "role": "Estilista Junior",
+          "bio": "Especializada en corte, peinados, técnicas de color, tratamientos GOA, maquillaje, manicura y pedicura."
+        }
+      ]
     },
     "marcas": {
-      "label": "Las Marcas",
-      "title": "Solo lo mejor\nsobre tu cabello.",
-      "text": "Trabajamos exclusivamente con marcas que comparten nuestra filosofía: rendimiento real, ingredientes de calidad y resultados que se mantienen."
+      "eyebrow": "Las marcas con las que trabajamos",
+      "title": "Marcas",
+      "goa": {
+        "index": "01",
+        "nameLines": [
+          "GOA",
+          "Organics"
+        ],
+        "products": [
+          "Keratin Infusion",
+          "Softy Mood",
+          "Sublime 10.31",
+          "Bae Berry"
+        ],
+        "desc": "Para abordar cada necesidad capilar con precisión y resultados visibles desde la primera sesión."
+      },
+      "oribe": {
+        "index": "02",
+        "nameLines": [
+          "ORIBE"
+        ],
+        "products": [],
+        "desc": "Una dimensión más lujosa y sensorial para quienes buscan una experiencia de salón más exclusiva."
+      }
+    },
+    "opiniones": {
+      "eyebrow": "Lo que dicen nuestros clientes",
+      "title": "Opiniones"
+    },
+    "cta": {
+      "title": "Reserva tu cita",
+      "subtitle": "Estaremos encantados de asesorarte desde el primer momento y ayudarte a encontrar el servicio que mejor encaja contigo.",
+      "button": "Reservar cita",
+      "location": "Torremolinos, Málaga",
+      "watermark": "Cita"
     }
   },
   "testimonials": {
@@ -537,5 +579,193 @@
         "hours": "Cerrado"
       }
     ]
+  },
+  "servicios": {
+    "hero": {
+      "eyebrow": "Torremolinos, Málaga",
+      "title": "Servicios de peluquería y belleza",
+      "location": "en Torremolinos",
+      "body": "Una selección de servicios enfocados en el resultado y la salud del cabello. Trabajamos con diagnóstico previo, productos premium y el tiempo que cada servicio necesita."
+    },
+    "nav": {
+      "cortes": "Cortes",
+      "color": "Coloración",
+      "tratamientos": "Tratamientos",
+      "maquillaje": "Maquillaje",
+      "manicura": "Manicura",
+      "eventos": "Eventos"
+    },
+    "cortes": {
+      "anchor": "corte-peinado",
+      "eyebrow": "Cortes",
+      "title": "Cortes y peinados",
+      "intro": "Cada corte se piensa antes de ejecutarse: estructura del rostro, textura del cabello, estilo de vida y mantenimiento. El resultado tiene que ser tuyo.",
+      "services": [
+        {
+          "name": "Artístico Design",
+          "tagline": "Corte de diseño",
+          "desc": "Corte de diseño avanzado, creativo y completamente personalizado. Buscamos una forma que te favorezca, te identifique y que funcione en el día a día sin esfuerzo.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Danza de Rizos",
+          "tagline": "Método curly",
+          "desc": "Método curly para cabellos rizados y ondulados. Rizos bien definidos, con estructura, movimiento y sin frizz. Técnica completamente personalizada según el patrón de rizo de cada cliente.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Glamour en Altura",
+          "tagline": "Peinados de evento · recogido",
+          "desc": "Recogidos elegantes y bien construidos para bodas, eventos, galas o cualquier ocasión especial.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Alfombra Roja",
+          "tagline": "Peinados de evento · ondas",
+          "desc": "Ondas Hollywood: acabado cinematográfico y luminoso, cabello sedoso, volumen controlado y brillo que se nota.",
+          "price": "desde [X]€"
+        }
+      ]
+    },
+    "color": {
+      "anchor": "color-rubios",
+      "eyebrow": "Coloración y rubios",
+      "title": "Color",
+      "intro": "Trabajamos desde el diagnóstico: base, historial del cabello, tono de piel y objetivo final. El color queda mejor cuando hay pensamiento detrás.",
+      "services": [
+        {
+          "name": "Balayage Estilo Brasileño",
+          "tagline": "según longitud",
+          "desc": "Efecto de cabello iluminado por el sol, con transiciones suaves y un resultado natural que favorece a prácticamente cualquier tono base.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Babylights Silk Shine",
+          "tagline": "según longitud",
+          "desc": "Mechas ultrafinas aplicadas con precisión para dar luminosidad sutil y acabado sedoso. Para quienes quieren brillo y dimensión sin un cambio brusco.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Balayage Rubio Deslumbrante",
+          "tagline": "según longitud y base",
+          "desc": "Rubio luminoso, atrevido y bien ejecutado. Decoloración controlada y matización precisa para un rubio que brilla sin parecer artificial.",
+          "price": "desde [X]€"
+        }
+      ]
+    },
+    "tratamientos": {
+      "anchor": "tratamientos",
+      "eyebrow": "Tratamientos capilares GOA Organics",
+      "title": "Tratamientos",
+      "intro": "Empezamos siempre por el diagnóstico. Resultados visibles desde la primera sesión.",
+      "brand": "GOA Organics",
+      "services": [
+        {
+          "name": "Keratin Infusion",
+          "tagline": "GOA Organics",
+          "desc": "Alisa, suaviza y reduce el encrespamiento de forma progresiva. Cabello más manejable, brillante y con textura notablemente mejorada.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Softy Mood",
+          "tagline": "GOA Organics",
+          "desc": "Hidratación profunda. Devuelve al cabello su elasticidad, su tacto sedoso y la sensación de cabello sano desde el primer lavado.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Sublime 10.31",
+          "tagline": "GOA Organics",
+          "desc": "Reconstrucción capilar intensiva para cabellos dañados o debilitados. Refuerza la fibra, devuelve consistencia y mejora la respuesta frente al calor.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Bae Berry",
+          "tagline": "GOA Organics",
+          "desc": "Nutrición, brillo y bienestar del cuero cabelludo. Un tratamiento que también entra por los sentidos.",
+          "price": "desde [X]€"
+        }
+      ]
+    },
+    "maquillaje": {
+      "anchor": "maquillaje-belleza",
+      "eyebrow": "Maquillaje",
+      "title": "Maquillaje",
+      "intro": "Parte del concepto de imagen completa. El mismo criterio y nivel de detalle que en el cabello.",
+      "services": [
+        {
+          "name": "Glamour Noche",
+          "tagline": "",
+          "desc": "Intensidad, acabado impecable y presencia que se mantiene de principio a fin de la noche.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "¡Ay que me caso!",
+          "tagline": "incluye prueba previa",
+          "desc": "Maquillaje de novia: duradero, luminoso y completamente adaptado a tu estilo. Para que te reconozcas en cada fotografía.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "¡Me voy de fiesta!",
+          "tagline": "",
+          "desc": "Fresco, divertido y con personalidad. Para brillar sin esfuerzo aparente en salidas, eventos o celebraciones.",
+          "price": "desde [X]€"
+        }
+      ]
+    },
+    "manicura": {
+      "anchor": "manicura-belleza",
+      "eyebrow": "Manicura y belleza",
+      "title": "Manicura",
+      "intro": "Cuidado de manos y pies con el mismo criterio de calidad que aplicamos en cada servicio.",
+      "services": [
+        {
+          "name": "Manicura",
+          "tagline": "",
+          "desc": "Cuidado completo de manos: limado, cutículas y esmaltado. Acabado impecable que dura.",
+          "price": "desde [X]€"
+        },
+        {
+          "name": "Pedicura",
+          "tagline": "",
+          "desc": "Tratamiento completo para los pies: exfoliación, hidratación y esmaltado. El cuidado que merecen.",
+          "price": "desde [X]€"
+        }
+      ]
+    },
+    "reserva": {
+      "anchor": "reservar",
+      "eyebrow": "Reserva tu cita",
+      "title": "¿Listo para empezar?",
+      "body": "¿Buscas un corte con sentido, una coloración bien trabajada o un tratamiento que mejore tu cabello? Reserva tu cita y déjate asesorar por el equipo.",
+      "buttonPrimary": "Reservar cita",
+      "buttonWhatsapp": "WhatsApp"
+    },
+    "eventos": {
+      "eyebrow": "Celebra con nosotros",
+      "title": "Eventos",
+      "description": "Hacemos que cada momento especial brille. Diseñamos experiencias de belleza a medida para los días más importantes.",
+      "packs": [
+        {
+          "tag": "Bodas",
+          "title": "Pack Novia",
+          "description": "Un día único merece una preparación única. Peinado y maquillaje nupcial, prueba previa incluida, para que llegues al altar sintiéndote perfecta.",
+          "detail": "Prueba + peinado nupcial + maquillaje"
+        },
+        {
+          "tag": "Despedidas",
+          "title": "Pack Despedida",
+          "description": "Porque la última noche de soltera tiene que ser memorable. Peinado, maquillaje y detalles especiales para toda la cuadrilla.",
+          "detail": "Peinado + maquillaje + detalle sorpresa"
+        },
+        {
+          "tag": "Cumpleaños",
+          "title": "Pack Celebración",
+          "description": "Regálate o regala una sesión de belleza completa para celebrar como se merece. Perfecta para cumpleaños, aniversarios o cualquier ocasión especial.",
+          "detail": "Peinado + maquillaje + atención VIP"
+        }
+      ],
+      "cta": "¿Tienes algo que celebrar?",
+      "whatsapp": "Cuéntanos tu evento"
+    }
   }
 }
