@@ -1,11 +1,20 @@
 import { getTranslations } from 'next-intl/server'
 
+const VALUE_PROPOSITION_BG =
+  'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/backgroundhome.jpg'
+
 export default async function ValueProposition() {
   const t = await getTranslations('valueProposition')
 
   return (
-    <section className="w-full bg-navy">
-      <div className="mx-auto max-w-6xl px-8 py-24 md:py-32">
+    <section className="relative w-full overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${VALUE_PROPOSITION_BG})` }}
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-black/40" aria-hidden />
+      <div className="relative z-10 mx-auto max-w-6xl px-8 py-24 md:py-32">
 
         {/* ── Top row: H2 left + body right ─────────────────────────────── */}
         <div className="flex flex-col md:flex-row md:items-end gap-10 md:gap-20">
@@ -27,7 +36,7 @@ export default async function ValueProposition() {
         <div className="mt-14 mb-14 h-px w-12 bg-orange" />
 
         {/* ── 3-column pillar block ─────────────────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-cream/10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-white/55">
 
           {/* Column 1: Diagnóstico */}
           <div className="flex flex-col gap-6 px-0 sm:pr-10 pb-10 sm:pb-0">
