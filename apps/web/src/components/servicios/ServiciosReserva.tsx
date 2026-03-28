@@ -6,7 +6,7 @@ const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 const PACK_IMAGES = [
   `${S3}/servicios/packnovionovia.webp`,
   `${S3}/servicios/packdespedida.webp`,
-  `${S3}/servicios/cumpleaños.webp`,
+  `${S3}/servicios/cumplean%CC%83os.webp`,
 ]
 
 /* ─────────────────────────────────────────────────────────────────────────────

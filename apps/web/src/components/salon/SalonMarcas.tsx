@@ -65,6 +65,15 @@ export default function SalonMarcas() {
   }, [])
 
   return (
+    <>
+    <style>{`
+      @media (max-width: 767px) {
+        .qb-brand-block {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    `}</style>
     <section
       id="marcas"
       ref={sectionRef}
@@ -164,7 +173,7 @@ export default function SalonMarcas() {
             >
               {/* Brand block */}
               <div
-                className="flex-1 flex flex-col py-10 md:py-0"
+                className="qb-brand-block flex-1 flex flex-col py-10 md:py-0"
                 style={{
                   paddingRight: bi === 0 ? 'clamp(2rem, 5vw, 5rem)' : '0',
                   paddingLeft: bi === 1 ? 'clamp(2rem, 5vw, 5rem)' : '0',
@@ -323,5 +332,6 @@ export default function SalonMarcas() {
         />
       </div>
     </section>
+    </>
   )
 }

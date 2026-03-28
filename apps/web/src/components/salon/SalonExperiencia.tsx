@@ -75,6 +75,18 @@ export default function SalonExperiencia() {
         .qb-grain {
           animation: qb-fade-grain 6s ease-in-out infinite;
         }
+        /* Mobile: reset asymmetric padding and side borders */
+        @media (max-width: 767px) {
+          .qb-pillar {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(246,244,241,0.08);
+          }
+          .qb-pillar:last-child {
+            border-bottom: none;
+          }
+        }
       `}</style>
 
       {/* ── Section ─────────────────────────────────────────────────────────── */}
@@ -231,7 +243,7 @@ function PillarCard({
 
   return (
     <div
-      className="relative flex flex-col pt-7 pb-10"
+      className="qb-pillar relative flex flex-col pt-7 pb-10"
       style={{
         borderRight: !isLast ? '1px solid rgba(246,244,241,0.08)' : 'none',
         paddingLeft: index === 0 ? 0 : '2.5rem',
