@@ -18,15 +18,33 @@
     "contacto": "Contacto"
   },
   "pages": {
-    "sobreNosotros": { "title": "Sobre Nosotros" },
-    "servicios": { "title": "Servicios" },
-    "tratamientos": { "title": "Tratamientos" },
-    "marcas": { "title": "Marcas" },
-    "galeria": { "title": "Galería" },
-    "equipo": { "title": "Equipo" },
-    "reservarCita": { "title": "Reservar Cita" },
-    "blog": { "title": "Blog" },
-    "contacto": { "title": "Contacto" }
+    "sobreNosotros": {
+      "title": "Sobre Nosotros"
+    },
+    "servicios": {
+      "title": "Servicios"
+    },
+    "tratamientos": {
+      "title": "Tratamientos"
+    },
+    "marcas": {
+      "title": "Marcas"
+    },
+    "galeria": {
+      "title": "Galería"
+    },
+    "equipo": {
+      "title": "Equipo"
+    },
+    "reservarCita": {
+      "title": "Reservar Cita"
+    },
+    "blog": {
+      "title": "Blog"
+    },
+    "contacto": {
+      "title": "Contacto"
+    }
   },
   "footer": {
     "tagline": "Barbería & Centro de Belleza",
@@ -44,9 +62,9 @@
     "rights": "Todos los derechos reservados."
   },
   "hero": {
-    "subtitle": "Salón de belleza · Torremolinos",
-    "intro1": "En Qué Bárbaro entendemos la peluquería de otra manera. No como una cita rápida para salir del paso, sino como un servicio donde el criterio, la técnica y la atención al detalle marcan la diferencia. Estamos en Torremolinos y trabajamos para quienes quieren que su cabello esté bien, no solo en el momento de salir del salón, sino también al día siguiente, y al otro.",
-    "intro2": "Nos especializamos en peluquería con atención personalizada: estudiamos cada cabello, escuchamos lo que busca cada persona y proponemos soluciones reales. Por eso muchos clientes que llegan buscando un salón de belleza en Torremolinos encuentran en nosotros algo diferente: un espacio donde se trabaja con tiempo, con intención y con un estándar alto en cada servicio."
+    "eyebrow": "Salón de belleza · Torremolinos",
+    "body": "Peluquería con criterio, atención personalizada y un estándar alto en cada servicio. Trabajamos para quienes quieren que su cabello esté bien hoy, mañana y la semana que viene.",
+    "cta": "Reservar cita"
   },
   "valueProposition": {
     "title": "Peluquería personalizada para quienes saben lo que quieren",
@@ -54,20 +72,38 @@
     "body2": "Ese enfoque es lo que nos distingue como referencia de alta peluquería en Torremolinos para quienes valoran una atención de verdad personalizada.",
     "headline": "No vendrás solo\na cortarte el pelo.",
     "subheadline": "Vendrás a desconectar. A que te mimen. A salir siendo más tú.",
-    "body": "¡Qué Bárbaro! nació para demostrar que una peluquería puede ser mucho más que un servicio. Es un refugio donde la estética, la hospitalidad y el diseño conviven para crear algo que no habías vivido antes. Cada detalle — la fragancia, la música, la toalla fría al llegar, la bebida que te espera — existe por una razón: hacerte sentir que eres lo más importante.",
+    "body": "Antes de empezar, entendemos la textura, el historial y el estilo de vida de cada cliente. El resultado tiene que funcionar en el salón y también en casa.",
     "ctaSalon": "Conoce el salón",
-    "ctaBook": "Reservar cita"
+    "ctaBook": "Reservar cita",
+    "h2": "Técnica,\nescucha\ny tiempo",
+    "n1": "01",
+    "title1": "Diagnóstico",
+    "desc1": "Textura, historial y estilo de vida",
+    "n2": "02",
+    "title2": "Técnica",
+    "desc2": "Precisión en cada servicio",
+    "n3": "03",
+    "title3": "Resultado",
+    "desc3": "Que funciona en casa"
   },
   "featuredServices": {
     "sectionTitle": "Servicios",
-    "viewAll": "Ver todos",
+    "viewAll": "Ver todos los servicios",
     "priceGuide": "Consultar catálogo de precios",
     "cortes": "Cortes",
     "peinados": "Peinados",
     "maquillaje": "Maquillaje",
     "goa": "Goa Organics",
     "rubios": "Rubios",
-    "evento": "Evento"
+    "evento": "Evento",
+    "h2": "Lo que hacemos",
+    "service1": "Cortes de diseño",
+    "service2": "Coloración y balayage",
+    "service3": "Tratamientos GOA Organics",
+    "service4": "Peinados de evento",
+    "service5": "Maquillaje",
+    "service6": "Barbería",
+    "service7": "Manicura"
   },
   "blog": {
     "eyebrow": "Tendencias · Cuidado · Inspiración",
@@ -161,8 +197,14 @@
       "name": "Cortes\nde Diseño",
       "description": "Cada corte es una obra maestra pensada para ti. Analizamos tu morfología facial, tu textura capilar y tu estilo de vida para diseñar un corte que te represente.",
       "treatments": [
-        { "name": "Corte de diseño \"Artístico Design\"", "description": "Un corte de autor que combina técnica avanzada con visión artística. Cada línea, cada volumen y cada textura se trabajan con precisión para crear un resultado único que define tu identidad." },
-        { "name": "Método Curly \"Danza de Rizos\"", "description": "Método especializado para potenciar la belleza natural de tu cabello rizado. Trabajamos con las curvas de tu melena para activar el rizo, aportar definición y eliminar el encrespamiento." }
+        {
+          "name": "Corte de diseño \"Artístico Design\"",
+          "description": "Un corte de autor que combina técnica avanzada con visión artística. Cada línea, cada volumen y cada textura se trabajan con precisión para crear un resultado único que define tu identidad."
+        },
+        {
+          "name": "Método Curly \"Danza de Rizos\"",
+          "description": "Método especializado para potenciar la belleza natural de tu cabello rizado. Trabajamos con las curvas de tu melena para activar el rizo, aportar definición y eliminar el encrespamiento."
+        }
       ]
     },
     "peinados": {
@@ -171,8 +213,14 @@
       "name": "Peinados",
       "description": "El arte de transformar el cabello en una declaración de estilo. Desde recogidos de alta costura hasta ondas cinematográficas, cada peinado es un momento.",
       "treatments": [
-        { "name": "Recogidos \"Glamour en Altura\"", "description": "Recogidos de alta costura que elevan cualquier look a otro nivel. Desde moños elegantes hasta trenzados elaborados, cada recogido es una obra pensada para tu silueta y tu ocasión." },
-        { "name": "Ondas Hollywood \"Alfombra Roja\"", "description": "Ondas suaves y luminosas que evocan la elegancia del cine clásico. Un peinado que combina glamour atemporal con una sofisticación que no pasa desapercibida." }
+        {
+          "name": "Recogidos \"Glamour en Altura\"",
+          "description": "Recogidos de alta costura que elevan cualquier look a otro nivel. Desde moños elegantes hasta trenzados elaborados, cada recogido es una obra pensada para tu silueta y tu ocasión."
+        },
+        {
+          "name": "Ondas Hollywood \"Alfombra Roja\"",
+          "description": "Ondas suaves y luminosas que evocan la elegancia del cine clásico. Un peinado que combina glamour atemporal con una sofisticación que no pasa desapercibida."
+        }
       ]
     },
     "maquillaje": {
@@ -181,9 +229,18 @@
       "name": "Maquillaje",
       "description": "Realzamos tu belleza natural con técnicas profesionales que se adaptan a cada ocasión. Desde looks de noche que hipnotizan hasta el maquillaje perfecto para el día más importante de tu vida.",
       "treatments": [
-        { "name": "Maquillaje Glamour Noche", "description": "Un look de noche intenso y sofisticado que realza tus rasgos y te hace brillar en cualquier ambiente. Técnicas de contouring, pigmentos vivos y acabados de larga duración." },
-        { "name": "Maquillaje \"Ay que me caso!\"", "description": "El maquillaje nupcial más especial. Creamos el look que llevarás en el día más importante de tu vida: perfecto ante la cámara, duradero todo el día y fiel a quien eres tú." },
-        { "name": "Maquillaje \"Me voy de fiesta!\"", "description": "Un maquillaje festivo, divertido y lleno de personalidad para que seas la más radiante en cada celebración. Adaptado a tu estilo, tu piel y el momento." }
+        {
+          "name": "Maquillaje Glamour Noche",
+          "description": "Un look de noche intenso y sofisticado que realza tus rasgos y te hace brillar en cualquier ambiente. Técnicas de contouring, pigmentos vivos y acabados de larga duración."
+        },
+        {
+          "name": "Maquillaje \"Ay que me caso!\"",
+          "description": "El maquillaje nupcial más especial. Creamos el look que llevarás en el día más importante de tu vida: perfecto ante la cámara, duradero todo el día y fiel a quien eres tú."
+        },
+        {
+          "name": "Maquillaje \"Me voy de fiesta!\"",
+          "description": "Un maquillaje festivo, divertido y lleno de personalidad para que seas la más radiante en cada celebración. Adaptado a tu estilo, tu piel y el momento."
+        }
       ]
     },
     "goa": {
@@ -192,10 +249,22 @@
       "name": "Goa\nOrganics",
       "description": "Tratamientos capilares de alta gama con la línea Goa Organics. Fórmulas avanzadas que transforman, reparan y embellecen el cabello con ingredientes orgánicos de máxima calidad.",
       "treatments": [
-        { "name": "Keratin Infusion Goa Organics", "description": "Tratamiento de alisado y nutrición intensiva con keratina de la línea Goa Organics. Reduce el volumen, elimina el frizz y deja el cabello suave, liso y brillante durante semanas." },
-        { "name": "Softy Mood Goa Organics", "description": "Tratamiento nutritivo de efecto sedoso para cabellos dañados, secos o con falta de brillo. Repara la fibra capilar desde el interior y transforma la textura en un acabado increíblemente suave." },
-        { "name": "Sublime 10.31 Goa Organics", "description": "Fórmula de color y nutrición en uno. Tonos dorados y beige que iluminan el cabello con un resultado sublime, natural y de alta duración." },
-        { "name": "Bae Berry Goa Organics", "description": "Tratamiento con pigmentos rojizos y violetas que aportan vida, color y brillo a cabellos apagados. Un cóctel de nutrición y color que transforma el cabello con una actitud única." }
+        {
+          "name": "Keratin Infusion Goa Organics",
+          "description": "Tratamiento de alisado y nutrición intensiva con keratina de la línea Goa Organics. Reduce el volumen, elimina el frizz y deja el cabello suave, liso y brillante durante semanas."
+        },
+        {
+          "name": "Softy Mood Goa Organics",
+          "description": "Tratamiento nutritivo de efecto sedoso para cabellos dañados, secos o con falta de brillo. Repara la fibra capilar desde el interior y transforma la textura en un acabado increíblemente suave."
+        },
+        {
+          "name": "Sublime 10.31 Goa Organics",
+          "description": "Fórmula de color y nutrición en uno. Tonos dorados y beige que iluminan el cabello con un resultado sublime, natural y de alta duración."
+        },
+        {
+          "name": "Bae Berry Goa Organics",
+          "description": "Tratamiento con pigmentos rojizos y violetas que aportan vida, color y brillo a cabellos apagados. Un cóctel de nutrición y color que transforma el cabello con una actitud única."
+        }
       ]
     },
     "rubios": {
@@ -204,9 +273,18 @@
       "name": "Rubios",
       "description": "Somos especialistas en técnicas de iluminación y coloración para rubios que enamoran. Desde balayages brasileños de ensueño hasta babylights de seda, creamos el rubio de tu vida.",
       "treatments": [
-        { "name": "Balayages Estilo Brasileño", "description": "La técnica de iluminación más natural del mundo, pintada a mano para conseguir transiciones de color perfectas. Un rubio vivo, luminoso y sin raíces marcadas." },
-        { "name": "Babylights \"Silk Shine\"", "description": "Mechas ultrafinas que imitan el rubio natural de la infancia. Un resultado suave, lleno de reflejos y brillo sedoso que parece hecho por el sol." },
-        { "name": "Balayage Rubio Deslumbrante", "description": "Un balayage de alta intensidad para quienes quieren un rubio impactante, luminoso y con presencia. Contraste perfecto entre base y puntas para un resultado cinematográfico." }
+        {
+          "name": "Balayages Estilo Brasileño",
+          "description": "La técnica de iluminación más natural del mundo, pintada a mano para conseguir transiciones de color perfectas. Un rubio vivo, luminoso y sin raíces marcadas."
+        },
+        {
+          "name": "Babylights \"Silk Shine\"",
+          "description": "Mechas ultrafinas que imitan el rubio natural de la infancia. Un resultado suave, lleno de reflejos y brillo sedoso que parece hecho por el sol."
+        },
+        {
+          "name": "Balayage Rubio Deslumbrante",
+          "description": "Un balayage de alta intensidad para quienes quieren un rubio impactante, luminoso y con presencia. Contraste perfecto entre base y puntas para un resultado cinematográfico."
+        }
       ]
     },
     "evento": {
@@ -215,16 +293,29 @@
       "name": "Evento",
       "description": "Convertimos tus momentos más especiales en recuerdos eternos. Nuestro equipo se vuelca al completo para que tú, y todos los tuyos, brilléis como merecéis.",
       "treatments": [
-        { "name": "Pack novias y novios", "description": "El pack más completo para el día B. Peinado, maquillaje y todo el cuidado que merecéis vosotros y vuestro séquito. Asesoría previa incluida para que todo salga perfecto." },
-        { "name": "Despedidas de solteras y solteros", "description": "Un momento para celebrar, disfrutar y sentirte increíble. Packs grupales con peinado y maquillaje para que toda la banda llegue en modo fiesta." },
-        { "name": "Packs cumpleaños", "description": "Porque los cumpleaños se celebran a lo grande. Packs personalizados de belleza para que el homenajeado y su grupo brillen en la celebración." }
+        {
+          "name": "Pack novias y novios",
+          "description": "El pack más completo para el día B. Peinado, maquillaje y todo el cuidado que merecéis vosotros y vuestro séquito. Asesoría previa incluida para que todo salga perfecto."
+        },
+        {
+          "name": "Despedidas de solteras y solteros",
+          "description": "Un momento para celebrar, disfrutar y sentirte increíble. Packs grupales con peinado y maquillaje para que toda la banda llegue en modo fiesta."
+        },
+        {
+          "name": "Packs cumpleaños",
+          "description": "Porque los cumpleaños se celebran a lo grande. Packs personalizados de belleza para que el homenajeado y su grupo brillen en la celebración."
+        }
       ]
     }
   },
   "elSalon": {
     "intro": {
       "label": "El Concepto",
-      "title": ["Un espacio", "para sentirte", "tú mismo."],
+      "title": [
+        "Un espacio",
+        "para sentirte",
+        "tú mismo."
+      ],
       "text": "Un refugio donde el cuidado personal se convierte en ritual. Cada detalle ha sido pensado para que entres como cliente y salgas como protagonista."
     },
     "historia": {
@@ -242,11 +333,26 @@
       "title": "Una marca\nque deja\nhuella.",
       "text": "Existimos porque creemos que la peluquería puede ser mucho más que un corte o un color.",
       "values": [
-        ["Belleza con propósito", "cada detalle busca emocionar"],
-        ["Atención 5 estrellas", "cada cliente es VIP"],
-        ["Diseño e identidad", "estética que cuenta historias"],
-        ["Calidez y humanidad", "cercanía real, sin poses"],
-        ["Formación constante", "el talento se alimenta cada día"]
+        [
+          "Belleza con propósito",
+          "cada detalle busca emocionar"
+        ],
+        [
+          "Atención 5 estrellas",
+          "cada cliente es VIP"
+        ],
+        [
+          "Diseño e identidad",
+          "estética que cuenta historias"
+        ],
+        [
+          "Calidez y humanidad",
+          "cercanía real, sin poses"
+        ],
+        [
+          "Formación constante",
+          "el talento se alimenta cada día"
+        ]
       ]
     },
     "experiencia": {
@@ -254,18 +360,44 @@
       "title": "Cada visita,\nun ritual.",
       "text": "Lujo emocional asequible.",
       "rituals": [
-        { "n": "01", "name": "Bienvenida sensorial", "desc": "Sonrisa y toalla fría aromatizada" },
-        { "n": "02", "name": "Cuidado exclusivo", "desc": "Menú de bebidas especiales" },
-        { "n": "03", "name": "Espacio emocional", "desc": "Decoración, música y aromas propios" },
-        { "n": "04", "name": "Atención única", "desc": "Por tu nombre, por tu historia" },
-        { "n": "05", "name": "Despedida memorable", "desc": "Con seguimiento y agradecimiento" }
+        {
+          "n": "01",
+          "name": "Bienvenida sensorial",
+          "desc": "Sonrisa y toalla fría aromatizada"
+        },
+        {
+          "n": "02",
+          "name": "Cuidado exclusivo",
+          "desc": "Menú de bebidas especiales"
+        },
+        {
+          "n": "03",
+          "name": "Espacio emocional",
+          "desc": "Decoración, música y aromas propios"
+        },
+        {
+          "n": "04",
+          "name": "Atención única",
+          "desc": "Por tu nombre, por tu historia"
+        },
+        {
+          "n": "05",
+          "name": "Despedida memorable",
+          "desc": "Con seguimiento y agradecimiento"
+        }
       ]
     },
     "fundadores": {
       "label": "Los Fundadores",
       "founders": [
-        { "name": "Missael Lundqvist", "role": "Co-Founder & CEO" },
-        { "name": "Aurelio Tabares", "role": "Co-Founder & Creative Director" }
+        {
+          "name": "Missael Lundqvist",
+          "role": "Co-Founder & CEO"
+        },
+        {
+          "name": "Aurelio Tabares",
+          "role": "Co-Founder & Creative Director"
+        }
       ]
     },
     "equipo": {
@@ -281,22 +413,39 @@
   },
   "testimonials": {
     "label": "Lo que dicen nuestros clientes",
-    "reviewCount": "+60 reseñas",
-    "verified": "verificadas",
-    "joinUs": "Únete a nuestros clientes satisfechos",
-    "leaveReview": "Deja tu reseña en Google"
+    "reviewCount": "Reseñas verificadas",
+    "verified": "Google · Tratamientos reales",
+    "joinUs": "¿Has pasado por el salón? Tu opinión nos importa.",
+    "leaveReview": "Dejar reseña",
+    "h2": "Lo que dicen nuestros clientes",
+    "eyebrow": "Google Reviews"
   },
   "ctaSection": {
     "eyebrow": "Reserva",
     "headline": "¿Listo para\nla experiencia?",
     "sub": "Tu cita te está esperando.",
-    "cta": "Reservar cita"
+    "cta": "Reservar cita",
+    "h2": "Reserva tu cita",
+    "subtitle": "Elige cómo prefieres contactarnos.",
+    "whatsappLabel": "WhatsApp",
+    "whatsappSub": "Respuesta rápida",
+    "booksyLabel": "Booksy",
+    "booksySub": "Reserva online",
+    "treatwellLabel": "Treatwell",
+    "treatwellSub": "Reserva online",
+    "llamarLabel": "Llamar",
+    "llamarSub": "+34 644 817 835",
+    "mobileBarAriaLabel": "Accesos rápidos de reserva"
   },
   "homeBrands": {
     "label": "Las Marcas",
     "title": "Solo lo mejor\nsobre tu cabello.",
     "text": "Trabajamos exclusivamente con marcas que comparten nuestra filosofía: rendimiento real, ingredientes de calidad y resultados que se mantienen.",
-    "viewAll": "Ver todas las marcas →"
+    "viewAll": "Ver todas las marcas →",
+    "eyebrow": "Marcas seleccionadas",
+    "h2": "GOA Organics y ORIBE",
+    "phrase1": "Para tratamientos ele de precisión capilar",
+    "phrase2": "Para una experiencia más exclusiva"
   },
   "experienceSection": {
     "label": "El espacio · Qué Bárbaro",
@@ -314,19 +463,78 @@
     "items": [
       {
         "q": "¿Trabajáis con cita previa?",
-        "a": "Sí. Recomendamos reservar con antelación para poder dedicar a cada cliente el tiempo que necesita y ofrecer una atención realmente personalizada."
+        "a": "Sí. Recomendamos reservar con antelación para poder dedicar a cada cliente el tiempo que necesita."
       },
       {
         "q": "¿Hacéis balayage y rubios?",
-        "a": "Sí. En Qué Bárbaro trabajamos Balayage Estilo Brasileño, Babylights Silk Shine y Balayage Rubio Deslumbrante, siempre con un enfoque profesional y respetuoso con el cabello."
+        "a": "Sí. Trabajamos Balayage Estilo Brasileño, Babylights Silk Shine y Balayage Rubio Deslumbrante."
       },
       {
         "q": "¿Tenéis tratamientos capilares?",
-        "a": "Sí. Trabajamos con GOA Organics y sus tratamientos Keratin Infusion, Softy Mood, Sublime 10.31 y Bae Berry, según lo que necesite cada cabello."
+        "a": "Sí. Con GOA Organics: Keratin Infusion, Softy Mood, Sublime 10.31 y Bae Berry."
       },
       {
         "q": "¿Hacéis packs para eventos?",
-        "a": "Sí. Tenemos packs especiales para novias y novios, despedidas de soltera y soltero, y cumpleaños. Consúltanos y lo organizamos todo para que el día sea perfecto."
+        "a": "Sí. Bodas, despedidas de soltera y soltero, y cumpleaños. Consúltanos y lo organizamos todo."
+      }
+    ],
+    "cta": "¿Tienes más preguntas? Escríbenos →"
+  },
+  "pricing": {
+    "eyebrow": "Algunos servicios · Referencia rápida",
+    "h2": "Precios orientativos",
+    "items": [
+      {
+        "name": "Artístico Design",
+        "price": "desde [X]€",
+        "desc": "corte de diseño personalizado"
+      },
+      {
+        "name": "Danza de Rizos",
+        "price": "desde [X]€",
+        "desc": "método curly"
+      },
+      {
+        "name": "Balayage Estilo Brasileño",
+        "price": "desde [X]€",
+        "desc": "coloración"
+      },
+      {
+        "name": "Keratin Infusion GOA",
+        "price": "desde [X]€",
+        "desc": "tratamiento"
+      },
+      {
+        "name": "Glamour en Altura",
+        "price": "desde [X]€",
+        "desc": "recogido de evento"
+      }
+    ],
+    "note": "Coloración y tratamientos pueden variar según longitud y trabajo técnico. Te orientamos antes de reservar.",
+    "viewAll": "Ver todos los servicios →"
+  },
+  "homeContact": {
+    "sectionLabel": "Cómo llegar",
+    "businessName": "¡Qué Bárbaro! Hair & Care Salon",
+    "address1": "Calle de los Caballeros, 4",
+    "address2": "Torremolinos, 29620 Málaga",
+    "hoursLabel": "Horario",
+    "phoneLabel": "Teléfono",
+    "socialLabel": "Redes sociales",
+    "whatsappCta": "Escríbenos por WhatsApp",
+    "mapTitle": "Mapa de ¡Qué Bárbaro! Hair & Care Salon en Torremolinos",
+    "hours": [
+      {
+        "days": "Lunes a Viernes",
+        "hours": "10:00 – 19:00"
+      },
+      {
+        "days": "Sábado",
+        "hours": "10:00 – 14:00"
+      },
+      {
+        "days": "Domingo",
+        "hours": "Cerrado"
       }
     ]
   }

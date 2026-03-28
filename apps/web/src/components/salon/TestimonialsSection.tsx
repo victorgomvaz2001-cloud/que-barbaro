@@ -9,7 +9,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
 
 /* ─── Helpers ───────────────────────────────────────────────────────────── */
 
-function t(visible: boolean, delay: number, mounted: boolean, from = 'translateY(22px)') {
+function anim(visible: boolean, delay: number, mounted: boolean, from = 'translateY(22px)') {
   if (!mounted) return {}
   return {
     opacity: visible ? 1 : 0,
@@ -63,12 +63,11 @@ export default function TestimonialsSection() {
 
   if (reviews.length === 0) return null
 
-
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden"
-      style={{ backgroundColor: '#F6F4F1', paddingTop: '7rem', paddingBottom: '7rem' }}
+      className="relative w-full overflow-hidden bg-cream"
+      style={{ paddingTop: '7rem', paddingBottom: '7rem' }}
     >
       {/* Decorative background numeral */}
       <div
@@ -91,30 +90,29 @@ export default function TestimonialsSection() {
         {/* ── Header ── */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
 
-          {/* Left: label + rating */}
+          {/* Left: H2 + rating */}
           <div>
-            <p
-              className="font-neue font-light uppercase tracking-[0.2em] mb-6"
-              style={{ fontSize: 'clamp(1rem, 1.6vw, 1.4rem)', color: '#1a1f3a', ...t(visible, 0, mounted) }}
+            <h2
+              className="font-primary uppercase text-navy mb-8 leading-none"
+              style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', ...anim(visible, 0, mounted) }}
             >
-              {tl('label')}
-            </p>
+              {tl('h2')}
+            </h2>
 
-            <div className="flex items-baseline gap-4" style={t(visible, 120, mounted)}>
-              <span
-                className="font-neue font-light leading-none"
-                style={{ fontSize: 'clamp(5rem, 12vw, 9rem)', color: '#1a1f3a', lineHeight: 1 }}
-              >
-                5.0
-              </span>
+            <div className="flex items-baseline gap-4" style={anim(visible, 120, mounted)}>
+              <div className="flex flex-col">
+                <span className="font-neue text-[10px] uppercase tracking-[0.35em] text-navy/30 mb-2">
+                  {tl('eyebrow')}
+                </span>
+                <span
+                  className="font-neue font-light leading-none"
+                  style={{ fontSize: 'clamp(5rem, 12vw, 9rem)', color: '#1a1f3a', lineHeight: 1 }}
+                >
+                  5.0
+                </span>
+              </div>
               <div className="flex flex-col gap-2 pb-2">
                 <Stars size={20} gap={4} />
-                <span
-                  className="font-neue font-light text-[11px] uppercase tracking-[0.22em]"
-                  style={{ color: 'rgba(26,31,58,0.5)' }}
-                >
-                  Google Reviews
-                </span>
               </div>
             </div>
           </div>
@@ -125,10 +123,7 @@ export default function TestimonialsSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 border px-6 py-4 self-start md:self-auto transition-opacity hover:opacity-70"
-            style={{
-              borderColor: 'rgba(26,31,58,0.12)',
-              ...t(visible, 200, mounted, 'translateY(12px)'),
-            }}
+            style={{ borderColor: 'rgba(26,31,58,0.12)', ...anim(visible, 200, mounted, 'translateY(12px)') }}
           >
             <svg width="22" height="22" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -167,7 +162,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* ── Footer CTA ── */}
-        <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6" style={t(visible, 900, mounted)}>
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6" style={anim(visible, 900, mounted)}>
           <p className="font-neue font-light text-[13px] tracking-[0.08em]" style={{ color: 'rgba(26,31,58,0.5)' }}>
             {tl('joinUs')}
           </p>
@@ -202,9 +197,8 @@ function ReviewCard({
 }) {
   return (
     <article
-      className="flex flex-col p-7 md:p-8"
+      className="flex flex-col p-7 md:p-8 bg-white"
       style={{
-        backgroundColor: '#ffffff',
         boxShadow: '0 2px 12px rgba(26,31,58,0.07), 0 1px 3px rgba(26,31,58,0.05)',
         ...(mounted ? {
           opacity: visible ? 1 : 0,
@@ -218,28 +212,16 @@ function ReviewCard({
       <div className="flex items-start justify-between mb-5">
         <Stars size={18} gap={3} />
         {review.authorPhotoUrl ? (
-          <Image
-            src={review.authorPhotoUrl}
-            alt={review.authorName}
-            width={48}
-            height={48}
-            className="h-12 w-12 rounded-full object-cover shrink-0"
-          />
+          <Image src={review.authorPhotoUrl} alt={review.authorName} width={48} height={48} className="h-12 w-12 rounded-full object-cover shrink-0" />
         ) : (
-          <div
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-neue font-light text-base"
-            style={{ backgroundColor: 'rgba(26,31,58,0.07)', color: '#1a1f3a' }}
-          >
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-neue font-light text-base" style={{ backgroundColor: 'rgba(26,31,58,0.07)', color: '#1a1f3a' }}>
             {review.authorName.charAt(0).toUpperCase()}
           </div>
         )}
       </div>
 
       {/* Quote */}
-      <p
-        className="font-neue font-light leading-snug flex-1"
-        style={{ fontSize: 'clamp(1rem, 1.4vw, 1.2rem)', color: '#1a1f3a' }}
-      >
+      <p className="font-neue font-light leading-snug flex-1" style={{ fontSize: 'clamp(1rem, 1.4vw, 1.2rem)', color: '#1a1f3a' }}>
         &ldquo;{review.text}&rdquo;
       </p>
 
@@ -249,14 +231,9 @@ function ReviewCard({
       {/* Author */}
       <div className="flex items-center justify-between gap-3">
         <div>
-          <p className="font-neue text-sm font-medium" style={{ color: '#1a1f3a' }}>
-            {review.authorName}
-          </p>
-          <p className="font-neue font-light text-xs mt-0.5" style={{ color: 'rgba(26,31,58,0.45)' }}>
-            {review.relativeTime}
-          </p>
+          <p className="font-neue text-sm font-medium" style={{ color: '#1a1f3a' }}>{review.authorName}</p>
+          <p className="font-neue font-light text-xs mt-0.5" style={{ color: 'rgba(26,31,58,0.45)' }}>{review.relativeTime}</p>
         </div>
-        {/* Google icon — links to reviews page */}
         <a href="https://share.google/hor7u24FsyXTZVydP" target="_blank" rel="noopener noreferrer" title="Ver en Google" className="shrink-0 opacity-30 hover:opacity-60 transition-opacity">
           <svg width="18" height="18" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>

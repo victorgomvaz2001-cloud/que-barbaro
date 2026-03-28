@@ -7,6 +7,7 @@ import ValueProposition from '@/components/home/ValueProposition'
 import ExperienceSection from '@/components/home/ExperienceSection'
 import FeaturedServices from '@/components/home/FeaturedServices'
 import HomeBrands from '@/components/home/HomeBrands'
+import PricingSection from '@/components/home/PricingSection'
 import TestimonialsSection from '@/components/salon/TestimonialsSection'
 import CtaSection from '@/components/salon/CtaSection'
 import FaqSection from '@/components/home/FaqSection'
@@ -24,6 +25,7 @@ export default async function HomePage() {
       <ExperienceSection />
       <FeaturedServices />
       <HomeBrands />
+      <PricingSection />
       <TestimonialsSection />
       <CtaSection />
       <FaqSection />
