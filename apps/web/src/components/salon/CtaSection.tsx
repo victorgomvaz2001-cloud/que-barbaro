@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 
 const WHATSAPP_HREF  = 'https://wa.me/34644817835'
@@ -37,8 +38,19 @@ export default async function CtaSection() {
   return (
     <>
       {/* ── Main section ─────────────────────────────────────────────── */}
-      <section className="w-full bg-navy py-32">
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
+      <section className="relative w-full bg-navy py-32 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden>
+          <Image
+            src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/cortinaslauder.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            style={{ opacity: 0.4 }}
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
 
           {/* H2 + subtitle */}
           <div className="text-center mb-14">
@@ -75,10 +87,10 @@ export default async function CtaSection() {
                 <span className="text-cream/50 group-hover:text-cream transition-colors duration-300">
                   {channel.icon}
                 </span>
-                <span className="font-primary uppercase text-cream text-[clamp(0.9rem,2.5vw,1.25rem)] tracking-wide leading-none">
+                <span className="font-primary uppercase text-cream text-[clamp(0.9rem,2.5vw,1.25rem)] tracking-wide leading-none font-bold">
                   {channel.label}
                 </span>
-                <span className="font-neue font-light text-cream/40 text-[11px] uppercase tracking-[0.2em] leading-none">
+                <span className="font-neue font-medium text-cream/60 text-[11px] uppercase tracking-[0.2em] leading-none">
                   {channel.sublabel}
                 </span>
               </a>

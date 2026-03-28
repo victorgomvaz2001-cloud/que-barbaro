@@ -69,7 +69,7 @@ export default async function SalonCtaReserva() {
 
         {/* CTA Button */}
         <Link
-          href="/reservar"
+          href="https://wa.me/34644817835"
           className={[
             'group relative inline-flex items-center gap-3',
             'bg-cream text-navy',

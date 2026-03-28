@@ -438,6 +438,30 @@
         ],
         "products": [],
         "desc": "Una dimensión más lujosa y sensorial para quienes buscan una experiencia de salón más exclusiva."
+      },
+      "ghd": {
+        "index": "03",
+        "nameLines": [
+          "ghd"
+        ],
+        "products": [],
+        "desc": "Herramientas de estilismo de alto rendimiento para acabados profesionales y duraderos."
+      },
+      "depot": {
+        "index": "04",
+        "nameLines": [
+          "DEPOT"
+        ],
+        "products": [],
+        "desc": "Grooming masculino de precisión: fórmulas avanzadas para el cuidado del cabello y la barba."
+      },
+      "schwarzkopf": {
+        "index": "05",
+        "nameLines": [
+          "Schwarzkopf"
+        ],
+        "products": [],
+        "desc": "Coloración e hidratación de referencia mundial, con más de 120 años de tradición en peluquería."
       }
     },
     "opiniones": {
@@ -484,9 +508,12 @@
     "text": "Trabajamos exclusivamente con marcas que comparten nuestra filosofía: rendimiento real, ingredientes de calidad y resultados que se mantienen.",
     "viewAll": "Ver todas las marcas →",
     "eyebrow": "Marcas seleccionadas",
-    "h2": "GOA Organics y ORIBE",
-    "phrase1": "Para tratamientos ele de precisión capilar",
-    "phrase2": "Para una experiencia más exclusiva"
+    "h2": "Las marcas con las que trabajamos",
+    "phrase1": "Para tratamientos de precisión capilar",
+    "phrase2": "Para una experiencia más exclusiva",
+    "phrase3": "Herramientas de estilismo de alto rendimiento",
+    "phrase4": "Grooming masculino de precisión",
+    "phrase5": "Coloración e hidratación de referencia mundial"
   },
   "experienceSection": {
     "label": "El espacio · Qué Bárbaro",

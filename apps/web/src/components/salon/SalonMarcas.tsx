@@ -30,13 +30,89 @@ type BrandData = {
   desc: string
 }
 
+/* ─── Logo map ──────────────────────────────────────────────────────────── */
+
+function BrandLogo({ index }: { index: string }) {
+  switch (index) {
+    case '01':
+      return (
+        <div className="relative" style={{ width: '220px', maxWidth: '100%', height: '88px' }}>
+          <Image
+            src="/goa_organics.png"
+            alt="GOA Organics"
+            fill
+            sizes="220px"
+            className="object-contain object-left"
+            style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
+          />
+        </div>
+      )
+    case '02':
+      return (
+        <div className="relative" style={{ width: '120px', maxWidth: '100%', height: '162px' }}>
+          <Image
+            src="/oribe.svg"
+            alt="ORIBE"
+            fill
+            sizes="120px"
+            className="object-contain object-left"
+            style={{ filter: 'invert(1) brightness(0.95)' }}
+          />
+        </div>
+      )
+    case '03':
+      return (
+        <div className="relative" style={{ width: '160px', maxWidth: '100%', height: '96px' }}>
+          <Image
+            src="/ghd.svg"
+            alt="ghd"
+            fill
+            sizes="160px"
+            className="object-contain object-left"
+          />
+        </div>
+      )
+    case '04':
+      return (
+        <div className="relative" style={{ width: '200px', maxWidth: '100%', height: '74px' }}>
+          <Image
+            src="/depot.png"
+            alt="DEPOT The Male Tools & Co."
+            fill
+            sizes="200px"
+            className="object-contain object-left"
+            style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
+          />
+        </div>
+      )
+    case '05':
+      return (
+        <div className="relative" style={{ width: '160px', maxWidth: '100%', height: '120px' }}>
+          <Image
+            src="/schwarzkopf.png"
+            alt="Schwarzkopf Professional"
+            fill
+            sizes="160px"
+            className="object-contain object-left"
+            style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
+          />
+        </div>
+      )
+    default:
+      return null
+  }
+}
+
 /* ─── Component ─────────────────────────────────────────────────────────── */
 
 export default function SalonMarcas() {
   const t = useTranslations('elSalon.marcas')
   const goa = t.raw('goa') as BrandData
   const oribe = t.raw('oribe') as BrandData
-  const brands = [goa, oribe]
+  const ghd = t.raw('ghd') as BrandData
+  const depot = t.raw('depot') as BrandData
+  const schwarzkopf = t.raw('schwarzkopf') as BrandData
+  const brands = [goa, oribe, ghd, depot, schwarzkopf]
 
   const sectionRef = useRef<HTMLElement>(null)
   const [visible, setVisible] = useState(false)
@@ -69,8 +145,8 @@ export default function SalonMarcas() {
     <style>{`
       @media (max-width: 767px) {
         .qb-brand-block {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
         }
       }
     `}</style>
@@ -163,30 +239,52 @@ export default function SalonMarcas() {
           />
         </header>
 
-        {/* ── Brand grid ─────────────────────────────────────────────────── */}
-        <div className="flex flex-col md:flex-row md:items-start gap-0">
+        {/* ── Brand grid — 1 col mobile / 2 col tablet / 3 col desktop ───── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-          {brands.map((brand, bi) => (
-            <div
-              key={brand.index}
-              className="flex flex-col md:flex-row w-full md:w-1/2"
-            >
-              {/* Brand block */}
+          {brands.map((brand, bi) => {
+            const total = brands.length // 5
+
+            // lg (3 cols): right border unless last in row or last item overall
+            const lgNeedsR = bi % 3 !== 2 && bi < total - 1
+            // lg: bottom border only for items in rows before the last row
+            const lgLastRowStart = Math.floor((total - 1) / 3) * 3 // = 3 for 5 items
+            const lgNeedsB = bi < lgLastRowStart
+
+            // md (2 cols): right border on even indices unless last item
+            const mdNeedsR = bi % 2 === 0 && bi < total - 1
+            // md: bottom border for items before the last row
+            const mdLastRowStart = Math.floor((total - 1) / 2) * 2 // = 4 for 5 items
+            const mdNeedsB = bi < mdLastRowStart
+
+            const borderCls = [
+              'border-cream/10',
+              // mobile bottom border except last
+              bi < total - 1 ? 'border-b' : '',
+              // md right border
+              mdNeedsR ? 'md:border-r' : 'md:border-r-0',
+              // md bottom border
+              mdNeedsB ? 'md:border-b' : 'md:border-b-0',
+              // lg right border
+              lgNeedsR ? 'lg:border-r' : 'lg:border-r-0',
+              // lg bottom border
+              lgNeedsB ? 'lg:border-b' : 'lg:border-b-0',
+            ]
+              .filter(Boolean)
+              .join(' ')
+
+            return (
               <div
-                className="qb-brand-block flex-1 flex flex-col py-10 md:py-0"
-                style={{
-                  paddingRight: bi === 0 ? 'clamp(2rem, 5vw, 5rem)' : '0',
-                  paddingLeft: bi === 1 ? 'clamp(2rem, 5vw, 5rem)' : '0',
-                }}
+                key={brand.index}
+                className={`qb-brand-block flex flex-col py-10 lg:py-12 px-0 md:px-8 lg:px-10 ${borderCls}`}
               >
-
                 {/* Index number */}
                 <p
                   className="font-neue text-cream/25 tabular-nums mb-6"
                   style={{
                     fontSize: 'clamp(0.6rem, 0.75vw, 0.68rem)',
                     letterSpacing: '0.2em',
-                    ...anim(visible, 320 + bi * 120, mounted, 'translateY(10px)'),
+                    ...anim(visible, 320 + bi * 100, mounted, 'translateY(10px)'),
                   }}
                 >
                   {brand.index}
@@ -195,37 +293,15 @@ export default function SalonMarcas() {
                 {/* Brand logo */}
                 <div
                   className="mb-8"
-                  style={anim(visible, 380 + bi * 120, mounted, 'translateY(16px)')}
+                  style={anim(visible, 380 + bi * 100, mounted, 'translateY(16px)')}
                 >
-                  {bi === 0 ? (
-                    <div className="relative" style={{ width: '220px', maxWidth: '100%', height: '88px' }}>
-                      <Image
-                        src="/goa_organics.png"
-                        alt="GOA Organics"
-                        fill
-                        sizes="220px"
-                        className="object-contain object-left"
-                        style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative" style={{ width: '120px', maxWidth: '100%', height: '162px' }}>
-                      <Image
-                        src="/oribe.svg"
-                        alt="ORIBE"
-                        fill
-                        sizes="120px"
-                        className="object-contain object-left"
-                        style={{ filter: 'invert(1) brightness(0.95)' }}
-                      />
-                    </div>
-                  )}
+                  <BrandLogo index={brand.index} />
                 </div>
 
                 {/* Brand name — typographic treatment */}
                 <div
                   className="mb-5"
-                  style={anim(visible, 460 + bi * 120, mounted, 'translateY(20px)')}
+                  style={anim(visible, 460 + bi * 100, mounted, 'translateY(20px)')}
                 >
                   {brand.nameLines.map((line, li) => (
                     <p
@@ -251,7 +327,7 @@ export default function SalonMarcas() {
                     width: visible ? '100%' : '0%',
                     maxWidth: '56px',
                     transition: 'width 0.7s cubic-bezier(0.16, 1, 0.3, 1)',
-                    transitionDelay: visible ? `${580 + bi * 120}ms` : '0ms',
+                    transitionDelay: visible ? `${580 + bi * 100}ms` : '0ms',
                   }}
                   aria-hidden
                 />
@@ -260,7 +336,7 @@ export default function SalonMarcas() {
                 {brand.products.length > 0 && (
                   <div
                     className="flex flex-wrap gap-2 mb-6"
-                    style={anim(visible, 720 + bi * 120, mounted)}
+                    style={anim(visible, 720 + bi * 100, mounted)}
                   >
                     {brand.products.map((product) => (
                       <span
@@ -283,40 +359,14 @@ export default function SalonMarcas() {
                   style={{
                     fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
                     maxWidth: '34ch',
-                    ...anim(visible, 800 + bi * 120, mounted),
+                    ...anim(visible, 800 + bi * 100, mounted),
                   }}
                 >
                   {brand.desc}
                 </p>
               </div>
-
-              {/* Vertical divider — desktop only, between brands */}
-              {bi === 0 && (
-                <div
-                  className="hidden md:block shrink-0 self-stretch"
-                  aria-hidden
-                >
-                  <div
-                    className="w-px h-full bg-cream/10"
-                    style={{
-                      opacity: visible ? 1 : 0,
-                      transition: 'opacity 0.6s ease',
-                      transitionDelay: visible ? '600ms' : '0ms',
-                    }}
-                  />
-                </div>
-              )}
-
-              {/* Mobile horizontal divider — between brands */}
-              {bi === 0 && (
-                <div
-                  className="block md:hidden w-full bg-cream/10 my-2"
-                  style={{ height: '1px' }}
-                  aria-hidden
-                />
-              )}
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* ── Bottom rule ────────────────────────────────────────────────── */}

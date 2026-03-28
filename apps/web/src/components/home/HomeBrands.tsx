@@ -4,37 +4,80 @@ import { getTranslations } from 'next-intl/server'
 export default async function HomeBrands() {
   const t = await getTranslations('homeBrands')
 
+  const brands = [
+    {
+      index: '01',
+      key: 'GOA',
+      phrase: t('phrase1'),
+      logo: { src: '/goa_organics.png', alt: 'GOA Organics', w: 260, h: 104, style: { filter: 'invert(1)', mixBlendMode: 'screen' as const } },
+      animClass: 'brands-logo-a',
+    },
+    {
+      index: '02',
+      key: 'ORIBE',
+      phrase: t('phrase2'),
+      logo: { src: '/oribe.svg', alt: 'ORIBE', w: 148, h: 199, style: { filter: 'invert(1) brightness(0.95)' } },
+      animClass: 'brands-logo-b',
+    },
+    {
+      index: '03',
+      key: 'ghd',
+      phrase: t('phrase3'),
+      logo: { src: '/ghd.svg', alt: 'ghd', w: 160, h: 96, style: {} },
+      animClass: 'brands-logo-c',
+    },
+    {
+      index: '04',
+      key: 'DEPOT',
+      phrase: t('phrase4'),
+      logo: { src: '/depot.png', alt: 'DEPOT The Male Tools & Co.', w: 200, h: 74, style: { filter: 'invert(1)', mixBlendMode: 'screen' as const } },
+      animClass: 'brands-logo-d',
+    },
+    {
+      index: '05',
+      key: 'SCHWARZKOPF',
+      phrase: t('phrase5'),
+      logo: { src: '/schwarzkopf.png', alt: 'Schwarzkopf Professional', w: 160, h: 120, style: { filter: 'invert(1)', mixBlendMode: 'screen' as const } },
+      animClass: 'brands-logo-e',
+    },
+  ]
+
   return (
     <>
       <style>{`
-        @keyframes brands-float-a {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-10px); }
-        }
-        @keyframes brands-float-b {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-8px); }
-        }
-        .brands-logo-goa   { animation: brands-float-a 8s  ease-in-out infinite; }
-        .brands-logo-oribe { animation: brands-float-b 10s ease-in-out infinite 1s; }
+        @keyframes brands-float-a { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-10px)} }
+        @keyframes brands-float-b { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-8px)} }
+        @keyframes brands-float-c { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-9px)} }
+        @keyframes brands-float-d { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-7px)} }
+        @keyframes brands-float-e { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-11px)} }
+        .brands-logo-a { animation: brands-float-a  8s ease-in-out infinite; }
+        .brands-logo-b { animation: brands-float-b 10s ease-in-out infinite 1s; }
+        .brands-logo-c { animation: brands-float-c  9s ease-in-out infinite 0.5s; }
+        .brands-logo-d { animation: brands-float-d 11s ease-in-out infinite 1.5s; }
+        .brands-logo-e { animation: brands-float-e  8s ease-in-out infinite 2s; }
       `}</style>
 
       <section className="relative bg-navy w-full overflow-hidden">
 
-        {/* ── Orange radial glow ──────────────────────────────────────── */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 90% 50% at 50% 30%, rgba(254,81,0,0.055) 0%, transparent 65%)' }}
-          aria-hidden
-        />
+        {/* ── Background photo ────────────────────────────────────────── */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden>
+          <Image
+            src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/cielo.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.38)' }} />
+        </div>
 
         {/* ── Eyebrow label ───────────────────────────────────────────── */}
         <div className="relative z-10 flex items-center gap-5 px-8 md:px-20 pt-20">
-          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(254,81,0,0.3))' }} />
-          <p className="font-neue text-[9px] uppercase tracking-[0.45em] text-orange/55 shrink-0">
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(246,244,241,0.3))' }} />
+          <p className="font-neue text-[9px] uppercase tracking-[0.45em] text-cream/55 shrink-0">
             {t('eyebrow')}
           </p>
-          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(254,81,0,0.3))' }} />
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(246,244,241,0.3))' }} />
         </div>
 
         {/* ── H2 ──────────────────────────────────────────────────────── */}
@@ -44,41 +87,68 @@ export default async function HomeBrands() {
           </h2>
         </div>
 
-        {/* ── Two brand panels ────────────────────────────────────────── */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 border-t border-cream/[0.06]">
+        {/* ── Brand panels grid ───────────────────────────────────────── */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border-t border-cream/[0.06]">
+          {brands.map((brand, bi) => {
+            const isLastInRowSm  = bi % 2 === 1
+            const isLastInRowLg  = bi % 3 === 2
+            const isLast         = bi === brands.length - 1
 
-          {/* ─ GOA ORGANICS ─ */}
-          <div className="relative overflow-hidden flex flex-col items-center gap-8 px-10 md:px-16 pt-16 pb-16 border-b md:border-b-0 md:border-r border-cream/[0.06]">
-            <span className="absolute inset-0 flex items-end pb-2 pl-3 font-primary select-none pointer-events-none" style={{ fontSize: 'clamp(5rem,13vw,11rem)', lineHeight: 1, color: 'rgba(246,244,241,0.027)', letterSpacing: '0.04em' }} aria-hidden>GOA</span>
-            <div className="self-start">
-              <span className="font-neue text-[9px] uppercase tracking-[0.45em] px-2 py-1" style={{ color: 'rgba(254,81,0,0.6)', border: '1px solid rgba(254,81,0,0.2)' }}>01</span>
-            </div>
-            <div className="brands-logo-goa relative" style={{ width: '260px', maxWidth: '100%', height: '104px' }}>
-              <Image src="/goa_organics.png" alt="GOA Organics" fill sizes="260px" className="object-contain object-center" style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
-            </div>
-            <p className="font-secondary italic text-[clamp(0.78rem,0.95vw,0.88rem)] text-cream/40 text-center tracking-wide">
-              {t('phrase1')}
-            </p>
-          </div>
+            return (
+              <div
+                key={brand.index}
+                className={[
+                  'relative overflow-hidden flex flex-col items-center gap-8 px-10 pt-16 pb-16',
+                  /* mobile: bottom border except last */
+                  bi < brands.length - 1 ? 'border-b border-cream/[0.06]' : '',
+                  /* sm: right border on left column, reset bottom */
+                  !isLastInRowSm ? 'sm:border-r sm:border-cream/[0.06]' : 'sm:border-r-0',
+                  bi < brands.length - (brands.length % 2 || 2) ? 'sm:border-b sm:border-cream/[0.06]' : 'sm:border-b-0',
+                  /* lg: 3 cols */
+                  !isLastInRowLg && !isLast ? 'lg:border-r lg:border-cream/[0.06]' : 'lg:border-r-0',
+                  bi < 3 ? 'lg:border-b lg:border-cream/[0.06]' : 'lg:border-b-0',
+                  /* xl: 5 cols, no bottom borders */
+                  !isLast ? 'xl:border-r xl:border-cream/[0.06]' : 'xl:border-r-0',
+                  'xl:border-b-0',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+              >
+                {/* Watermark letter */}
+                <span
+                  className="absolute inset-0 flex items-end pb-2 pl-3 font-primary select-none pointer-events-none"
+                  style={{ fontSize: 'clamp(4rem,10vw,9rem)', lineHeight: 1, color: 'rgba(246,244,241,0.027)', letterSpacing: '0.04em' }}
+                  aria-hidden
+                >
+                  {brand.key}
+                </span>
 
-          {/* ─ ORIBE ─ */}
-          <div className="relative overflow-hidden flex flex-col items-center gap-8 px-10 md:px-16 pt-16 pb-16">
-            <span className="absolute inset-0 flex items-end justify-end pb-2 pr-3 font-primary select-none pointer-events-none" style={{ fontSize: 'clamp(4rem,11vw,9rem)', lineHeight: 1, color: 'rgba(246,244,241,0.027)', letterSpacing: '0.04em' }} aria-hidden>ORIBE</span>
-            <div className="self-start">
-              <span className="font-neue text-[9px] uppercase tracking-[0.45em] px-2 py-1" style={{ color: 'rgba(254,81,0,0.6)', border: '1px solid rgba(254,81,0,0.2)' }}>02</span>
-            </div>
-            <div className="brands-logo-oribe relative" style={{ width: '148px', height: '199px' }}>
-              <Image src="/oribe.svg" alt="ORIBE" fill sizes="148px" className="object-contain object-center" style={{ filter: 'invert(1) brightness(0.95)' }} />
-            </div>
-            <p className="font-secondary italic text-[clamp(0.78rem,0.95vw,0.88rem)] text-cream/40 text-center tracking-wide">
-              {t('phrase2')}
-            </p>
-          </div>
+                {/* Logo */}
+                <div
+                  className={`${brand.animClass} relative`}
+                  style={{ width: `${brand.logo.w}px`, maxWidth: '100%', height: `${brand.logo.h}px` }}
+                >
+                  <Image
+                    src={brand.logo.src}
+                    alt={brand.logo.alt}
+                    fill
+                    sizes={`${brand.logo.w}px`}
+                    className="object-contain object-center"
+                    style={brand.logo.style}
+                  />
+                </div>
 
+                {/* Phrase */}
+                <p className="font-neue uppercase text-[clamp(0.65rem,0.8vw,0.75rem)] text-cream/85 text-center tracking-[0.2em]">
+                  {brand.phrase}
+                </p>
+              </div>
+            )
+          })}
         </div>
 
         {/* ── Thin orange rule ─────────────────────────────────────────── */}
-        <div className="relative z-10 mx-8 md:mx-20 mt-14 mb-8 h-px bg-orange/30" />
+        <div className="relative z-10 mx-8 md:mx-20 mt-14 mb-8 h-px bg-cream/30" />
 
       </section>
     </>

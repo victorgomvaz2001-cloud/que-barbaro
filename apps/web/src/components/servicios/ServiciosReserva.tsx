@@ -223,7 +223,7 @@ export default async function ServiciosReserva() {
 
             {/* Primary — Reservar cita */}
             <Link
-              href="/reservar"
+              href="https://wa.me/34644817835"
               className="group inline-flex items-center gap-3 bg-cream text-navy hover:bg-orange hover:text-cream transition-colors duration-300 font-neue uppercase tracking-widest px-12 py-4"
               style={{ fontSize: '11px', letterSpacing: '0.22em' }}
             >

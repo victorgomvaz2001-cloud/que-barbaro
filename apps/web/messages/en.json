@@ -438,6 +438,30 @@
         ],
         "products": [],
         "desc": "A more luxurious, sensorial dimension for those seeking a more exclusive salon experience."
+      },
+      "ghd": {
+        "index": "03",
+        "nameLines": [
+          "ghd"
+        ],
+        "products": [],
+        "desc": "High-performance styling tools for professional, long-lasting results every time."
+      },
+      "depot": {
+        "index": "04",
+        "nameLines": [
+          "DEPOT"
+        ],
+        "products": [],
+        "desc": "Precision male grooming: advanced formulas for hair and beard care."
+      },
+      "schwarzkopf": {
+        "index": "05",
+        "nameLines": [
+          "Schwarzkopf"
+        ],
+        "products": [],
+        "desc": "World-reference color and hydration with over 120 years of hairdressing tradition."
       }
     },
     "opiniones": {
@@ -484,9 +508,12 @@
     "text": "We work exclusively with brands that share our philosophy: real performance, quality ingredients and results that last.",
     "viewAll": "View all brands →",
     "eyebrow": "Selected brands",
-    "h2": "GOA Organics and ORIBE",
+    "h2": "The brands we work with",
     "phrase1": "For precise premium hair treatments",
-    "phrase2": "For a more exclusive experience"
+    "phrase2": "For a more exclusive experience",
+    "phrase3": "High-performance styling tools",
+    "phrase4": "Precision male grooming",
+    "phrase5": "World-reference color and hydration"
   },
   "experienceSection": {
     "label": "The space · Qué Bárbaro",
