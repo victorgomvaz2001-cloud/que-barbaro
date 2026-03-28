@@ -70,7 +70,7 @@ export default async function ExperienceSection() {
         </div>
 
         {/* ── 4-photo salon strip ───────────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-16 -mx-8 md:-mx-0">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-16">
           {[
             { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213834-sillones.webp', alt: 'Sillones del salón' },
             { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213899-mostrador.webp', alt: 'Mostrador de Qué Bárbaro' },
@@ -109,7 +109,7 @@ export default async function ExperienceSection() {
           </div>
 
           {/* Párrafos apilados */}
-          <div className="flex-1 flex flex-col gap-8 px-8 md:pr-16">
+          <div className="flex-1 flex flex-col gap-8 px-8 md:px-12 md:pr-16">
             <p className="font-neue font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-navy/60">
               {t('body1')}
             </p>

@@ -53,7 +53,7 @@ export default async function HomeBrands() {
             <div className="self-start">
               <span className="font-neue text-[9px] uppercase tracking-[0.45em] px-2 py-1" style={{ color: 'rgba(254,81,0,0.6)', border: '1px solid rgba(254,81,0,0.2)' }}>01</span>
             </div>
-            <div className="brands-logo-goa relative" style={{ width: '260px', height: '104px' }}>
+            <div className="brands-logo-goa relative" style={{ width: '260px', maxWidth: '100%', height: '104px' }}>
               <Image src="/goa_organics.png" alt="GOA Organics" fill sizes="260px" className="object-contain object-center" style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
             </div>
             <p className="font-secondary italic text-[clamp(0.78rem,0.95vw,0.88rem)] text-cream/40 text-center tracking-wide">

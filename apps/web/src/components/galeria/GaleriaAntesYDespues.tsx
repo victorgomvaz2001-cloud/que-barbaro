@@ -139,13 +139,14 @@ export default function GaleriaAntesYDespues() {
   const [visible, setVisible] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [pairs, setPairs] = useState<IGalleryPhoto[]>([])
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
     fetch(`${API_URL}/gallery/section/antes-despues`)
       .then((r) => r.ok ? r.json() : { data: [] })
-      .then((json) => setPairs(json.data ?? []))
-      .catch(() => setPairs([]))
+      .then((json) => { setPairs(json.data ?? []); setLoaded(true) })
+      .catch(() => { setPairs([]); setLoaded(true) })
   }, [])
 
   useEffect(() => {
@@ -163,6 +164,8 @@ export default function GaleriaAntesYDespues() {
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
+
+  if (!loaded || pairs.length === 0) return null
 
   return (
     <section

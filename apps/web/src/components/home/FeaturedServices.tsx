@@ -7,10 +7,10 @@ const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 /*
   Desktop mosaic layout — 4 columns × 3 rows, placement explícito:
 
-       Col 1      Col 2      Col 3      Col 4
-  Row1 [Card1     Card1    ] [Card2   ] [Card3   ]
-  Row2 [Card4   ] [Card5   ] [Card2   ] [Card6   ]
-  Row3 [Card4   ] [Card7     Card7   ] [Card6   ]
+       Col 1         Col 2         Col 3         Col 4
+  Row1 [Cortes       Cortes      ] [Color       ] [Trat.       ]
+  Row2 [Maquillaje ] [Manicura   ] [Color       ] [Trat.       ]
+  Row3 [Maquillaje ] [Manicura   ] [Eventos      Eventos      ]
 
   Sin huecos · bordes alineados · tamaños variados
 */
@@ -22,13 +22,12 @@ const SERVICES: {
   gc: string   // gridColumn (desktop)
   gr: string   // gridRow    (desktop)
 }[] = [
-  { key: 'service1', href: '/servicios/cortes',     img: `${S3}/servicios/cortedisen%CC%83o.webp`,    gc: '1 / 3', gr: '1 / 2' }, // wide
-  { key: 'service2', href: '/servicios/rubios',     img: `${S3}/servicios/balayagebrasil.webp`, gc: '3 / 4', gr: '1 / 3' }, // tall
-  { key: 'service3', href: '/servicios/goa',        img: `${S3}/servicios/keratin.webp`,        gc: '4 / 5', gr: '1 / 2' }, // square
-  { key: 'service4', href: '/servicios/peinados',   img: `${S3}/servicios/recogido.webp`,       gc: '1 / 2', gr: '2 / 4' }, // tall
-  { key: 'service5', href: '/servicios/maquillaje', img: `${S3}/servicios/makeupnoche.webp`,    gc: '2 / 3', gr: '2 / 3' }, // square
-  { key: 'service6', href: '/servicios#barberia',   img: `${S3}/servicios/ondas.webp`,          gc: '4 / 5', gr: '2 / 4' }, // tall
-  { key: 'service7', href: '/servicios#manicura',   img: `${S3}/servicios/manicura.jpg`,        gc: '2 / 4', gr: '3 / 4' }, // wide
+  { key: 'service1', href: '/servicios#corte-peinado',      img: `${S3}/servicios/cortedisen%CC%83o.webp`, gc: '1 / 3', gr: '1 / 2' }, // wide
+  { key: 'service2', href: '/servicios#color-rubios',       img: `${S3}/servicios/balayagebrasil.webp`,    gc: '3 / 4', gr: '1 / 3' }, // tall
+  { key: 'service3', href: '/servicios#tratamientos',       img: `${S3}/servicios/keratin.webp`,           gc: '4 / 5', gr: '1 / 3' }, // tall
+  { key: 'service4', href: '/servicios#maquillaje-belleza', img: `${S3}/servicios/makeupnoche.webp`,       gc: '1 / 2', gr: '2 / 4' }, // tall
+  { key: 'service5', href: '/servicios#manicura-belleza',   img: `${S3}/servicios/manicura.jpg`,           gc: '2 / 3', gr: '2 / 4' }, // tall
+  { key: 'service6', href: '/servicios#eventos',            img: `${S3}/servicios/packnovionovia.webp`,    gc: '3 / 5', gr: '3 / 4' }, // wide
 ]
 
 export default async function FeaturedServices() {
@@ -52,7 +51,7 @@ export default async function FeaturedServices() {
           </Link>
         </div>
 
-        {/* ── Mobile grid: 2 columnas, Card7 full-width ──────────────── */}
+        {/* ── Mobile grid: 2 columnas, último card full-width ───────── */}
         <div className="md:hidden grid grid-cols-2 gap-2">
           {SERVICES.map((s, i) => (
             <Link
@@ -60,7 +59,7 @@ export default async function FeaturedServices() {
               href={s.href}
               className={[
                 'group relative overflow-hidden bg-navy',
-                i === 6 ? 'col-span-2 aspect-[5/2]' : 'aspect-[3/4]',
+                i === 5 ? 'col-span-2 aspect-[5/2]' : 'aspect-[3/4]',
               ].join(' ')}
             >
               <CardInner number={String(i + 1).padStart(2, '0')} name={t(s.key as any)} img={s.img} />
@@ -119,8 +118,8 @@ function CardInner({ number, name, img }: { number: string; name: string; img?: 
       </span>
 
       {/* Service name */}
-      <div className="absolute inset-x-0 bottom-0 z-20 px-5 pb-5 pt-10 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
-        <p className="font-primary text-white uppercase text-[clamp(0.9rem,2vw,1.5rem)] leading-tight tracking-[0.06em]">
+      <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 pt-10 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
+        <p className="font-primary text-white uppercase text-[clamp(1rem,2vw,1.5rem)] leading-tight tracking-[0.06em]">
           {name}
         </p>
       </div>

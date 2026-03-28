@@ -1,23 +1,8 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-/* ─── Slug helper ────────────────────────────────────────────────────────── */
-
-function slugify(str: string): string {
-  return str
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-')
-}
-
-/* ─── Component ─────────────────────────────────────────────────────────── */
-
 export default async function GaleriaHero() {
   const t = await getTranslations('galeria')
-  const categories = t.raw('hero.categories') as string[]
 
   return (
     <section
@@ -112,37 +97,18 @@ export default async function GaleriaHero() {
           {t('hero.description')}
         </p>
 
-        {/* ── Category pills ───────────────────────────────────────────────── */}
-        <div
-          className="flex flex-row gap-2 pb-1"
-          style={{
-            overflowX: 'auto',
-            scrollbarWidth: 'none',
-          }}
-          role="navigation"
-          aria-label="Filtrar por categoría"
+        {/* Scroll CTA */}
+        <Link
+          href="#galeria-grid"
+          className="inline-flex items-center gap-3 font-neue uppercase tracking-[0.22em] text-cream/50 hover:text-cream transition-colors duration-200"
+          style={{ fontSize: '9px' }}
         >
-          {/* "Todos" pill */}
-          <Link
-            href="#galeria-grid"
-            className="shrink-0 inline-block font-neue uppercase tracking-[0.18em] border border-cream/20 text-cream/50 px-4 py-1.5 transition-colors duration-200 hover:border-cream hover:text-cream"
-            style={{ fontSize: '9px' }}
-          >
-            {t('hero.allCategories')}
-          </Link>
-
-          {/* Category pills */}
-          {categories.map((category) => (
-            <Link
-              key={category}
-              href={`#${slugify(category)}`}
-              className="shrink-0 inline-block font-neue uppercase tracking-[0.18em] border border-cream/20 text-cream/50 px-4 py-1.5 transition-colors duration-200 hover:border-cream hover:text-cream"
-              style={{ fontSize: '9px' }}
-            >
-              {category}
-            </Link>
-          ))}
-        </div>
+          {t('hero.allCategories')}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <line x1="7" y1="1" x2="7" y2="13" />
+            <polyline points="3 9 7 13 11 9" />
+          </svg>
+        </Link>
 
       </div>
 

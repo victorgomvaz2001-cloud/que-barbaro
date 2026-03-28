@@ -65,7 +65,7 @@ export default async function CtaSection() {
                 target={channel.href.startsWith('tel:') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
                 className={[
-                  'group border border-cream/20 px-8 py-6',
+                  'group border border-cream/20 px-3 py-5 sm:px-8 sm:py-6',
                   'flex flex-col items-center gap-2 text-center',
                   'transition-all duration-300 ease-out',
                   'hover:bg-cream/10 hover:border-cream/40',
@@ -75,7 +75,7 @@ export default async function CtaSection() {
                 <span className="text-cream/50 group-hover:text-cream transition-colors duration-300">
                   {channel.icon}
                 </span>
-                <span className="font-primary uppercase text-cream text-xl tracking-wide leading-none">
+                <span className="font-primary uppercase text-cream text-[clamp(0.9rem,2.5vw,1.25rem)] tracking-wide leading-none">
                   {channel.label}
                 </span>
                 <span className="font-neue font-light text-cream/40 text-[11px] uppercase tracking-[0.2em] leading-none">
