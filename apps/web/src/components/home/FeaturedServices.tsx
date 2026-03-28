@@ -1,5 +1,8 @@
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
+
+const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 
 /*
   Desktop mosaic layout — 4 columns × 3 rows, placement explícito:
@@ -15,17 +18,17 @@ import { getTranslations } from 'next-intl/server'
 const SERVICES: {
   key: string
   href: string
-  bg: string
+  img: string
   gc: string   // gridColumn (desktop)
   gr: string   // gridRow    (desktop)
 }[] = [
-  { key: 'service1', href: '/servicios/cortes',     bg: 'bg-navy',      gc: '1 / 3', gr: '1 / 2' }, // wide
-  { key: 'service2', href: '/servicios/rubios',     bg: 'bg-[#2C1810]', gc: '3 / 4', gr: '1 / 3' }, // tall
-  { key: 'service3', href: '/servicios/goa',        bg: 'bg-[#1a3a2a]', gc: '4 / 5', gr: '1 / 2' }, // square
-  { key: 'service4', href: '/servicios/peinados',   bg: 'bg-[#2a1a3a]', gc: '1 / 2', gr: '2 / 4' }, // tall
-  { key: 'service5', href: '/servicios/maquillaje', bg: 'bg-[#3a2a1a]', gc: '2 / 3', gr: '2 / 3' }, // square
-  { key: 'service6', href: '/servicios#barberia',   bg: 'bg-[#0a1245]', gc: '4 / 5', gr: '2 / 4' }, // tall
-  { key: 'service7', href: '/servicios#manicura',   bg: 'bg-[#1a2a1a]', gc: '2 / 4', gr: '3 / 4' }, // wide
+  { key: 'service1', href: '/servicios/cortes',     img: `${S3}/servicios/cortedisen%CC%83o.webp`,    gc: '1 / 3', gr: '1 / 2' }, // wide
+  { key: 'service2', href: '/servicios/rubios',     img: `${S3}/servicios/balayagebrasil.webp`, gc: '3 / 4', gr: '1 / 3' }, // tall
+  { key: 'service3', href: '/servicios/goa',        img: `${S3}/servicios/keratin.webp`,        gc: '4 / 5', gr: '1 / 2' }, // square
+  { key: 'service4', href: '/servicios/peinados',   img: `${S3}/servicios/recogido.webp`,       gc: '1 / 2', gr: '2 / 4' }, // tall
+  { key: 'service5', href: '/servicios/maquillaje', img: `${S3}/servicios/makeupnoche.webp`,    gc: '2 / 3', gr: '2 / 3' }, // square
+  { key: 'service6', href: '/servicios#barberia',   img: `${S3}/servicios/ondas.webp`,          gc: '4 / 5', gr: '2 / 4' }, // tall
+  { key: 'service7', href: '/servicios#manicura',   img: `${S3}/servicios/manicura.jpg`,        gc: '2 / 4', gr: '3 / 4' }, // wide
 ]
 
 export default async function FeaturedServices() {
@@ -56,12 +59,11 @@ export default async function FeaturedServices() {
               key={s.key}
               href={s.href}
               className={[
-                'group relative overflow-hidden',
-                s.bg,
+                'group relative overflow-hidden bg-navy',
                 i === 6 ? 'col-span-2 aspect-[5/2]' : 'aspect-[3/4]',
               ].join(' ')}
             >
-              <CardInner number={String(i + 1).padStart(2, '0')} name={t(s.key as any)} />
+              <CardInner number={String(i + 1).padStart(2, '0')} name={t(s.key as any)} img={s.img} />
             </Link>
           ))}
         </div>
@@ -78,10 +80,10 @@ export default async function FeaturedServices() {
             <Link
               key={s.key}
               href={s.href}
-              className={['group relative overflow-hidden', s.bg].join(' ')}
+              className="group relative overflow-hidden bg-navy"
               style={{ gridColumn: s.gc, gridRow: s.gr }}
             >
-              <CardInner number={String(i + 1).padStart(2, '0')} name={t(s.key as any)} />
+              <CardInner number={String(i + 1).padStart(2, '0')} name={t(s.key as any)} img={s.img} />
             </Link>
           ))}
         </div>
@@ -93,11 +95,23 @@ export default async function FeaturedServices() {
 
 /* ── Card interior ──────────────────────────────────────────────────────── */
 
-function CardInner({ number, name }: { number: string; name: string }) {
+function CardInner({ number, name, img }: { number: string; name: string; img?: string }) {
   return (
     <>
+      {/* Background photo */}
+      {img && (
+        <Image
+          src={img}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 50vw, 25vw"
+          className="object-cover object-center"
+          aria-hidden
+        />
+      )}
+
       {/* Hover overlay */}
-      <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25 z-10" />
+      <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/50 z-10" />
 
       {/* Ghost number */}
       <span className="absolute top-4 left-5 font-secondary text-[clamp(2.5rem,6vw,5rem)] leading-none text-white/10 select-none z-20 pointer-events-none">

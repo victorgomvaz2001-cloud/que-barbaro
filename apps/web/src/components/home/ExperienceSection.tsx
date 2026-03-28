@@ -95,7 +95,7 @@ export default async function ExperienceSection() {
           {/* Image — flush left */}
           <div className="relative shrink-0 w-full md:w-[40%] aspect-[4/3] overflow-hidden mb-10 md:mb-0">
             <Image
-              src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/experience1.webp"
+              src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213886-nevera.webp"
               alt="Detalle del servicio en Qué Bárbaro"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
