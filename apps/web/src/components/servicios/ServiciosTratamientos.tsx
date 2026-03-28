@@ -247,7 +247,7 @@ export default function ServiciosTratamientos() {
               id="tratamientos-title"
               className="font-primary text-navy uppercase leading-[0.88] tracking-tight"
               style={{
-                fontSize: 'clamp(4.5rem, 11vw, 9.5rem)',
+                fontSize: 'clamp(2.8rem, 11vw, 9.5rem)',
                 ...anim(visible, 120, mounted, 'translateY(60px)'),
               }}
             >
