@@ -21,8 +21,8 @@ export default async function ElSalonPage() {
       <SalonHistoria />
       <SalonExperiencia />
       <SalonEquipo />
-      <SalonMarcas />
-      <SalonOpiniones />
+      {/* <SalonMarcas /> */}
+      {/* <SalonOpiniones /> */}
       <SalonCtaReserva />
     </>
   )
