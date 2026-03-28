@@ -6,10 +6,10 @@ import { useTranslations } from 'next-intl'
 
 const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 const CARD_IMAGES = [
-  `${S3}/keratin.webp`,
-  `${S3}/softymood.jpg`,
-  `${S3}/sublime.jpg`,
-  `${S3}/baeberry.png`,
+  `${S3}/servicios/keratin.webp`,
+  `${S3}/servicios/softymood.jpg`,
+  `${S3}/servicios/sublime.jpg`,
+  `${S3}/servicios/baeberry.png`,
 ]
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */

@@ -8,9 +8,9 @@ const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 
 // One image per service row (indexed by position)
 const ROW_IMAGES = [
-  `${S3}/balayagebrasil.webp`,
-  `${S3}/babylight.webp`,
-  `${S3}/balayagerubio.webp`,
+  `${S3}/servicios/balayagebrasil.webp`,
+  `${S3}/servicios/babylight.webp`,
+  `${S3}/servicios/balayagerubio.webp`,
 ]
 
 type ServiceItem = {

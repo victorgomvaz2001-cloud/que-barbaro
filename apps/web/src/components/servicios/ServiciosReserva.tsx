@@ -4,9 +4,9 @@ import { Link } from '@/i18n/navigation'
 
 const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 const PACK_IMAGES = [
-  `${S3}/packnovionovia.webp`,
-  `${S3}/packdespedida.webp`,
-  `${S3}/cumpleaños.webp`,
+  `${S3}/servicios/packnovionovia.webp`,
+  `${S3}/servicios/packdespedida.webp`,
+  `${S3}/servicios/cumpleaños.webp`,
 ]
 
 /* ─────────────────────────────────────────────────────────────────────────────

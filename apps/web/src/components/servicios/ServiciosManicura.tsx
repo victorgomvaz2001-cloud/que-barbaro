@@ -179,7 +179,7 @@ export default function ServiciosManicura() {
   }, [])
 
   const images = [
-    'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/manicura.jpg',
+    'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/servicios/manicura.jpg',
     'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/servicios/pedicura.jpg',
   ]
 

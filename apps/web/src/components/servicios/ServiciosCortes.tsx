@@ -6,8 +6,8 @@ import { useTranslations } from 'next-intl'
 
 const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 const EDITORIAL_IMAGES = [
-  { src: `${S3}/cortediseño.webp`,              label: 'Artístico Design' },
-  { src: `${S3}/metodocurly.webp`,              label: 'Danza de Rizos' },
+  { src: `${S3}/servicios/cortediseño.webp`,              label: 'Artístico Design' },
+  { src: `${S3}/servicios/metodocurly.webp`,              label: 'Danza de Rizos' },
   { src: `${S3}/servicios/recogido.webp`,        label: 'Glamour en Altura' },
   { src: `${S3}/servicios/ondas.webp`,           label: 'Alfombra Roja' },
 ]

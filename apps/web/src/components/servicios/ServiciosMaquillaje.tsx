@@ -6,9 +6,9 @@ import { useTranslations } from 'next-intl'
 
 const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 const IMAGES = [
-  `${S3}/makeupnoche.webp`,
-  `${S3}/quemecaso.webp`,
-  `${S3}/mevoydefiesta.webp`,
+  `${S3}/servicios/makeupnoche.webp`,
+  `${S3}/servicios/quemecaso.webp`,
+  `${S3}/servicios/mevoydefiesta.webp`,
 ]
 
 type Service = {
