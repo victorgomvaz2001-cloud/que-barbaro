@@ -9,6 +9,7 @@
     "seed:blog": "ts-node --transpile-only src/scripts/seed-blog.ts",
     "seed:blog-content": "ts-node --transpile-only src/scripts/seed-blog-content.ts",
     "migrate:blog-categories": "ts-node --transpile-only src/scripts/migrate-blog-categories.ts",
+    "seed:gallery-antesdespues": "ts-node --transpile-only src/scripts/seed-gallery-antesdespues.ts",
     "seed:seo": "ts-node --transpile-only src/scripts/seed-seo.ts",
     "lint": "eslint src/",
     "test": "jest --coverage",

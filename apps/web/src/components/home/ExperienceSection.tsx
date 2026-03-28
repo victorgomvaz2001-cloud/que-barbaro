@@ -42,14 +42,13 @@ export default async function ExperienceSection() {
               <div className="w-px bg-navy/20" />
             </div>
 
-            {/* Image — experience2, flush right, full height of row */}
+            {/* Image — salon3, flush right, full height of row */}
             <div className="relative shrink-0 w-full md:w-[38%] self-stretch min-h-[300px] overflow-hidden mt-10 md:mt-0 md:-mr-8">
               <Image
-                src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/experience2.webp"
+                src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp"
                 alt="Interior del salón Qué Bárbaro en Torremolinos"
                 fill
                 sizes="(max-width: 768px) 100vw, 38vw"
-                quality={85}
                 className="object-cover object-left"
               />
             </div>
@@ -70,6 +69,26 @@ export default async function ExperienceSection() {
           </div>
         </div>
 
+        {/* ── 4-photo salon strip ───────────────────────────────────── */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-16 -mx-8 md:-mx-0">
+          {[
+            { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213834-sillones.webp', alt: 'Sillones del salón' },
+            { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213899-mostrador.webp', alt: 'Mostrador de Qué Bárbaro' },
+            { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213917-salon2.webp', alt: 'Espacio interior del salón' },
+            { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp', alt: 'Zona de trabajo del salón' },
+          ].map((img) => (
+            <div key={img.src} className="relative aspect-[3/4] overflow-hidden">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover object-center"
+              />
+            </div>
+          ))}
+        </div>
+
         {/* ── Body paragraphs + image left ──────────────────────────── */}
         <div className="flex flex-col md:flex-row md:items-center w-full">
 
@@ -80,7 +99,6 @@ export default async function ExperienceSection() {
               alt="Detalle del servicio en Qué Bárbaro"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
-              quality={85}
               className="object-cover object-center"
             />
           </div>
