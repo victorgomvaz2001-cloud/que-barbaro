@@ -173,7 +173,7 @@ export default function SalonMarcas() {
 
                 {/* Index number */}
                 <p
-                  className="font-neue text-cream/25 tabular-nums mb-4"
+                  className="font-neue text-cream/25 tabular-nums mb-6"
                   style={{
                     fontSize: 'clamp(0.6rem, 0.75vw, 0.68rem)',
                     letterSpacing: '0.2em',
@@ -183,20 +183,50 @@ export default function SalonMarcas() {
                   {brand.index}
                 </p>
 
+                {/* Brand logo */}
+                <div
+                  className="mb-8"
+                  style={anim(visible, 380 + bi * 120, mounted, 'translateY(16px)')}
+                >
+                  {bi === 0 ? (
+                    <div className="relative" style={{ width: '220px', maxWidth: '100%', height: '88px' }}>
+                      <Image
+                        src="/goa_organics.png"
+                        alt="GOA Organics"
+                        fill
+                        sizes="220px"
+                        className="object-contain object-left"
+                        style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
+                      />
+                    </div>
+                  ) : (
+                    <div className="relative" style={{ width: '120px', maxWidth: '100%', height: '162px' }}>
+                      <Image
+                        src="/oribe.svg"
+                        alt="ORIBE"
+                        fill
+                        sizes="120px"
+                        className="object-contain object-left"
+                        style={{ filter: 'invert(1) brightness(0.95)' }}
+                      />
+                    </div>
+                  )}
+                </div>
+
                 {/* Brand name — typographic treatment */}
                 <div
                   className="mb-5"
-                  style={anim(visible, 400 + bi * 120, mounted, 'translateY(20px)')}
+                  style={anim(visible, 460 + bi * 120, mounted, 'translateY(20px)')}
                 >
                   {brand.nameLines.map((line, li) => (
                     <p
                       key={li}
-                      className="font-primary text-cream uppercase leading-[0.88] tracking-tight"
+                      className="font-primary text-cream/30 uppercase leading-[0.88] tracking-tight"
                       style={{
                         fontSize:
                           brand.nameLines.length === 1
-                            ? 'clamp(4rem, 7.5vw, 7rem)'
-                            : 'clamp(3rem, 5.5vw, 5.5rem)',
+                            ? 'clamp(2rem, 4vw, 3.5rem)'
+                            : 'clamp(1.5rem, 3vw, 2.8rem)',
                       }}
                     >
                       {line}
@@ -221,7 +251,7 @@ export default function SalonMarcas() {
                 {brand.products.length > 0 && (
                   <div
                     className="flex flex-wrap gap-2 mb-6"
-                    style={anim(visible, 660 + bi * 120, mounted)}
+                    style={anim(visible, 720 + bi * 120, mounted)}
                   >
                     {brand.products.map((product) => (
                       <span
@@ -244,7 +274,7 @@ export default function SalonMarcas() {
                   style={{
                     fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
                     maxWidth: '34ch',
-                    ...anim(visible, 720 + bi * 120, mounted),
+                    ...anim(visible, 800 + bi * 120, mounted),
                   }}
                 >
                   {brand.desc}

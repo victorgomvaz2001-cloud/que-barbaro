@@ -59,7 +59,7 @@ export default async function FeaturedServices() {
               href={s.href}
               className={[
                 'group relative overflow-hidden bg-navy',
-                i === 5 ? 'col-span-2 aspect-[5/2]' : 'aspect-[3/4]',
+                i >= 4 ? 'col-span-2 aspect-[5/2]' : 'aspect-[3/4]',
               ].join(' ')}
             >
               <CardInner number={String(i + 1).padStart(2, '0')} name={t(s.key as any)} img={s.img} />
