@@ -32,24 +32,24 @@ export default async function ReservarCitaPage() {
         <div className="w-12 h-px bg-navy/20 mt-2" />
       </div>
 
-      {/* 5 booking / social channels */}
-      <div className="mx-auto max-w-3xl">
+      {/* 5 booking / social channels
+          Mobile/tablet: 2-2-1 | Desktop (lg): 3-2
+          Single grid — 2 cols / 6 cols — no gray gaps at any breakpoint */}
+      <div className="mx-auto max-w-2xl lg:max-w-3xl">
+      <div className="grid grid-cols-2 lg:grid-cols-6 gap-px bg-navy/10">
 
-      {/* Row 1 — 3 items */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy/10">
-
-        {/* ── WhatsApp ── */}
+        {/* ── WhatsApp — col-span-1 lg:col-span-2 ── */}
         <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex flex-col items-center text-center gap-5 px-10 py-12 bg-cream transition-colors duration-300 hover:bg-navy"
+          className="col-span-1 lg:col-span-2 group relative flex flex-col items-center text-center gap-3 px-6 py-8 bg-cream transition-colors duration-300 hover:bg-navy"
         >
           <span className="absolute top-0 left-0 right-0 h-[3px] bg-orange" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            width="42" height="42"
+            width="34" height="34"
             fill="none"
             aria-hidden="true"
           >
@@ -65,32 +65,32 @@ export default async function ReservarCitaPage() {
             />
           </svg>
           <div>
-            <p className="font-primary text-[1.6rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
+            <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               WhatsApp
             </p>
-            <p className="font-neue text-[11px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
               Mensaje directo
             </p>
           </div>
-          <p className="font-secondary text-[14px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
+          <p className="font-secondary text-[12px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
             +34 644 817 835
           </p>
-          <span className="font-neue font-bold text-[10px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
+          <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
             Escribir ahora →
           </span>
         </a>
 
-        {/* ── Instagram ── */}
+        {/* ── Instagram — col-span-1 lg:col-span-2 ── */}
         <a
           href={INSTAGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex flex-col items-center text-center gap-5 px-10 py-12 bg-cream transition-colors duration-300 hover:bg-navy"
+          className="col-span-1 lg:col-span-2 group relative flex flex-col items-center text-center gap-3 px-6 py-8 bg-cream transition-colors duration-300 hover:bg-navy"
         >
           <span className="absolute top-0 left-0 right-0 h-[3px] bg-orange" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="42" height="42"
+            width="34" height="34"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -105,32 +105,32 @@ export default async function ReservarCitaPage() {
             <circle cx="17.5" cy="6.5" r="1" />
           </svg>
           <div>
-            <p className="font-primary text-[1.6rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
+            <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               Instagram
             </p>
-            <p className="font-neue text-[11px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
               Perfil oficial
             </p>
           </div>
-          <p className="font-secondary font-semibold text-[14px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
+          <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
             {INSTAGRAM_HANDLE}
           </p>
-          <span className="font-neue font-bold text-[10px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
+          <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
             Ver perfil →
           </span>
         </a>
 
-        {/* ── TikTok ── */}
+        {/* ── TikTok — col-span-1 lg:col-span-2 ── */}
         <a
           href={TIKTOK_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex flex-col items-center text-center gap-5 px-10 py-12 bg-cream transition-colors duration-300 hover:bg-navy"
+          className="col-span-1 lg:col-span-2 group relative flex flex-col items-center text-center gap-3 px-6 py-8 bg-cream transition-colors duration-300 hover:bg-navy"
         >
           <span className="absolute top-0 left-0 right-0 h-[3px] bg-orange" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="42" height="42"
+            width="34" height="34"
             viewBox="0 0 24 24"
             fill="currentColor"
             className="text-orange transition-colors duration-300 group-hover:text-cream"
@@ -139,40 +139,35 @@ export default async function ReservarCitaPage() {
             <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
           </svg>
           <div>
-            <p className="font-primary text-[1.6rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
+            <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               TikTok
             </p>
-            <p className="font-neue text-[11px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
               Perfil oficial
             </p>
           </div>
-          <p className="font-secondary font-semibold text-[14px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
+          <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
             @que.barbaro_estilistas
           </p>
-          <span className="font-neue font-bold text-[10px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
+          <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
             Ver perfil →
           </span>
         </a>
 
-      </div>{/* end row 1 */}
+        {/* ── Treatwell — col-span-1 lg:col-span-3 ── */}
+        <TreatwellCard className="col-span-1 lg:col-span-3" />
 
-      {/* Row 2 — 2 items centered */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-navy/10 mt-px lg:w-2/3 lg:mx-auto">
-
-        {/* ── Treatwell ── */}
-        <TreatwellCard />
-
-        {/* ── Booksy ── */}
+        {/* ── Booksy — col-span-2 lg:col-span-3 ── */}
         <a
           href={BOOKSY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex flex-col items-center text-center gap-5 px-10 py-12 bg-cream transition-colors duration-300 hover:bg-navy"
+          className="col-span-2 lg:col-span-3 group relative flex flex-col items-center text-center gap-3 px-6 py-8 bg-cream transition-colors duration-300 hover:bg-navy"
         >
           <span className="absolute top-0 left-0 right-0 h-[3px] bg-orange" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="42" height="42"
+            width="34" height="34"
             viewBox="0 0 48 48"
             aria-hidden="true"
           >
@@ -196,23 +191,22 @@ export default async function ReservarCitaPage() {
             />
           </svg>
           <div>
-            <p className="font-primary text-[1.6rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
+            <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               Booksy
             </p>
-            <p className="font-neue text-[11px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
               Reserva online
             </p>
           </div>
-          <p className="font-secondary text-[14px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
+          <p className="font-secondary text-[12px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
             booksy.com
           </p>
-          <span className="font-neue font-bold text-[10px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
+          <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
             Reservar ahora →
           </span>
         </a>
 
-      </div>{/* end row 2 */}
-
+      </div>
       </div>{/* end outer container */}
 
       {/* Treatwell scripts */}
