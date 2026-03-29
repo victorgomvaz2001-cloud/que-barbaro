@@ -18,7 +18,7 @@ export default function TreatwellCard() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className="group relative flex flex-col items-center text-center gap-5 px-10 py-12 bg-cream transition-colors duration-300 hover:bg-orange"
+      className="group relative flex flex-col items-center text-center gap-5 px-10 py-12 bg-cream transition-colors duration-300 hover:bg-navy"
     >
       <span className="absolute top-0 left-0 right-0 h-[3px] bg-orange" />
       {/* Calendar + checkmark icon */}
@@ -27,7 +27,7 @@ export default function TreatwellCard() {
         width="42" height="42"
         viewBox="0 0 24 24"
         fill="none"
-        className="text-orange transition-colors duration-300 group-hover:text-white"
+        className="text-orange transition-colors duration-300 group-hover:text-cream"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -40,17 +40,17 @@ export default function TreatwellCard() {
         <polyline points="9 16 11 18 15 14" stroke="currentColor" />
       </svg>
       <div>
-        <p className="font-primary text-[1.6rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-white mb-1">
+        <p className="font-primary text-[1.6rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
           Treatwell
         </p>
-        <p className="font-neue text-[11px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-white/70">
+        <p className="font-neue text-[11px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
           Reserva online
         </p>
       </div>
-      <p className="font-secondary font-semibold text-[14px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-white/80">
+      <p className="font-secondary font-semibold text-[14px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
         treatwell.es
       </p>
-      <span className="font-neue font-bold text-[10px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-white/70 border-b border-current pb-px">
+      <span className="font-neue font-bold text-[10px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
         Reservar ahora →
       </span>
     </a>
