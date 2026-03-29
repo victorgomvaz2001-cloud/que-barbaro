@@ -17,6 +17,7 @@ export interface IPromotion {
   backgroundImage: string
   button: IPromotionButton
   position: 'top' | 'bottom'
+  size: 's' | 'm' | 'l'
   isActive: boolean
   createdAt: string
   updatedAt: string
@@ -29,6 +30,7 @@ export interface IPromotionCreate {
   backgroundImage: string
   button: IPromotionButton
   position: 'top' | 'bottom'
+  size: 's' | 'm' | 'l'
 }
 
 export type IPromotionUpdate = Partial<IPromotionCreate>

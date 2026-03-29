@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server'
 import type { IPromotion } from '@falcanna/types'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
@@ -15,7 +16,8 @@ async function getActivePromotion(): Promise<IPromotion | null> {
   }
 }
 
-export default async function PromotionalBanner({ locale }: { locale: string }) {
+export default async function PromotionalBanner() {
+  const locale = await getLocale()
   const promotion = await getActivePromotion()
   if (!promotion) return null
 
@@ -23,7 +25,14 @@ export default async function PromotionalBanner({ locale }: { locale: string }) 
   const description = locale === 'en' ? promotion.description.en : promotion.description.es
   const buttonText = locale === 'en' ? promotion.button.text.en : promotion.button.text.es
 
-  const positionClass = promotion.position === 'bottom' ? 'bottom-0' : 'top-0'
+  // top-20 = 80px, the height of the navbar, so the banner sticks just below it
+  const positionClass = promotion.position === 'bottom' ? 'bottom-0' : 'top-20'
+
+  const sizeStyles = {
+    s: { content: 'py-2 gap-2 sm:gap-4', title: 'text-xs font-semibold', description: 'text-[10px]' },
+    m: { content: 'py-4 gap-3 sm:gap-6', title: 'text-sm font-semibold',  description: 'text-xs'     },
+    l: { content: 'py-6 gap-4 sm:gap-8', title: 'text-base font-semibold', description: 'text-sm'    },
+  }[promotion.size ?? 's']
 
   return (
     <div
@@ -40,14 +49,14 @@ export default async function PromotionalBanner({ locale }: { locale: string }) 
             aria-hidden="true"
           />
         )}
-        <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
 
         {/* Content */}
-        <div className="relative flex flex-col items-center justify-center gap-3 px-6 py-4 text-center sm:flex-row sm:gap-6 sm:text-left">
+        <div className={`relative flex flex-col items-center justify-center px-6 text-center sm:flex-row sm:text-left ${sizeStyles.content}`}>
           <div className="min-w-0">
-            <p className="text-sm font-semibold text-white leading-tight">{title}</p>
+            <p className={`text-white leading-tight ${sizeStyles.title}`}>{title}</p>
             {description && (
-              <p className="mt-0.5 text-xs text-white/80 leading-snug">{description}</p>
+              <p className={`mt-0.5 text-white/80 leading-snug ${sizeStyles.description}`}>{description}</p>
             )}
           </div>
           <a

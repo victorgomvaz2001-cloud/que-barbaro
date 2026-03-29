@@ -25,6 +25,7 @@ const promotionSchema = new Schema<IPromotionDocument>(
     backgroundImage: { type: String, required: true },
     button:          { type: buttonSchema, required: true },
     position:        { type: String, enum: ['top', 'bottom'], default: 'top' },
+    size:            { type: String, enum: ['s', 'm', 'l'], default: 's' },
     isActive:        { type: Boolean, default: false },
   },
   { timestamps: true },

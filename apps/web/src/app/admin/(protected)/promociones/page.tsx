@@ -34,6 +34,7 @@ function PromotionModal({
   const [buttonUrl,       setButtonUrl]       = useState(initial?.button.url ?? '')
   const [buttonTarget,    setButtonTarget]    = useState<'_self' | '_blank'>(initial?.button.target ?? '_self')
   const [position,        setPosition]        = useState<'top' | 'bottom'>(initial?.position ?? 'top')
+  const [size,            setSize]            = useState<'s' | 'm' | 'l'>(initial?.size ?? 's')
   const [mediOpen,        setMediOpen]        = useState(false)
   const [saving,          setSaving]          = useState(false)
 
@@ -52,6 +53,7 @@ function PromotionModal({
         target: buttonTarget,
       },
       position,
+      size,
     })
     setSaving(false)
   }
@@ -242,6 +244,31 @@ function PromotionModal({
                   />
                   <span className="text-sm text-gray-700">Parte inferior</span>
                 </label>
+              </div>
+            </div>
+
+            {/* Size */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Tamaño del banner
+                <span className="ml-1 text-xs text-gray-400 font-normal">— controla la altura y el tamaño del texto</span>
+              </label>
+              <div className="flex gap-3">
+                {(['s', 'm', 'l'] as const).map((opt) => (
+                  <label key={opt} className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="size"
+                      value={opt}
+                      checked={size === opt}
+                      onChange={() => setSize(opt)}
+                      className="accent-gray-900"
+                    />
+                    <span className="text-sm text-gray-700">
+                      {opt === 's' ? 'S — Pequeño' : opt === 'm' ? 'M — Mediano' : 'L — Grande'}
+                    </span>
+                  </label>
+                ))}
               </div>
             </div>
 
@@ -473,6 +500,7 @@ export default function PromocionesPage() {
               <p className="text-sm font-semibold text-gray-900 truncate">{promotion.internalName}</p>
               <p className="mt-0.5 text-xs text-gray-400">
                 {promotion.position === 'top' ? 'Superior' : 'Inferior'}
+                {' · '}Tamaño: {(promotion.size ?? 's').toUpperCase()}
                 {' · '}Botón: {promotion.button.text.es || '—'}
               </p>
 

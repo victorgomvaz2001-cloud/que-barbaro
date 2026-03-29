@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/admin/galeria', label: 'Galería' },
   { href: '/admin/resenas', label: 'Reseñas' },
   { href: '/admin/menciones', label: 'Menciones' },
+  { href: '/admin/promociones', label: 'Promociones' },
   { href: '/admin/users', label: 'Users' },
 ]
 
