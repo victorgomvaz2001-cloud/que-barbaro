@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import type { ReactNode } from 'react'
+import PromotionalBanner from '@/components/PromotionalBanner'
 
 export default async function LocaleLayout({
   children,
@@ -21,6 +22,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <PromotionalBanner locale={locale} />
       {children}
     </NextIntlClientProvider>
   )

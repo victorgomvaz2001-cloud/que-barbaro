@@ -4,6 +4,7 @@ export default function DashboardPage() {
     { href: '/admin/blog', label: 'Manage Blog Posts' },
     { href: '/admin/galeria', label: 'Manage Galería' },
     { href: '/admin/users', label: 'Manage Users' },
+    { href: '/admin/promociones', label: 'Manage Promotions' },
   ]
 
   return (

@@ -8,6 +8,7 @@ import uploadRoutes from './upload.routes'
 import galleryRoutes from './gallery.routes'
 import reviewRoutes from './review.routes'
 import mentionRoutes from './mention.routes'
+import promotionRoutes from './promotion.routes'
 
 const router: IRouter = Router()
 
@@ -18,6 +19,7 @@ router.use('/locations', locationRoutes)
 router.use('/gallery', galleryRoutes)
 router.use('/reviews', reviewRoutes)
 router.use('/mentions', mentionRoutes)
+router.use('/promotions', promotionRoutes)
 router.use('/admin/users', userRoutes)
 router.use('/admin/upload', uploadRoutes)
 
