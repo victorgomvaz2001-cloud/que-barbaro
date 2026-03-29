@@ -59,7 +59,13 @@
       "privacidad": "Política de Privacidad",
       "cookies": "Política de Cookies"
     },
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "hoursLabel": "Horario",
+    "hours": [
+      { "days": "Mar – Vie", "hours": "10:00 – 19:00" },
+      { "days": "Sábado", "hours": "10:00 – 14:00" },
+      { "days": "Dom y Lun", "hours": "Cerrado" }
+    ]
   },
   "hero": {
     "eyebrow": "Salón de belleza · Torremolinos",

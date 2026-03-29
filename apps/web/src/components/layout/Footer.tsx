@@ -21,10 +21,13 @@ const SOCIAL = [
 const WHATSAPP_URL = 'https://wa.me/34644817835'
 const SALON_MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Que+Barbaro+Hair+%26+Care+Salon+Torremolinos'
 
+type HourEntry = { days: string; hours: string }
+
 export default async function Footer() {
   const tNav  = await getTranslations('nav')
   const tFoot = await getTranslations('footer')
   const year  = new Date().getFullYear()
+  const hoursList = tFoot.raw('hours') as HourEntry[]
 
   return (
     <footer>
@@ -88,6 +91,22 @@ export default async function Footer() {
                     {tFoot('city')}
                   </p>
                 </a>
+              </div>
+
+              <div>
+                <h3 className="font-primary text-navy text-[clamp(1.4rem,2.5vw,1.8rem)] tracking-[0.18em] mb-3">
+                  {tFoot('hoursLabel')}
+                </h3>
+                <dl className="flex flex-col gap-1">
+                  {hoursList.map(({ days, hours }) => (
+                    <div key={days} className="flex justify-center gap-2">
+                      <dt className="font-neue font-light text-navy/50 text-[clamp(1.1rem,2vw,1.4rem)]">{days}</dt>
+                      <dd className="font-neue font-light text-navy text-[clamp(1.1rem,2vw,1.4rem)]">
+                        <time>{hours}</time>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             </div>
 
