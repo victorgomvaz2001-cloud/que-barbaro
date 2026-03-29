@@ -127,7 +127,7 @@ export default function GaleriaEspacio() {
 
         {/* ── Photo grid ───────────────────────────────────────────────────── */}
 
-        {/* Hero image — full-width tall */}
+        {/* Hero image - full-width tall */}
         <div
           style={anim(visible, 240, mounted)}
           className="relative group overflow-hidden aspect-[21/9] w-full"

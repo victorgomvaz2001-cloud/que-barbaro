@@ -1,4 +1,4 @@
-# Qué Bárbaro — Monorepo
+# Qué Bárbaro - Monorepo
 
 TypeScript monorepo powered by **Turborepo** + **Yarn workspaces**.
 
@@ -22,7 +22,7 @@ TypeScript monorepo powered by **Turborepo** + **Yarn workspaces**.
 ```
 que-barbaro/
 ├── apps/
-│   ├── web/          # Next.js 15 — sitio público + admin
+│   ├── web/          # Next.js 15 - sitio público + admin
 │   └── api/          # Express.js REST API
 ├── packages/
 │   ├── tsconfig/     # TS base configs
@@ -136,7 +136,7 @@ El sitio usa rutas con `locale` (`/es`, `/en`, ...). A continuación se listan l
 
 ## Admin routes (`/admin`)
 
-Protected by `middleware.ts` — redirects to `/admin/login` if no `token` cookie.
+Protected by `middleware.ts` - redirects to `/admin/login` if no `token` cookie.
 
 | Route | Description |
 |---|---|
@@ -160,7 +160,7 @@ Protected by `middleware.ts` — redirects to `/admin/login` if no `token` cooki
 
 ---
 
-## API endpoints (`apps/api`) — legacy
+## API endpoints (`apps/api`) - legacy
 
 Base: `http://localhost:4000/api`
 

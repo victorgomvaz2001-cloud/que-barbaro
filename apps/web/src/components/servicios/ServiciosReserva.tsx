@@ -25,7 +25,7 @@ export default async function ServiciosReserva() {
   return (
     <>
       {/* ══════════════════════════════════════════════════════════════════════
-          SUB-SECTION 1 — EVENTOS
+          SUB-SECTION 1 - EVENTOS
       ══════════════════════════════════════════════════════════════════════ */}
       <section
         id="eventos"
@@ -161,7 +161,7 @@ export default async function ServiciosReserva() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════════
-          SUB-SECTION 2 — RESERVA CTA
+          SUB-SECTION 2 - RESERVA CTA
       ══════════════════════════════════════════════════════════════════════ */}
       <section
         id="reservar"
@@ -193,7 +193,7 @@ export default async function ServiciosReserva() {
           }}
         />
 
-        {/* Ghost watermark — bottom-right, cream at 2.8% opacity */}
+        {/* Ghost watermark - bottom-right, cream at 2.8% opacity */}
         <div
           aria-hidden="true"
           className="pointer-events-none select-none absolute bottom-0 right-0 font-primary text-cream leading-none"
@@ -246,7 +246,7 @@ export default async function ServiciosReserva() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
 
-            {/* Primary — Reservar cita */}
+            {/* Primary - Reservar cita */}
             <Link
               href="https://wa.me/34644817835"
               className="group inline-flex items-center gap-3 bg-cream text-navy hover:bg-orange hover:text-cream transition-colors duration-300 font-neue uppercase tracking-widest px-12 py-4"
@@ -272,7 +272,7 @@ export default async function ServiciosReserva() {
               </svg>
             </Link>
 
-            {/* Secondary — WhatsApp */}
+            {/* Secondary - WhatsApp */}
             <a
               href="https://wa.me/34644817835"
               target="_blank"

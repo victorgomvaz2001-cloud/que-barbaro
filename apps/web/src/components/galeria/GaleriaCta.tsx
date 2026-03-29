@@ -102,7 +102,7 @@ export default async function GaleriaCta() {
           </svg>
         </Link>
 
-        {/* Bottom label — location whisper */}
+        {/* Bottom label - location whisper */}
         <p
           className="mt-10 font-neue uppercase tracking-[0.3em] text-cream text-[9px]"
           style={{ opacity: 0.3 }}

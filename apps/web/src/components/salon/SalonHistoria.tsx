@@ -158,7 +158,7 @@ export default function SalonHistoria() {
               ...anim(visible, 160, mounted, 'translateX(32px)'),
             }}
           >
-            {/* Tall image wrapper — slight negative top offset for asymmetric feel */}
+            {/* Tall image wrapper - slight negative top offset for asymmetric feel */}
             <div
               className="relative w-full overflow-hidden"
               style={{
@@ -195,7 +195,7 @@ export default function SalonHistoria() {
               }}
             />
 
-            {/* Year stamp on image — bottom right corner */}
+            {/* Year stamp on image - bottom right corner */}
             <div
               className="absolute bottom-6 right-6 pointer-events-none select-none"
               style={anim(visible, 600, mounted)}

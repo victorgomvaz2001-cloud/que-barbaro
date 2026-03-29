@@ -33,7 +33,7 @@ function Lightbox({
       role="dialog"
       aria-modal="true"
     >
-      {/* Image container — stop propagation so clicking image doesn't close */}
+      {/* Image container - stop propagation so clicking image doesn't close */}
       <div
         className="relative w-full h-full flex items-center justify-center px-4 md:px-16"
         onClick={(e) => e.stopPropagation()}

@@ -13,7 +13,7 @@ function formatDate(iso: string) {
 export default function BlogCard({ post }: { post: IBlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group flex flex-col">
-      {/* Image — 16:9 */}
+      {/* Image - 16:9 */}
       <div className="relative aspect-[16/9] overflow-hidden bg-navy/5">
         {post.image ? (
           <Image

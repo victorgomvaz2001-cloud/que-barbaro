@@ -35,7 +35,7 @@ export default async function HomeContact() {
       <div className="border-t border-navy/10 px-8 py-14">
         <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-          {/* NAP — Name, Address, Phone (local SEO) */}
+          {/* NAP - Name, Address, Phone (local SEO) */}
           <div>
             <p className="font-secondary text-[9px] uppercase tracking-[0.28em] text-navy/35 mb-3">
               {t('sectionLabel')}

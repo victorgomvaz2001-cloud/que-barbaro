@@ -168,7 +168,7 @@ function AntesYDespuesModal({
             <div className="grid grid-cols-2 gap-4">
               {/* Before */}
               <div>
-                <p className="text-sm font-medium text-gray-700 mb-2">Foto — Antes</p>
+                <p className="text-sm font-medium text-gray-700 mb-2">Foto - Antes</p>
                 {urlBefore ? (
                   <div className="relative group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -194,7 +194,7 @@ function AntesYDespuesModal({
               </div>
               {/* After */}
               <div>
-                <p className="text-sm font-medium text-gray-700 mb-2">Foto — Después</p>
+                <p className="text-sm font-medium text-gray-700 mb-2">Foto - Después</p>
                 {urlAfter ? (
                   <div className="relative group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

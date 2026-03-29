@@ -55,7 +55,7 @@ export default function SalonHero() {
     <section
       ref={sectionRef}
       className="relative w-full min-h-screen overflow-hidden flex flex-col justify-end"
-      aria-label={`${t('title')} — ${t('brand')}, ${t('location')}`}
+      aria-label={`${t('title')} - ${t('brand')}, ${t('location')}`}
     >
       {/* ── Background image ─────────────────────────────────────────────── */}
       <Image
@@ -124,7 +124,7 @@ export default function SalonHero() {
           </h1>
         </div>
 
-        {/* Brand name — lighter, as subtitle */}
+        {/* Brand name - lighter, as subtitle */}
         <div className="overflow-hidden mb-10 md:mb-14">
           <p
             className="font-primary text-orange uppercase leading-[0.85] tracking-tight"

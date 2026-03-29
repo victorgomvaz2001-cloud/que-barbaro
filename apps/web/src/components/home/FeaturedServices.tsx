@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server'
 const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 
 /*
-  Desktop mosaic layout — 4 columns × 3 rows, placement explícito:
+  Desktop mosaic layout - 4 columns × 3 rows, placement explícito:
 
        Col 1         Col 2         Col 3         Col 4
   Row1 [Cortes       Cortes      ] [Color       ] [Trat.       ]

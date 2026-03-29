@@ -81,7 +81,7 @@ function CropEditor({
   const [fileName, setFileName] = useState(stripExt(file.name))
   const [processing, setProcessing] = useState(false)
 
-  // Drag refs — avoid re-renders mid-drag
+  // Drag refs - avoid re-renders mid-drag
   const dragging      = useRef(false)
   const lastMouse     = useRef({ x: 0, y: 0 })
   const lastPinchDist = useRef(0)
@@ -680,7 +680,7 @@ export function MediaPickerModal({
           </button>
         </div>
 
-        {/* Tabs — hidden while crop editor is open */}
+        {/* Tabs - hidden while crop editor is open */}
         {uploadStatus !== 'crop' && !cropQueueId && (
           <div className="flex shrink-0 border-b border-gray-200 px-6">
             {(['library', 'upload'] as const).map((t) => (
@@ -776,11 +776,11 @@ export function MediaPickerModal({
             </div>
           )}
 
-          {/* ── Upload tab — single ──────────────────────────────────────── */}
+          {/* ── Upload tab - single ──────────────────────────────────────── */}
           {uploadStatus !== 'crop' && tab === 'upload' && !multiple && (
             <div className="flex h-full flex-col items-center justify-center gap-6 px-8 py-8">
 
-              {/* Drop zone — only when idle/error and no file selected */}
+              {/* Drop zone - only when idle/error and no file selected */}
               {(uploadStatus === 'idle' || uploadStatus === 'error') && !file && (
                 <div
                   onDragOver={(e) => { e.preventDefault(); setIsDragging(true) }}
@@ -798,7 +798,7 @@ export function MediaPickerModal({
                 </div>
               )}
 
-              {/* Ready to upload — show preview + file info */}
+              {/* Ready to upload - show preview + file info */}
               {uploadStatus === 'idle' && file && (
                 <div className="flex flex-col items-center gap-4">
                   <div className="relative h-40 w-40 overflow-hidden rounded-lg border border-gray-200">
@@ -862,7 +862,7 @@ export function MediaPickerModal({
             </div>
           )}
 
-          {/* ── Upload tab — multiple ────────────────────────────────────── */}
+          {/* ── Upload tab - multiple ────────────────────────────────────── */}
           {uploadStatus !== 'crop' && !cropQueueId && tab === 'upload' && multiple && (
             <div className="flex h-full flex-col gap-4 p-6">
               {/* Drop zone */}

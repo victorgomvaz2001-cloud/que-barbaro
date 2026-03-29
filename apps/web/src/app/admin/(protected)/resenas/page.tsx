@@ -378,7 +378,7 @@ export default function AdminResenasPage() {
                 )}
                 <div className="min-w-0">
                   <p className="truncate text-sm font-semibold text-gray-900">{review.authorName}</p>
-                  <p className="text-[11px] text-gray-400">{review.relativeTime || '—'}</p>
+                  <p className="text-[11px] text-gray-400">{review.relativeTime || '-'}</p>
                 </div>
               </div>
 

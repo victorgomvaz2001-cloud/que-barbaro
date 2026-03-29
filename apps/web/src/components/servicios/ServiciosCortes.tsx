@@ -103,7 +103,7 @@ function ServiceRow({
           </p>
         </div>
 
-        {/* Spacer column — only on md grid, holds layout alignment */}
+        {/* Spacer column - only on md grid, holds layout alignment */}
         <div className="hidden md:block" />
 
         {/* Description + price */}

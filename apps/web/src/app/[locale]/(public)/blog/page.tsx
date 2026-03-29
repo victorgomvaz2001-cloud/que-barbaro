@@ -60,7 +60,7 @@ export default async function BlogPage() {
         </div>
       </div>
 
-      {/* All posts — unified grid with category filter pills */}
+      {/* All posts - unified grid with category filter pills */}
       <AllPostsSection locale={locale} categories={CATEGORIES} labels={allPostsLabels} />
     </>
   )

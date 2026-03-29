@@ -157,7 +157,7 @@ export default function SalonMarcas() {
       aria-label={t('eyebrow')}
     >
 
-      {/* ── Background image — very low opacity ──────────────────────────── */}
+      {/* ── Background image - very low opacity ──────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <Image
           src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1920&q=80"
@@ -239,7 +239,7 @@ export default function SalonMarcas() {
           />
         </header>
 
-        {/* ── Brand grid — 1 col mobile / 2 col tablet / 3 col desktop ───── */}
+        {/* ── Brand grid - 1 col mobile / 2 col tablet / 3 col desktop ───── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
           {brands.map((brand, bi) => {
@@ -298,7 +298,7 @@ export default function SalonMarcas() {
                   <BrandLogo index={brand.index} />
                 </div>
 
-                {/* Brand name — typographic treatment */}
+                {/* Brand name - typographic treatment */}
                 <div
                   className="mb-5"
                   style={anim(visible, 460 + bi * 100, mounted, 'translateY(20px)')}
@@ -332,7 +332,7 @@ export default function SalonMarcas() {
                   aria-hidden
                 />
 
-                {/* Products — pill tags (GOA only) */}
+                {/* Products - pill tags (GOA only) */}
                 {brand.products.length > 0 && (
                   <div
                     className="flex flex-wrap gap-2 mb-6"

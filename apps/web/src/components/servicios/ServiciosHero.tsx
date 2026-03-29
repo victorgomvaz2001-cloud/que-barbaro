@@ -126,7 +126,7 @@ export default function ServiciosHero() {
               style={{ fontSize: 'clamp(0.6rem, 0.8vw, 0.7rem)' }}
               aria-hidden="true"
             >
-              — {t('location')}
+              - {t('location')}
             </span>
           </div>
 

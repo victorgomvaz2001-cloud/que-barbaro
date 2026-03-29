@@ -68,7 +68,7 @@ export default async function CtaSection() {
           {/* Divider */}
           <hr className="border-0 border-t border-cream/10 mb-14" />
 
-          {/* Booking channel cards — 2×2 mobile, 4-col desktop */}
+          {/* Booking channel cards - 2×2 mobile, 4-col desktop */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {channels.map((channel) => (
               <a
@@ -118,7 +118,7 @@ export default async function CtaSection() {
                 'text-cream/60 transition-colors duration-200 active:bg-cream/10',
                 channel.id === 'whatsapp' ? 'hover:text-[#25D366]' : 'hover:text-cream',
               ].join(' ')}
-              aria-label={`${channel.label} — ${channel.sublabel}`}
+              aria-label={`${channel.label} - ${channel.sublabel}`}
             >
               <span className="w-5 h-5 flex items-center justify-center">{channel.icon}</span>
               <span className="font-neue text-[9px] uppercase tracking-wide leading-none text-center w-full px-2 truncate">{channel.label}</span>

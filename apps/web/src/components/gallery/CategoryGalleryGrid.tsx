@@ -132,7 +132,7 @@ export default function CategoryGalleryGrid({ photos, comingSoon = 'Próximament
           {/* Top bar */}
           <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-10 py-6 pointer-events-none z-10">
             <span className="font-neue text-white/40 text-[10px] tracking-[0.28em] uppercase">
-              {String(selectedIndex + 1).padStart(2, '0')} — {String(photos.length).padStart(2, '0')}
+              {String(selectedIndex + 1).padStart(2, '0')} - {String(photos.length).padStart(2, '0')}
             </span>
             <button
               className="pointer-events-auto font-neue text-white/50 hover:text-white text-3xl leading-none transition-colors duration-200"

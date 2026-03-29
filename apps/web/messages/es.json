@@ -149,7 +149,7 @@
     "hero": {
       "eyebrow": "Galería · Qué Bárbaro",
       "title": "Galería",
-      "subtitle": "— Qué Bárbaro",
+      "subtitle": "Qué Bárbaro",
       "description": "Resultados reales: coloración, cortes, tratamientos, eventos y el interior del salón. La mejor manera de entender cómo trabajamos.",
       "allCategories": "Todos",
       "categories": [
@@ -194,7 +194,7 @@
     }
   },
   "contacto": {
-    "title": "Contacto — Qué Bárbaro",
+    "title": "Contacto - Qué Bárbaro",
     "intro": "Toda la información para ponerte en contacto o llegar al salón.",
     "whereTitle": "Dónde estamos",
     "whereText": "Nuestro salón está en Torremolinos, Málaga. La ubicación es cómoda y accesible tanto para clientes locales como para personas de los alrededores que buscan un salón con una propuesta más cuidada y personal.",
@@ -226,7 +226,7 @@
     "mapsTitle": "Ubicación de Qué Bárbaro en Google Maps"
   },
   "serviciosPage": {
-    "eyebrow": "— Qué Bárbaro",
+    "eyebrow": "- Qué Bárbaro",
     "title": "Servicios",
     "serviceLabel": "Servicio",
     "priceNote": "Precio orientativo",

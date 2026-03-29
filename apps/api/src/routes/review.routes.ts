@@ -4,7 +4,7 @@ import { authMiddleware } from '../middleware/auth.middleware'
 
 const router: IRouter = Router()
 
-// Public — selected reviews for testimonials
+// Public - selected reviews for testimonials
 router.get('/', reviewController.getSelected)
 
 // Admin

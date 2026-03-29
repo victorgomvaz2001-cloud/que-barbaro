@@ -15,7 +15,7 @@ export default async function GaleriaPage() {
 
   return (
     <>
-      <SEOHead route={seoRoute} fallback={{ title: 'Galería — Qué Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Galería - Qué Bárbaro' }} />
       <GaleriaHero />
       <GaleriaGrid />
       <GaleriaAntesYDespues />

@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
       <SEOHead
         route={seoRoute}
         fallback={{
-          title: `${post.title} — Qué Bárbaro`,
+          title: `${post.title} - Qué Bárbaro`,
           description: post.excerpt,
         }}
       />
@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Gradiente de abajo */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-navy/10" />
 
-        {/* Contenido superpuesto — centrado verticalmente con padding simétrico */}
+        {/* Contenido superpuesto - centrado verticalmente con padding simétrico */}
         <div className="absolute inset-0 flex flex-col justify-center px-8 py-16 md:px-12 md:py-20">
           <div className="mx-auto w-full max-w-4xl">
 

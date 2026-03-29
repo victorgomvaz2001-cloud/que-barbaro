@@ -49,10 +49,10 @@ function FlipCard({
       // touch support
       onTouchStart={() => setFlipped((f) => !f)}
       tabIndex={0}
-      aria-label={`${pair.pairLabel ?? ''} — ${flipped ? afterLabel : beforeLabel}`}
+      aria-label={`${pair.pairLabel ?? ''} - ${flipped ? afterLabel : beforeLabel}`}
       style={{ perspective: '1200px' }}
     >
-      {/* Card wrapper — rotates on flip */}
+      {/* Card wrapper - rotates on flip */}
       <div
         style={{
           position: 'relative',
@@ -70,7 +70,7 @@ function FlipCard({
         >
           <Image
             src={pair.url}
-            alt={`${pair.pairLabel ?? ''} — ${beforeLabel}`}
+            alt={`${pair.pairLabel ?? ''} - ${beforeLabel}`}
             fill
             sizes="(max-width: 768px) 90vw, 30vw"
             className="object-cover object-top"
@@ -107,7 +107,7 @@ function FlipCard({
         >
           <Image
             src={pair.urlAfter ?? pair.url}
-            alt={`${pair.pairLabel ?? ''} — ${afterLabel}`}
+            alt={`${pair.pairLabel ?? ''} - ${afterLabel}`}
             fill
             sizes="(max-width: 768px) 90vw, 30vw"
             className="object-cover object-top"

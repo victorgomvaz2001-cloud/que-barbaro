@@ -17,7 +17,7 @@ export default async function ServiciosPage() {
 
   return (
     <>
-      <SEOHead route={seoRoute} fallback={{ title: 'Servicios — Qué Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Servicios - Qué Bárbaro' }} />
       <ServiciosNav />
       <ServiciosHero />
       <ServiciosCortes />

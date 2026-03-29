@@ -42,7 +42,7 @@ export default async function ExperienceSection() {
               <div className="w-px bg-navy/20" />
             </div>
 
-            {/* Image — salon3, flush right, full height of row */}
+            {/* Image - salon3, flush right, full height of row */}
             <div className="relative shrink-0 w-full md:w-[38%] self-stretch min-h-[300px] overflow-hidden mt-10 md:mt-0 md:-mr-8">
               <Image
                 src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp"
@@ -92,7 +92,7 @@ export default async function ExperienceSection() {
         {/* ── Body paragraphs + image left ──────────────────────────── */}
         <div className="flex flex-col md:flex-row md:items-center w-full">
 
-          {/* Image — flush left */}
+          {/* Image - flush left */}
           <div className="relative shrink-0 w-full md:w-[40%] aspect-[4/3] overflow-hidden mb-10 md:mb-0">
             <Image
               src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213886-nevera.webp"
@@ -103,7 +103,7 @@ export default async function ExperienceSection() {
             />
           </div>
 
-          {/* Divider — centered between image and text */}
+          {/* Divider - centered between image and text */}
           <div className="hidden md:flex justify-center items-stretch w-16 shrink-0 self-stretch">
             <div className="w-px bg-navy/20" />
           </div>

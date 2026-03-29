@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
-/* ─── Hook — single IntersectionObserver ───────────────────────────────────── */
+/* ─── Hook - single IntersectionObserver ───────────────────────────────────── */
 
 function useReveal<T extends HTMLElement>(threshold = 0.25) {
   const ref = useRef<T>(null)
@@ -133,7 +133,7 @@ export default function SalonExperiencia() {
             className="font-neue uppercase tracking-[0.32em] text-cream/40 mb-10"
             style={{ fontSize: '10px', ...fadeUp(visible, 0) }}
           >
-            — {t('eyebrow')}
+            - {t('eyebrow')}
           </p>
 
           {/* Display title */}

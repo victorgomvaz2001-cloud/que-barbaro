@@ -4,7 +4,7 @@ import { authMiddleware } from '../middleware/auth.middleware'
 
 const router: IRouter = Router()
 
-// Public — visible mentions for the section
+// Public - visible mentions for the section
 router.get('/', mentionController.getVisible)
 
 // Admin

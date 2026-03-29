@@ -259,7 +259,7 @@ export default function ServiciosManicura() {
           </p>
         </div>
 
-        {/* ── Services grid — asymmetric 60/40 ───────────────────────── */}
+        {/* ── Services grid - asymmetric 60/40 ───────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-x-8 lg:gap-x-12 gap-y-16">
           {services.map((service, i) => (
             <ServiceCard

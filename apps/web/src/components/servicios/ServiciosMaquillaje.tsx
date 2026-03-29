@@ -219,7 +219,7 @@ export default function ServiciosMaquillaje() {
                 key={service.name}
                 className={`maq-card-${i} relative flex flex-col bg-navy group`}
               >
-                {/* Top orange bar — animates in on scroll, scales on hover */}
+                {/* Top orange bar - animates in on scroll, scales on hover */}
                 <div
                   className={`maq-bar-${i} h-[2px] w-full bg-orange origin-left`}
                   style={{ transformOrigin: 'left' }}
@@ -265,7 +265,7 @@ export default function ServiciosMaquillaje() {
                     {service.name}
                   </h3>
 
-                  {/* Tagline — only rendered if non-empty */}
+                  {/* Tagline - only rendered if non-empty */}
                   {service.tagline ? (
                     <p
                       className="font-neue uppercase tracking-[0.18em] text-orange"

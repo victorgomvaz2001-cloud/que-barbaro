@@ -81,7 +81,7 @@ async function seed() {
     created++
   }
 
-  console.log(`\nDone — ${created} created, ${skipped} skipped (${PAIRS.length} total)`)
+  console.log(`\nDone - ${created} created, ${skipped} skipped (${PAIRS.length} total)`)
   await mongoose.disconnect()
 }
 

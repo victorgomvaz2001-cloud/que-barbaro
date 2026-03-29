@@ -76,7 +76,7 @@ function ServiceCard({
         </div>
       )}
 
-      {/* Orange top bar — animated scaleX on reveal */}
+      {/* Orange top bar - animated scaleX on reveal */}
       <div className="overflow-hidden mb-7">
         <div
           aria-hidden
