@@ -16,7 +16,7 @@ export default async function ElSalonPage() {
 
   return (
     <>
-      <SEOHead route={seoRoute} fallback={{ title: 'El Salón - Que Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'El Salón - Qué Bárbaro' }} />
       <SalonHero />
       <SalonHistoria />
       <SalonExperiencia />

@@ -9,7 +9,7 @@ export default async function PoliticaCookiesPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-8 py-24">
-      <SEOHead route={seoRoute} fallback={{ title: 'Política de Cookies - Que Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Política de Cookies - Qué Bárbaro' }} />
       <h1
         className="font-primary text-5xl uppercase tracking-wide text-navy"
       >

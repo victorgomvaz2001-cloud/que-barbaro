@@ -34,7 +34,7 @@ export default async function Footer() {
 
           {/* Top row: Logo centrado */}
           <div className="flex justify-center mb-16">
-            <Link href="/" className="text-navy transition-opacity hover:opacity-70" aria-label="Que Bárbaro">
+            <Link href="/" className="text-navy transition-opacity hover:opacity-70" aria-label="Qué Bárbaro">
               <Logo className="h-24 w-auto" />
             </Link>
           </div>
@@ -110,7 +110,7 @@ export default async function Footer() {
           {/* Bottom bar: copyright · legal · back to top */}
           <div className="border-t border-navy/15 mt-12 py-5 flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
             <p className="font-neue font-light font-light text-navy/35 text-xs text-center md:text-left">
-              © {year} Que Bárbaro. {tFoot('rights')}
+              © {year} Qué Bárbaro. {tFoot('rights')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-5">

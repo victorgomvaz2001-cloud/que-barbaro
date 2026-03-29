@@ -19,7 +19,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <SEOHead route={seoRoute} fallback={{ title: 'Que Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Qué Bárbaro' }} />
       <Hero />
       <ValueProposition />
       <ExperienceSection />

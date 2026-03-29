@@ -42,7 +42,7 @@ export default async function ContactoPage() {
 
   return (
     <>
-      <SEOHead route={seoRoute} fallback={{ title: 'Contacto - Que Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Contacto - Qué Bárbaro' }} />
 
       <div className="w-full px-6 md:px-10 py-16 md:py-20">
         <div className="mx-auto w-full max-w-6xl flex flex-col gap-16 md:gap-20">

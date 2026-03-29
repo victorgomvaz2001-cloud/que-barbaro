@@ -9,7 +9,7 @@ export default async function AvisoLegalPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-8 py-24">
-      <SEOHead route={seoRoute} fallback={{ title: 'Aviso Legal - Que Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Aviso Legal - Qué Bárbaro' }} />
       <h1
         className="font-primary text-5xl uppercase tracking-wide text-navy"
       >

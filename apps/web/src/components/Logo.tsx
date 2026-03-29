@@ -1,5 +1,5 @@
 /**
- * Logo de Que Bárbaro - SVG inline con fill="currentColor"
+ * Logo de Qué Bárbaro - SVG inline con fill="currentColor"
  * para heredar el color del texto (navbar, footer, etc.).
  */
 export default function Logo({ className }: { className?: string }) {

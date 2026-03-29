@@ -18,7 +18,7 @@ export default async function ReservarCitaPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-8 py-16">
-      <SEOHead route={seoRoute} fallback={{ title: 'Reservar Cita - Que Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Reservar Cita - Qué Bárbaro' }} />
 
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-3 mb-16">
