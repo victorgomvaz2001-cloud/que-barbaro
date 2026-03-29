@@ -11,6 +11,7 @@ import PricingSection from '@/components/home/PricingSection'
 import TestimonialsSection from '@/components/salon/TestimonialsSection'
 import CtaSection from '@/components/salon/CtaSection'
 import FaqSection from '@/components/home/FaqSection'
+import MentionsSection from '@/components/home/MentionsSection'
 import HomeContact from '@/components/home/HomeContact'
 
 export default async function HomePage() {
@@ -29,6 +30,7 @@ export default async function HomePage() {
       <TestimonialsSection />
       <CtaSection />
       <FaqSection />
+      <MentionsSection />
       <HomeContact />
     </>
   )

@@ -554,32 +554,39 @@
     "items": [
       {
         "name": "Artístico Design",
-        "price": "desde [X]€",
+        "price": "desde 49€",
         "desc": "corte de diseño personalizado"
       },
       {
         "name": "Danza de Rizos",
-        "price": "desde [X]€",
+        "price": "desde 69€",
         "desc": "método curly"
       },
       {
         "name": "Balayage Estilo Brasileño",
-        "price": "desde [X]€",
+        "price": "desde 170€",
         "desc": "coloración"
       },
       {
         "name": "Keratin Infusion GOA",
-        "price": "desde [X]€",
+        "price": "desde 250€",
         "desc": "tratamiento"
       },
       {
-        "name": "Glamour en Altura",
-        "price": "desde [X]€",
-        "desc": "recogido de evento"
+        "name": "Maquillaje Glamour Noche",
+        "price": "desde 90€",
+        "desc": "maquillaje"
       }
     ],
     "note": "Coloración y tratamientos pueden variar según longitud y trabajo técnico. Te orientamos antes de reservar.",
     "viewAll": "Ver todos los servicios →"
+  },
+  "mentionsSection": {
+    "eyebrow": "Prensa · Medios",
+    "title": "Nos han mencionado",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "goTo": "Ir a la mención"
   },
   "homeContact": {
     "sectionLabel": "Cómo llegar",

@@ -554,32 +554,39 @@
     "items": [
       {
         "name": "Artistic Design",
-        "price": "from [X]€",
+        "price": "from 49€",
         "desc": "personalised design cut"
       },
       {
         "name": "Dance of Curls",
-        "price": "from [X]€",
+        "price": "from 69€",
         "desc": "curly method"
       },
       {
-        "name": "Brazilian Style Balayage",
-        "price": "from [X]€",
+        "name": "Babylights Silk Shine",
+        "price": "from 170€",
         "desc": "colouring"
       },
       {
         "name": "Keratin Infusion GOA",
-        "price": "from [X]€",
+        "price": "from 250€",
         "desc": "treatment"
       },
       {
-        "name": "Glamour Heights",
-        "price": "from [X]€",
-        "desc": "event updo"
+        "name": "Glamour Night Makeup",
+        "price": "from 90€",
+        "desc": "makeup"
       }
     ],
     "note": "Colour and treatments may vary by length and technical work. We'll advise you before you book.",
     "viewAll": "View all services →"
+  },
+  "mentionsSection": {
+    "eyebrow": "Press · Media",
+    "title": "As featured in",
+    "prev": "Previous",
+    "next": "Next",
+    "goTo": "Go to mention"
   },
   "homeContact": {
     "sectionLabel": "How to get here",
