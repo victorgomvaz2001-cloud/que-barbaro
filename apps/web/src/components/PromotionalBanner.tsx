@@ -26,7 +26,8 @@ export default async function PromotionalBanner() {
   const buttonText = locale === 'en' ? promotion.button.text.en : promotion.button.text.es
 
   // top-20 = 80px, the height of the navbar, so the banner sticks just below it
-  const positionClass = promotion.position === 'bottom' ? 'bottom-0' : 'top-20'
+  const isBottom = promotion.position === 'bottom'
+  const positionClass = isBottom ? 'fixed bottom-0' : 'sticky top-20'
 
   const sizeStyles = {
     s: { content: 'py-2 gap-2 sm:gap-4', title: 'text-xs font-semibold', description: 'text-[10px]' },
@@ -36,7 +37,7 @@ export default async function PromotionalBanner() {
 
   return (
     <div
-      className={`sticky ${positionClass} left-0 z-50 w-full`}
+      className={`${positionClass} left-0 z-50 w-full`}
       role="banner"
       aria-label={title}
     >
