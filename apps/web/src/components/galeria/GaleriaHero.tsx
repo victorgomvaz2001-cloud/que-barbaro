@@ -14,20 +14,20 @@ export default async function GaleriaHero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/hero.jpg")',
+            'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/renaissance-circle.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.15,
+          opacity: 0.8,
         }}
         aria-hidden
       />
 
-      {/* ── Dark navy gradient overlay ────────────────────────────────────── */}
+      {/* ── Dark gradient overlay ────────────────────────────────────────── */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(1,10,73,0.6) 0%, rgba(1,10,73,0.45) 50%, rgba(1,10,73,0.72) 100%)',
+            'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.20) 100%)',
         }}
         aria-hidden
       />

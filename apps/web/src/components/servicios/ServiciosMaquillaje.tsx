@@ -136,6 +136,31 @@ export default function ServiciosMaquillaje() {
         className={`relative w-full bg-navy py-24 md:py-32 overflow-hidden${visible ? ' maq-visible' : ''}`}
         aria-labelledby="maquillaje-title"
       >
+        {/* ── Background image ─────────────────────────────────────────── */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/michelangelo.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.7,
+            zIndex: 0,
+          }}
+        />
+
+        {/* ── Black overlay ────────────────────────────────────────────── */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(0,0,0,0.35)',
+            zIndex: 0,
+          }}
+        />
+
         {/* Ghost watermark */}
         <span
           className="pointer-events-none select-none absolute -bottom-[6vw] -right-[4vw] font-primary text-cream/[0.03] leading-none uppercase"

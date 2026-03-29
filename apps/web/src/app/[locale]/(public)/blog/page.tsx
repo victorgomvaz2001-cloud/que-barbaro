@@ -2,7 +2,7 @@ import { getLocale, getTranslations } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
 import AllPostsSection from '@/components/blog/AllPostsSection'
 
-const HERO_IMAGE = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/hero.jpg'
+const HERO_IMAGE = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/santisimatrinidad.jpeg'
 
 const CATEGORIES = [
   'Cuidado capilar',
@@ -44,7 +44,7 @@ export default async function BlogPage() {
         />
 
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/10" />
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-7xl">

@@ -168,6 +168,31 @@ export default async function ServiciosReserva() {
         className="relative w-full bg-navy overflow-hidden py-32"
         aria-labelledby="reservar-title"
       >
+        {/* ── Background image ──────────────────────────────────────────── */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/venusycupido.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.7,
+            zIndex: 0,
+          }}
+        />
+
+        {/* ── Black overlay ─────────────────────────────────────────────── */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(0,0,0,0.35)',
+            zIndex: 0,
+          }}
+        />
+
         {/* Ghost watermark — bottom-right, cream at 2.8% opacity */}
         <div
           aria-hidden="true"

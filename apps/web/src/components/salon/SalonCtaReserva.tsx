@@ -9,6 +9,26 @@ export default async function SalonCtaReserva() {
       className="relative w-full bg-navy overflow-hidden py-32"
       aria-label={t('title')}
     >
+      {/* ── Background image ─────────────────────────────────────────────── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/madonnagoldfinch.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.7,
+        }}
+        aria-hidden
+      />
+
+      {/* ── Black overlay ────────────────────────────────────────────────── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'rgba(0,0,0,0.25)' }}
+        aria-hidden
+      />
+
       {/* ── Subtle grain texture overlay ─────────────────────────────────── */}
       <div
         className="absolute inset-0 pointer-events-none"

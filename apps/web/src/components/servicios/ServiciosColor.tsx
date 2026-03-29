@@ -124,27 +124,27 @@ export default function ServiciosColor() {
         aria-labelledby="color-section-title"
       >
 
-        {/* ── Background image at ~12% opacity ───────────────── */}
+        {/* ── Background image ────────────────────────────────── */}
         <div
           aria-hidden="true"
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `url(${S3}/balayagerubio.webp)`,
+            backgroundImage: 'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/sanpredro.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.12,
+            opacity: 0.7,
             zIndex: 0,
           }}
         />
 
-        {/* ── Navy gradient overlay ───────────────────────────── */}
+        {/* ── Dark gradient overlay ───────────────────────────── */}
         <div
           aria-hidden="true"
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(1,10,73,0.82) 0%, rgba(1,10,73,0.62) 50%, rgba(1,10,73,0.88) 100%)',
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%)',
             zIndex: 1,
           }}
         />
