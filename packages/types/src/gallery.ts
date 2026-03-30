@@ -1,4 +1,29 @@
-export type GallerySection = 'general' | 'antes-despues' | 'espacio' | 'eventos'
+export type GallerySection = 'general' | 'antes-despues' | 'espacio' | 'eventos' | 'services'
+
+export interface IGalleryCategory {
+  _id: string
+  slug: string
+  nameEs: string
+  nameEn: string
+  descriptionEs: string
+  descriptionEn: string
+  order: number
+  active: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface IGalleryCategoryCreate {
+  slug: string
+  nameEs: string
+  nameEn: string
+  descriptionEs?: string
+  descriptionEn?: string
+  order?: number
+  active?: boolean
+}
+
+export type IGalleryCategoryUpdate = Partial<IGalleryCategoryCreate>
 
 export interface IGalleryPhoto {
   _id: string

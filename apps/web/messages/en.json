@@ -199,6 +199,10 @@
       "watermark": "Book"
     }
   },
+  "galeriaServicios": {
+    "photos": "photos",
+    "of": "of"
+  },
   "contacto": {
     "title": "Contact - Qué Bárbaro",
     "intro": "All the information to get in touch or find your way to the salon.",

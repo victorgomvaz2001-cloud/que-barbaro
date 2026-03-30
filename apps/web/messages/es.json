@@ -199,6 +199,10 @@
       "watermark": "Reserva"
     }
   },
+  "galeriaServicios": {
+    "photos": "fotos",
+    "of": "de"
+  },
   "contacto": {
     "title": "Contacto - Qué Bárbaro",
     "intro": "Toda la información para ponerte en contacto o llegar al salón.",

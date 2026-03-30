@@ -5,6 +5,7 @@ import { apiClient } from '@/lib/api-client'
 import { Button } from '@/components/admin/Button'
 import { useToast } from '@/components/admin/Toast'
 import { MediaPickerModal } from '@/components/admin/MediaPickerModal'
+import ServiceCategoryManager from '@/components/admin/ServiceCategoryManager'
 import type {
   ApiListResponse,
   ApiResponse,
@@ -15,11 +16,11 @@ import type {
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const SECTIONS: { key: GallerySection; label: string }[] = [
-  { key: 'general',       label: 'General' },
-  { key: 'antes-despues', label: 'Antes y después' },
-  { key: 'espacio',       label: 'Espacio' },
-  { key: 'eventos',       label: 'Bodas y eventos' },
+type AdminTab = GallerySection | 'service-categories'
+
+const SECTIONS: { key: AdminTab; label: string }[] = [
+  { key: 'service-categories', label: 'Galerías de servicios' },
+  { key: 'antes-despues',      label: 'Antes y después' },
 ]
 
 const GENERAL_CATEGORIES = ['Cortes y peinados', 'Coloración y rubios', 'Tratamientos', 'Maquillaje', 'Sin categoría']
@@ -340,7 +341,7 @@ function SectionGrid({
 
 export default function AdminGaleriaPage() {
   const { success, error } = useToast()
-  const [activeSection, setActiveSection] = useState<GallerySection>('general')
+  const [activeSection, setActiveSection] = useState<AdminTab>('service-categories')
   const [photos, setPhotos]               = useState<IGalleryPhoto[]>([])
   const [loading, setLoading]             = useState(true)
   const [mediaPickerOpen, setMediaPickerOpen] = useState(false)
@@ -349,6 +350,7 @@ export default function AdminGaleriaPage() {
   const [antesYDespuesOpen, setAntesYDespuesOpen] = useState(false)
 
   useEffect(() => {
+    if (activeSection === 'service-categories') return
     setLoading(true)
     apiClient
       .get<ApiListResponse<IGalleryPhoto>>(`/gallery/admin/list?section=${activeSection}`)
@@ -434,7 +436,8 @@ export default function AdminGaleriaPage() {
     }
   }
 
-  const isAntesYDespues = activeSection === 'antes-despues'
+  const isAntesYDespues    = activeSection === 'antes-despues'
+  const isServiceCategories = activeSection === 'service-categories'
 
   function handleAddClick() {
     if (isAntesYDespues) {
@@ -460,7 +463,7 @@ export default function AdminGaleriaPage() {
       {pendingUrl !== null && (
         <PhotoFormModal
           url={pendingUrl}
-          section={activeSection}
+          section={activeSection as GallerySection}
           onSave={handleCreate}
           onClose={() => setPendingUrl(null)}
         />
@@ -470,7 +473,7 @@ export default function AdminGaleriaPage() {
       {editingPhoto !== null && activeSection !== 'antes-despues' && (
         <PhotoFormModal
           photo={editingPhoto}
-          section={activeSection}
+          section={activeSection as GallerySection}
           onSave={(data) => handleUpdate(editingPhoto, data)}
           onClose={() => setEditingPhoto(null)}
         />
@@ -497,25 +500,27 @@ export default function AdminGaleriaPage() {
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Galería</h1>
-          {!loading && (
+          {!isServiceCategories && !loading && (
             <p className="mt-0.5 text-sm text-gray-400">
               {sectionPhotos.filter((p) => p.visible).length} visibles · {sectionPhotos.length} total en esta sección
             </p>
           )}
         </div>
-        <Button onClick={handleAddClick}>
-          {isAntesYDespues ? '+ Añadir par' : '+ Añadir foto'}
-        </Button>
+        {!isServiceCategories && (
+          <Button onClick={handleAddClick}>
+            {isAntesYDespues ? '+ Añadir par' : '+ Añadir foto'}
+          </Button>
+        )}
       </div>
 
       {/* Section tabs */}
-      <div className="mb-6 flex gap-1 border-b border-gray-200">
+      <div className="mb-6 flex gap-1 border-b border-gray-200 overflow-x-auto">
         {SECTIONS.map((s) => (
           <button
             key={s.key}
             onClick={() => setActiveSection(s.key)}
             className={[
-              'px-4 py-2.5 text-sm font-medium transition-colors border-b-2 -mb-px',
+              'shrink-0 px-4 py-2.5 text-sm font-medium transition-colors border-b-2 -mb-px',
               activeSection === s.key
                 ? 'border-blue-600 text-blue-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700',
@@ -527,12 +532,14 @@ export default function AdminGaleriaPage() {
       </div>
 
       {/* Content */}
-      {loading ? (
+      {isServiceCategories ? (
+        <ServiceCategoryManager />
+      ) : loading ? (
         <p className="text-gray-500">Cargando...</p>
       ) : (
         <SectionGrid
           photos={sectionPhotos}
-          section={activeSection}
+          section={activeSection as GallerySection}
           onEdit={setEditingPhoto}
           onDelete={handleDelete}
           onToggleVisible={handleToggleVisible}

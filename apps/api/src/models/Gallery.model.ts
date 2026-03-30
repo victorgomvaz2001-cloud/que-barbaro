@@ -10,7 +10,7 @@ const gallerySchema = new Schema<IGalleryDocument>(
     pairLabel:  { type: String, default: '' },
     alt:        { type: String, default: '' },
     category:   { type: String, default: '' },
-    section:    { type: String, default: 'general', enum: ['general', 'antes-despues', 'espacio', 'eventos'] },
+    section:    { type: String, default: 'general', enum: ['general', 'antes-despues', 'espacio', 'eventos', 'services'] },
     order:      { type: Number, default: 0 },
     visible:    { type: Boolean, default: true },
   },
