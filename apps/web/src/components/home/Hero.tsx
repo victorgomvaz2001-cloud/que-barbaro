@@ -36,7 +36,7 @@ export default async function Hero() {
         <div className="w-full h-px bg-orange/30" />
       </div>
 
-      {/* ── Hero image: full-width, tall ──────────────────────────────── */}
+      {/* ── Hero image: full-width, tall + overlay + CTA ─────────────── */}
       <div
         className="relative w-full"
         style={{ aspectRatio: '16 / 9', minHeight: '320px', maxHeight: '780px' }}
@@ -50,36 +50,34 @@ export default async function Hero() {
           priority
           className="object-cover object-center"
         />
-      </div>
 
-      {/* ── Thin navy rule ─────────────────────────────────────────────── */}
-      <div className="max-w-[1680px] mx-auto px-6 md:px-12">
-        <div className="w-full h-px bg-navy/10" />
-      </div>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
 
-      {/* ── Body + CTA ─────────────────────────────────────────────────── */}
-      <div className="max-w-[1680px] mx-auto px-6 md:px-12 py-14 md:py-20 flex flex-col md:flex-row md:items-end md:justify-between gap-10 md:gap-20">
+        {/* Body + CTA overlaid at bottom */}
+        <div className="absolute inset-x-0 bottom-0 max-w-[1680px] mx-auto px-6 md:px-12 py-10 md:py-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-20">
 
-        <p
-          className="font-secondary text-navy/65 leading-relaxed max-w-xl"
-          style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)' }}
-        >
-          {t('body')}
-        </p>
-
-        <div className="shrink-0">
-          <Link
-            href="/reservar-cita"
-            className="inline-flex items-center gap-4 bg-orange text-cream font-neue uppercase tracking-[0.18em] px-10 py-5 md:px-14 md:py-6 transition-colors duration-200 hover:bg-navy"
-            style={{ fontSize: 'clamp(0.8rem, 1.2vw, 1rem)' }}
+          <p
+            className="font-secondary text-cream/85 leading-relaxed max-w-xl"
+            style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)' }}
           >
-            {t('cta')}
-            <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
-              <path d="M1 5h16M12 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-        </div>
+            {t('body')}
+          </p>
 
+          <div className="shrink-0">
+            <Link
+              href="/reservar-cita"
+              className="inline-flex items-center gap-4 bg-orange text-cream font-neue uppercase tracking-[0.18em] px-10 py-5 md:px-14 md:py-6 transition-colors duration-200 hover:bg-navy"
+              style={{ fontSize: 'clamp(0.8rem, 1.2vw, 1rem)' }}
+            >
+              {t('cta')}
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+                <path d="M1 5h16M12 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
+
+        </div>
       </div>
 
     </section>
