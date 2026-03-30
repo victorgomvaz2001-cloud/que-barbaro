@@ -235,7 +235,7 @@
     "eyebrow": "- Qué Bárbaro",
     "title": "Servicios",
     "serviceLabel": "Servicio",
-    "priceNote": "Precio orientativo",
+    "priceNote": "Precios desde",
     "bookCta": "Reservar cita",
     "cortes": {
       "index": "01",
@@ -414,7 +414,7 @@
           "bio": "Domina todos los servicios de corte y color. Referente técnico del equipo."
         },
         {
-          "name": "Carmen",
+          "name": "Carmen Contreras",
           "role": "Estilista Junior",
           "bio": "Especializada en corte, peinados, técnicas de color, tratamientos GOA, maquillaje, manicura y pedicura."
         }
@@ -556,7 +556,7 @@
   },
   "pricing": {
     "eyebrow": "Algunos servicios · Referencia rápida",
-    "h2": "Precios orientativos",
+    "h2": "Precios desde",
     "items": [
       {
         "name": "Artístico Design",

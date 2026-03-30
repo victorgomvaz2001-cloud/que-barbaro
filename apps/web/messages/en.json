@@ -235,7 +235,7 @@
     "eyebrow": "- Qué Bárbaro",
     "title": "Services",
     "serviceLabel": "Service",
-    "priceNote": "Guide price",
+    "priceNote": "Prices from",
     "bookCta": "Book an appointment",
     "cortes": {
       "index": "01",
@@ -408,13 +408,13 @@
           "role": "Co-founder & GOA Organics Specialist",
           "bio": "Expert in hair treatments: Sublime 10.31, Bae Berry, Softy Mood and Keratin Infusion."
         },
-        {
+          {
           "name": "Antonio",
           "role": "Senior Stylist",
           "bio": "Masters all cut and colour services. The team's technical reference."
         },
         {
-          "name": "Carmen",
+          "name": "Carmen Contreras",
           "role": "Junior Stylist",
           "bio": "Specialised in cuts, styling, colour techniques, GOA treatments, make-up, manicure and pedicure."
         }
@@ -556,7 +556,7 @@
   },
   "pricing": {
     "eyebrow": "Selected services · Quick reference",
-    "h2": "Approximate prices",
+    "h2": "Prices from",
     "items": [
       {
         "name": "Artistic Design",
