@@ -25,7 +25,11 @@ const PhoneIcon = () => (
   </svg>
 )
 
-export default async function CtaSection() {
+interface CtaSectionProps {
+  backgroundImage?: string | null
+}
+
+export default async function CtaSection({ backgroundImage }: CtaSectionProps) {
   const t = await getTranslations('ctaSection')
 
   const channels = [
@@ -39,17 +43,19 @@ export default async function CtaSection() {
     <>
       {/* ── Main section ─────────────────────────────────────────────── */}
       <section className="relative w-full bg-navy py-32 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden>
-          <Image
-            src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/cortinaslauder.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            style={{ opacity: 0.4 }}
-          />
-          <div className="absolute inset-0 bg-black/20" />
-        </div>
+        {backgroundImage && (
+          <div className="absolute inset-0 pointer-events-none" aria-hidden>
+            <Image
+              src={backgroundImage}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              style={{ opacity: 0.4 }}
+            />
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+        )}
         <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
 
           {/* H2 + subtitle */}

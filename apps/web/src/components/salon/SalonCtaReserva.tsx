@@ -1,7 +1,11 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default async function SalonCtaReserva() {
+interface SalonCtaReservaProps {
+  backgroundImage?: string | null
+}
+
+export default async function SalonCtaReserva({ backgroundImage }: SalonCtaReservaProps) {
   const t = await getTranslations('elSalon.cta')
 
   return (
@@ -9,25 +13,28 @@ export default async function SalonCtaReserva() {
       className="relative w-full bg-navy overflow-hidden py-32"
       aria-label={t('title')}
     >
-      {/* ── Background image ─────────────────────────────────────────────── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/madonnagoldfinch.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.7,
-        }}
-        aria-hidden
-      />
+      {backgroundImage && (
+        <>
+          {/* ── Background image ───────────────────────────────────────────── */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `url("${backgroundImage}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.7,
+            }}
+            aria-hidden
+          />
 
-      {/* ── Black overlay ────────────────────────────────────────────────── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'rgba(0,0,0,0.25)' }}
-        aria-hidden
-      />
+          {/* ── Black overlay ──────────────────────────────────────────────── */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: 'rgba(0,0,0,0.25)' }}
+            aria-hidden
+          />
+        </>
+      )}
 
       {/* ── Subtle grain texture overlay ─────────────────────────────────── */}
       <div

@@ -2,7 +2,11 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 
-export default async function Hero() {
+interface HeroProps {
+  backgroundImage?: string | null
+}
+
+export default async function Hero({ backgroundImage }: HeroProps) {
   const t = await getTranslations('hero')
 
   return (
@@ -36,23 +40,25 @@ export default async function Hero() {
         <div className="w-full h-px bg-orange/30" />
       </div>
 
-      {/* ── Hero image: full-width, tall + overlay + CTA ─────────────── */}
+      {/* ── Hero image area ───────────────────────────────────────────── */}
       <div
-        className="relative w-full"
+        className="relative w-full bg-navy"
         style={{ aspectRatio: '16 / 9', minHeight: '320px', maxHeight: '780px' }}
       >
-        <Image
-          src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp"
-          alt="Interior del salón ¡Qué Bárbaro! en Torremolinos"
-          fill
-          sizes="100vw"
-          quality={90}
-          priority
-          className="object-cover object-center"
-        />
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
+        {backgroundImage && (
+          <>
+            <Image
+              src={backgroundImage}
+              alt="Interior del salón ¡Qué Bárbaro! en Torremolinos"
+              fill
+              sizes="100vw"
+              quality={90}
+              priority
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
+          </>
+        )}
 
         {/* Body + CTA overlaid at bottom */}
         <div className="absolute inset-x-0 bottom-0 max-w-[1680px] mx-auto px-6 md:px-12 py-10 md:py-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-20">

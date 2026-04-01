@@ -1,7 +1,11 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default async function GaleriaHero() {
+interface GaleriaHeroProps {
+  backgroundImage?: string | null
+}
+
+export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps) {
   const t = await getTranslations('galeria')
 
   return (
@@ -9,41 +13,44 @@ export default async function GaleriaHero() {
       className="relative w-full py-28 md:py-40 overflow-hidden bg-navy"
       aria-labelledby="galeria-hero-title"
     >
-      {/* ── Background image ─────────────────────────────────────────────── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/renaissance-circle.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.8,
-        }}
-        aria-hidden
-      />
+      {backgroundImage && (
+        <>
+          {/* ── Background image ─────────────────────────────────────────── */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `url("${backgroundImage}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.8,
+            }}
+            aria-hidden
+          />
 
-      {/* ── Dark gradient overlay ────────────────────────────────────────── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.20) 100%)',
-        }}
-        aria-hidden
-      />
+          {/* ── Dark gradient overlay ──────────────────────────────────────── */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.20) 100%)',
+            }}
+            aria-hidden
+          />
 
-      {/* ── Grain texture overlay ─────────────────────────────────────────── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.75\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3CfeColorMatrix type=\'saturate\' values=\'0\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.035\'/%3E%3C/svg%3E")',
-          backgroundRepeat: 'repeat',
-          opacity: 0.6,
-          mixBlendMode: 'overlay',
-        }}
-        aria-hidden
-      />
+          {/* ── Grain texture overlay ─────────────────────────────────────── */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage:
+                'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.75\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3CfeColorMatrix type=\'saturate\' values=\'0\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.035\'/%3E%3C/svg%3E")',
+              backgroundRepeat: 'repeat',
+              opacity: 0.6,
+              mixBlendMode: 'overlay',
+            }}
+            aria-hidden
+          />
+        </>
+      )}
 
       {/* ── Content ──────────────────────────────────────────────────────── */}
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-8 md:px-16">

@@ -12,22 +12,26 @@ import TestimonialsSection from '@/components/salon/TestimonialsSection'
 import CtaSection from '@/components/salon/CtaSection'
 import FaqSection from '@/components/home/FaqSection'
 import MentionsSection from '@/components/home/MentionsSection'
+import { getSectionBackgrounds } from '@/lib/getSectionBackgrounds'
 
 export default async function HomePage() {
-  const locale = await getLocale()
+  const [locale, bg] = await Promise.all([
+    getLocale(),
+    getSectionBackgrounds('home'),
+  ])
   const seoRoute = locale === 'es' ? '/' : `/${locale}`
 
   return (
     <>
       <SEOHead route={seoRoute} fallback={{ title: '¡Qué Bárbaro!' }} />
-      <Hero />
-      <ValueProposition />
+      <Hero backgroundImage={bg['hero']} />
+      <ValueProposition backgroundImage={bg['valueProp']} />
       <ExperienceSection />
       <FeaturedServices />
-      <HomeBrands />
+      <HomeBrands backgroundImage={bg['brands']} />
       <PricingSection />
       <TestimonialsSection />
-      <CtaSection />
+      <CtaSection backgroundImage={bg['cta']} />
       <FaqSection />
       <MentionsSection />
     </>

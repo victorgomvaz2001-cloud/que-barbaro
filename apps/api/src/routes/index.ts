@@ -9,6 +9,7 @@ import galleryRoutes from './gallery.routes'
 import reviewRoutes from './review.routes'
 import mentionRoutes from './mention.routes'
 import promotionRoutes from './promotion.routes'
+import sectionBackgroundRoutes from './sectionBackground.routes'
 
 const router: IRouter = Router()
 
@@ -20,6 +21,7 @@ router.use('/gallery', galleryRoutes)
 router.use('/reviews', reviewRoutes)
 router.use('/mentions', mentionRoutes)
 router.use('/promotions', promotionRoutes)
+router.use('/section-backgrounds', sectionBackgroundRoutes)
 router.use('/admin/users', userRoutes)
 router.use('/admin/upload', uploadRoutes)
 

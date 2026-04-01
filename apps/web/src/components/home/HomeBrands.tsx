@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 
-export default async function HomeBrands() {
+interface HomeBrandsProps {
+  backgroundImage?: string | null
+}
+
+export default async function HomeBrands({ backgroundImage }: HomeBrandsProps) {
   const t = await getTranslations('homeBrands')
 
   const row1 = [
@@ -60,16 +64,18 @@ export default async function HomeBrands() {
     <section className="relative bg-navy w-full overflow-hidden">
 
       {/* ── Background photo ────────────────────────────────────────── */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <Image
-          src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/cielo.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.38)' }} />
-      </div>
+      {backgroundImage && (
+        <div className="absolute inset-0 pointer-events-none" aria-hidden>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.38)' }} />
+        </div>
+      )}
 
       {/* ── Eyebrow label ───────────────────────────────────────────── */}
       <div className="relative z-10 flex items-center gap-5 px-8 md:px-20 pt-20">

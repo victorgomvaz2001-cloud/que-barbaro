@@ -23,7 +23,11 @@ function anim(
 
 /* ─── Component ─────────────────────────────────────────────────────────── */
 
-export default function SalonHero() {
+interface SalonHeroProps {
+  backgroundImage?: string | null
+}
+
+export default function SalonHero({ backgroundImage }: SalonHeroProps) {
   const t = useTranslations('elSalon.hero')
   const sectionRef = useRef<HTMLElement>(null)
   const [visible, setVisible] = useState(false)
@@ -58,15 +62,17 @@ export default function SalonHero() {
       aria-label={`${t('title')} - ${t('brand')}, ${t('location')}`}
     >
       {/* ── Background image ─────────────────────────────────────────────── */}
-      <Image
-        src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920&q=80"
-        alt="Interior de un salón de peluquería elegante"
-        fill
-        sizes="100vw"
-        quality={90}
-        priority
-        className="object-cover object-center"
-      />
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt="Interior de un salón de peluquería elegante"
+          fill
+          sizes="100vw"
+          quality={90}
+          priority
+          className="object-cover object-center"
+        />
+      )}
 
       {/* ── Dark overlay ─────────────────────────────────────────────────── */}
       <div

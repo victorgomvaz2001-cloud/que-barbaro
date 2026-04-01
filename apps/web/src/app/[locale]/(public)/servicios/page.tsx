@@ -10,16 +10,20 @@ import ServiciosTratamientos from '@/components/servicios/ServiciosTratamientos'
 import ServiciosMaquillaje from '@/components/servicios/ServiciosMaquillaje'
 import ServiciosManicura from '@/components/servicios/ServiciosManicura'
 import ServiciosReserva from '@/components/servicios/ServiciosReserva'
+import { getSectionBackgrounds } from '@/lib/getSectionBackgrounds'
 
 export default async function ServiciosPage() {
-  const locale = await getLocale()
+  const [locale, bg] = await Promise.all([
+    getLocale(),
+    getSectionBackgrounds('servicios'),
+  ])
   const seoRoute = locale === 'es' ? '/servicios' : `/${locale}/servicios`
 
   return (
     <>
       <SEOHead route={seoRoute} fallback={{ title: 'Servicios - ¡Qué Bárbaro!' }} />
       <ServiciosNav />
-      <ServiciosHero />
+      <ServiciosHero backgroundImage={bg['hero']} />
       <ServiciosCortes />
       <ServiciosColor />
       <ServiciosTratamientos />

@@ -1,19 +1,24 @@
 import { getTranslations } from 'next-intl/server'
 
-const VALUE_PROPOSITION_BG =
-  'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/backgroundhome.jpg'
+interface ValuePropositionProps {
+  backgroundImage?: string | null
+}
 
-export default async function ValueProposition() {
+export default async function ValueProposition({ backgroundImage }: ValuePropositionProps) {
   const t = await getTranslations('valueProposition')
 
   return (
-    <section className="relative w-full overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${VALUE_PROPOSITION_BG})` }}
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-black/40" aria-hidden />
+    <section className="relative w-full overflow-hidden bg-navy">
+      {backgroundImage && (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+            aria-hidden
+          />
+          <div className="absolute inset-0 bg-black/40" aria-hidden />
+        </>
+      )}
       <div className="relative z-10 mx-auto max-w-6xl px-8 py-24 md:py-32">
 
         {/* ── Top row: H2 left + body right ─────────────────────────────── */}

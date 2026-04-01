@@ -3,7 +3,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
-export default function ServiciosHero() {
+interface ServiciosHeroProps {
+  backgroundImage?: string | null
+}
+
+export default function ServiciosHero({ backgroundImage }: ServiciosHeroProps) {
   const t = useTranslations('servicios.hero')
 
   const sectionRef = useRef<HTMLElement>(null)
@@ -71,10 +75,20 @@ export default function ServiciosHero() {
 
       <section
         ref={sectionRef}
-        className={`w-full bg-cream pt-20 md:pt-28 pb-16 md:pb-20${visible ? ' servicios-hero-visible' : ''}`}
+        className={`relative w-full overflow-hidden bg-cream pt-20 md:pt-28 pb-16 md:pb-20${visible ? ' servicios-hero-visible' : ''}`}
         aria-labelledby="servicios-hero-title"
       >
-        <div className="max-w-[1680px] mx-auto px-8 md:px-16 lg:px-24">
+        {backgroundImage && (
+          <>
+            <div
+              className="absolute inset-0 pointer-events-none bg-cover bg-center"
+              style={{ backgroundImage: `url(${backgroundImage})` }}
+              aria-hidden
+            />
+            <div className="absolute inset-0 pointer-events-none bg-black/50" aria-hidden />
+          </>
+        )}
+        <div className="relative z-10 max-w-[1680px] mx-auto px-8 md:px-16 lg:px-24">
 
           {/* Eyebrow */}
           <div className={`flex items-center gap-3 mb-6 md:mb-8 hero-animate hero-item-0`}>
@@ -94,7 +108,7 @@ export default function ServiciosHero() {
           <div className={`hero-animate hero-item-1`}>
             <h1
               id="servicios-hero-title"
-              className="font-primary text-navy uppercase leading-[0.88] tracking-tight"
+              className={`font-primary uppercase leading-[0.88] tracking-tight ${backgroundImage ? 'text-cream' : 'text-navy'}`}
               style={{ fontSize: 'clamp(3.5rem, 10vw, 9rem)' }}
             >
               {t('title')}
@@ -112,7 +126,7 @@ export default function ServiciosHero() {
           {/* Body + location suffix */}
           <div className={`hero-animate hero-item-3 flex flex-col gap-3 md:flex-row md:items-end md:gap-12`}>
             <p
-              className="font-secondary italic text-navy/60 leading-relaxed"
+              className={`font-secondary italic leading-relaxed ${backgroundImage ? 'text-cream/70' : 'text-navy/60'}`}
               style={{
                 fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
                 maxWidth: '55ch',
@@ -122,7 +136,7 @@ export default function ServiciosHero() {
             </p>
 
             <span
-              className="shrink-0 font-neue text-navy/30 uppercase tracking-[0.18em] pb-[2px]"
+              className={`shrink-0 font-neue uppercase tracking-[0.18em] pb-[2px] ${backgroundImage ? 'text-cream/30' : 'text-navy/30'}`}
               style={{ fontSize: 'clamp(0.6rem, 0.8vw, 0.7rem)' }}
               aria-hidden="true"
             >
