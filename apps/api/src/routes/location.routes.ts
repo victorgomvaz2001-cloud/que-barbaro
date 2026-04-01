@@ -8,6 +8,7 @@ const router: IRouter = Router()
 router.get('/', locationController.getAll)
 
 // Admin
+router.delete('/admin/bulk', authMiddleware, locationController.bulkRemove)
 router.get('/admin/list', authMiddleware, locationController.getAll)
 router.get('/admin/:id', authMiddleware, locationController.getById)
 router.post('/admin', authMiddleware, locationController.create)

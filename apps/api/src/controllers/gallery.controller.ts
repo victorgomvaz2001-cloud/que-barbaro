@@ -60,3 +60,23 @@ export async function remove(req: Request, res: Response, next: NextFunction): P
     next(err)
   }
 }
+
+export async function reorder(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const { id1, id2 } = req.body as { id1: string; id2: string }
+    await galleryService.reorder(id1, id2)
+    res.status(204).send()
+  } catch (err) {
+    next(err)
+  }
+}
+
+export async function bulkRemove(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const { ids } = req.body as { ids: string[] }
+    await galleryService.bulkDelete(ids)
+    res.status(204).send()
+  } catch (err) {
+    next(err)
+  }
+}

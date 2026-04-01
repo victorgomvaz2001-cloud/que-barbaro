@@ -151,7 +151,6 @@ function CategoryPhotosPanel({
           url,
           section: 'services',
           category: category.slug,
-          order: photos.length + added,
           visible: true,
         })
         setPhotos((prev) => [res.data, ...prev])
@@ -250,6 +249,8 @@ export default function ServiceCategoryManager() {
   const [formOpen, setFormOpen]             = useState(false)
   const [editingCat, setEditingCat]         = useState<IGalleryCategory | null>(null)
   const [photosPanelCat, setPhotosPanelCat] = useState<IGalleryCategory | null>(null)
+  const [selectedIds, setSelectedIds]       = useState<Set<string>>(new Set())
+  const [reordering, setReordering]         = useState(false)
 
   useEffect(() => {
     load()
@@ -302,7 +303,39 @@ export default function ServiceCategoryManager() {
     try {
       await apiClient.delete(`/gallery/admin/categories/${cat._id}`)
       setCategories((prev) => prev.filter((c) => c._id !== cat._id))
+      setSelectedIds((prev) => { const next = new Set(prev); next.delete(cat._id as string); return next })
       success('Categoría eliminada')
+    } catch (err) {
+      error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
+    }
+  }
+
+  async function handleReorder(index: number, direction: 'up' | 'down') {
+    const targetIndex = direction === 'up' ? index - 1 : index + 1
+    if (targetIndex < 0 || targetIndex >= categories.length) return
+    const item = categories[index]
+    const target = categories[targetIndex]
+    if (!item || !target) return
+    setReordering(true)
+    try {
+      await apiClient.put('/gallery/admin/categories/reorder', { id1: item._id, id2: target._id })
+      setCategories((prev) => {
+        const next = [...prev]
+        const o1 = item.order, o2 = target.order
+        next[index] = { ...item, order: o2 } as typeof item
+        next[targetIndex] = { ...target, order: o1 } as typeof target
+        return next.sort((a, b) => a.order - b.order)
+      })
+    } finally { setReordering(false) }
+  }
+
+  async function handleBulkDelete() {
+    if (!confirm(`¿Eliminar ${selectedIds.size} categoría${selectedIds.size !== 1 ? 's' : ''}? Las fotos asociadas NO se eliminarán.`)) return
+    try {
+      await apiClient.delete('/gallery/admin/categories/bulk', { body: { ids: [...selectedIds] } })
+      setCategories((prev) => prev.filter((c) => !selectedIds.has(c._id as string)))
+      success(`${selectedIds.size} categoría${selectedIds.size !== 1 ? 's' : ''} eliminadas`)
+      setSelectedIds(new Set())
     } catch (err) {
       error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
     }
@@ -331,11 +364,21 @@ export default function ServiceCategoryManager() {
       )}
 
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex items-center justify-between gap-3 flex-wrap">
         <p className="text-sm text-gray-400">
           {loading ? 'Cargando...' : `${categories.length} categoría${categories.length !== 1 ? 's' : ''}`}
         </p>
-        <Button onClick={() => setFormOpen(true)}>+ Nueva categoría</Button>
+        <div className="flex items-center gap-2">
+          {selectedIds.size > 0 && (
+            <button
+              onClick={handleBulkDelete}
+              className="rounded-lg bg-red-600 px-3 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
+            >
+              Eliminar seleccionados ({selectedIds.size})
+            </button>
+          )}
+          <Button onClick={() => setFormOpen(true)}>+ Nueva categoría</Button>
+        </div>
       </div>
 
       {/* Category list */}
@@ -348,11 +391,28 @@ export default function ServiceCategoryManager() {
         </div>
       ) : (
         <div className="space-y-2">
-          {categories.map((cat) => (
+          {categories.map((cat, index) => (
             <div
               key={cat._id}
-              className="flex items-center gap-4 rounded-lg border border-gray-200 bg-white px-4 py-3"
+              className={`flex items-center gap-3 rounded-lg border bg-white px-4 py-3 transition-colors ${
+                selectedIds.has(cat._id as string) ? 'border-blue-200 bg-blue-50' : 'border-gray-200'
+              }`}
             >
+              {/* Checkbox */}
+              <input
+                type="checkbox"
+                checked={selectedIds.has(cat._id as string)}
+                onChange={(e) => {
+                  setSelectedIds((prev) => {
+                    const next = new Set(prev)
+                    if (e.target.checked) next.add(cat._id as string)
+                    else next.delete(cat._id as string)
+                    return next
+                  })
+                }}
+                className="h-4 w-4 shrink-0 rounded border-gray-300 accent-gray-900 cursor-pointer"
+              />
+
               {/* Order badge */}
               <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-500">
                 {cat.order}
@@ -366,6 +426,19 @@ export default function ServiceCategoryManager() {
 
               {/* Actions */}
               <div className="flex items-center gap-2 shrink-0">
+                {/* Order arrows */}
+                <button
+                  onClick={() => handleReorder(index, 'up')}
+                  disabled={index === 0 || reordering}
+                  title="Mover arriba"
+                  className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >↑</button>
+                <button
+                  onClick={() => handleReorder(index, 'down')}
+                  disabled={index === categories.length - 1 || reordering}
+                  title="Mover abajo"
+                  className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >↓</button>
                 <button
                   onClick={() => handleToggleActive(cat)}
                   className={`rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors ${cat.active ? 'bg-green-100 text-green-700 hover:bg-green-200' : 'bg-gray-200 text-gray-500 hover:bg-gray-300'}`}

@@ -21,7 +21,6 @@ function MentionModal({
   const [name,     setName]     = useState(initial?.name ?? '')
   const [logoUrl,  setLogoUrl]  = useState(initial?.logoUrl ?? '')
   const [link,     setLink]     = useState(initial?.link ?? '')
-  const [order,    setOrder]    = useState(initial?.order ?? 0)
   const [visible,  setVisible]  = useState(initial?.visible ?? true)
   const [mediOpen, setMediOpen] = useState(false)
   const [saving,   setSaving]   = useState(false)
@@ -30,7 +29,7 @@ function MentionModal({
     e.preventDefault()
     if (!name.trim() || !logoUrl.trim() || !link.trim()) return
     setSaving(true)
-    await onSave({ name: name.trim(), logoUrl: logoUrl.trim(), link: link.trim(), order, visible })
+    await onSave({ name: name.trim(), logoUrl: logoUrl.trim(), link: link.trim(), order: initial?.order ?? 0, visible })
     setSaving(false)
   }
 
@@ -107,18 +106,6 @@ function MentionModal({
               />
             </div>
 
-            {/* Order */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Orden</label>
-              <input
-                value={order}
-                onChange={(e) => setOrder(Number(e.target.value))}
-                type="number"
-                min={0}
-                className="w-24 rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
-              />
-            </div>
-
             {/* Visible */}
             {initial && (
               <div className="flex items-center gap-3">
@@ -161,6 +148,8 @@ export default function AdminMencionesPage() {
   const [editTarget,  setEditTarget]  = useState<IMention | null>(null)
   const [savingCfg,   setSavingCfg]   = useState(false)
   const [maxInput,    setMaxInput]    = useState(0)
+  const [reordering,  setReordering]  = useState(false)
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     Promise.all([
@@ -229,7 +218,40 @@ export default function AdminMencionesPage() {
     try {
       await apiClient.delete(`/mentions/admin/${mention._id}`)
       setMentions((prev) => prev.filter((m) => m._id !== mention._id))
+      setSelectedIds((prev) => { const next = new Set(prev); next.delete(mention._id as string); return next })
       success('Mención eliminada')
+    } catch (err) {
+      error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
+    }
+  }
+
+  async function handleReorder(index: number, direction: 'up' | 'down') {
+    const targetIndex = direction === 'up' ? index - 1 : index + 1
+    if (targetIndex < 0 || targetIndex >= mentions.length) return
+    const item = mentions[index]
+    const target = mentions[targetIndex]
+    if (!item || !target) return
+    setReordering(true)
+    try {
+      await apiClient.put('/mentions/admin/reorder', { id1: item._id, id2: target._id })
+      setMentions((prev) => {
+        const next = [...prev]
+        const o1 = item.order
+        const o2 = target.order
+        next[index] = { ...item, order: o2 } as typeof item
+        next[targetIndex] = { ...target, order: o1 } as typeof target
+        return next.sort((a, b) => a.order - b.order)
+      })
+    } finally { setReordering(false) }
+  }
+
+  async function handleBulkDelete() {
+    if (!confirm(`¿Eliminar ${selectedIds.size} mención${selectedIds.size !== 1 ? 'es' : ''}?`)) return
+    try {
+      await apiClient.delete('/mentions/admin/bulk', { body: { ids: [...selectedIds] } })
+      setMentions((prev) => prev.filter((m) => !selectedIds.has(m._id as string)))
+      success(`${selectedIds.size} mención${selectedIds.size !== 1 ? 'es' : ''} eliminadas`)
+      setSelectedIds(new Set())
     } catch (err) {
       error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
     }
@@ -260,12 +282,22 @@ export default function AdminMencionesPage() {
             </p>
           )}
         </div>
-        <button
-          onClick={() => setAddOpen(true)}
-          className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-700"
-        >
-          + Añadir mención
-        </button>
+        <div className="flex items-center gap-2">
+          {selectedIds.size > 0 && (
+            <button
+              onClick={handleBulkDelete}
+              className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
+            >
+              Eliminar seleccionados ({selectedIds.size})
+            </button>
+          )}
+          <button
+            onClick={() => setAddOpen(true)}
+            className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-700"
+          >
+            + Añadir mención
+          </button>
+        </div>
       </div>
 
       {/* Config */}
@@ -314,15 +346,32 @@ export default function AdminMencionesPage() {
 
       {!loading && mentions.length > 0 && (
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {mentions.map((mention) => (
+          {mentions.map((mention, index) => (
             <div
               key={mention._id}
               className={`relative flex items-center gap-4 rounded-xl border p-4 transition-all duration-200 ${
                 mention.visible ? 'border-gray-200 bg-white' : 'border-gray-200 bg-gray-50 opacity-60'
               }`}
             >
+              {/* Checkbox (top-left overlay) */}
+              <div className="absolute left-2 top-2" onClick={(e) => e.stopPropagation()}>
+                <input
+                  type="checkbox"
+                  checked={selectedIds.has(mention._id as string)}
+                  onChange={(e) => {
+                    setSelectedIds((prev) => {
+                      const next = new Set(prev)
+                      if (e.target.checked) next.add(mention._id as string)
+                      else next.delete(mention._id as string)
+                      return next
+                    })
+                  }}
+                  className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+                />
+              </div>
+
               {/* Logo */}
-              <div className="relative h-16 w-16 shrink-0 border border-gray-100 bg-white">
+              <div className="relative h-16 w-16 shrink-0 border border-gray-100 bg-white ml-5">
                 <Image
                   src={mention.logoUrl}
                   alt={mention.name}
@@ -348,6 +397,26 @@ export default function AdminMencionesPage() {
 
               {/* Actions */}
               <div className="flex flex-col items-end gap-2 shrink-0">
+                {/* Order arrows */}
+                <div className="flex gap-1">
+                  <button
+                    onClick={() => handleReorder(index, 'up')}
+                    disabled={index === 0 || reordering}
+                    className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    title="Mover arriba"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    onClick={() => handleReorder(index, 'down')}
+                    disabled={index === mentions.length - 1 || reordering}
+                    className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    title="Mover abajo"
+                  >
+                    ↓
+                  </button>
+                </div>
+
                 <div className="flex items-center gap-1">
                   <button
                     onClick={() => setEditTarget(mention)}

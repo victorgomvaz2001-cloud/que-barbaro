@@ -8,6 +8,8 @@ const router: IRouter = Router()
 router.get('/', mentionController.getVisible)
 
 // Admin
+router.put('/admin/reorder',  authMiddleware, mentionController.reorder)
+router.delete('/admin/bulk',  authMiddleware, mentionController.bulkRemove)
 router.get('/admin/list',     authMiddleware, mentionController.getAll)
 router.get('/admin/config',   authMiddleware, mentionController.getConfig)
 router.put('/admin/config',   authMiddleware, mentionController.updateConfig)

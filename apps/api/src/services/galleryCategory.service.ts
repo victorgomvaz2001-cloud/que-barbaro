@@ -17,7 +17,21 @@ export class GalleryCategoryService {
   }
 
   async create(data: IGalleryCategoryCreate) {
-    return GalleryCategory.create(data)
+    await GalleryCategory.updateMany({}, { $inc: { order: 1 } })
+    return GalleryCategory.create({ ...data, order: 0 })
+  }
+
+  async reorder(id1: string, id2: string) {
+    const [item1, item2] = await Promise.all([GalleryCategory.findById(id1), GalleryCategory.findById(id2)])
+    if (!item1 || !item2) throw Object.assign(new Error('Gallery category not found'), { statusCode: 404 })
+    await Promise.all([
+      GalleryCategory.findByIdAndUpdate(id1, { order: item2.order }),
+      GalleryCategory.findByIdAndUpdate(id2, { order: item1.order }),
+    ])
+  }
+
+  async bulkDelete(ids: string[]) {
+    await GalleryCategory.deleteMany({ _id: { $in: ids } })
   }
 
   async update(id: string, data: IGalleryCategoryUpdate) {

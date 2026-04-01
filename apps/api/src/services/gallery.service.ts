@@ -38,7 +38,21 @@ export class GalleryService {
   }
 
   async create(data: IGalleryPhotoCreate) {
-    return Gallery.create(data)
+    await Gallery.updateMany({ section: data.section }, { $inc: { order: 1 } })
+    return Gallery.create({ ...data, order: 0 })
+  }
+
+  async reorder(id1: string, id2: string) {
+    const [item1, item2] = await Promise.all([Gallery.findById(id1), Gallery.findById(id2)])
+    if (!item1 || !item2) throw Object.assign(new Error('Gallery photo not found'), { statusCode: 404 })
+    await Promise.all([
+      Gallery.findByIdAndUpdate(id1, { order: item2.order }),
+      Gallery.findByIdAndUpdate(id2, { order: item1.order }),
+    ])
+  }
+
+  async bulkDelete(ids: string[]) {
+    await Gallery.deleteMany({ _id: { $in: ids } })
   }
 
   async update(id: string, data: IGalleryPhotoUpdate) {

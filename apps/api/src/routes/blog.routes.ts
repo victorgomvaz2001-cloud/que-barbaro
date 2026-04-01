@@ -11,6 +11,7 @@ router.get('/categories', blogController.getCategories)
 router.get('/:slug', blogController.getBySlug)
 
 // Admin
+router.delete('/admin/bulk', authMiddleware, blogController.bulkRemove)
 router.get('/admin/list', authMiddleware, blogController.getAll)
 router.get('/admin/:id', authMiddleware, blogController.getById)
 router.post('/admin', authMiddleware, blogController.create)

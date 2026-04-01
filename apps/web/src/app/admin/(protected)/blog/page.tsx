@@ -51,6 +51,17 @@ export default function AdminBlogPage() {
     }
   }
 
+  async function handleBulkDelete(ids: string[]) {
+    if (!confirm(`¿Eliminar ${ids.length} post${ids.length !== 1 ? 's' : ''}?`)) return
+    try {
+      await apiClient.delete('/blog/admin/bulk', { body: { ids } })
+      setPosts((prev) => prev.filter((p) => !ids.includes(p._id as string)))
+      success(`${ids.length} post${ids.length !== 1 ? 's' : ''} eliminados`)
+    } catch (err) {
+      error(err instanceof Error ? err.message : 'Error al eliminar posts', 'Error')
+    }
+  }
+
   if (loading) return <p className="text-gray-500">Loading…</p>
 
   return (
@@ -68,6 +79,7 @@ export default function AdminBlogPage() {
         data={posts}
         columns={columns}
         exportFileName="blog-posts"
+        onBulkDelete={handleBulkDelete}
         actions={(post) => (
           <>
             <button

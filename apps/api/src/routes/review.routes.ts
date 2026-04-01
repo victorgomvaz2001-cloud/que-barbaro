@@ -8,6 +8,8 @@ const router: IRouter = Router()
 router.get('/', reviewController.getSelected)
 
 // Admin
+router.put('/admin/reorder', authMiddleware, reviewController.reorder)
+router.delete('/admin/bulk', authMiddleware, reviewController.bulkRemove)
 router.get('/admin/list',    authMiddleware, reviewController.getAll)
 router.post('/admin/sync',   authMiddleware, reviewController.syncFromGoogle)
 router.post('/admin',        authMiddleware, reviewController.create)

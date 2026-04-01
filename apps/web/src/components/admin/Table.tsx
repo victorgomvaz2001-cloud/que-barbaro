@@ -27,6 +27,8 @@ export interface TableProps<T extends object> {
   exportFileName?: string
   /** Field used as React key (defaults to "_id") */
   keyField?: string
+  /** When provided, adds bulk delete support with checkboxes */
+  onBulkDelete?: (ids: string[]) => Promise<void>
 }
 
 const PAGE_SIZES = [10, 25, 50] as const
@@ -179,11 +181,13 @@ export function Table<T extends object>({
   actions,
   exportFileName = 'export',
   keyField = '_id',
+  onBulkDelete,
 }: TableProps<T>) {
   const [sortKey, setSortKey] = useState<string | null>(null)
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
   const [pageSize, setPageSize] = useState<PageSize>(10)
   const [page, setPage] = useState(1)
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
 
   // Sorted
   const sorted = useMemo(() => {
@@ -219,33 +223,53 @@ export function Table<T extends object>({
     setPage(1)
   }
 
-  const colCount = columns.length + (actions ? 1 : 0)
+  const colCount = columns.length + (actions ? 1 : 0) + (onBulkDelete ? 1 : 0)
   const from = sorted.length === 0 ? 0 : (safePage - 1) * pageSize + 1
   const to = Math.min(safePage * pageSize, sorted.length)
+
+  const allPaginatedSelected =
+    paginated.length > 0 &&
+    paginated.every((r) => selectedIds.has(coerce(getValue(r as Record<string, unknown>, keyField))))
 
   return (
     <div className="space-y-3">
       {/* ── Toolbar ── */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        {/* Page size selector */}
-        <div className="flex items-center gap-2 text-sm text-gray-600">
-          <span className="hidden sm:inline">Show</span>
-          <div className="flex gap-1">
-            {PAGE_SIZES.map((size) => (
-              <button
-                key={size}
-                onClick={() => handlePageSize(size)}
-                className={`rounded px-2.5 py-1 text-xs font-medium transition-colors ${
-                  pageSize === size
-                    ? 'bg-blue-600 text-white'
-                    : 'border border-gray-300 text-gray-600 hover:bg-gray-50'
-                }`}
-              >
-                {size}
-              </button>
-            ))}
+        {/* Left side: page size + bulk delete */}
+        <div className="flex items-center gap-3 flex-wrap">
+          {/* Page size selector */}
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <span className="hidden sm:inline">Show</span>
+            <div className="flex gap-1">
+              {PAGE_SIZES.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => handlePageSize(size)}
+                  className={`rounded px-2.5 py-1 text-xs font-medium transition-colors ${
+                    pageSize === size
+                      ? 'bg-blue-600 text-white'
+                      : 'border border-gray-300 text-gray-600 hover:bg-gray-50'
+                  }`}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+            <span className="hidden sm:inline text-gray-400">entries</span>
           </div>
-          <span className="hidden sm:inline text-gray-400">entries</span>
+
+          {/* Bulk delete button */}
+          {onBulkDelete && selectedIds.size > 0 && (
+            <button
+              onClick={async () => {
+                await onBulkDelete([...selectedIds])
+                setSelectedIds(new Set())
+              }}
+              className="rounded bg-red-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-700 transition-colors"
+            >
+              Eliminar seleccionados ({selectedIds.size})
+            </button>
+          )}
         </div>
 
         {/* Export */}
@@ -279,6 +303,22 @@ export function Table<T extends object>({
           <table className="w-full text-sm">
             <thead className="bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
               <tr>
+                {onBulkDelete && (
+                  <th className="w-8 px-3 py-3">
+                    <input
+                      type="checkbox"
+                      checked={allPaginatedSelected}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedIds(new Set(paginated.map((r) => coerce(getValue(r as Record<string, unknown>, keyField)))))
+                        } else {
+                          setSelectedIds(new Set())
+                        }
+                      }}
+                      className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+                    />
+                  </th>
+                )}
                 {columns.map((col) => (
                   <th
                     key={col.key}
@@ -314,12 +354,29 @@ export function Table<T extends object>({
                 </tr>
               ) : (
                 paginated.map((row, i) => {
-                  const key = coerce(getValue(row as Record<string, unknown>, keyField)) || String(i)
+                  const rowKey = coerce(getValue(row as Record<string, unknown>, keyField)) || String(i)
                   return (
                     <tr
-                      key={key}
+                      key={rowKey}
                       className="transition-colors hover:bg-blue-50/50"
                     >
+                      {onBulkDelete && (
+                        <td className="w-8 px-3 py-3" onClick={(e) => e.stopPropagation()}>
+                          <input
+                            type="checkbox"
+                            checked={selectedIds.has(rowKey)}
+                            onChange={(e) => {
+                              setSelectedIds((prev) => {
+                                const next = new Set(prev)
+                                if (e.target.checked) next.add(rowKey)
+                                else next.delete(rowKey)
+                                return next
+                              })
+                            }}
+                            className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+                          />
+                        </td>
+                      )}
                       {columns.map((col) => (
                         <td
                           key={col.key}
@@ -351,12 +408,32 @@ export function Table<T extends object>({
             <p className="px-4 py-10 text-center text-sm text-gray-400">No records found.</p>
           ) : (
             paginated.map((row, i) => {
-              const key = coerce(getValue(row as Record<string, unknown>, keyField)) || String(i)
+              const rowKey = coerce(getValue(row as Record<string, unknown>, keyField)) || String(i)
               return (
                 <div
-                  key={key}
+                  key={rowKey}
                   className="p-4 transition-colors hover:bg-blue-50/50"
                 >
+                  {onBulkDelete && (
+                    <div className="mb-2" onClick={(e) => e.stopPropagation()}>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedIds.has(rowKey)}
+                          onChange={(e) => {
+                            setSelectedIds((prev) => {
+                              const next = new Set(prev)
+                              if (e.target.checked) next.add(rowKey)
+                              else next.delete(rowKey)
+                              return next
+                            })
+                          }}
+                          className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+                        />
+                        <span className="text-xs text-gray-500">Seleccionar</span>
+                      </label>
+                    </div>
+                  )}
                   <dl className="space-y-2">
                     {columns.map((col) => (
                       <div key={col.key} className="flex flex-wrap gap-x-2 text-sm">

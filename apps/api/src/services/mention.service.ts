@@ -37,14 +37,28 @@ async function getAll(): Promise<IMention[]> {
 }
 
 async function create(data: IMentionCreate): Promise<IMention> {
+  await Mention.updateMany({}, { $inc: { order: 1 } })
   const mention = await Mention.create({
     name:    data.name,
     logoUrl: data.logoUrl,
     link:    data.link,
-    order:   data.order ?? 0,
+    order:   0,
     visible: true,
   })
   return mention.toObject() as unknown as IMention
+}
+
+async function reorder(id1: string, id2: string): Promise<void> {
+  const [item1, item2] = await Promise.all([Mention.findById(id1), Mention.findById(id2)])
+  if (!item1 || !item2) throw Object.assign(new Error('Mention not found'), { statusCode: 404 })
+  await Promise.all([
+    Mention.findByIdAndUpdate(id1, { order: item2.order }),
+    Mention.findByIdAndUpdate(id2, { order: item1.order }),
+  ])
+}
+
+async function bulkDelete(ids: string[]): Promise<void> {
+  await Mention.deleteMany({ _id: { $in: ids } })
 }
 
 async function update(id: string, data: IMentionUpdate): Promise<IMention> {
@@ -68,6 +82,8 @@ export const mentionService = {
   getVisible,
   getAll,
   create,
+  reorder,
+  bulkDelete,
   update,
   remove,
 }

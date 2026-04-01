@@ -63,6 +63,7 @@ async function update(id: string, data: Partial<Pick<IReview, 'selected' | 'orde
 
 /* ── Create manual review ── */
 async function create(data: IReviewCreate): Promise<IReview> {
+  await Review.updateMany({}, { $inc: { order: 1 } })
   const review = await Review.create({
     googleId:       `manual_${Date.now()}`,
     source:         'manual',
@@ -78,6 +79,21 @@ async function create(data: IReviewCreate): Promise<IReview> {
   return review.toObject() as unknown as IReview
 }
 
+/* ── Swap order of two reviews ── */
+async function reorder(id1: string, id2: string): Promise<void> {
+  const [item1, item2] = await Promise.all([Review.findById(id1), Review.findById(id2)])
+  if (!item1 || !item2) throw Object.assign(new Error('Review not found'), { statusCode: 404 })
+  await Promise.all([
+    Review.findByIdAndUpdate(id1, { order: item2.order }),
+    Review.findByIdAndUpdate(id2, { order: item1.order }),
+  ])
+}
+
+/* ── Bulk delete manual reviews ── */
+async function bulkDelete(ids: string[]): Promise<void> {
+  await Review.deleteMany({ _id: { $in: ids }, source: 'manual' })
+}
+
 /* ── Delete manual review ── */
 async function remove(id: string): Promise<void> {
   const review = await Review.findById(id)
@@ -86,4 +102,4 @@ async function remove(id: string): Promise<void> {
   await Review.findByIdAndDelete(id)
 }
 
-export const reviewService = { syncFromGoogle, getAll, getSelected, update, create, remove }
+export const reviewService = { syncFromGoogle, getAll, getSelected, update, create, reorder, bulkDelete, remove }

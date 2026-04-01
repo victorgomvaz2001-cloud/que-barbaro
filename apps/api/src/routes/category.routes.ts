@@ -8,6 +8,8 @@ const router: IRouter = Router()
 router.get('/', categoryController.getAll)
 
 // Admin
+router.put('/admin/reorder', authMiddleware, categoryController.reorder)
+router.delete('/admin/bulk', authMiddleware, categoryController.bulkRemove)
 router.get('/admin/:id', authMiddleware, categoryController.getById)
 router.post('/admin', authMiddleware, categoryController.create)
 router.put('/admin/:id', authMiddleware, categoryController.update)

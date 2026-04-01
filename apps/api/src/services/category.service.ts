@@ -13,7 +13,21 @@ export class CategoryService {
   }
 
   async create(data: IBlogCategoryCreate) {
-    return Category.create(data)
+    await Category.updateMany({}, { $inc: { order: 1 } })
+    return Category.create({ ...data, order: 0 })
+  }
+
+  async reorder(id1: string, id2: string) {
+    const [item1, item2] = await Promise.all([Category.findById(id1), Category.findById(id2)])
+    if (!item1 || !item2) throw Object.assign(new Error('Category not found'), { statusCode: 404 })
+    await Promise.all([
+      Category.findByIdAndUpdate(id1, { order: item2.order }),
+      Category.findByIdAndUpdate(id2, { order: item1.order }),
+    ])
+  }
+
+  async bulkDelete(ids: string[]) {
+    await Category.deleteMany({ _id: { $in: ids } })
   }
 
   async update(id: string, data: IBlogCategoryUpdate) {

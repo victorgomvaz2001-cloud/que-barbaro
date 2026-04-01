@@ -204,10 +204,12 @@ function AddReviewModal({
 
 export default function AdminResenasPage() {
   const { success, error } = useToast()
-  const [reviews, setReviews]       = useState<IReview[]>([])
-  const [loading, setLoading]       = useState(true)
-  const [syncing, setSyncing]       = useState(false)
+  const [reviews, setReviews]           = useState<IReview[]>([])
+  const [loading, setLoading]           = useState(true)
+  const [syncing, setSyncing]           = useState(false)
   const [addModalOpen, setAddModalOpen] = useState(false)
+  const [reordering, setReordering]     = useState(false)
+  const [selectedIds, setSelectedIds]   = useState<Set<string>>(new Set())
 
   useEffect(() => {
     apiClient
@@ -258,13 +260,53 @@ export default function AdminResenasPage() {
     try {
       await apiClient.delete(`/reviews/admin/${review._id}`)
       setReviews((prev) => prev.filter((r) => r._id !== review._id))
+      setSelectedIds((prev) => { const next = new Set(prev); next.delete(review._id as string); return next })
       success('Reseña eliminada')
     } catch (err) {
       error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
     }
   }
 
+  async function handleReorder(index: number, direction: 'up' | 'down') {
+    const targetIndex = direction === 'up' ? index - 1 : index + 1
+    if (targetIndex < 0 || targetIndex >= reviews.length) return
+    const item = reviews[index]
+    const target = reviews[targetIndex]
+    if (!item || !target) return
+    setReordering(true)
+    try {
+      await apiClient.put('/reviews/admin/reorder', { id1: item._id, id2: target._id })
+      setReviews((prev) => {
+        const next = [...prev]
+        const o1 = item.order
+        const o2 = target.order
+        next[index] = { ...item, order: o2 } as typeof item
+        next[targetIndex] = { ...target, order: o1 } as typeof target
+        return next.sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+      })
+    } finally { setReordering(false) }
+  }
+
+  async function handleBulkDelete() {
+    const manualSelected = [...selectedIds].filter((id) =>
+      reviews.find((r) => r._id === id && r.source === 'manual')
+    )
+    if (manualSelected.length === 0) return
+    if (!confirm(`¿Eliminar ${manualSelected.length} reseña${manualSelected.length !== 1 ? 's' : ''} manual${manualSelected.length !== 1 ? 'es' : ''}?`)) return
+    try {
+      await apiClient.delete('/reviews/admin/bulk', { body: { ids: manualSelected } })
+      setReviews((prev) => prev.filter((r) => !manualSelected.includes(r._id as string)))
+      success(`${manualSelected.length} reseña${manualSelected.length !== 1 ? 's' : ''} eliminadas`)
+      setSelectedIds(new Set())
+    } catch (err) {
+      error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
+    }
+  }
+
   const selectedCount = reviews.filter((r) => r.selected).length
+  const manualSelectedCount = [...selectedIds].filter((id) =>
+    reviews.find((r) => r._id === id && r.source === 'manual')
+  ).length
 
   return (
     <div>
@@ -282,7 +324,15 @@ export default function AdminResenasPage() {
             </p>
           )}
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
+          {manualSelectedCount > 0 && (
+            <button
+              onClick={handleBulkDelete}
+              className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
+            >
+              Eliminar seleccionados ({manualSelectedCount})
+            </button>
+          )}
           <button
             onClick={() => setAddModalOpen(true)}
             className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
@@ -343,15 +393,52 @@ export default function AdminResenasPage() {
 
       {!loading && reviews.length > 0 && (
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {reviews.map((review) => (
+          {reviews.map((review, index) => (
             <div
               key={review._id}
               className={`relative flex flex-col gap-4 rounded-xl border p-5 transition-all duration-200 ${
                 review.selected ? 'border-green-200 bg-green-50 shadow-sm' : 'border-gray-200 bg-white'
               }`}
             >
-              {/* Badges */}
+              {/* Checkbox (only for manual reviews) */}
+              {review.source === 'manual' && (
+                <div className="absolute left-3 top-3" onClick={(e) => e.stopPropagation()}>
+                  <input
+                    type="checkbox"
+                    checked={selectedIds.has(review._id as string)}
+                    onChange={(e) => {
+                      setSelectedIds((prev) => {
+                        const next = new Set(prev)
+                        if (e.target.checked) next.add(review._id as string)
+                        else next.delete(review._id as string)
+                        return next
+                      })
+                    }}
+                    className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+                  />
+                </div>
+              )}
+
+              {/* Order arrows */}
               <div className="absolute right-4 top-4 flex items-center gap-1.5">
+                <div className="flex gap-1 mr-1">
+                  <button
+                    onClick={() => handleReorder(index, 'up')}
+                    disabled={index === 0 || reordering}
+                    className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    title="Mover arriba"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    onClick={() => handleReorder(index, 'down')}
+                    disabled={index === reviews.length - 1 || reordering}
+                    className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    title="Mover abajo"
+                  >
+                    ↓
+                  </button>
+                </div>
                 {review.source === 'manual' && (
                   <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-500">
                     Manual

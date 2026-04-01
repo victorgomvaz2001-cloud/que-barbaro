@@ -78,6 +78,10 @@ export class BlogService {
     const post = await Blog.findByIdAndDelete(id)
     if (!post) throw Object.assign(new Error('Blog post not found'), { statusCode: 404 })
   }
+
+  async bulkDelete(ids: string[]) {
+    await Blog.deleteMany({ _id: { $in: ids } })
+  }
 }
 
 export const blogService = new BlogService()

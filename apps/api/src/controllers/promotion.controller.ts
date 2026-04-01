@@ -65,3 +65,13 @@ export async function remove(req: Request, res: Response, next: NextFunction): P
     next(err)
   }
 }
+
+export async function bulkRemove(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const { ids } = req.body as { ids: string[] }
+    await promotionService.bulkDelete(ids)
+    res.status(204).send()
+  } catch (err) {
+    next(err)
+  }
+}

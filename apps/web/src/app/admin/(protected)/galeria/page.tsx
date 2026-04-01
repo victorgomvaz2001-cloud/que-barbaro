@@ -251,6 +251,8 @@ function SectionGrid({
   onDelete,
   onToggleVisible,
   onAdd,
+  onReorder,
+  onBulkDelete,
 }: {
   photos: IGalleryPhoto[]
   section: GallerySection
@@ -258,7 +260,39 @@ function SectionGrid({
   onDelete: (p: IGalleryPhoto) => void
   onToggleVisible: (p: IGalleryPhoto) => void
   onAdd: () => void
+  onReorder?: (id1: string, id2: string) => Promise<void>
+  onBulkDelete?: (ids: string[]) => Promise<void>
 }) {
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
+  const [reordering, setReordering]   = useState(false)
+
+  async function handleReorder(index: number, direction: 'up' | 'down') {
+    const targetIndex = direction === 'up' ? index - 1 : index + 1
+    if (targetIndex < 0 || targetIndex >= photos.length || !onReorder) return
+    const a = photos[index], b = photos[targetIndex]
+    if (!a || !b) return
+    setReordering(true)
+    try {
+      await onReorder(a._id as string, b._id as string)
+    } finally { setReordering(false) }
+  }
+
+  async function handleBulkDelete() {
+    if (!onBulkDelete || selectedIds.size === 0) return
+    if (!confirm(`¿Eliminar ${selectedIds.size} foto${selectedIds.size !== 1 ? 's' : ''}?`)) return
+    await onBulkDelete([...selectedIds])
+    setSelectedIds(new Set())
+  }
+
+  function toggleSelect(id: string) {
+    setSelectedIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
   if (photos.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-gray-200 py-20">
@@ -279,60 +313,130 @@ function SectionGrid({
 
   if (section === 'antes-despues') {
     return (
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {photos.map((photo) => (
-          <div key={photo._id} className="group relative rounded-lg border border-gray-200 bg-gray-50 overflow-hidden">
-            <div className="grid grid-cols-2 gap-0.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photo.url} alt="Antes" className="h-32 w-full object-cover" />
-              {photo.urlAfter
-                // eslint-disable-next-line @next/next/no-img-element
-                ? <img src={photo.urlAfter} alt="Después" className="h-32 w-full object-cover" />
-                : <div className="h-32 w-full bg-orange-50 flex items-center justify-center text-orange-300 text-xs">Sin foto</div>
-              }
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/40 group-hover:opacity-100">
-              <button onClick={() => onEdit(photo)} className="rounded bg-white px-3 py-1.5 text-xs font-medium text-gray-800 hover:bg-gray-100">Editar</button>
-              <button onClick={() => onDelete(photo)} className="rounded bg-red-500 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-600">Eliminar</button>
-            </div>
-            <button
-              onClick={() => onToggleVisible(photo)}
-              className={`absolute right-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-medium transition-colors ${photo.visible ? 'bg-green-100 text-green-700 hover:bg-green-200' : 'bg-gray-200 text-gray-500 hover:bg-gray-300'}`}
-            >
-              {photo.visible ? 'Visible' : 'Oculta'}
+      <div className="space-y-3">
+        {selectedIds.size > 0 && (
+          <div className="flex items-center gap-3">
+            <button onClick={handleBulkDelete} className="rounded-lg bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 transition-colors">
+              Eliminar seleccionados ({selectedIds.size})
             </button>
-            <div className="px-3 py-2">
-              <p className="text-xs font-medium text-gray-700">{photo.pairLabel || <span className="italic text-gray-300">Sin etiqueta</span>}</p>
-              <p className="text-[10px] text-gray-400 mt-0.5">Antes / Después</p>
-            </div>
+            <button onClick={() => setSelectedIds(new Set())} className="text-sm text-gray-500 hover:text-gray-700">
+              Cancelar selección
+            </button>
           </div>
-        ))}
+        )}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {photos.map((photo, index) => (
+            <div
+              key={photo._id}
+              className={`group relative rounded-lg border bg-gray-50 overflow-hidden transition-colors ${
+                selectedIds.has(photo._id as string) ? 'border-blue-300' : 'border-gray-200'
+              }`}
+            >
+              {/* Checkbox */}
+              <div className="absolute left-2 top-2 z-10" onClick={(e) => e.stopPropagation()}>
+                <input
+                  type="checkbox"
+                  checked={selectedIds.has(photo._id as string)}
+                  onChange={() => toggleSelect(photo._id as string)}
+                  className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-0.5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={photo.url} alt="Antes" className="h-32 w-full object-cover" />
+                {photo.urlAfter
+                  // eslint-disable-next-line @next/next/no-img-element
+                  ? <img src={photo.urlAfter} alt="Después" className="h-32 w-full object-cover" />
+                  : <div className="h-32 w-full bg-orange-50 flex items-center justify-center text-orange-300 text-xs">Sin foto</div>
+                }
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/40 group-hover:opacity-100">
+                <button onClick={() => onEdit(photo)} className="rounded bg-white px-3 py-1.5 text-xs font-medium text-gray-800 hover:bg-gray-100">Editar</button>
+                <button onClick={() => onDelete(photo)} className="rounded bg-red-500 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-600">Eliminar</button>
+              </div>
+              <button
+                onClick={() => onToggleVisible(photo)}
+                className={`absolute right-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-medium transition-colors ${photo.visible ? 'bg-green-100 text-green-700 hover:bg-green-200' : 'bg-gray-200 text-gray-500 hover:bg-gray-300'}`}
+              >
+                {photo.visible ? 'Visible' : 'Oculta'}
+              </button>
+              <div className="flex items-center justify-between px-3 py-2">
+                <div>
+                  <p className="text-xs font-medium text-gray-700">{photo.pairLabel || <span className="italic text-gray-300">Sin etiqueta</span>}</p>
+                  <p className="text-[10px] text-gray-400 mt-0.5">Antes / Después</p>
+                </div>
+                {onReorder && (
+                  <div className="flex gap-1">
+                    <button onClick={() => handleReorder(index, 'up')} disabled={index === 0 || reordering}
+                      className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs">↑</button>
+                    <button onClick={() => handleReorder(index, 'down')} disabled={index === photos.length - 1 || reordering}
+                      className="flex h-6 w-6 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs">↓</button>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      {photos.map((photo) => (
-        <div key={photo._id} className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={photo.url} alt={photo.alt} className="h-36 w-full object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/45 group-hover:opacity-100">
-            <button onClick={() => onEdit(photo)} className="rounded bg-white px-3 py-1.5 text-xs font-medium text-gray-800 hover:bg-gray-100">Editar</button>
-            <button onClick={() => onDelete(photo)} className="rounded bg-red-500 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-600">Eliminar</button>
-          </div>
-          <button
-            onClick={() => onToggleVisible(photo)}
-            className={`absolute right-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-medium transition-colors ${photo.visible ? 'bg-green-100 text-green-700 hover:bg-green-200' : 'bg-gray-200 text-gray-500 hover:bg-gray-300'}`}
-          >
-            {photo.visible ? 'Visible' : 'Oculta'}
+    <div className="space-y-3">
+      {selectedIds.size > 0 && (
+        <div className="flex items-center gap-3">
+          <button onClick={handleBulkDelete} className="rounded-lg bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 transition-colors">
+            Eliminar seleccionados ({selectedIds.size})
           </button>
-          <div className="px-2 py-1.5">
-            <p className="truncate text-xs text-gray-600">{photo.alt || <span className="italic text-gray-300">Sin descripción</span>}</p>
-            {photo.category && <p className="truncate text-[10px] text-gray-400">{photo.category}</p>}
-          </div>
+          <button onClick={() => setSelectedIds(new Set())} className="text-sm text-gray-500 hover:text-gray-700">
+            Cancelar selección
+          </button>
         </div>
-      ))}
+      )}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {photos.map((photo, index) => (
+          <div
+            key={photo._id}
+            className={`group relative overflow-hidden rounded-lg border bg-gray-50 transition-colors ${
+              selectedIds.has(photo._id as string) ? 'border-blue-300' : 'border-gray-200'
+            }`}
+          >
+            {/* Checkbox */}
+            <div className="absolute left-1.5 top-1.5 z-10" onClick={(e) => e.stopPropagation()}>
+              <input
+                type="checkbox"
+                checked={selectedIds.has(photo._id as string)}
+                onChange={() => toggleSelect(photo._id as string)}
+                className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+              />
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={photo.url} alt={photo.alt} className="h-36 w-full object-cover" />
+            <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/45 group-hover:opacity-100">
+              <button onClick={() => onEdit(photo)} className="rounded bg-white px-3 py-1.5 text-xs font-medium text-gray-800 hover:bg-gray-100">Editar</button>
+              <button onClick={() => onDelete(photo)} className="rounded bg-red-500 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-600">Eliminar</button>
+            </div>
+            <button
+              onClick={() => onToggleVisible(photo)}
+              className={`absolute right-1.5 top-1.5 rounded-full px-2 py-0.5 text-[10px] font-medium transition-colors ${photo.visible ? 'bg-green-100 text-green-700 hover:bg-green-200' : 'bg-gray-200 text-gray-500 hover:bg-gray-300'}`}
+            >
+              {photo.visible ? 'Visible' : 'Oculta'}
+            </button>
+            <div className="px-2 py-1.5">
+              <p className="truncate text-xs text-gray-600">{photo.alt || <span className="italic text-gray-300">Sin descripción</span>}</p>
+              {photo.category && <p className="truncate text-[10px] text-gray-400">{photo.category}</p>}
+            </div>
+            {onReorder && (
+              <div className="flex justify-end gap-1 px-2 pb-1.5">
+                <button onClick={() => handleReorder(index, 'up')} disabled={index === 0 || reordering}
+                  className="flex h-5 w-5 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[10px]">↑</button>
+                <button onClick={() => handleReorder(index, 'down')} disabled={index === photos.length - 1 || reordering}
+                  className="flex h-5 w-5 items-center justify-center rounded border border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-[10px]">↓</button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -374,7 +478,6 @@ export default function AdminGaleriaPage() {
         const res = await apiClient.post<ApiResponse<IGalleryPhoto>>('/gallery/admin', {
           url,
           section: activeSection,
-          order: photos.length + added,
         })
         setPhotos((prev) => [res.data, ...prev])
         added++
@@ -391,7 +494,6 @@ export default function AdminGaleriaPage() {
         ...data,
         url,
         section: activeSection,
-        order: photos.length,
       })
       setPhotos((prev) => [res.data, ...prev])
       success('Foto añadida')
@@ -431,6 +533,35 @@ export default function AdminGaleriaPage() {
       await apiClient.delete(`/gallery/admin/${photo._id}`)
       setPhotos((prev) => prev.filter((p) => p._id !== photo._id))
       success('Foto eliminada')
+    } catch (err) {
+      error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
+    }
+  }
+
+  async function handleReorderPhoto(id1: string, id2: string) {
+    try {
+      await apiClient.put('/gallery/admin/reorder', { id1, id2 })
+      setPhotos((prev) => {
+        const next = [...prev]
+        const i1 = next.findIndex((p) => p._id === id1)
+        const i2 = next.findIndex((p) => p._id === id2)
+        if (i1 === -1 || i2 === -1) return prev
+        const p1 = next[i1]!, p2 = next[i2]!
+        const o1 = p1.order, o2 = p2.order
+        next[i1] = { ...p1, order: o2 } as typeof p1
+        next[i2] = { ...p2, order: o1 } as typeof p2
+        return next.sort((a, b) => a.order - b.order)
+      })
+    } catch (err) {
+      error(err instanceof Error ? err.message : 'Error al reordenar', 'Error')
+    }
+  }
+
+  async function handleBulkDeletePhotos(ids: string[]) {
+    try {
+      await apiClient.delete('/gallery/admin/bulk', { body: { ids } })
+      setPhotos((prev) => prev.filter((p) => !ids.includes(p._id as string)))
+      success(`${ids.length} foto${ids.length !== 1 ? 's' : ''} eliminadas`)
     } catch (err) {
       error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
     }
@@ -544,6 +675,8 @@ export default function AdminGaleriaPage() {
           onDelete={handleDelete}
           onToggleVisible={handleToggleVisible}
           onAdd={handleAddClick}
+          onReorder={handleReorderPhoto}
+          onBulkDelete={handleBulkDeletePhotos}
         />
       )}
     </div>

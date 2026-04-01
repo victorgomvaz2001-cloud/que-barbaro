@@ -61,6 +61,10 @@ async function remove(id: string): Promise<void> {
   await promotion.deleteOne()
 }
 
+async function bulkDelete(ids: string[]): Promise<void> {
+  await Promotion.deleteMany({ _id: { $in: ids }, isActive: false })
+}
+
 export const promotionService = {
   getActive,
   getAll,
@@ -69,4 +73,5 @@ export const promotionService = {
   activate,
   deactivate,
   remove,
+  bulkDelete,
 }

@@ -13,12 +13,16 @@ router.get('/section/:section', galleryController.getBySection)
 router.get('/categories',       galleryCategoryController.getAll)
 
 // Admin — photos
+router.put('/admin/reorder',    authMiddleware, galleryController.reorder)
+router.delete('/admin/bulk',    authMiddleware, galleryController.bulkRemove)
 router.get('/admin/list',       authMiddleware, galleryController.getAll)
 router.post('/admin',           authMiddleware, galleryController.create)
 router.put('/admin/:id',        authMiddleware, galleryController.update)
 router.delete('/admin/:id',     authMiddleware, galleryController.remove)
 
 // Admin — categories
+router.put('/admin/categories/reorder',  authMiddleware, galleryCategoryController.reorder)
+router.delete('/admin/categories/bulk',  authMiddleware, galleryCategoryController.bulkRemove)
 router.get('/admin/categories',        authMiddleware, galleryCategoryController.getAllAdmin)
 router.post('/admin/categories',       authMiddleware, galleryCategoryController.create)
 router.put('/admin/categories/:id',    authMiddleware, galleryCategoryController.update)

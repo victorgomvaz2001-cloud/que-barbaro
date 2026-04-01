@@ -304,6 +304,7 @@ export default function PromocionesPage() {
   const [loading,     setLoading]     = useState(true)
   const [addOpen,     setAddOpen]     = useState(false)
   const [editTarget,  setEditTarget]  = useState<IPromotion | null>(null)
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     apiClient
@@ -373,7 +374,24 @@ export default function PromocionesPage() {
     try {
       await apiClient.delete(`/promotions/admin/${promotion._id}`)
       setPromotions((prev) => prev.filter((p) => p._id !== promotion._id))
+      setSelectedIds((prev) => { const next = new Set(prev); next.delete(promotion._id as string); return next })
       success('Promoción eliminada')
+    } catch (err) {
+      error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
+    }
+  }
+
+  async function handleBulkDelete() {
+    const inactiveSelected = [...selectedIds].filter((id) =>
+      promotions.find((p) => p._id === id && !p.isActive)
+    )
+    if (inactiveSelected.length === 0) return
+    if (!confirm(`¿Eliminar ${inactiveSelected.length} promoción${inactiveSelected.length !== 1 ? 'es' : ''}?`)) return
+    try {
+      await apiClient.delete('/promotions/admin/bulk', { body: { ids: inactiveSelected } })
+      setPromotions((prev) => prev.filter((p) => !inactiveSelected.includes(p._id as string)))
+      success(`${inactiveSelected.length} promoción${inactiveSelected.length !== 1 ? 'es' : ''} eliminadas`)
+      setSelectedIds(new Set())
     } catch (err) {
       error(err instanceof Error ? err.message : 'Error al eliminar', 'Error')
     }
@@ -407,12 +425,22 @@ export default function PromocionesPage() {
             </p>
           )}
         </div>
-        <button
-          onClick={() => setAddOpen(true)}
-          className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-700"
-        >
-          + Nueva promoción
-        </button>
+        <div className="flex items-center gap-2">
+          {selectedIds.size > 0 && (
+            <button
+              onClick={handleBulkDelete}
+              className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
+            >
+              Eliminar seleccionados ({selectedIds.size})
+            </button>
+          )}
+          <button
+            onClick={() => setAddOpen(true)}
+            className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-700"
+          >
+            + Nueva promoción
+          </button>
+        </div>
       </div>
 
       {/* Active banner preview */}
@@ -467,9 +495,29 @@ export default function PromocionesPage() {
               className={`relative rounded-xl border p-4 transition-all duration-200 ${
                 promotion.isActive
                   ? 'border-green-300 bg-white ring-1 ring-green-200'
+                  : selectedIds.has(promotion._id as string)
+                  ? 'border-blue-300 bg-blue-50'
                   : 'border-gray-200 bg-white'
               }`}
             >
+              {/* Checkbox (only for inactive promotions) */}
+              {!promotion.isActive && (
+                <div className="absolute left-3 top-3 z-10" onClick={(e) => e.stopPropagation()}>
+                  <input
+                    type="checkbox"
+                    checked={selectedIds.has(promotion._id as string)}
+                    onChange={(e) => {
+                      setSelectedIds((prev) => {
+                        const next = new Set(prev)
+                        if (e.target.checked) next.add(promotion._id as string)
+                        else next.delete(promotion._id as string)
+                        return next
+                      })
+                    }}
+                    className="h-4 w-4 rounded border-gray-300 accent-gray-900 cursor-pointer"
+                  />
+                </div>
+              )}
               {/* Background image preview */}
               <div className="relative mb-3 h-28 w-full overflow-hidden rounded-lg bg-gray-100">
                 {promotion.backgroundImage && (

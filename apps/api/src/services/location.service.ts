@@ -27,6 +27,10 @@ export class LocationService {
     const location = await Location.findByIdAndDelete(id)
     if (!location) throw Object.assign(new Error('Location not found'), { statusCode: 404 })
   }
+
+  async bulkDelete(ids: string[]) {
+    await Location.deleteMany({ _id: { $in: ids } })
+  }
 }
 
 export const locationService = new LocationService()
