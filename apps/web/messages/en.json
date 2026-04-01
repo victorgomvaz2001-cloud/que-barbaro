@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "Qué Bárbaro",
+    "title": "¡Qué Bárbaro!",
     "description": "Your trusted barbershop and beauty center."
   },
   "nav": {
@@ -74,7 +74,7 @@
   },
   "valueProposition": {
     "title": "Personalised hairdressing for those who know what they want",
-    "body1": "Not every head of hair needs the same thing, and not every client is looking for the same thing. At Qué Bárbaro that diversity is the starting point. Before beginning any service, we take the time to understand the texture, history, lifestyle and expectations of each person. That way the result not only looks good in the salon - it works at home too.",
+    "body1": "Not every head of hair needs the same thing, and not every client is looking for the same thing. At ¡Qué Bárbaro! that diversity is the starting point. Before beginning any service, we take the time to understand the texture, history, lifestyle and expectations of each person. That way the result not only looks good in the salon - it works at home too.",
     "body2": "That approach is what sets us apart as a reference for high-end hairdressing in Torremolinos for those who value truly personalised care.",
     "headline": "You won't just come\nto get a haircut.",
     "subheadline": "You'll come to unwind. To be pampered. To leave feeling more yourself.",
@@ -112,7 +112,7 @@
   },
   "blog": {
     "eyebrow": "Trends · Care · Inspiration",
-    "heroTitle": "Qué Bárbaro Blog",
+    "heroTitle": "¡Qué Bárbaro! Blog",
     "heroDescription": "Hairdressing, colour, hair care and trends. Written by the salon team.",
     "backToBlog": "← Back to blog",
     "by": "By",
@@ -142,10 +142,10 @@
         "description": "Styles, shapes and changes that define the moment, always with a realistic eye on what actually works in the salon and in everyday life."
       },
       "Eventos y ocasiones especiales": {
-        "description": "Tips for brides, hen parties, evening looks. How to prepare for a big event and get the most from Qué Bárbaro's services when the day really matters."
+        "description": "Tips for brides, hen parties, evening looks. How to prepare for a big event and get the most from ¡Qué Bárbaro!'s services when the day really matters."
       },
-      "Noticias de Qué Bárbaro": {
-        "description": "Salon news, new services, new team members and everything that reinforces Qué Bárbaro's identity as a reference hairdresser in Torremolinos."
+      "Noticias de ¡Qué Bárbaro!": {
+        "description": "Salon news, new services, new team members and everything that reinforces ¡Qué Bárbaro!'s identity as a reference hairdresser in Torremolinos."
       }
     },
     "allCategories": "All",
@@ -153,9 +153,9 @@
   },
   "galeria": {
     "hero": {
-      "eyebrow": "Gallery · Qué Bárbaro",
+      "eyebrow": "Gallery · ¡Qué Bárbaro!",
       "title": "Gallery",
-      "subtitle": "Qué Bárbaro",
+      "subtitle": "¡Qué Bárbaro!",
       "description": "Real results: colour, cuts, treatments, events and the salon interior. The best way to understand how we work.",
       "allCategories": "All",
       "categories": [
@@ -181,7 +181,7 @@
     },
     "espacio": {
       "eyebrow": "The salon",
-      "title": "The Qué Bárbaro space",
+      "title": "The ¡Qué Bárbaro! space",
       "description": "The salon atmosphere is part of the experience."
     },
     "eventos": {
@@ -194,7 +194,7 @@
     "cta": {
       "eyebrow": "Like what you see?",
       "title": "Book your appointment",
-      "description": "Let the Qué Bárbaro team guide you.",
+      "description": "Let the ¡Qué Bárbaro! team guide you.",
       "button": "Book an appointment",
       "watermark": "Book"
     }
@@ -204,9 +204,9 @@
     "of": "of"
   },
   "contacto": {
-    "title": "Contact - Qué Bárbaro",
+    "title": "Contact - ¡Qué Bárbaro!",
     "intro": "All the information to get in touch or find your way to the salon.",
-    "whereTitle": "Where we are",
+    "whereTitle": "Where are we?",
     "whereText": "Our salon is in Torremolinos, Málaga. The location is convenient and accessible for local clients as well as people from surrounding areas looking for a salon with a more considered and personal approach.",
     "hoursTitle": "Opening hours",
     "hoursText": "We work by appointment to ensure personalised attention and the time each service requires.",
@@ -228,15 +228,15 @@
     "phoneTitle": "Phone & WhatsApp",
     "phoneText": "For questions about services, availability or event packages, write to us or call us directly. We're here to help you find what you need.",
     "followTitle": "Follow us",
-    "followText": "Follow the day-to-day of Qué Bárbaro, discover recent work and news through our social media. It's the quickest way to see what we're doing and get inspired before you visit.",
+    "followText": "Follow the day-to-day of ¡Qué Bárbaro!, discover recent work and news through our social media. It's the quickest way to see what we're doing and get inspired before you visit.",
     "address": "Address",
     "phone": "Phone",
     "social": "Social media",
     "bookCta": "Book an appointment",
-    "mapsTitle": "Qué Bárbaro location on Google Maps"
+    "mapsTitle": "¡Qué Bárbaro! location on Google Maps"
   },
   "serviciosPage": {
-    "eyebrow": "- Qué Bárbaro",
+    "eyebrow": "- ¡Qué Bárbaro!",
     "title": "Services",
     "serviceLabel": "Service",
     "priceNote": "Prices from",
@@ -362,11 +362,11 @@
     "hero": {
       "location": "Torremolinos, Málaga",
       "title": "The salon",
-      "brand": "Qué Bárbaro",
+      "brand": "¡Qué Bárbaro!",
       "body": "A salon with its own identity in Torremolinos: elegant without being cold, technical without feeling distant. Born from a simple idea: that hairdressing can be done better."
     },
     "historia": {
-      "eyebrow": "How Qué Bárbaro came to be",
+      "eyebrow": "How ¡Qué Bárbaro! came to be",
       "title": "Story",
       "body": "We built the salon from a constant pursuit of quality: in the cut, colouring, hair diagnosis, the treatment and the atmosphere. In an industry where speed often wins, we chose to work with time, listening and judgement.",
       "foundedBy": "Founded by",
@@ -374,7 +374,7 @@
     },
     "experiencia": {
       "eyebrow": "The experience",
-      "titleLine1": "The Qué Bárbaro",
+      "titleLine1": "The ¡Qué Bárbaro!",
       "titleLine2": "experience",
       "body": "We want every visit to the salon to be a real pause. We take care of the atmosphere, the pace of the appointment and the guidance from the very first moment.",
       "quote1": "The result matters.",
@@ -508,7 +508,7 @@
     "booksySub": "Book online",
     "treatwellLabel": "Treatwell",
     "treatwellSub": "Book online",
-    "llamarLabel": "Call us",
+    "llamarLabel": "Contact us",
     "llamarSub": "+34 644 817 835",
     "mobileBarAriaLabel": "Quick booking access"
   },
@@ -523,17 +523,19 @@
     "phrase2": "For a more exclusive experience",
     "phrase3": "High-performance styling tools",
     "phrase4": "Precision male grooming",
-    "phrase5": "World-reference color and hydration"
+    "phrase5": "World-reference color and hydration",
+    "phrase6": "Premium nail care for hands and feet",
+    "phrase7": "Luxurious body oils and skincare"
   },
   "experienceSection": {
-    "label": "The space · Qué Bárbaro",
+    "label": "The space · ¡Qué Bárbaro!",
     "h2L1": "A space",
     "h2L2": "designed so that",
     "h2L3": "personal care",
     "h2L4": "becomes",
     "h2L5": "an experience",
     "ticker": "Quality · Technique · Personalised care · Torremolinos · Boutique salon · High-end hairdressing · ",
-    "body1": "Qué Bárbaro is not just a boutique hair salon. It is an elegant, calm space with its own aesthetic vision, where every detail of the process is part of the result. From the welcome to the final finish, we take care of the pace, the atmosphere and the treatment so that coming to the salon is a pause worth taking.",
+    "body1": "¡Qué Bárbaro! is not just a boutique hair salon. It is an elegant, calm space with its own aesthetic vision, where every detail of the process is part of the result. From the welcome to the final finish, we take care of the pace, the atmosphere and the treatment so that coming to the salon is a pause worth taking.",
     "body2": "That combination of technique and experience is what makes us one of the reference salons in Torremolinos for those who seek quality, not volume."
   },
   "faq": {
@@ -600,14 +602,14 @@
   },
   "homeContact": {
     "sectionLabel": "How to get here",
-    "businessName": "¡Qué Bárbaro! Hair & Care Salon",
+    "businessName": "¡¡Qué Bárbaro!! Hair & Care Salon",
     "address1": "Calle de los Caballeros, 4",
     "address2": "Torremolinos, 29620 Málaga",
     "hoursLabel": "Opening hours",
     "phoneLabel": "Phone",
     "socialLabel": "Social media",
     "whatsappCta": "Write to us on WhatsApp",
-    "mapTitle": "Map of ¡Qué Bárbaro! Hair & Care Salon in Torremolinos",
+    "mapTitle": "Map of ¡¡Qué Bárbaro!! Hair & Care Salon in Torremolinos",
     "hours": [
       {
         "days": "Monday to Friday",

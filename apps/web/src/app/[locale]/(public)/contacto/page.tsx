@@ -42,7 +42,7 @@ export default async function ContactoPage() {
 
   return (
     <>
-      <SEOHead route={seoRoute} fallback={{ title: 'Contacto - Qué Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Contacto - ¡Qué Bárbaro!' }} />
 
       <div className="w-full px-6 md:px-10 py-16 md:py-20">
         <div className="mx-auto w-full max-w-6xl flex flex-col gap-16 md:gap-20">
@@ -60,7 +60,7 @@ export default async function ContactoPage() {
           {/* ── Secciones de información ─────────────────────────────────────── */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-16 md:gap-y-14">
 
-            {/* Dónde estamos */}
+            {/* ¿Dónde estamos? */}
             <section>
               <h2 className="font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] text-navy mb-3">
                 {t('whereTitle')}

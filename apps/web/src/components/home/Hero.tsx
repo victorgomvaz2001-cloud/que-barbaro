@@ -27,7 +27,7 @@ export default async function Hero() {
           className="font-primary text-navy uppercase leading-[0.88] tracking-tight"
           style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
         >
-          Qué&nbsp;Bárbaro
+          ¡Qué&nbsp;Bárbaro!
         </h1>
       </div>
 
@@ -43,7 +43,7 @@ export default async function Hero() {
       >
         <Image
           src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp"
-          alt="Interior del salón Qué Bárbaro en Torremolinos"
+          alt="Interior del salón ¡Qué Bárbaro! en Torremolinos"
           fill
           sizes="100vw"
           quality={90}

@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="mx-auto flex items-center justify-between max-w-[1680px] px-6 py-3 md:grid md:grid-cols-3">
           {/* Left: Logo */}
           <div className="flex items-center">
-            <Link href="/" aria-label="Qué Bárbaro" className="text-navy transition-opacity hover:opacity-70">
+            <Link href="/" aria-label="¡Qué Bárbaro!" className="text-navy transition-opacity hover:opacity-70">
               <Logo className="h-14 w-auto" />
             </Link>
           </div>
@@ -176,7 +176,7 @@ export default function Navbar() {
             </button>
 
             {/* Logo centrado */}
-            <Link href="/" onClick={() => closeMenu()} aria-label="Qué Bárbaro" className="text-navy transition-opacity hover:opacity-70">
+            <Link href="/" onClick={() => closeMenu()} aria-label="¡Qué Bárbaro!" className="text-navy transition-opacity hover:opacity-70">
               <Logo className="h-20 w-auto" />
             </Link>
 

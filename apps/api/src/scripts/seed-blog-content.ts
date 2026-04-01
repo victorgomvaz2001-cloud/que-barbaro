@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import { Blog } from '../models/Blog.model'
 import { env } from '../config/env'
 
-const AUTHOR = 'Qué Bárbaro'
+const AUTHOR = '¡Qué Bárbaro!'
 const S3 = 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com'
 
 const posts = [
@@ -17,7 +17,7 @@ const posts = [
     featured: false,
     image: `${S3}/keratin.webp`,
     content: `
-<p>Cuando alguien viene al salón con el cabello encrespado, difícil de manejar o simplemente sin vida, la conversación suele derivar en tratamientos. Y dos de los que más preguntamos en Qué Bárbaro son el <strong>Keratin Infusion</strong> y el <strong>Softy Mood</strong>. Los dos son de la línea GOA Organics. Los dos mejoran el cabello. Pero no son lo mismo, y elegir mal puede significar gastar dinero en algo que no era lo que necesitabas.</p>
+<p>Cuando alguien viene al salón con el cabello encrespado, difícil de manejar o simplemente sin vida, la conversación suele derivar en tratamientos. Y dos de los que más preguntamos en ¡Qué Bárbaro! son el <strong>Keratin Infusion</strong> y el <strong>Softy Mood</strong>. Los dos son de la línea GOA Organics. Los dos mejoran el cabello. Pero no son lo mismo, y elegir mal puede significar gastar dinero en algo que no era lo que necesitabas.</p>
 
 <h2>Qué hace el Keratin Infusion</h2>
 <p>El Keratin Infusion trabaja sobre la fibra capilar desde dentro. Su objetivo principal es <strong>alisar, suavizar y reducir el encrespamiento</strong> de forma progresiva. No es un alisado permanente agresivo. Es un tratamiento que se aplica con calor y que va dejando el cabello más manejable, más brillante y con mucho menos frizz en cada lavado.</p>
@@ -47,7 +47,7 @@ const posts = [
     featured: false,
     image: `${S3}/balayagebrasil.webp`,
     content: `
-<p>Si hay una técnica que lleva años resistiendo el paso del tiempo y los cambios de tendencia, esa es el balayage. No es una moda. Es una forma de entender el color que se adapta a casi cualquier persona, cualquier tipo de cabello y cualquier tono base. Por eso sigue siendo, de lejos, la técnica más solicitada en Qué Bárbaro.</p>
+<p>Si hay una técnica que lleva años resistiendo el paso del tiempo y los cambios de tendencia, esa es el balayage. No es una moda. Es una forma de entender el color que se adapta a casi cualquier persona, cualquier tipo de cabello y cualquier tono base. Por eso sigue siendo, de lejos, la técnica más solicitada en ¡Qué Bárbaro!.</p>
 
 <h2>Qué es exactamente el balayage</h2>
 <p>Balayage viene del francés y significa "barrer". El nombre describe la técnica: el colorista aplica el decolorante o el color con un movimiento de barrido sobre el cabello, sin papel de aluminio, creando transiciones suaves y naturales entre el tono de la raíz y las puntas.</p>
@@ -63,7 +63,7 @@ const posts = [
 </ul>
 
 <h2>Balayage estilo brasileño vs balayage rubio</h2>
-<p>En Qué Bárbaro trabajamos dos estilos diferenciados. El <strong>Balayage Estilo Brasileño</strong> busca ese efecto de cabello iluminado por el sol: transiciones muy suaves, resultado muy natural, tonos cálidos y sin contraste brusco. El <strong>Balayage Rubio Deslumbrante</strong> va a otro registro: decoloración más controlada, matización precisa, para quienes quieren un rubio que brille pero que no parezca artificial.</p>
+<p>En ¡Qué Bárbaro! trabajamos dos estilos diferenciados. El <strong>Balayage Estilo Brasileño</strong> busca ese efecto de cabello iluminado por el sol: transiciones muy suaves, resultado muy natural, tonos cálidos y sin contraste brusco. El <strong>Balayage Rubio Deslumbrante</strong> va a otro registro: decoloración más controlada, matización precisa, para quienes quieren un rubio que brille pero que no parezca artificial.</p>
 <p>Cuál te conviene depende de tu tono de base, de lo que quieras cambiar y de cuánto mantenimiento estás dispuesta a darle. Esa conversación la tenemos siempre antes de empezar.</p>
 
 <h2>¿Cuánto dura y cómo se mantiene?</h2>
@@ -96,7 +96,7 @@ const posts = [
 </ol>
 
 <h2>El corte importa tanto como la rutina</h2>
-<p>Uno de los errores más comunes al empezar con el método curly es cambiar toda la rutina de productos sin cambiar el corte. Y el corte, en cabello rizado, lo es casi todo. Un corte convencional en seco, en línea recta, aplana el rizo y le quita movimiento. La <strong>Danza de Rizos</strong>, la técnica que ofrecemos en Qué Bárbaro, se hace en mojado y respeta la forma natural de cada rizo. El resultado es completamente diferente.</p>
+<p>Uno de los errores más comunes al empezar con el método curly es cambiar toda la rutina de productos sin cambiar el corte. Y el corte, en cabello rizado, lo es casi todo. Un corte convencional en seco, en línea recta, aplana el rizo y le quita movimiento. La <strong>Danza de Rizos</strong>, la técnica que ofrecemos en ¡Qué Bárbaro!, se hace en mojado y respeta la forma natural de cada rizo. El resultado es completamente diferente.</p>
 
 <h2>Por dónde empezar</h2>
 <p>No hace falta tirarlo todo por la borda el primer día. Lo más sensato es empezar por el corte, luego cambiar el champú y el acondicionador, y a partir de ahí ir ajustando la rutina según cómo responde tu cabello. Cada rizo es diferente y lo que funciona a una persona puede no funcionar a otra. La paciencia forma parte del método.</p>
@@ -114,13 +114,13 @@ const posts = [
     featured: false,
     image: `${S3}/cortediseño.webp`,
     content: `
-<p>Cada año hay una lista de cortes "de tendencia" que circula por redes y revistas. La mayoría son variaciones de lo mismo con nombres distintos. Lo que de verdad nos interesa en Qué Bárbaro no es seguir la tendencia por seguirla, sino entender qué está funcionando realmente y por qué. Esto es lo que más estamos viendo este año, con una mirada honesta.</p>
+<p>Cada año hay una lista de cortes "de tendencia" que circula por redes y revistas. La mayoría son variaciones de lo mismo con nombres distintos. Lo que de verdad nos interesa en ¡Qué Bárbaro! no es seguir la tendencia por seguirla, sino entender qué está funcionando realmente y por qué. Esto es lo que más estamos viendo este año, con una mirada honesta.</p>
 
 <h2>El bob en todas sus versiones</h2>
 <p>El bob no muere. Y tiene sentido: es versátil, tiene decenas de variantes y funciona en casi todos los tipos de cabello y de cara. Lo que estamos viendo más este año es el <strong>bob texturizado</strong>, con puntas irregulares y movimiento, lejos de la línea recta perfecta. También el <strong>bob asimétrico</strong>, con un lado ligeramente más largo que el otro. Ambos funcionan especialmente bien en cabellos con algo de volumen natural.</p>
 
 <h2>El corte de diseño personalizado</h2>
-<p>Cada vez más clientes vienen al salón con una idea clara: quieren un corte que les favorezca a ellos, no el que está de moda. El <strong>Artístico Design</strong> que trabajamos en Qué Bárbaro responde exactamente a eso: un corte avanzado y completamente personalizado que busca una forma que te favorezca, te identifique y que funcione en el día a día sin esfuerzo. No hay dos cortes iguales.</p>
+<p>Cada vez más clientes vienen al salón con una idea clara: quieren un corte que les favorezca a ellos, no el que está de moda. El <strong>Artístico Design</strong> que trabajamos en ¡Qué Bárbaro! responde exactamente a eso: un corte avanzado y completamente personalizado que busca una forma que te favorezca, te identifique y que funcione en el día a día sin esfuerzo. No hay dos cortes iguales.</p>
 
 <h2>El regreso del flequillo</h2>
 <p>El flequillo lleva un par de temporadas volviendo con fuerza. Pero no es el flequillo de siempre. El que más vemos ahora es el <strong>flequillo cortina</strong>, partido en el centro y con caída natural hacia los lados, y el <strong>flequillo texturizado</strong>, con puntas abiertas y poco peso. Antes de pedirlo, vale la pena hablar con tu estilista: el flequillo que queda bien depende mucho de la forma de tu cara y de tu tipo de cabello.</p>
@@ -159,24 +159,24 @@ const posts = [
 
 <h2>El día de la boda: tiempos y logística</h2>
 <p>Una cosa que siempre recomendamos: reserva más tiempo del que crees que necesitas. Un peinado de novia puede llevar entre 60 y 90 minutos. Si además hay maquillaje, peinados de damas de honor o cualquier imprevisto, los tiempos se estiran. Habla con tu estilista con antelación y haz un cálculo realista.</p>
-<p>En Qué Bárbaro ofrecemos el <strong>Pack Novia</strong>, que incluye la prueba previa, el peinado y el maquillaje del día. Si tienes una boda en el horizonte y quieres hablar de opciones, escríbenos por WhatsApp y lo organizamos.</p>
+<p>En ¡Qué Bárbaro! ofrecemos el <strong>Pack Novia</strong>, que incluye la prueba previa, el peinado y el maquillaje del día. Si tienes una boda en el horizonte y quieres hablar de opciones, escríbenos por WhatsApp y lo organizamos.</p>
     `.trim(),
   },
 
-  // ── 6. Noticias de Qué Bárbaro ────────────────────────────────────────────
+  // ── 6. Noticias de ¡Qué Bárbaro! ────────────────────────────────────────────
   {
-    title: 'Qué Bárbaro abre sus puertas en Torremolinos',
+    title: '¡Qué Bárbaro! abre sus puertas en Torremolinos',
     slug: 'que-barbaro-abre-puertas-torremolinos',
-    excerpt: 'Presentamos Qué Bárbaro: un espacio pensado para quienes quieren que su cabello esté bien, no solo el día del salón.',
-    category: 'Noticias de Qué Bárbaro',
+    excerpt: 'Presentamos ¡Qué Bárbaro!: un espacio pensado para quienes quieren que su cabello esté bien, no solo el día del salón.',
+    category: 'Noticias de ¡Qué Bárbaro!',
     publishedAt: '2025-07-01',
     featured: true,
     image: `${S3}/sublime.jpg`,
     content: `
-<p>Qué Bárbaro abre hoy sus puertas en Torremolinos. No es solo un salón de peluquería. Es un espacio pensado con cuidado para que cada persona que entre sepa exactamente qué va a recibir: atención real, técnica honesta y resultados que se mantienen más allá del día de la cita.</p>
+<p>¡Qué Bárbaro! abre hoy sus puertas en Torremolinos. No es solo un salón de peluquería. Es un espacio pensado con cuidado para que cada persona que entre sepa exactamente qué va a recibir: atención real, técnica honesta y resultados que se mantienen más allá del día de la cita.</p>
 
 <h2>Quiénes somos</h2>
-<p>Detrás de Qué Bárbaro están <strong>Missael Lundqvist y Aurelio Tabares</strong>, dos estilistas con años de experiencia y una filosofía compartida: el trabajo bien hecho no necesita exageraciones. El cabello de cada cliente tiene su propia historia, su propio estado y sus propias necesidades. Entender eso antes de coger las tijeras es lo que hace la diferencia.</p>
+<p>Detrás de ¡Qué Bárbaro! están <strong>Missael Lundqvist y Aurelio Tabares</strong>, dos estilistas con años de experiencia y una filosofía compartida: el trabajo bien hecho no necesita exageraciones. El cabello de cada cliente tiene su propia historia, su propio estado y sus propias necesidades. Entender eso antes de coger las tijeras es lo que hace la diferencia.</p>
 <p>Hemos construido el salón alrededor de esa idea. El espacio, los productos que usamos, la forma en que organizamos cada cita. Todo está pensado para que la experiencia tenga sentido de principio a fin.</p>
 
 <h2>Qué ofrecemos</h2>
@@ -238,7 +238,7 @@ const posts = [
 <p>Las babylights funcionan en casi todos los tonos de base, pero dan su mejor resultado en cabellos entre el castaño claro y el rubio oscuro. En tonos muy oscuros, el contraste puede ser menos visible a menos que se use una decoloración más intensa, lo que cambia el carácter del resultado.</p>
 <p>Son especialmente recomendables para quienes quieren empezar a iluminar el cabello sin comprometerse con un cambio radical, para quienes necesitan un color de muy bajo mantenimiento, o para quienes tienen el cabello fino y no quieren sobrecargar la fibra con demasiado producto.</p>
 
-<h2>Cómo se hace en Qué Bárbaro</h2>
+<h2>Cómo se hace en ¡Qué Bárbaro!</h2>
 <p>En el salón trabajamos las babylights con el concepto <strong>Silk Shine</strong>: aplicación precisa, secciones muy finas y acabado con matización para que el resultado tenga coherencia cromática y no quede "parcelado". El proceso lleva más tiempo que otras técnicas de iluminación porque requiere más paciencia, pero el resultado lo justifica.</p>
 <p>Después del servicio recomendamos siempre un acondicionador de color para mantener el brillo y prolongar la vida del tratamiento entre visitas.</p>
 
@@ -272,7 +272,7 @@ const posts = [
 </ul>
 
 <h2>Cómo organizarlo en el salón</h2>
-<p>Lo más práctico es reservar un bloque de tiempo en el salón para todo el grupo. Cuántas personas vendrán, a qué hora tienen que estar listas, si hay maquillaje también... toda esa logística hay que organizarla con antelación para que no haya prisas. En Qué Bárbaro tenemos el <strong>Pack Despedida</strong> pensado exactamente para esto: peinado, maquillaje y ese detalle sorpresa que hace que la experiencia sea un poco más especial.</p>
+<p>Lo más práctico es reservar un bloque de tiempo en el salón para todo el grupo. Cuántas personas vendrán, a qué hora tienen que estar listas, si hay maquillaje también... toda esa logística hay que organizarla con antelación para que no haya prisas. En ¡Qué Bárbaro! tenemos el <strong>Pack Despedida</strong> pensado exactamente para esto: peinado, maquillaje y ese detalle sorpresa que hace que la experiencia sea un poco más especial.</p>
 <p>Si estás organizando una despedida y quieres saber qué podemos hacer por el grupo, escríbenos por WhatsApp y te contamos. Cuanto antes reserves, más fácil es cuadrar los tiempos.</p>
     `.trim(),
   },

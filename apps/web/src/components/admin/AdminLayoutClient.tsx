@@ -28,7 +28,7 @@ export function AdminLayoutClient({
         <aside className="flex w-56 shrink-0 flex-col bg-navy">
           <div className="px-4 py-5">
             <span className="block font-primary text-4xl text-white leading-none mb-1">
-              Qué Bárbaro
+              ¡Qué Bárbaro!
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-widest text-white/40">
               Admin

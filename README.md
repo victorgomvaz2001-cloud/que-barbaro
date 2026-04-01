@@ -1,4 +1,4 @@
-# Qué Bárbaro - Monorepo
+# ¡Qué Bárbaro! - Monorepo
 
 TypeScript monorepo powered by **Turborepo** + **Yarn workspaces**.
 

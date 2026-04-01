@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "Qué Bárbaro",
+    "title": "¡Qué Bárbaro!",
     "description": "Tu barbería y centro de belleza de confianza."
   },
   "nav": {
@@ -74,7 +74,7 @@
   },
   "valueProposition": {
     "title": "Peluquería personalizada para quienes saben lo que quieren",
-    "body1": "No todos los cabellos necesitan lo mismo, y no todos los clientes buscan lo mismo. En Qué Bárbaro esa diversidad es el punto de partida. Antes de empezar cualquier servicio, nos tomamos el tiempo de entender la textura, el historial, el estilo de vida y las expectativas de cada persona. Así el resultado no solo queda bien en el salón, también funciona en casa.",
+    "body1": "No todos los cabellos necesitan lo mismo, y no todos los clientes buscan lo mismo. En ¡Qué Bárbaro! esa diversidad es el punto de partida. Antes de empezar cualquier servicio, nos tomamos el tiempo de entender la textura, el historial, el estilo de vida y las expectativas de cada persona. Así el resultado no solo queda bien en el salón, también funciona en casa.",
     "body2": "Ese enfoque es lo que nos distingue como referencia de alta peluquería en Torremolinos para quienes valoran una atención de verdad personalizada.",
     "headline": "No vendrás solo\na cortarte el pelo.",
     "subheadline": "Vendrás a desconectar. A que te mimen. A salir siendo más tú.",
@@ -112,7 +112,7 @@
   },
   "blog": {
     "eyebrow": "Tendencias · Cuidado · Inspiración",
-    "heroTitle": "Blog de Qué Bárbaro",
+    "heroTitle": "Blog de ¡Qué Bárbaro!",
     "heroDescription": "Peluquería, coloración, cuidado capilar y tendencias. Escrito por el equipo del salón.",
     "backToBlog": "← Volver al blog",
     "by": "Por",
@@ -142,10 +142,10 @@
         "description": "Estilos, formas y cambios que marcan el momento, siempre con una mirada realista sobre lo que de verdad funciona en el salón y en la vida diaria."
       },
       "Eventos y ocasiones especiales": {
-        "description": "Consejos para novias, para despedidas, para looks de noche. Cómo prepararse para un evento grande y sacarle el máximo partido a los servicios de Qué Bárbaro cuando el día importa de verdad."
+        "description": "Consejos para novias, para despedidas, para looks de noche. Cómo prepararse para un evento grande y sacarle el máximo partido a los servicios de ¡Qué Bárbaro! cuando el día importa de verdad."
       },
-      "Noticias de Qué Bárbaro": {
-        "description": "Novedades del salón, nuevos servicios, incorporaciones y todo lo que ayude a reforzar la identidad de Qué Bárbaro como peluquería de referencia en Torremolinos."
+      "Noticias de ¡Qué Bárbaro!": {
+        "description": "Novedades del salón, nuevos servicios, incorporaciones y todo lo que ayude a reforzar la identidad de ¡Qué Bárbaro! como peluquería de referencia en Torremolinos."
       }
     },
     "allCategories": "Todos",
@@ -153,9 +153,9 @@
   },
   "galeria": {
     "hero": {
-      "eyebrow": "Galería · Qué Bárbaro",
+      "eyebrow": "Galería · ¡Qué Bárbaro!",
       "title": "Galería",
-      "subtitle": "Qué Bárbaro",
+      "subtitle": "¡Qué Bárbaro!",
       "description": "Resultados reales: coloración, cortes, tratamientos, eventos y el interior del salón. La mejor manera de entender cómo trabajamos.",
       "allCategories": "Todos",
       "categories": [
@@ -181,7 +181,7 @@
     },
     "espacio": {
       "eyebrow": "El salón",
-      "title": "El espacio de Qué Bárbaro",
+      "title": "El espacio de ¡Qué Bárbaro!",
       "description": "El ambiente del salón forma parte de la experiencia."
     },
     "eventos": {
@@ -194,7 +194,7 @@
     "cta": {
       "eyebrow": "¿Te convence lo que ves?",
       "title": "Reserva tu cita",
-      "description": "Déjate asesorar por el equipo de Qué Bárbaro.",
+      "description": "Déjate asesorar por el equipo de ¡Qué Bárbaro!.",
       "button": "Reservar cita",
       "watermark": "Reserva"
     }
@@ -204,9 +204,9 @@
     "of": "de"
   },
   "contacto": {
-    "title": "Contacto - Qué Bárbaro",
+    "title": "Contacto - ¡Qué Bárbaro!",
     "intro": "Toda la información para ponerte en contacto o llegar al salón.",
-    "whereTitle": "Dónde estamos",
+    "whereTitle": "¿Dónde estamos?",
     "whereText": "Nuestro salón está en Torremolinos, Málaga. La ubicación es cómoda y accesible tanto para clientes locales como para personas de los alrededores que buscan un salón con una propuesta más cuidada y personal.",
     "hoursTitle": "Horarios",
     "hoursText": "Trabajamos con cita previa para garantizar una atención personalizada y el tiempo necesario en cada servicio.",
@@ -228,15 +228,15 @@
     "phoneTitle": "Teléfono y WhatsApp",
     "phoneText": "Para dudas sobre servicios, disponibilidad o packs de eventos, escríbenos o llámanos directamente. Estamos aquí para ayudarte a encontrar lo que necesitas.",
     "followTitle": "Síguenos",
-    "followText": "Sigue el día a día de Qué Bárbaro, descubre trabajos recientes y novedades a través de nuestras redes sociales. Es la forma más rápida de ver lo que estamos haciendo y de inspirarte antes de venir.",
+    "followText": "Sigue el día a día de ¡Qué Bárbaro!, descubre trabajos recientes y novedades a través de nuestras redes sociales. Es la forma más rápida de ver lo que estamos haciendo y de inspirarte antes de venir.",
     "address": "Dirección",
     "phone": "Teléfono",
     "social": "Redes sociales",
     "bookCta": "Reservar cita",
-    "mapsTitle": "Ubicación de Qué Bárbaro en Google Maps"
+    "mapsTitle": "Ubicación de ¡Qué Bárbaro! en Google Maps"
   },
   "serviciosPage": {
-    "eyebrow": "- Qué Bárbaro",
+    "eyebrow": "- ¡Qué Bárbaro!",
     "title": "Servicios",
     "serviceLabel": "Servicio",
     "priceNote": "Precios desde",
@@ -362,11 +362,11 @@
     "hero": {
       "location": "Torremolinos, Málaga",
       "title": "El salón",
-      "brand": "Qué Bárbaro",
+      "brand": "¡Qué Bárbaro!",
       "body": "Un salón con identidad propia en Torremolinos: elegante sin ser frío, técnico sin resultar distante. Nació de una idea sencilla: que la peluquería puede hacerse mejor."
     },
     "historia": {
-      "eyebrow": "Cómo surgió Qué Bárbaro",
+      "eyebrow": "Cómo surgió ¡Qué Bárbaro!",
       "title": "Historia",
       "body": "Construimos el salón desde la búsqueda constante de calidad: en el corte, la coloración, el diagnóstico capilar, el trato y el ambiente. En un sector donde muchas veces prima la rapidez, elegimos trabajar con tiempo, escucha y criterio.",
       "foundedBy": "Fundado por",
@@ -375,7 +375,7 @@
     "experiencia": {
       "eyebrow": "La experiencia",
       "titleLine1": "La experiencia en",
-      "titleLine2": "Qué Bárbaro",
+      "titleLine2": "¡Qué Bárbaro!",
       "body": "Queremos que venir al salón sea una pausa de verdad. Cuidamos la atmósfera, el ritmo de la cita y el acompañamiento desde el primer momento.",
       "quote1": "El resultado importa.",
       "quote2": "También importa cómo se llega a él.",
@@ -399,7 +399,7 @@
     },
     "equipo": {
       "eyebrow": "El equipo",
-      "title": "Quiénes somos",
+      "title": "¿Quiénes somos?",
       "intro": "Detrás del salón hay profesionales que entienden la peluquería como oficio, como sensibilidad estética y como trabajo bien hecho.",
       "members": [
         {
@@ -508,7 +508,7 @@
     "booksySub": "Reserva online",
     "treatwellLabel": "Treatwell",
     "treatwellSub": "Reserva online",
-    "llamarLabel": "Llamar",
+    "llamarLabel": "Contáctanos",
     "llamarSub": "+34 644 817 835",
     "mobileBarAriaLabel": "Accesos rápidos de reserva"
   },
@@ -523,17 +523,19 @@
     "phrase2": "Para una experiencia más exclusiva",
     "phrase3": "Herramientas de estilismo de alto rendimiento",
     "phrase4": "Grooming masculino de precisión",
-    "phrase5": "Coloración e hidratación de referencia mundial"
+    "phrase5": "Coloración e hidratación de referencia mundial",
+    "phrase6": "Cuidado de uñas premium para manos y pies",
+    "phrase7": "Aceites y cosméticos corporales de lujo"
   },
   "experienceSection": {
-    "label": "El espacio · Qué Bárbaro",
+    "label": "El espacio · ¡Qué Bárbaro!",
     "h2L1": "Un espacio",
     "h2L2": "pensado para",
     "h2L3": "que el cuidado",
     "h2L4": "personal sea",
     "h2L5": "una experiencia",
     "ticker": "Calidad · Técnica · Atención personalizada · Torremolinos · Peluquería boutique · Alta peluquería · ",
-    "body1": "Qué Bárbaro no es solo una peluquería boutique. Es un espacio elegante, tranquilo y con criterio estético propio, donde cada detalle del proceso forma parte del resultado. Desde la bienvenida hasta el acabado final, cuidamos el ritmo, el ambiente y el trato para que venir al salón sea una pausa que merece la pena.",
+    "body1": "¡Qué Bárbaro! no es solo una peluquería boutique. Es un espacio elegante, tranquilo y con criterio estético propio, donde cada detalle del proceso forma parte del resultado. Desde la bienvenida hasta el acabado final, cuidamos el ritmo, el ambiente y el trato para que venir al salón sea una pausa que merece la pena.",
     "body2": "Esa combinación de técnica y experiencia es lo que nos convierte en uno de los salones de referencia en Torremolinos para quienes buscan calidad, no volumen."
   },
   "faq": {
@@ -600,14 +602,14 @@
   },
   "homeContact": {
     "sectionLabel": "Cómo llegar",
-    "businessName": "¡Qué Bárbaro! Hair & Care Salon",
+    "businessName": "¡¡Qué Bárbaro!! Hair & Care Salon",
     "address1": "Calle de los Caballeros, 4",
     "address2": "Torremolinos, 29620 Málaga",
     "hoursLabel": "Horario",
     "phoneLabel": "Teléfono",
     "socialLabel": "Redes sociales",
     "whatsappCta": "Escríbenos por WhatsApp",
-    "mapTitle": "Mapa de ¡Qué Bárbaro! Hair & Care Salon en Torremolinos",
+    "mapTitle": "Mapa de ¡¡Qué Bárbaro!! Hair & Care Salon en Torremolinos",
     "hours": [
       {
         "days": "Lunes a Viernes",

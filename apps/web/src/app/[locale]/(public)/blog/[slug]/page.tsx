@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
       <SEOHead
         route={seoRoute}
         fallback={{
-          title: `${post.title} - Qué Bárbaro`,
+          title: `${post.title} - ¡Qué Bárbaro!`,
           description: post.excerpt,
         }}
       />

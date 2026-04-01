@@ -168,7 +168,7 @@ export default function SalonHistoria() {
             >
               <Image
                 src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=960&q=80"
-                alt="Dos estilistas trabajando en el salón Qué Bárbaro"
+                alt="Dos estilistas trabajando en el salón ¡Qué Bárbaro!"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover object-center"

@@ -306,7 +306,7 @@ export default function EditBlogPostPage() {
                         <option value="Rizos y método curly">Rizos y método curly</option>
                         <option value="Tendencias">Tendencias</option>
                         <option value="Eventos y ocasiones especiales">Eventos y ocasiones especiales</option>
-                        <option value="Noticias de Qué Bárbaro">Noticias de Qué Bárbaro</option>
+                        <option value="Noticias de ¡Qué Bárbaro!">Noticias de ¡Qué Bárbaro!</option>
                       </select>
                     </div>
                     <div>

@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import { Blog } from '../models/Blog.model'
 import { env } from '../config/env'
 
-const AUTHOR = 'Qué Bárbaro'
+const AUTHOR = '¡Qué Bárbaro!'
 
 const posts = [
   // ── Cuidado capilar ────────────────────────────────────────────────────────
@@ -17,7 +17,7 @@ const posts = [
   {
     title: 'GOA Organics: qué es y para qué tipo de cabello está pensado',
     slug: 'goa-organics-que-es-para-que-cabello',
-    excerpt: 'Te explicamos en qué consiste el tratamiento GOA Organics que ofrecemos en Qué Bárbaro y cuándo tiene más sentido hacerlo.',
+    excerpt: 'Te explicamos en qué consiste el tratamiento GOA Organics que ofrecemos en ¡Qué Bárbaro! y cuándo tiene más sentido hacerlo.',
     category: 'Cuidado capilar',
     publishedAt: '2025-03-08',
   },
@@ -177,7 +177,7 @@ const posts = [
     publishedAt: '2025-03-19',
   },
   {
-    title: 'Cómo sacarle partido a tu cita en Qué Bárbaro antes de un evento',
+    title: 'Cómo sacarle partido a tu cita en ¡Qué Bárbaro! antes de un evento',
     slug: 'aprovechar-cita-que-barbaro-antes-evento',
     excerpt: 'Si tienes un evento importante, hay formas de optimizar tu cita para que el resultado dure más y se adapte mejor a la ocasión.',
     category: 'Eventos y ocasiones especiales',
@@ -191,12 +191,12 @@ const posts = [
     publishedAt: '2025-04-02',
   },
 
-  // ── Noticias de Qué Bárbaro ────────────────────────────────────────────────
+  // ── Noticias de ¡Qué Bárbaro! ────────────────────────────────────────────────
   {
-    title: 'Qué Bárbaro abre sus puertas en Torremolinos',
+    title: '¡Qué Bárbaro! abre sus puertas en Torremolinos',
     slug: 'que-barbaro-abre-puertas-torremolinos',
-    excerpt: 'Presentamos Qué Bárbaro: un espacio pensado para quienes quieren que su cabello esté bien, no solo el día del salón.',
-    category: 'Noticias de Qué Bárbaro',
+    excerpt: 'Presentamos ¡Qué Bárbaro!: un espacio pensado para quienes quieren que su cabello esté bien, no solo el día del salón.',
+    category: 'Noticias de ¡Qué Bárbaro!',
     publishedAt: '2025-07-01',
     featured: true,
   },
@@ -204,28 +204,28 @@ const posts = [
     title: 'Incorporamos la Danza de Rizos a nuestro catálogo de servicios',
     slug: 'incorporamos-danza-de-rizos',
     excerpt: 'A partir de ahora ofrecemos el corte Danza de Rizos, una técnica específica para cabellos rizados que respeta la forma natural del rizo.',
-    category: 'Noticias de Qué Bárbaro',
+    category: 'Noticias de ¡Qué Bárbaro!',
     publishedAt: '2025-07-15',
   },
   {
     title: 'Ya trabajamos con GOA Organics en el salón',
     slug: 'ya-trabajamos-con-goa-organics',
     excerpt: 'Hemos incorporado GOA Organics a nuestra oferta de tratamientos. Una línea de cuidado capilar con ingredientes naturales y resultados reales.',
-    category: 'Noticias de Qué Bárbaro',
+    category: 'Noticias de ¡Qué Bárbaro!',
     publishedAt: '2025-08-01',
   },
   {
     title: 'Nuevo servicio de maquillaje profesional para eventos',
     slug: 'nuevo-servicio-maquillaje-profesional-eventos',
     excerpt: 'Ampliamos nuestra oferta de servicios para eventos con maquillaje profesional. Una forma de cubrir todo desde un solo espacio.',
-    category: 'Noticias de Qué Bárbaro',
+    category: 'Noticias de ¡Qué Bárbaro!',
     publishedAt: '2025-08-20',
   },
   {
-    title: 'Qué Bárbaro, referencia en peluquería en Torremolinos',
+    title: '¡Qué Bárbaro!, referencia en peluquería en Torremolinos',
     slug: 'que-barbaro-referencia-peluqueria-torremolinos',
-    excerpt: 'A pocos meses de abrir, Qué Bárbaro se consolida como una opción de referencia para quienes buscan calidad y atención personalizada en Torremolinos.',
-    category: 'Noticias de Qué Bárbaro',
+    excerpt: 'A pocos meses de abrir, ¡Qué Bárbaro! se consolida como una opción de referencia para quienes buscan calidad y atención personalizada en Torremolinos.',
+    category: 'Noticias de ¡Qué Bárbaro!',
     publishedAt: '2025-09-10',
     featured: true,
   },

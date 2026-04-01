@@ -10,7 +10,7 @@ const CATEGORIES = [
   'Rizos y método curly',
   'Tendencias',
   'Eventos y ocasiones especiales',
-  'Noticias de Qué Bárbaro',
+  'Noticias de ¡Qué Bárbaro!',
 ]
 
 export default async function BlogPage() {
@@ -33,7 +33,7 @@ export default async function BlogPage() {
 
   return (
     <>
-      <SEOHead route={seoRoute} fallback={{ title: 'Blog - Qué Bárbaro' }} />
+      <SEOHead route={seoRoute} fallback={{ title: 'Blog - ¡Qué Bárbaro!' }} />
 
       {/* Hero */}
       <div className="relative overflow-hidden border-b border-navy/10 bg-navy px-8 py-24 md:px-12 md:py-36">

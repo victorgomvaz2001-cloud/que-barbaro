@@ -46,7 +46,7 @@ export default async function ExperienceSection() {
             <div className="relative shrink-0 w-full md:w-[38%] self-stretch min-h-[300px] overflow-hidden mt-10 md:mt-0 md:-mr-8">
               <Image
                 src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp"
-                alt="Interior del salón Qué Bárbaro en Torremolinos"
+                alt="Interior del salón ¡Qué Bárbaro! en Torremolinos"
                 fill
                 sizes="(max-width: 768px) 100vw, 38vw"
                 className="object-cover object-left"
@@ -73,7 +73,7 @@ export default async function ExperienceSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-16">
           {[
             { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213834-sillones.webp', alt: 'Sillones del salón' },
-            { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213899-mostrador.webp', alt: 'Mostrador de Qué Bárbaro' },
+            { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213899-mostrador.webp', alt: 'Mostrador de ¡Qué Bárbaro!' },
             { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213917-salon2.webp', alt: 'Espacio interior del salón' },
             { src: 'https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213868-salon3.webp', alt: 'Zona de trabajo del salón' },
           ].map((img) => (
@@ -96,7 +96,7 @@ export default async function ExperienceSection() {
           <div className="relative shrink-0 w-full md:w-[40%] aspect-[4/3] overflow-hidden mb-10 md:mb-0">
             <Image
               src="https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/gallery/1774688213886-nevera.webp"
-              alt="Detalle del servicio en Qué Bárbaro"
+              alt="Detalle del servicio en ¡Qué Bárbaro!"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover object-center"
