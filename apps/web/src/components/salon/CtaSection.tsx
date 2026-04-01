@@ -66,7 +66,7 @@ export default async function CtaSection({ backgroundImage }: CtaSectionProps) {
             >
               {t('h2')}
             </h2>
-            <p className="mt-5 font-neue font-light text-cream/50 uppercase tracking-[0.2em] text-[11px]">
+            <p className="mt-5 font-neue text-cream/50 uppercase tracking-[0.2em] text-[11px]">
               {t('subtitle')}
             </p>
           </div>

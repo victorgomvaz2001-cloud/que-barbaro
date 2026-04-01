@@ -29,7 +29,7 @@ export default function CategoryCarousel({ title, description, posts }: Props) {
             <h2 className="font-primary text-3xl uppercase tracking-wide text-navy md:text-4xl">
               {title}
             </h2>
-            <p className="mt-2 font-neue font-light text-sm leading-relaxed text-navy/50">{description}</p>
+            <p className="mt-2 font-neue text-sm leading-relaxed text-navy/50">{description}</p>
           </div>
           {/* Arrow buttons */}
           <div className="flex shrink-0 gap-2">
@@ -56,7 +56,7 @@ export default function CategoryCarousel({ title, description, posts }: Props) {
 
         {/* Scrollable track */}
         {posts.length === 0 ? (
-          <p className="py-8 font-neue font-light text-sm text-navy/30 italic">Próximamente artículos en esta categoría.</p>
+          <p className="py-8 font-neue text-sm text-navy/30 italic">Próximamente artículos en esta categoría.</p>
         ) : (
           <div
             ref={trackRef}

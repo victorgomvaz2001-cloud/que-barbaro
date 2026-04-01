@@ -110,10 +110,10 @@ export default async function ExperienceSection() {
 
           {/* Párrafos apilados */}
           <div className="flex-1 flex flex-col gap-8 px-8 md:px-12 md:pr-16">
-            <p className="font-neue font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-navy/60">
+            <p className="font-neue text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-navy/60">
               {t('body1')}
             </p>
-            <p className="font-neue font-light text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-navy/60">
+            <p className="font-neue text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-navy/60">
               {t('body2')}
             </p>
           </div>

@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
                   {tl('eyebrow')}
                 </span>
                 <span
-                  className="font-neue font-light leading-none"
+                  className="font-neue leading-none"
                   style={{ fontSize: 'clamp(5rem, 12vw, 9rem)', color: '#1a1f3a', lineHeight: 1 }}
                 >
                   5.0
@@ -132,10 +132,10 @@ export default function TestimonialsSection() {
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
             <div>
-              <p className="font-neue font-light text-[11px] uppercase tracking-[0.18em]" style={{ color: '#1a1f3a' }}>
+              <p className="font-neue text-[11px] uppercase tracking-[0.18em]" style={{ color: '#1a1f3a' }}>
                 {tl('reviewCount')}
               </p>
-              <p className="font-neue font-light text-[10px] uppercase tracking-[0.14em]" style={{ color: 'rgba(26,31,58,0.4)' }}>
+              <p className="font-neue text-[10px] uppercase tracking-[0.14em]" style={{ color: 'rgba(26,31,58,0.4)' }}>
                 {tl('verified')}
               </p>
             </div>
@@ -163,14 +163,14 @@ export default function TestimonialsSection() {
 
         {/* ── Footer CTA ── */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6" style={anim(visible, 900, mounted)}>
-          <p className="font-neue font-light text-[13px] tracking-[0.08em]" style={{ color: 'rgba(26,31,58,0.5)' }}>
+          <p className="font-neue text-[13px] tracking-[0.08em]" style={{ color: 'rgba(26,31,58,0.5)' }}>
             {tl('joinUs')}
           </p>
           <a
             href="https://g.page/r/CZB0xjaUuYRfEBM/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 font-neue font-light text-[11px] uppercase tracking-[0.28em] transition-all duration-300"
+            className="group flex items-center gap-3 font-neue text-[11px] uppercase tracking-[0.28em] transition-all duration-300"
             style={{ color: '#1a1f3a' }}
           >
             <span className="h-px w-8 transition-all duration-300 group-hover:w-14" style={{ backgroundColor: '#e8632a' }} />
@@ -214,14 +214,14 @@ function ReviewCard({
         {review.authorPhotoUrl ? (
           <Image src={review.authorPhotoUrl} alt={review.authorName} width={48} height={48} className="h-12 w-12 rounded-full object-cover shrink-0" />
         ) : (
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-neue font-light text-base" style={{ backgroundColor: 'rgba(26,31,58,0.07)', color: '#1a1f3a' }}>
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-neue text-base" style={{ backgroundColor: 'rgba(26,31,58,0.07)', color: '#1a1f3a' }}>
             {review.authorName.charAt(0).toUpperCase()}
           </div>
         )}
       </div>
 
       {/* Quote */}
-      <p className="font-neue font-light leading-snug flex-1" style={{ fontSize: 'clamp(1rem, 1.4vw, 1.2rem)', color: '#1a1f3a' }}>
+      <p className="font-neue leading-snug flex-1" style={{ fontSize: 'clamp(1rem, 1.4vw, 1.2rem)', color: '#1a1f3a' }}>
         &ldquo;{review.text}&rdquo;
       </p>
 
@@ -232,7 +232,7 @@ function ReviewCard({
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="font-neue text-sm font-medium" style={{ color: '#1a1f3a' }}>{review.authorName}</p>
-          <p className="font-neue font-light text-xs mt-0.5" style={{ color: 'rgba(26,31,58,0.45)' }}>{review.relativeTime}</p>
+          <p className="font-neue text-xs mt-0.5" style={{ color: 'rgba(26,31,58,0.45)' }}>{review.relativeTime}</p>
         </div>
         <a href="https://share.google/hor7u24FsyXTZVydP" target="_blank" rel="noopener noreferrer" title="Ver en Google" className="shrink-0 opacity-30 hover:opacity-60 transition-opacity">
           <svg width="18" height="18" viewBox="0 0 24 24">

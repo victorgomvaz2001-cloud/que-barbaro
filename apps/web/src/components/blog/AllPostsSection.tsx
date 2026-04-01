@@ -169,7 +169,7 @@ export default function AllPostsSection({ locale, categories, labels }: Props) {
               placeholder={labels.searchPlaceholder}
               value={filters.q}
               onChange={(e) => updateFilter('q', e.target.value)}
-              className="w-full border-b border-navy/20 bg-transparent pb-2 font-neue font-light text-sm text-navy placeholder-navy/30 focus:border-navy focus:outline-none"
+              className="w-full border-b border-navy/20 bg-transparent pb-2 font-neue text-sm text-navy placeholder-navy/30 focus:border-navy focus:outline-none"
             />
           </div>
 
@@ -179,7 +179,7 @@ export default function AllPostsSection({ locale, categories, labels }: Props) {
             value={filters.date}
             onChange={(e) => updateFilter('date', e.target.value)}
             aria-label={labels.filterDate}
-            className="border-b border-navy/20 bg-transparent pb-2 font-neue font-light text-sm text-navy focus:border-navy focus:outline-none"
+            className="border-b border-navy/20 bg-transparent pb-2 font-neue text-sm text-navy focus:border-navy focus:outline-none"
           />
 
           {/* Sort */}
@@ -187,7 +187,7 @@ export default function AllPostsSection({ locale, categories, labels }: Props) {
             value={filters.sort}
             onChange={(e) => updateFilter('sort', e.target.value)}
             aria-label={labels.sortLabel}
-            className="border-b border-navy/20 bg-transparent pb-2 font-neue font-light text-sm text-navy focus:border-navy focus:outline-none"
+            className="border-b border-navy/20 bg-transparent pb-2 font-neue text-sm text-navy focus:border-navy focus:outline-none"
           >
             <option value="date-desc">{labels.sortDateDesc}</option>
             <option value="date-asc">{labels.sortDateAsc}</option>
@@ -199,7 +199,7 @@ export default function AllPostsSection({ locale, categories, labels }: Props) {
           {(hasSecondaryFilters || filters.category) && (
             <button
               onClick={clearAll}
-              className="flex items-center gap-1.5 font-neue font-light text-xs uppercase tracking-[0.18em] text-navy/40 transition-colors hover:text-navy"
+              className="flex items-center gap-1.5 font-neue text-xs uppercase tracking-[0.18em] text-navy/40 transition-colors hover:text-navy"
             >
               <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                 <path d="M1 1l10 10M11 1L1 11" />
@@ -221,7 +221,7 @@ export default function AllPostsSection({ locale, categories, labels }: Props) {
             ))}
           </div>
         ) : posts.length === 0 ? (
-          <p className="py-16 text-center font-neue font-light text-sm uppercase tracking-[0.2em] text-navy/30">
+          <p className="py-16 text-center font-neue text-sm uppercase tracking-[0.2em] text-navy/30">
             {labels.noResults}
           </p>
         ) : (
@@ -238,7 +238,7 @@ export default function AllPostsSection({ locale, categories, labels }: Props) {
             <button
               onClick={handleLoadMore}
               disabled={loadingMore}
-              className="border border-navy/30 px-10 py-3 font-neue font-light text-[10px] uppercase tracking-[0.25em] text-navy transition-all duration-300 hover:border-navy hover:bg-navy hover:text-cream disabled:opacity-40"
+              className="border border-navy/30 px-10 py-3 font-neue text-[10px] uppercase tracking-[0.25em] text-navy transition-all duration-300 hover:border-navy hover:bg-navy hover:text-cream disabled:opacity-40"
             >
               {loadingMore ? '…' : labels.loadMore}
             </button>

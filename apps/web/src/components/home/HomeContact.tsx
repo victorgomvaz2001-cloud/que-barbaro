@@ -44,8 +44,8 @@ export default async function HomeContact() {
               {t('businessName')}
             </p>
             <address className="not-italic">
-              <p className="font-neue font-light text-navy text-base leading-snug">{t('address1')}</p>
-              <p className="font-neue font-light text-navy text-base leading-snug">{t('address2')}</p>
+              <p className="font-neue text-navy text-base leading-snug">{t('address1')}</p>
+              <p className="font-neue text-navy text-base leading-snug">{t('address2')}</p>
             </address>
           </div>
 
@@ -57,8 +57,8 @@ export default async function HomeContact() {
             <dl className="flex flex-col gap-1.5">
               {hoursList.map(({ days, hours }) => (
                 <div key={days} className="flex flex-col">
-                  <dt className="font-neue font-light text-navy/50 text-[11px] uppercase tracking-[0.12em]">{days}</dt>
-                  <dd className="font-neue font-light text-navy text-base leading-snug">
+                  <dt className="font-neue text-navy/50 text-[11px] uppercase tracking-[0.12em]">{days}</dt>
+                  <dd className="font-neue text-navy text-base leading-snug">
                     <time>{hours}</time>
                   </dd>
                 </div>
@@ -72,7 +72,7 @@ export default async function HomeContact() {
               <p className="font-secondary text-[9px] uppercase tracking-[0.28em] text-navy/35 mb-3">
                 {t('phoneLabel')}
               </p>
-              <a href="tel:+34644817835" className="font-neue font-light text-navy text-base hover:text-navy/60 transition-colors duration-200">
+              <a href="tel:+34644817835" className="font-neue text-navy text-base hover:text-navy/60 transition-colors duration-200">
                 +34 644 817 835
               </a>
             </div>
@@ -82,7 +82,7 @@ export default async function HomeContact() {
               </p>
               <div className="flex flex-col gap-1">
                 {SOCIAL.map((s) => (
-                  <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="font-neue font-light text-navy text-base hover:text-navy/60 transition-colors duration-200">
+                  <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="font-neue text-navy text-base hover:text-navy/60 transition-colors duration-200">
                     {s.name}
                   </a>
                 ))}

@@ -34,7 +34,7 @@ export default async function PricingSection() {
               <span className="font-neue text-[clamp(1.3rem,2.5vw,1.8rem)] font-semibold text-orange md:w-48 md:text-right">
                 {item.price}
               </span>
-              <span className="font-neue text-[10px] font-light uppercase tracking-[0.18em] text-navy/50 md:w-52 md:text-right">
+              <span className="font-neue text-[10px] uppercase tracking-[0.18em] text-navy/50 md:w-52 md:text-right">
                 {item.desc}
               </span>
             </div>

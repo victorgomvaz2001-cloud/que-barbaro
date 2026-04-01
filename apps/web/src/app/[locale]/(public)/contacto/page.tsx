@@ -88,12 +88,12 @@ export default async function ContactoPage() {
                     key={days}
                     className="flex items-baseline justify-between gap-4 border-b border-navy/8 py-3 first:border-t"
                   >
-                    <span className="font-neue font-light text-sm text-navy/60 uppercase tracking-[0.12em]">{days}</span>
+                    <span className="font-neue text-sm text-navy/60 uppercase tracking-[0.12em]">{days}</span>
                     <span className="font-neue text-sm text-navy tabular-nums shrink-0">{hours}</span>
                   </div>
                 ))}
               </div>
-              <p className="font-neue font-light text-xs uppercase tracking-[0.18em] text-orange mb-6">
+              <p className="font-neue text-xs uppercase tracking-[0.18em] text-orange mb-6">
                 {t('hoursNote')}
               </p>
               <a

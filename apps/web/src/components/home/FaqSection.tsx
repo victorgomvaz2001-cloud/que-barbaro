@@ -25,7 +25,7 @@ function FaqItem({ item, index }: { item: Item; index: number }) {
           <span className="font-secondary text-[10px] tracking-[0.25em] text-navy/30 shrink-0">
             {String(index + 1).padStart(2, '0')}
           </span>
-          <h3 className="font-neue font-light text-[clamp(1.1rem,2vw,1.5rem)] leading-snug text-navy group-hover:text-navy/70 transition-colors duration-200">
+          <h3 className="font-neue text-[clamp(1.1rem,2vw,1.5rem)] leading-snug text-navy group-hover:text-navy/70 transition-colors duration-200">
             {item.q}
           </h3>
         </div>
@@ -44,7 +44,7 @@ function FaqItem({ item, index }: { item: Item; index: number }) {
         className="overflow-hidden transition-all duration-500 ease-in-out"
         style={{ maxHeight: open ? '200px' : '0px', opacity: open ? 1 : 0 }}
       >
-        <p className="font-neue font-light text-[clamp(0.9rem,1.2vw,1.05rem)] leading-relaxed text-navy/60 pb-7 pl-[4.25rem]">
+        <p className="font-neue text-[clamp(0.9rem,1.2vw,1.05rem)] leading-relaxed text-navy/60 pb-7 pl-[4.25rem]">
           {item.a}
         </p>
       </div>
@@ -83,7 +83,7 @@ export default function FaqSection() {
             href="https://wa.me/34644817835"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-neue font-light text-[clamp(0.9rem,1.3vw,1.05rem)] text-navy/50 hover:text-orange transition-colors duration-200 inline-flex items-center gap-2"
+            className="font-neue text-[clamp(0.9rem,1.3vw,1.05rem)] text-navy/50 hover:text-orange transition-colors duration-200 inline-flex items-center gap-2"
           >
             {t('cta')}
           </a>

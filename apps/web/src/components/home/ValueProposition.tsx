@@ -55,7 +55,7 @@ export default async function ValueProposition({ backgroundImage }: ValueProposi
             <h3 className="font-primary text-[clamp(1.5rem,2.5vw,2rem)] leading-[1] tracking-[0.05em] text-cream uppercase">
               {t('title1')}
             </h3>
-            <p className="font-neue font-light text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
+            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
               {t('desc1')}
             </p>
           </div>
@@ -74,7 +74,7 @@ export default async function ValueProposition({ backgroundImage }: ValueProposi
             <h3 className="font-primary text-[clamp(1.5rem,2.5vw,2rem)] leading-[1] tracking-[0.05em] text-cream uppercase">
               {t('title2')}
             </h3>
-            <p className="font-neue font-light text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
+            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
               {t('desc2')}
             </p>
           </div>
@@ -90,7 +90,7 @@ export default async function ValueProposition({ backgroundImage }: ValueProposi
             <h3 className="font-primary text-[clamp(1.5rem,2.5vw,2rem)] leading-[1] tracking-[0.05em] text-cream uppercase">
               {t('title3')}
             </h3>
-            <p className="font-neue font-light text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
+            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
               {t('desc3')}
             </p>
           </div>
