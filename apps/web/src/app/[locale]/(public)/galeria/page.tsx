@@ -6,6 +6,7 @@ import GaleriaHero from '@/components/galeria/GaleriaHero'
 import GaleriaServicios from '@/components/galeria/GaleriaServicios'
 import GaleriaAntesYDespues from '@/components/galeria/GaleriaAntesYDespues'
 import GaleriaCta from '@/components/galeria/GaleriaCta'
+
 import { getSectionBackgrounds } from '@/lib/getSectionBackgrounds'
 
 export default async function GaleriaPage() {
@@ -21,7 +22,7 @@ export default async function GaleriaPage() {
       <GaleriaHero backgroundImage={bg['hero']} />
       <GaleriaServicios />
       <GaleriaAntesYDespues />
-      <GaleriaCta />
+      <GaleriaCta backgroundImage={bg['ctaReserva']} />
     </>
   )
 }

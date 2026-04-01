@@ -23,7 +23,7 @@ export default async function ElSalonPage() {
       <SEOHead route={seoRoute} fallback={{ title: 'El Salón - ¡Qué Bárbaro!' }} />
       <SalonHero backgroundImage={bg['hero']} />
       <SalonHistoria />
-      <SalonExperiencia />
+      <SalonExperiencia backgroundImage={bg['experiencia']} />
       <SalonEquipo />
       {/* <SalonMarcas /> */}
       {/* <SalonOpiniones /> */}

@@ -1,7 +1,11 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default async function GaleriaCta() {
+interface GaleriaCtaProps {
+  backgroundImage?: string | null
+}
+
+export default async function GaleriaCta({ backgroundImage }: GaleriaCtaProps) {
   const t = await getTranslations('galeria')
 
   return (
@@ -9,6 +13,17 @@ export default async function GaleriaCta() {
       className="relative w-full bg-navy overflow-hidden py-32"
       aria-label={t('cta.title')}
     >
+      {backgroundImage && (
+        <>
+          <div
+            className="absolute inset-0 pointer-events-none bg-cover bg-center"
+            style={{ backgroundImage: `url("${backgroundImage}")`, opacity: 0.5 }}
+            aria-hidden
+          />
+          <div className="absolute inset-0 pointer-events-none bg-black/30" aria-hidden />
+        </>
+      )}
+
       {/* ── Subtle grain texture overlay ─────────────────────────────────── */}
       <div
         className="absolute inset-0 pointer-events-none"

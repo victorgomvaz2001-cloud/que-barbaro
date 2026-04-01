@@ -48,7 +48,11 @@ const BG_IMAGE =
 
 /* ─── Component ─────────────────────────────────────────────────────────────── */
 
-export default function SalonExperiencia() {
+interface SalonExperienciaProps {
+  backgroundImage?: string | null
+}
+
+export default function SalonExperiencia({ backgroundImage }: SalonExperienciaProps) {
   const t = useTranslations('elSalon.experiencia')
   const pillars = t.raw('pillars') as { n: string; title: string; desc: string }[]
   const { ref: sectionRef, visible } = useReveal<HTMLElement>(0.15)
@@ -98,7 +102,7 @@ export default function SalonExperiencia() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${BG_IMAGE})` }}
+          style={{ backgroundImage: `url(${backgroundImage ?? BG_IMAGE})` }}
           aria-hidden
         />
 

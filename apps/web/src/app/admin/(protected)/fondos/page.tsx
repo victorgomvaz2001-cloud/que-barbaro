@@ -23,8 +23,9 @@ const PAGES = [
     slug: 'el-salon',
     label: 'El Salón',
     sections: [
-      { key: 'hero',       label: 'Hero' },
-      { key: 'ctaReserva', label: 'CTA Reserva' },
+      { key: 'hero',        label: 'Hero' },
+      { key: 'experiencia', label: 'Experiencia' },
+      { key: 'ctaReserva',  label: 'CTA Reserva' },
     ],
   },
   {
@@ -45,7 +46,8 @@ const PAGES = [
     slug: 'galeria',
     label: 'Galería',
     sections: [
-      { key: 'hero', label: 'Hero' },
+      { key: 'hero',      label: 'Hero' },
+      { key: 'ctaReserva', label: 'CTA Reserva' },
     ],
   },
 ]
