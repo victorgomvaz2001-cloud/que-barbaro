@@ -1,3 +1,18 @@
+export interface IBlogCategory {
+  _id: string
+  slug: string
+  nameEs: string
+  nameEn: string
+  descriptionEs: string
+  descriptionEn: string
+  order: number
+  createdAt: string
+  updatedAt: string
+}
+
+export type IBlogCategoryCreate = Omit<IBlogCategory, '_id' | 'createdAt' | 'updatedAt'>
+export type IBlogCategoryUpdate = Partial<IBlogCategoryCreate>
+
 export interface IBlogPost {
   _id: string
   title: string

@@ -2,6 +2,7 @@ import { Router, type Router as IRouter } from 'express'
 import authRoutes from './auth.routes'
 import seoRoutes from './seo.routes'
 import blogRoutes from './blog.routes'
+import categoryRoutes from './category.routes'
 import locationRoutes from './location.routes'
 import userRoutes from './user.routes'
 import uploadRoutes from './upload.routes'
@@ -16,6 +17,7 @@ const router: IRouter = Router()
 router.use('/auth', authRoutes)
 router.use('/seo', seoRoutes)
 router.use('/blog', blogRoutes)
+router.use('/categories', categoryRoutes)
 router.use('/locations', locationRoutes)
 router.use('/gallery', galleryRoutes)
 router.use('/reviews', reviewRoutes)

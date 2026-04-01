@@ -1,16 +1,32 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
-import AllPostsSection from '@/components/blog/AllPostsSection'
+import CategoryCarousel from '@/components/blog/CategoryCarousel'
 import { getSectionBackgrounds } from '@/lib/getSectionBackgrounds'
+import type { IBlogCategory, IBlogPost, BlogPageResponse } from '@falcanna/types'
 
-const CATEGORIES = [
-  'Cuidado capilar',
-  'Coloración',
-  'Rizos y método curly',
-  'Tendencias',
-  'Eventos y ocasiones especiales',
-  'Noticias de ¡Qué Bárbaro!',
-]
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api'
+
+async function getCategories(): Promise<IBlogCategory[]> {
+  try {
+    const res = await fetch(`${API_URL}/categories`, { cache: 'no-store' })
+    if (!res.ok) return []
+    const json = await res.json() as { data: IBlogCategory[] }
+    return json.data ?? []
+  } catch {
+    return []
+  }
+}
+
+async function getPostsByLocale(locale: string): Promise<IBlogPost[]> {
+  try {
+    const res = await fetch(`${API_URL}/blog/page?locale=${locale}&limit=200`, { cache: 'no-store' })
+    if (!res.ok) return []
+    const json = await res.json() as BlogPageResponse
+    return json.data ?? []
+  } catch {
+    return []
+  }
+}
 
 export default async function BlogPage() {
   const [locale, t, bg] = await Promise.all([
@@ -21,19 +37,19 @@ export default async function BlogPage() {
   const heroImage = bg['hero'] ?? null
   const seoRoute = locale === 'es' ? '/blog' : `/${locale}/blog`
 
-  const allPostsLabels = {
-    title: t('allPostsTitle'),
-    allCategories: t('allCategories'),
-    searchPlaceholder: t('searchPlaceholder'),
-    filterDate: t('filterDate'),
-    sortLabel: t('sortLabel'),
-    sortDateDesc: t('sortDateDesc'),
-    sortDateAsc: t('sortDateAsc'),
-    sortAlphaAsc: t('sortAlphaAsc'),
-    sortAlphaDesc: t('sortAlphaDesc'),
-    loadMore: t('loadMore'),
-    noResults: t('noResults'),
+  const [categories, posts] = await Promise.all([
+    getCategories(),
+    getPostsByLocale(locale),
+  ])
+
+  const postsByCategory = new Map<string, IBlogPost[]>()
+  for (const post of posts) {
+    const list = postsByCategory.get(post.category) ?? []
+    list.push(post)
+    postsByCategory.set(post.category, list)
   }
+
+  const visibleCategories = categories.filter((cat) => (postsByCategory.get(cat.slug)?.length ?? 0) > 0)
 
   return (
     <>
@@ -43,17 +59,13 @@ export default async function BlogPage() {
       <div className="relative overflow-hidden border-b border-navy/10 bg-navy px-8 py-24 md:px-12 md:py-36">
         {heroImage && (
           <>
-            {/* Background image */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${heroImage})` }}
             />
-            {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/10" />
           </>
         )}
-
-        {/* Content */}
         <div className="relative z-10 mx-auto max-w-7xl">
           <p className="mb-4 font-neue text-xs uppercase tracking-[0.25em] text-white/50">
             {t('eyebrow')}
@@ -67,8 +79,21 @@ export default async function BlogPage() {
         </div>
       </div>
 
-      {/* All posts - unified grid with category filter pills */}
-      <AllPostsSection locale={locale} categories={CATEGORIES} labels={allPostsLabels} />
+      {/* Category carousels */}
+      {visibleCategories.length === 0 ? (
+        <div className="px-8 py-24 text-center md:px-12">
+          <p className="font-neue text-sm text-navy/40">{t('noResults')}</p>
+        </div>
+      ) : (
+        visibleCategories.map((category) => (
+          <CategoryCarousel
+            key={category._id}
+            title={locale === 'es' ? category.nameEs : category.nameEn}
+            description={locale === 'es' ? category.descriptionEs : category.descriptionEn}
+            posts={postsByCategory.get(category.slug) ?? []}
+          />
+        ))
+      )}
     </>
   )
 }

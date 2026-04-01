@@ -6,7 +6,7 @@ import { apiClient } from '@/lib/api-client'
 import { Button } from '@/components/admin/Button'
 import { useToast } from '@/components/admin/Toast'
 import { MediaPickerModal } from '@/components/admin/MediaPickerModal'
-import type { ApiResponse, IBlogPostCreate, IBlogPost, ISEOPage } from '@falcanna/types'
+import type { ApiResponse, IBlogPostCreate, IBlogPost, ISEOPage, IBlogCategory } from '@falcanna/types'
 
 const inputCls =
   'mt-1 w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
@@ -36,12 +36,20 @@ export default function NewBlogPostPage() {
   const [authorImage, setAuthorImage] = useState('')
   const [mediaPickerOpen, setMediaPickerOpen] = useState(false)
   const [mediaPickerTarget, setMediaPickerTarget] = useState<'header' | 'author'>('header')
+  const [categories, setCategories] = useState<IBlogCategory[]>([])
 
   const [title, setTitle] = useState('')
   const [slug, setSlug] = useState('')
   const [slugManual, setSlugManual] = useState(false)
   const [canonical, setCanonical] = useState('')
   const [canonicalManual, setCanonicalManual] = useState(false)
+
+  useEffect(() => {
+    apiClient
+      .get<ApiResponse<IBlogCategory[]>>('/categories')
+      .then((res) => setCategories(res.data))
+      .catch(console.error)
+  }, [])
 
   useEffect(() => {
     if (!slugManual) setSlug(slugify(title))
@@ -241,12 +249,9 @@ export default function NewBlogPostPage() {
                     <label className={labelCls}>Categoría <span className="text-red-500">*</span></label>
                     <select name="category" required defaultValue="" className={inputCls}>
                       <option value="" disabled>Selecciona una categoría</option>
-                      <option value="Cuidado capilar">Cuidado capilar</option>
-                      <option value="Coloración">Coloración</option>
-                      <option value="Rizos y método curly">Rizos y método curly</option>
-                      <option value="Tendencias">Tendencias</option>
-                      <option value="Eventos y ocasiones especiales">Eventos y ocasiones especiales</option>
-                      <option value="Noticias de ¡Qué Bárbaro!">Noticias de ¡Qué Bárbaro!</option>
+                      {categories.map((cat) => (
+                        <option key={cat._id} value={cat.slug}>{cat.nameEs}</option>
+                      ))}
                     </select>
                   </div>
                   <div>

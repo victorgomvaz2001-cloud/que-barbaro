@@ -4,7 +4,8 @@ import { AdminLayoutClient } from '@/components/admin/AdminLayoutClient'
 const NAV_LINKS = [
   { href: '/admin/dashboard', label: 'Dashboard' },
   { href: '/admin/seo', label: 'SEO' },
-  { href: '/admin/blog', label: 'Blog' },
+  { href: '/admin/blog', label: 'Blog Posts' },
+  { href: '/admin/blog/categorias', label: 'Blog Categorías' },
   { href: '/admin/galeria', label: 'Galería' },
   { href: '/admin/resenas', label: 'Reseñas' },
   { href: '/admin/menciones', label: 'Menciones' },
