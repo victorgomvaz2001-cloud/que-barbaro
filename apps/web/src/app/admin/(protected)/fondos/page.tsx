@@ -94,7 +94,7 @@ export default function AdminFondosPage() {
     const id = `${pageSlug}/${sectionKey}`
     setSaving(id)
     try {
-      await apiClient.put(`/admin/section-backgrounds/${pageSlug}/${sectionKey}`, { imageUrl })
+      await apiClient.put(`/section-backgrounds/admin/${pageSlug}/${sectionKey}`, { imageUrl })
       setData((prev) => ({
         ...prev,
         [pageSlug]: { ...(prev[pageSlug] ?? {}), [sectionKey]: imageUrl },
@@ -110,7 +110,7 @@ export default function AdminFondosPage() {
     const id = `${pageSlug}/${sectionKey}`
     setSaving(id)
     try {
-      await apiClient.delete(`/admin/section-backgrounds/${pageSlug}/${sectionKey}`)
+      await apiClient.delete(`/section-backgrounds/admin/${pageSlug}/${sectionKey}`)
       setData((prev) => ({
         ...prev,
         [pageSlug]: { ...(prev[pageSlug] ?? {}), [sectionKey]: null },
