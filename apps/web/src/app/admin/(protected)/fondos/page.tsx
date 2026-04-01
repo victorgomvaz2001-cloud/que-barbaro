@@ -50,6 +50,13 @@ const PAGES = [
       { key: 'ctaReserva', label: 'CTA Reserva' },
     ],
   },
+  {
+    slug: 'reservar-cita',
+    label: 'Reservar Cita',
+    sections: [
+      { key: 'hero', label: 'Fondo de página' },
+    ],
+  },
 ]
 
 /* ── Types ───────────────────────────────────────────────────────────────── */

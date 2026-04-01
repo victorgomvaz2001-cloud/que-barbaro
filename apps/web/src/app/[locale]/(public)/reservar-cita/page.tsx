@@ -4,6 +4,7 @@ import { getLocale } from 'next-intl/server'
 import Script from 'next/script'
 import SEOHead from '@/components/SEOHead'
 import TreatwellCard from '@/components/TreatwellCard'
+import { getSectionBackgrounds } from '@/lib/getSectionBackgrounds'
 
 const BOOKSY_URL =
   'https://booksy.com/es-es/144807_que-barbaro-hair-care-salon_peluqueria_29275_torremolinos'
@@ -14,11 +15,26 @@ const WHATSAPP_URL = 'https://wa.me/34644817835'
 const TIKTOK_URL = 'https://www.tiktok.com/@que.barbaro_estilistas'
 
 export default async function ReservarCitaPage() {
-  const locale = await getLocale()
+  const [locale, bg] = await Promise.all([
+    getLocale(),
+    getSectionBackgrounds('reservar-cita'),
+  ])
   const seoRoute = locale === 'es' ? '/reservar-cita' : `/${locale}/reservar-cita`
+  const backgroundImage = bg['hero'] ?? null
 
   return (
-    <div className="mx-auto max-w-7xl px-8 py-16">
+    <div className="relative min-h-screen">
+      {backgroundImage && (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center pointer-events-none"
+            style={{ backgroundImage: `url("${backgroundImage}")` }}
+            aria-hidden
+          />
+          <div className="absolute inset-0 bg-black/60 pointer-events-none" aria-hidden />
+        </>
+      )}
+    <div className="relative z-10 mx-auto max-w-7xl px-8 py-16">
       <SEOHead route={seoRoute} fallback={{ title: 'Reservar Cita - ¡Qué Bárbaro!' }} />
 
       {/* Header */}
@@ -219,6 +235,7 @@ export default async function ReservarCitaPage() {
         src="https://widget.treatwell.es/common/venue-menu/javascript/widget-button.js?v1"
         strategy="afterInteractive"
       />
+    </div>
     </div>
   )
 }
