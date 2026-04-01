@@ -76,7 +76,7 @@ export default async function SalonCtaReserva({ backgroundImage }: SalonCtaReser
 
         {/* Main title */}
         <h2
-          className="font-primary uppercase text-cream leading-[0.88] tracking-tight mb-8"
+          className="font-primary uppercase text-cream leading-[0.88] tracking-[0.08em] mb-8"
           style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
         >
           {t('title')}

@@ -143,7 +143,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
           {/* Display title */}
           <div className="mb-4 overflow-hidden">
             <h2
-              className="font-primary text-cream uppercase leading-[0.9] tracking-tight"
+              className="font-primary text-cream uppercase leading-[0.9] tracking-[0.08em]"
               style={{
                 fontSize: 'clamp(3rem, 7.5vw, 6.5rem)',
                 ...fadeUp(visible, 120),
@@ -154,7 +154,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
           </div>
           <div className="overflow-hidden mb-14">
             <h2
-              className="font-primary uppercase leading-[0.9] tracking-tight"
+              className="font-primary uppercase leading-[0.9] tracking-[0.08em]"
               style={{
                 fontSize: 'clamp(3rem, 7.5vw, 6.5rem)',
                 color: 'transparent',

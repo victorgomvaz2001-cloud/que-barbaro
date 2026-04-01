@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
           {/* Left: H2 + rating */}
           <div>
             <h2
-              className="font-primary uppercase text-navy mb-8 leading-none"
+              className="font-primary uppercase text-navy mb-8 leading-none tracking-[0.08em]"
               style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', ...anim(visible, 0, mounted) }}
             >
               {tl('h2')}

@@ -29,7 +29,7 @@ export default async function ExperienceSection() {
           <div className="flex flex-col md:flex-row md:items-center w-full">
 
             {/* H2 */}
-            <h2 className="flex-1 font-primary text-[clamp(2.6rem,7.5vw,6.5rem)] leading-[0.93] tracking-tight text-navy uppercase">
+            <h2 className="flex-1 font-primary text-[clamp(2.6rem,7.5vw,6.5rem)] leading-[0.93] tracking-[0.08em] text-navy uppercase">
               <span className="block" style={{ paddingLeft: '0' }}>{t('h2L1')}</span>
               <span className="block" style={{ paddingLeft: '7vw' }}>{t('h2L2')}</span>
               <span className="block" style={{ paddingLeft: '1vw' }}>{t('h2L3')}</span>

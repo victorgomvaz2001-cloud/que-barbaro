@@ -62,7 +62,7 @@ export default function FaqSection() {
 
         {/* Header */}
         <div className="flex items-end justify-between mb-14 border-b border-navy/15 pb-8">
-          <h2 className="font-primary text-[clamp(2.2rem,5vw,4rem)] leading-[1] tracking-tight text-navy uppercase">
+          <h2 className="font-primary text-[clamp(2.2rem,5vw,4rem)] leading-[1] tracking-[0.08em] text-navy uppercase">
             {t('title')}
           </h2>
           <span className="font-secondary text-[10px] uppercase tracking-[0.28em] text-navy/30 mb-1">

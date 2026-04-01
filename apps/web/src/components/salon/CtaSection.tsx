@@ -61,7 +61,7 @@ export default async function CtaSection({ backgroundImage }: CtaSectionProps) {
           {/* H2 + subtitle */}
           <div className="text-center mb-14">
             <h2
-              className="font-primary uppercase text-cream leading-[0.92] tracking-tight"
+              className="font-primary uppercase text-cream leading-[0.92] tracking-[0.08em]"
               style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
             >
               {t('h2')}

@@ -146,7 +146,7 @@ function TeamCard({
           {member.role}
         </p>
         <h3
-          className="font-primary text-navy uppercase leading-[1.05] mb-3"
+          className="font-primary text-navy uppercase leading-[1.05] tracking-[0.08em] mb-3"
           style={{ fontSize: 'clamp(1.3rem, 2.2vw, 1.75rem)' }}
         >
           {member.name}
