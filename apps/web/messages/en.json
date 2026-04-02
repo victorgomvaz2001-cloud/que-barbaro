@@ -62,9 +62,18 @@
     "rights": "All rights reserved.",
     "hoursLabel": "Opening hours",
     "hours": [
-      { "days": "Tue – Fri", "hours": "10:00 – 19:00" },
-      { "days": "Saturday", "hours": "10:00 – 14:00" },
-      { "days": "Sun & Mon", "hours": "Closed" }
+      {
+        "days": "Tue – Fri",
+        "hours": "10:00 – 19:00"
+      },
+      {
+        "days": "Saturday",
+        "hours": "10:00 – 14:00"
+      },
+      {
+        "days": "Sun & Mon",
+        "hours": "Closed"
+      }
     ]
   },
   "hero": {
@@ -412,7 +421,7 @@
           "role": "Co-founder & GOA Organics Specialist",
           "bio": "Expert in hair treatments: Sublime 10.31, Bae Berry, Softy Mood and Keratin Infusion."
         },
-          {
+        {
           "name": "Antonio Gámez",
           "role": "Senior Stylist",
           "bio": "Masters all cut and colour services. The team's technical reference."
@@ -811,6 +820,35 @@
       ],
       "cta": "Have something to celebrate?",
       "whatsapp": "Tell us about your event"
+    }
+  },
+  "reservarCita": {
+    "title": "Book Appointment",
+    "subtitle": "Beauty salon · Torremolinos",
+    "whatsapp": {
+      "label": "WhatsApp",
+      "sublabel": "Direct message",
+      "cta": "Message now →"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "sublabel": "Official profile",
+      "cta": "View profile →"
+    },
+    "tiktok": {
+      "label": "TikTok",
+      "sublabel": "Official profile",
+      "cta": "View profile →"
+    },
+    "treatwell": {
+      "label": "Treatwell",
+      "sublabel": "Book online",
+      "cta": "Book now →"
+    },
+    "booksy": {
+      "label": "Booksy",
+      "sublabel": "Book online",
+      "cta": "Book now →"
     }
   }
 }

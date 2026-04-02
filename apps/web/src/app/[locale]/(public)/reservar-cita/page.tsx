@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 
-import { getLocale } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import Script from 'next/script'
 import SEOHead from '@/components/SEOHead'
 import TreatwellCard from '@/components/TreatwellCard'
@@ -15,9 +15,10 @@ const WHATSAPP_URL = 'https://wa.me/34644817835'
 const TIKTOK_URL = 'https://www.tiktok.com/@que.barbaro_estilistas'
 
 export default async function ReservarCitaPage() {
-  const [locale, bg] = await Promise.all([
+  const [locale, bg, t] = await Promise.all([
     getLocale(),
     getSectionBackgrounds('reservar-cita'),
+    getTranslations('reservarCita'),
   ])
   const seoRoute = locale === 'es' ? '/reservar-cita' : `/${locale}/reservar-cita`
   const backgroundImage = bg['hero'] ?? null
@@ -40,10 +41,10 @@ export default async function ReservarCitaPage() {
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-3 mb-16">
         <h1 className="font-primary text-[clamp(3rem,10vw,6rem)] leading-[0.95] uppercase tracking-[0.04em] text-cream">
-          Reservar Cita
+          {t('title')}
         </h1>
         <p className="font-secondary text-[13px] uppercase tracking-[0.18em] text-cream">
-          Salón de belleza · Torremolinos
+          {t('subtitle')}
         </p>
         <div className="w-12 h-px bg-navy/20 mt-2" />
       </div>
@@ -79,17 +80,17 @@ export default async function ReservarCitaPage() {
           </svg>
           <div>
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-white mb-1">
-              WhatsApp
+              {t('whatsapp.label')}
             </p>
             <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-white/60">
-              Mensaje directo
+              {t('whatsapp.sublabel')}
             </p>
           </div>
-          <p className="font-secondary text-[12px] tracking-[0.08em] text-white">
+          <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-white">
             +34 644 817 835
           </p>
           <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-white border-b border-current pb-px">
-            Escribir ahora →
+            {t('whatsapp.cta')}
           </span>
         </a>
 
@@ -118,17 +119,17 @@ export default async function ReservarCitaPage() {
           </svg>
           <div>
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-white mb-1">
-              Instagram
+              {t('instagram.label')}
             </p>
             <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-white/60">
-              Perfil oficial
+              {t('instagram.sublabel')}
             </p>
           </div>
           <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-white">
             {INSTAGRAM_HANDLE}
           </p>
           <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-white border-b border-current pb-px">
-            Ver perfil →
+            {t('instagram.cta')}
           </span>
         </a>
 
@@ -151,22 +152,26 @@ export default async function ReservarCitaPage() {
           </svg>
           <div>
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-white mb-1">
-              TikTok
+              {t('tiktok.label')}
             </p>
             <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-white/60">
-              Perfil oficial
+              {t('tiktok.sublabel')}
             </p>
           </div>
           <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-white">
             @que.barbaro_estilistas
           </p>
           <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-white border-b border-current pb-px">
-            Ver perfil →
+            {t('tiktok.cta')}
           </span>
         </a>
 
         {/* ── Treatwell ── */}
-        <TreatwellCard className="" />
+        <TreatwellCard
+          label={t('treatwell.label')}
+          sublabel={t('treatwell.sublabel')}
+          cta={t('treatwell.cta')}
+        />
 
         {/* ── Booksy ── */}
         <a
@@ -202,17 +207,17 @@ export default async function ReservarCitaPage() {
           </svg>
           <div>
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-white mb-1">
-              Booksy
+              {t('booksy.label')}
             </p>
             <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-white/60">
-              Reserva online
+              {t('booksy.sublabel')}
             </p>
           </div>
           <p className="font-secondary text-[12px] tracking-[0.08em] text-white">
             booksy.com
           </p>
           <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-white border-b border-current pb-px">
-            Reservar ahora →
+            {t('booksy.cta')}
           </span>
         </a>
 

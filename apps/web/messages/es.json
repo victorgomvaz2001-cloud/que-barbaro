@@ -62,9 +62,18 @@
     "rights": "Todos los derechos reservados.",
     "hoursLabel": "Horario",
     "hours": [
-      { "days": "Mar – Vie", "hours": "10:00 – 19:00" },
-      { "days": "Sábado", "hours": "10:00 – 14:00" },
-      { "days": "Dom y Lun", "hours": "Cerrado" }
+      {
+        "days": "Mar – Vie",
+        "hours": "10:00 – 19:00"
+      },
+      {
+        "days": "Sábado",
+        "hours": "10:00 – 14:00"
+      },
+      {
+        "days": "Dom y Lun",
+        "hours": "Cerrado"
+      }
     ]
   },
   "hero": {
@@ -811,6 +820,35 @@
       ],
       "cta": "¿Tienes algo que celebrar?",
       "whatsapp": "Cuéntanos tu evento"
+    }
+  },
+  "reservarCita": {
+    "title": "Reservar Cita",
+    "subtitle": "Salón de belleza · Torremolinos",
+    "whatsapp": {
+      "label": "WhatsApp",
+      "sublabel": "Mensaje directo",
+      "cta": "Escribir ahora →"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "sublabel": "Perfil oficial",
+      "cta": "Ver perfil →"
+    },
+    "tiktok": {
+      "label": "TikTok",
+      "sublabel": "Perfil oficial",
+      "cta": "Ver perfil →"
+    },
+    "treatwell": {
+      "label": "Treatwell",
+      "sublabel": "Reserva online",
+      "cta": "Reservar ahora →"
+    },
+    "booksy": {
+      "label": "Booksy",
+      "sublabel": "Reserva online",
+      "cta": "Reservar ahora →"
     }
   }
 }

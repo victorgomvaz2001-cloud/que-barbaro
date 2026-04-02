@@ -3,7 +3,17 @@
 const TREATWELL_WIDGET_URL = 'https://widget.treatwell.es/establecimiento/506250/servicios/'
 const TREATWELL_FALLBACK = 'https://www.treatwell.es/'
 
-export default function TreatwellCard({ className = '' }: { className?: string }) {
+export default function TreatwellCard({
+  className = '',
+  label = 'Treatwell',
+  sublabel = 'Reserva online',
+  cta = 'Reservar ahora →',
+}: {
+  className?: string
+  label?: string
+  sublabel?: string
+  cta?: string
+}) {
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     const w = window as unknown as { wahanda?: { openOnlineBookingWidget: (url: string) => void } }
     if (w.wahanda?.openOnlineBookingWidget) {
@@ -40,17 +50,17 @@ export default function TreatwellCard({ className = '' }: { className?: string }
       </svg>
       <div>
         <p className="font-primary text-[1.3rem] leading-none tracking-wide text-white mb-1">
-          Treatwell
+          {label}
         </p>
-        <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-white">
-          Reserva online
+        <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-white/60">
+          {sublabel}
         </p>
       </div>
       <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-white">
         treatwell.es
       </p>
       <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-white border-b border-current pb-px">
-        Reservar ahora →
+        {cta}
       </span>
     </a>
   )
