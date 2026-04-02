@@ -131,7 +131,7 @@ export default function Navbar() {
 
       {/* ── Desktop sub-navbar (Servicios) ──────────────────────────────────── */}
       <div
-        className="hidden md:block sticky top-20 z-40 bg-navy overflow-hidden transition-[max-height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        className="hidden md:block sticky top-20 z-[55] bg-navy overflow-hidden transition-[max-height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{ maxHeight: serviciosOpen ? '56px' : '0px' }}
       >
         {serviciosOpen && (

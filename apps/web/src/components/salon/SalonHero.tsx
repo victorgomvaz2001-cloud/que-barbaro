@@ -79,7 +79,7 @@ export default function SalonHero({ backgroundImage }: SalonHeroProps) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'rgba(0,0,0,0.2)',
+            'rgba(0,0,0,0.4)',
         }}
         aria-hidden
       />
