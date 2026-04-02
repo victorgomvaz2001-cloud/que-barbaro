@@ -93,14 +93,14 @@ export default async function HomeBrands({ backgroundImage }: HomeBrandsProps) {
         </h2>
       </div>
 
-      {/* ── Row 1: 3 brands ─────────────────────────────────────────── */}
+      {/* ── Row 1: 3 brands (ORIBE · GOA · SCHWARZKOPF) ────────────── */}
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 border-t border-b border-cream/[0.06]">
-        {row2.map((brand, bi) => (
+        {row1.map((brand, bi) => (
           <div
             key={brand.index}
             className={[
               cellBase,
-              bi < row2.length - 1 ? 'border-b border-cream/[0.06] sm:border-b-0 sm:border-r sm:border-cream/[0.06]' : '',
+              bi < row1.length - 1 ? 'border-b border-cream/[0.06] sm:border-b-0 sm:border-r sm:border-cream/[0.06]' : '',
             ].filter(Boolean).join(' ')}
           >
             <span
@@ -110,7 +110,7 @@ export default async function HomeBrands({ backgroundImage }: HomeBrandsProps) {
             >
               {brand.key}
             </span>
-            <div className="flex items-center justify-center" style={{ height: `${row2LogoAreaH}px` }}>
+            <div className="flex items-center justify-center" style={{ height: `${row1LogoAreaH}px` }}>
               <div className="relative" style={{ width: `${brand.logo.w}px`, maxWidth: '100%', height: `${brand.logo.h}px` }}>
                 <Image
                   src={brand.logo.src}
@@ -129,17 +129,17 @@ export default async function HomeBrands({ backgroundImage }: HomeBrandsProps) {
         ))}
       </div>
 
-      {/* ── Row 2: 4 brands ─────────────────────────────────────────── */}
+      {/* ── Row 2: 4 brands (ghd · DEPOT · OPI · L'OCCITANE) ───────── */}
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        {row1.map((brand, bi) => (
+        {row2.map((brand, bi) => (
           <div
             key={brand.index}
             className={[
               cellBase,
               'border-b border-cream/[0.06]',
-              bi < row1.length - 1 ? 'sm:border-r sm:border-cream/[0.06]' : 'sm:border-r-0',
+              bi < row2.length - 1 ? 'sm:border-r sm:border-cream/[0.06]' : 'sm:border-r-0',
               bi < 2 ? 'sm:border-b sm:border-cream/[0.06]' : 'sm:border-b-0',
-              bi < row1.length - 1 ? 'lg:border-r lg:border-cream/[0.06]' : 'lg:border-r-0',
+              bi < row2.length - 1 ? 'lg:border-r lg:border-cream/[0.06]' : 'lg:border-r-0',
               'lg:border-b lg:border-cream/[0.06]',
             ].filter(Boolean).join(' ')}
           >
@@ -150,7 +150,7 @@ export default async function HomeBrands({ backgroundImage }: HomeBrandsProps) {
             >
               {brand.key}
             </span>
-            <div className="flex items-center justify-center" style={{ height: `${row1LogoAreaH}px` }}>
+            <div className="flex items-center justify-center" style={{ height: `${row2LogoAreaH}px` }}>
               <div className="relative" style={{ width: `${brand.logo.w}px`, maxWidth: '100%', height: `${brand.logo.h}px` }}>
                 <Image
                   src={brand.logo.src}

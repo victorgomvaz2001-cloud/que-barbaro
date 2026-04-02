@@ -79,7 +79,7 @@ export default function SalonHero({ backgroundImage }: SalonHeroProps) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(1,10,73,0.62) 45%, rgba(1,10,73,0.78) 80%, rgba(1,10,73,0.9) 100%)',
+            'rgba(0,0,0,0.2)',
         }}
         aria-hidden
       />
@@ -110,7 +110,7 @@ export default function SalonHero({ backgroundImage }: SalonHeroProps) {
             aria-hidden
           />
           <p
-            className="font-neue text-cream/55 uppercase tracking-[0.3em]"
+            className="font-neue text-cream uppercase tracking-[0.3em]"
             style={{ fontSize: 'clamp(0.6rem, 0.85vw, 0.75rem)' }}
           >
             {t('location')}
@@ -181,15 +181,6 @@ export default function SalonHero({ backgroundImage }: SalonHeroProps) {
         <div className="w-px h-10 bg-gradient-to-b from-cream to-transparent animate-pulse" />
       </div>
 
-      {/* ── Bottom fade into cream ────────────────────────────────────────── */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-20"
-        style={{
-          background:
-            'linear-gradient(to bottom, transparent 0%, #F6F4F1 100%)',
-        }}
-        aria-hidden
-      />
     </section>
   )
 }
