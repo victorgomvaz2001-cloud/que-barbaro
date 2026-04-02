@@ -39,10 +39,10 @@ export default async function ReservarCitaPage() {
 
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-3 mb-16">
-        <h1 className="font-primary text-[clamp(3rem,10vw,6rem)] leading-[0.95] uppercase tracking-tight text-navy">
+        <h1 className="font-primary text-[clamp(3rem,10vw,6rem)] leading-[0.95] uppercase tracking-[0.04em] text-cream">
           Reservar Cita
         </h1>
-        <p className="font-secondary text-[13px] uppercase tracking-[0.18em] text-navy/60">
+        <p className="font-secondary text-[13px] uppercase tracking-[0.18em] text-cream">
           Salón de belleza · Torremolinos
         </p>
         <div className="w-12 h-px bg-navy/20 mt-2" />
