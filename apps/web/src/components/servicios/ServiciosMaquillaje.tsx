@@ -238,10 +238,6 @@ export default function ServiciosMaquillaje() {
                   {/* Dark gradient overlay at bottom of image */}
                   <div
                     className="absolute inset-0"
-                    style={{
-                      background:
-                        'linear-gradient(to top, rgba(1,10,73,0.85) 0%, rgba(1,10,73,0.3) 45%, transparent 75%)',
-                    }}
                     aria-hidden="true"
                   />
                   {/* Index number ghost */}

@@ -144,7 +144,7 @@ export default function ServiciosColor() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%)',
+            background: 'rgba(0,0,0,0.3)',
             zIndex: 1,
           }}
         />
