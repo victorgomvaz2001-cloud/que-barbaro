@@ -104,7 +104,7 @@ export default function GaleriaEventos() {
 
             {/* Title */}
             <h2
-              className="font-primary uppercase text-cream leading-[0.88] tracking-tight"
+              className="font-primary uppercase text-cream leading-[0.88] tracking-[0.04em]"
               style={{
                 fontSize: 'clamp(3rem, 7vw, 6rem)',
                 ...anim(visible, 80, mounted),

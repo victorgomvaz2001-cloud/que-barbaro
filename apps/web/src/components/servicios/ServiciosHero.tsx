@@ -97,7 +97,7 @@ export default function ServiciosHero({ backgroundImage }: ServiciosHeroProps) {
               aria-hidden="true"
             />
             <p
-              className="font-neue text-orange uppercase tracking-widest"
+              className="font-neue text-cream uppercase tracking-widest"
               style={{ fontSize: 'clamp(0.6rem, 0.85vw, 0.75rem)' }}
             >
               {t('eyebrow')}
@@ -108,7 +108,7 @@ export default function ServiciosHero({ backgroundImage }: ServiciosHeroProps) {
           <div className={`hero-animate hero-item-1`}>
             <h1
               id="servicios-hero-title"
-              className={`font-primary uppercase leading-[0.88] tracking-tight ${backgroundImage ? 'text-cream' : 'text-navy'}`}
+              className={`font-primary uppercase leading-[0.88] tracking-[0.04em] ${backgroundImage ? 'text-cream' : 'text-navy'}`}
               style={{ fontSize: 'clamp(3.5rem, 10vw, 9rem)' }}
             >
               {t('title')}

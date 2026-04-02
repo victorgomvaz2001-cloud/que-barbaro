@@ -219,7 +219,7 @@ function CategorySection({
             </p>
           </div>
           <h2
-            className="font-primary text-navy uppercase leading-[0.9] tracking-tight"
+            className="font-primary text-navy uppercase leading-[0.9] tracking-[0.04em]"
             style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)' }}
           >
             {name}

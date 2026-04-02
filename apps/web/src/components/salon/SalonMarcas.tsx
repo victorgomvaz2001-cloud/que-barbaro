@@ -306,7 +306,7 @@ export default function SalonMarcas() {
                   {brand.nameLines.map((line, li) => (
                     <p
                       key={li}
-                      className="font-primary text-cream/30 uppercase leading-[0.88] tracking-tight"
+                      className="font-primary text-cream/30 uppercase leading-[0.88] tracking-[0.04em]"
                       style={{
                         fontSize:
                           brand.nameLines.length === 1

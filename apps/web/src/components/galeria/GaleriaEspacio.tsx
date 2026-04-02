@@ -89,7 +89,7 @@ export default function GaleriaEspacio() {
 
           {/* Title */}
           <h2
-            className="font-primary uppercase text-navy leading-[0.88] tracking-tight"
+            className="font-primary uppercase text-navy leading-[0.88] tracking-[0.04em]"
             style={{
               fontSize: 'clamp(3.5rem, 9vw, 8rem)',
               ...anim(visible, 80, mounted),

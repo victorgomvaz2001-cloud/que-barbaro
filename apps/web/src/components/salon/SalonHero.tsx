@@ -120,7 +120,7 @@ export default function SalonHero({ backgroundImage }: SalonHeroProps) {
         {/* Page title */}
         <div className="overflow-hidden mb-4">
           <h1
-            className="font-primary text-cream uppercase leading-[0.85] tracking-tight"
+            className="font-primary text-cream uppercase leading-[0.85] tracking-[0.04em]"
             style={{
               fontSize: 'clamp(4rem, 12vw, 10rem)',
               ...anim(visible, 220, mounted, 'translateY(60px)'),
@@ -133,7 +133,7 @@ export default function SalonHero({ backgroundImage }: SalonHeroProps) {
         {/* Brand name - lighter, as subtitle */}
         <div className="overflow-hidden mb-10 md:mb-14">
           <p
-            className="font-primary text-orange uppercase leading-[0.85] tracking-tight"
+            className="font-primary text-orange uppercase leading-[0.85] tracking-[0.04em]"
             style={{
               fontSize: 'clamp(2rem, 5.5vw, 4.5rem)',
               ...anim(visible, 380, mounted, 'translateY(40px)'),

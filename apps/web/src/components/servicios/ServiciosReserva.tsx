@@ -100,7 +100,7 @@ export default async function ServiciosReserva() {
 
                 {/* Pack title */}
                 <h3
-                  className="font-primary text-navy uppercase leading-[0.9] tracking-tight mb-4"
+                  className="font-primary text-navy uppercase leading-[0.9] tracking-[0.04em] mb-4"
                   style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
                 >
                   {pack.title}
@@ -229,7 +229,7 @@ export default async function ServiciosReserva() {
           {/* Large title */}
           <h2
             id="reservar-title"
-            className="font-primary text-cream uppercase leading-[0.88] tracking-tight mb-8"
+            className="font-primary text-cream uppercase leading-[0.88] tracking-[0.04em] mb-8"
             style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
           >
             {tR('title')}
