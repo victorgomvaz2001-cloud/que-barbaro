@@ -123,7 +123,7 @@ function ServiceCard({
 
         {/* Description */}
         <p
-          className="font-secondarytext-navy/60 leading-relaxed mb-5"
+          className="font-secondary text-navy leading-relaxed mb-5"
           style={{
             fontSize: 'clamp(0.875rem, 1.1vw, 0.975rem)',
             maxWidth: '34ch',
@@ -136,7 +136,7 @@ function ServiceCard({
         <div>
           <span
             className="inline-block bg-navy text-cream font-neue uppercase px-3 py-1 tracking-[0.14em]"
-            style={{ fontSize: '10px' }}
+            style={{ fontSize: '13px' }}
           >
             {service.price}
           </span>
@@ -248,7 +248,7 @@ export default function ServiciosManicura() {
 
           {/* Intro */}
           <p
-            className="font-secondarytext-navy/55 leading-relaxed"
+            className="font-secondary text-navy leading-relaxed"
             style={{
               fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
               maxWidth: '52ch',

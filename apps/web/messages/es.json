@@ -650,25 +650,25 @@
           "name": "Artístico Design",
           "tagline": "Corte de diseño",
           "desc": "Corte de diseño avanzado, creativo y completamente personalizado. Buscamos una forma que te favorezca, te identifique y que funcione en el día a día sin esfuerzo.",
-          "price": "desde [X]€"
+          "price": "desde 49€"
         },
         {
           "name": "Danza de Rizos",
           "tagline": "Método curly",
           "desc": "Método curly para cabellos rizados y ondulados. Rizos bien definidos, con estructura, movimiento y sin frizz. Técnica completamente personalizada según el patrón de rizo de cada cliente.",
-          "price": "desde [X]€"
+          "price": "desde 69€"
         },
         {
           "name": "Glamour en Altura",
           "tagline": "Peinados de evento · recogido",
           "desc": "Recogidos elegantes y bien construidos para bodas, eventos, galas o cualquier ocasión especial.",
-          "price": "desde [X]€"
+          "price": "desde 80€"
         },
         {
           "name": "Alfombra Roja",
           "tagline": "Peinados de evento · ondas",
           "desc": "Ondas Hollywood: acabado cinematográfico y luminoso, cabello sedoso, volumen controlado y brillo que se nota.",
-          "price": "desde [X]€"
+          "price": "desde 38€"
         }
       ]
     },
@@ -682,19 +682,19 @@
           "name": "Balayage Estilo Brasileño",
           "tagline": "según longitud",
           "desc": "Efecto de cabello iluminado por el sol, con transiciones suaves y un resultado natural que favorece a prácticamente cualquier tono base.",
-          "price": "desde [X]€"
+          "price": "desde 170€"
         },
         {
           "name": "Babylights Silk Shine",
           "tagline": "según longitud",
           "desc": "Mechas ultrafinas aplicadas con precisión para dar luminosidad sutil y acabado sedoso. Para quienes quieren brillo y dimensión sin un cambio brusco.",
-          "price": "desde [X]€"
+          "price": "desde 170€"
         },
         {
           "name": "Balayage Rubio Deslumbrante",
           "tagline": "según longitud y base",
           "desc": "Rubio luminoso, atrevido y bien ejecutado. Decoloración controlada y matización precisa para un rubio que brilla sin parecer artificial.",
-          "price": "desde [X]€"
+          "price": "desde 170€"
         }
       ]
     },
@@ -709,25 +709,25 @@
           "name": "Keratin Infusion",
           "tagline": "GOA Organics",
           "desc": "Alisa, suaviza y reduce el encrespamiento de forma progresiva. Cabello más manejable, brillante y con textura notablemente mejorada.",
-          "price": "desde [X]€"
+          "price": "desde 250€"
         },
         {
           "name": "Softy Mood",
           "tagline": "GOA Organics",
           "desc": "Hidratación profunda. Devuelve al cabello su elasticidad, su tacto sedoso y la sensación de cabello sano desde el primer lavado.",
-          "price": "desde [X]€"
+          "price": "desde 160€"
         },
         {
           "name": "Sublime 10.31",
           "tagline": "GOA Organics",
           "desc": "Reconstrucción capilar intensiva para cabellos dañados o debilitados. Refuerza la fibra, devuelve consistencia y mejora la respuesta frente al calor.",
-          "price": "desde [X]€"
+          "price": "desde 90€"
         },
         {
           "name": "Bae Berry",
           "tagline": "GOA Organics",
           "desc": "Nutrición, brillo y bienestar del cuero cabelludo. Un tratamiento que también entra por los sentidos.",
-          "price": "desde [X]€"
+          "price": "desde 55€"
         }
       ]
     },
@@ -741,19 +741,19 @@
           "name": "Glamour Noche",
           "tagline": "",
           "desc": "Intensidad, acabado impecable y presencia que se mantiene de principio a fin de la noche.",
-          "price": "desde [X]€"
+          "price": "desde 90€"
         },
         {
           "name": "¡Ay que me caso!",
           "tagline": "incluye prueba previa",
           "desc": "Maquillaje de novia: duradero, luminoso y completamente adaptado a tu estilo. Para que te reconozcas en cada fotografía.",
-          "price": "desde [X]€"
+          "price": "desde 200€"
         },
         {
           "name": "¡Me voy de fiesta!",
           "tagline": "",
           "desc": "Fresco, divertido y con personalidad. Para brillar sin esfuerzo aparente en salidas, eventos o celebraciones.",
-          "price": "desde [X]€"
+          "price": "desde 75€"
         }
       ]
     },
@@ -767,13 +767,13 @@
           "name": "Manicura",
           "tagline": "",
           "desc": "Cuidado completo de manos: limado, cutículas y esmaltado. Acabado impecable que dura.",
-          "price": "desde [X]€"
+          "price": "desde 15€"
         },
         {
           "name": "Pedicura",
           "tagline": "",
           "desc": "Tratamiento completo para los pies: exfoliación, hidratación y esmaltado. El cuidado que merecen.",
-          "price": "desde [X]€"
+          "price": "desde 18€"
         }
       ]
     },

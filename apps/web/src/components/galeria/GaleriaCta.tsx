@@ -63,13 +63,13 @@ export default async function GaleriaCta({ backgroundImage }: GaleriaCtaProps) {
         />
 
         {/* Eyebrow */}
-        <p className="font-neue uppercase tracking-[0.3em] text-cream/40 text-[10px] mb-4">
+        <p className="font-neue uppercase tracking-[0.3em] text-cream text-[10px] mb-4">
           {t('cta.eyebrow')}
         </p>
 
         {/* Main title */}
         <h2
-          className="font-primary uppercase text-cream leading-[0.88] tracking-tight mb-8"
+          className="font-primary uppercase text-cream leading-[0.88] tracking-[0.04em] mb-8"
           style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
         >
           {t('cta.title')}
@@ -77,7 +77,7 @@ export default async function GaleriaCta({ backgroundImage }: GaleriaCtaProps) {
 
         {/* Description */}
         <p
-          className="font-secondarytext-cream/55 leading-relaxed mb-14"
+          className="font-secondary text-cream leading-relaxed mb-14"
           style={{
             fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
             maxWidth: '50ch',
@@ -120,7 +120,7 @@ export default async function GaleriaCta({ backgroundImage }: GaleriaCtaProps) {
         {/* Bottom label - location whisper */}
         <p
           className="mt-10 font-neue uppercase tracking-[0.3em] text-cream text-[9px]"
-          style={{ opacity: 0.3 }}
+          style={{ opacity: 1 }}
         >
           Torremolinos, Málaga
         </p>

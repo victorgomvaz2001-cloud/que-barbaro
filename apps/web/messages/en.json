@@ -650,25 +650,25 @@
           "name": "Artístico Design",
           "tagline": "Bespoke cut",
           "desc": "Advanced, creative, fully personalised design cut. We find a shape that suits you, defines you and works effortlessly every day.",
-          "price": "from [X]€"
+          "price": "from 49€"
         },
         {
           "name": "Danza de Rizos",
           "tagline": "Curly method",
           "desc": "Curly method for wavy and curly hair. Well-defined curls with structure, movement and no frizz. Fully personalised to each client's curl pattern.",
-          "price": "from [X]€"
+          "price": "from 69€"
         },
         {
           "name": "Glamour en Altura",
           "tagline": "Event styling · updo",
           "desc": "Elegant, well-constructed updos for weddings, events, galas or any special occasion.",
-          "price": "from [X]€"
+          "price": "from 80€"
         },
         {
           "name": "Alfombra Roja",
           "tagline": "Event styling · waves",
           "desc": "Hollywood waves: cinematic, luminous finish, silky hair, controlled volume and visible shine.",
-          "price": "from [X]€"
+          "price": "from 38€"
         }
       ]
     },
@@ -682,19 +682,19 @@
           "name": "Balayage Estilo Brasileño",
           "tagline": "by length",
           "desc": "Sun-kissed hair effect with soft transitions and a natural result that suits almost any base tone.",
-          "price": "from [X]€"
+          "price": "from 170€"
         },
         {
           "name": "Babylights Silk Shine",
           "tagline": "by length",
           "desc": "Ultra-fine highlights applied with precision for subtle luminosity and a silky finish. For those who want shine and dimension without a drastic change.",
-          "price": "from [X]€"
+          "price": "from 170€"
         },
         {
           "name": "Balayage Rubio Deslumbrante",
           "tagline": "by length and base",
           "desc": "Luminous, bold and well-executed blonde. Controlled bleaching and precise toning for a blonde that shines without looking artificial.",
-          "price": "from [X]€"
+          "price": "from 170€"
         }
       ]
     },
@@ -709,25 +709,25 @@
           "name": "Keratin Infusion",
           "tagline": "GOA Organics",
           "desc": "Progressively smooths, softens and reduces frizz. More manageable, shinier hair with a noticeably improved texture.",
-          "price": "from [X]€"
+          "price": "from 250€"
         },
         {
           "name": "Softy Mood",
           "tagline": "GOA Organics",
           "desc": "Deep hydration. Restores the hair's elasticity, silky feel and the sensation of healthy hair from the first wash.",
-          "price": "from [X]€"
+          "price": "from 160€"
         },
         {
           "name": "Sublime 10.31",
           "tagline": "GOA Organics",
           "desc": "Intensive hair reconstruction for damaged or weakened hair. Reinforces the fibre, restores consistency and improves heat response.",
-          "price": "from [X]€"
+          "price": "from 90€"
         },
         {
           "name": "Bae Berry",
           "tagline": "GOA Organics",
           "desc": "Nutrition, shine and scalp wellbeing. A treatment that also works on your senses.",
-          "price": "from [X]€"
+          "price": "from 55€"
         }
       ]
     },
@@ -741,19 +741,19 @@
           "name": "Glamour Noche",
           "tagline": "",
           "desc": "Intensity, impeccable finish and presence that lasts from start to finish of the night.",
-          "price": "from [X]€"
+          "price": "from 90€"
         },
         {
           "name": "¡Ay que me caso!",
           "tagline": "includes pre-trial",
           "desc": "Bridal make-up: long-lasting, luminous and fully adapted to your style. So you recognise yourself in every photograph.",
-          "price": "from [X]€"
+          "price": "from 200€"
         },
         {
           "name": "¡Me voy de fiesta!",
           "tagline": "",
           "desc": "Fresh, fun and full of personality. To shine effortlessly at nights out, events or celebrations.",
-          "price": "from [X]€"
+          "price": "from 75€"
         }
       ]
     },
@@ -767,13 +767,13 @@
           "name": "Manicure",
           "tagline": "",
           "desc": "Complete hand care: filing, cuticles and polish. An impeccable finish that lasts.",
-          "price": "from [X]€"
+          "price": "from 15€"
         },
         {
           "name": "Pedicure",
           "tagline": "",
           "desc": "Full foot treatment: exfoliation, hydration and polish. The care they deserve.",
-          "price": "from [X]€"
+          "price": "from 18€"
         }
       ]
     },

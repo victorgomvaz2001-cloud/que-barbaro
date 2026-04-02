@@ -94,7 +94,7 @@ function ServiceCard({
       {/* Index number */}
       <p
         aria-hidden
-        className="font-neue text-navy/20 tabular-nums mb-3 select-none"
+        className="font-neue text-navy tabular-nums mb-3 select-none"
         style={{ fontSize: '10px', letterSpacing: '0.18em' }}
       >
         {num}
@@ -102,7 +102,7 @@ function ServiceCard({
 
       {/* Service name */}
       <h3
-        className="font-primary text-navy uppercase leading-[0.88] tracking-tight mb-4"
+        className="font-primary text-navy uppercase leading-[0.88] tracking-[0.04em] mb-4"
         style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.5rem)' }}
       >
         {service.name}
@@ -115,8 +115,8 @@ function ServiceCard({
           style={{ width: '4px', height: '4px' }}
         />
         <span
-          className="font-neue uppercase text-orange/60 tracking-[0.3em]"
-          style={{ fontSize: '9px' }}
+          className="font-neue uppercase text-orange tracking-[0.3em]"
+          style={{ fontSize: '13px' }}
         >
           {service.tagline}
         </span>
@@ -124,7 +124,7 @@ function ServiceCard({
 
       {/* Description */}
       <p
-        className="font-secondarytext-navy/60 leading-relaxed flex-1 mb-6"
+        className="font-secondary text-navy leading-relaxed flex-1 mb-6"
         style={{ fontSize: 'clamp(0.9rem, 1.2vw, 1.02rem)', maxWidth: '36ch' }}
       >
         {service.desc}
@@ -134,7 +134,7 @@ function ServiceCard({
       <div>
         <span
           className="font-neue uppercase tracking-widest bg-navy text-cream px-3 py-1 inline-block"
-          style={{ fontSize: '10px' }}
+          style={{ fontSize: '13px' }}
         >
           {service.price}
         </span>
@@ -233,8 +233,8 @@ export default function ServiciosTratamientos() {
                 style={{ width: '4px', height: '4px' }}
               />
               <span
-                className="font-neue uppercase text-navy/30 tracking-[0.3em]"
-                style={{ fontSize: '9px' }}
+                className="font-neue uppercase text-navy tracking-[0.3em]"
+                style={{ fontSize: '13px' }}
               >
                 {t('brand')}
               </span>
@@ -245,7 +245,7 @@ export default function ServiciosTratamientos() {
           <div className="overflow-hidden mb-4">
             <h2
               id="tratamientos-title"
-              className="font-primary text-navy uppercase leading-[0.88] tracking-tight"
+              className="font-primary text-navy uppercase leading-[0.88] tracking-[0.04em]"
               style={{
                 fontSize: 'clamp(2.8rem, 11vw, 9.5rem)',
                 ...anim(visible, 120, mounted, 'translateY(60px)'),
@@ -257,7 +257,7 @@ export default function ServiciosTratamientos() {
 
           {/*intro note */}
           <p
-            className="font-secondarytext-navy/50 mb-6 leading-relaxed"
+            className="font-secondary text-navy mb-6 leading-relaxed"
             style={{
               fontSize: 'clamp(0.9rem, 1.3vw, 1.05rem)',
               maxWidth: '50ch',

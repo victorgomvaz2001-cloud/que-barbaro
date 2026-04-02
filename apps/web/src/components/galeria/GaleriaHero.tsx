@@ -62,7 +62,7 @@ export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps)
             aria-hidden="true"
           />
           <p
-            className="font-neue text-cream/40 uppercase tracking-[0.3em]"
+            className="font-neue text-cream uppercase tracking-[0.3em]"
             style={{ fontSize: 'clamp(0.6rem, 0.85vw, 0.75rem)' }}
           >
             {t('hero.eyebrow')}
@@ -79,7 +79,7 @@ export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps)
         {/* Title */}
         <h1
           id="galeria-hero-title"
-          className="font-primary text-cream uppercase leading-[0.88] tracking-tight"
+          className="font-primary text-cream uppercase leading-[0.88] tracking-[0.04em]"
           style={{ fontSize: 'clamp(5rem, 14vw, 12rem)' }}
         >
           {t('hero.title')}
@@ -87,7 +87,7 @@ export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps)
 
         {/* Subtitle */}
         <p
-          className="font-secondary italictext-cream mt-3 mb-8 md:mb-12"
+          className="font-secondary text-cream mt-3 mb-8 md:mb-12"
           style={{ fontSize: 'clamp(1.25rem, 3vw, 2.5rem)' }}
         >
           {t('hero.subtitle')}
@@ -95,7 +95,7 @@ export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps)
 
         {/* Description */}
         <p
-          className="font-secondarytext-cream/65 leading-relaxed mb-12 md:mb-16"
+          className="font-secondary text-cream leading-relaxed mb-12 md:mb-16"
           style={{
             fontSize: 'clamp(1rem, 1.3vw, 1.1rem)',
             maxWidth: '52ch',
@@ -107,7 +107,7 @@ export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps)
         {/* Scroll CTA */}
         <Link
           href="#galeria-grid"
-          className="inline-flex items-center gap-3 font-neue uppercase tracking-[0.22em]text-cream hover:text-cream transition-colors duration-200"
+          className="inline-flex items-center gap-3 font-neue uppercase tracking-[0.22em] text-cream hover:text-cream transition-colors duration-200"
           style={{ fontSize: '9px' }}
         >
           {t('hero.allCategories')}

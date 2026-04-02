@@ -52,7 +52,7 @@ function Lightbox({
         {/* Category label */}
         {photo.category && (
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-            <span className="font-neue uppercase tracking-[0.22em]text-cream text-[10px]">
+            <span className="font-neue uppercase tracking-[0.22em] text-cream text-[10px]">
               {photo.category}
             </span>
           </div>
@@ -99,7 +99,7 @@ function Lightbox({
 
       {/* Counter */}
       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6">
-        <span className="font-neue text-cream/30 text-[10px] tracking-[0.2em]">
+        <span className="font-neue text-cream text-[10px] tracking-[0.2em]">
           {String(index + 1).padStart(2, '0')} / {String(photos.length).padStart(2, '0')}
         </span>
       </div>

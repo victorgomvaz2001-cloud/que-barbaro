@@ -36,12 +36,12 @@ export default function BlogCard({ post }: { post: IBlogPost }) {
           </span>
         )}
 
-        <h3 className="font-primary line-clamp-2 text-xl uppercase leading-snug tracking-wide text-navy group-hover:opacity-70 transition-opacity md:text-2xl">
+        <h3 className="font-secondary line-clamp-2 text-xl uppercase leading-snug tracking-wide text-navy group-hover:opacity-70 transition-opacity md:text-2xl">
           {post.title}
         </h3>
 
         {post.excerpt && (
-          <p className="mt-2 line-clamp-3 font-neue text-sm leading-relaxed text-navy/50">
+          <p className="mt-2 line-clamp-3 font-neue text-sm leading-relaxed text-navy">
             {post.excerpt}
           </p>
         )}

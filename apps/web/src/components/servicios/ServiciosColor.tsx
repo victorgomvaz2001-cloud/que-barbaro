@@ -160,7 +160,7 @@ export default function ServiciosColor() {
               className="color-eyebrow font-neue uppercase tracking-widest mb-5"
               style={{
                 fontSize: 'clamp(0.6rem, 0.8vw, 0.7rem)',
-                color: 'rgba(246, 244, 241, 0.4)',
+                color: 'var(--color-cream)',
                 letterSpacing: '0.28em',
               }}
             >
@@ -170,7 +170,7 @@ export default function ServiciosColor() {
             {/* Title */}
             <h2
               id="color-section-title"
-              className="color-title font-primary text-cream uppercase leading-[0.88] tracking-tight"
+              className="color-title font-primary text-cream uppercase leading-[0.88] tracking-[0.04em]"
               style={{ fontSize: 'clamp(3.5rem, 10vw, 9rem)' }}
             >
               {t('title')}
@@ -186,10 +186,9 @@ export default function ServiciosColor() {
 
             {/* Intro */}
             <p
-              className="color-intro font-secondaryleading-relaxed"
+              className="color-intro font-secondary text-cream leading-relaxed"
               style={{
                 fontSize: 'clamp(0.95rem, 1.25vw, 1.1rem)',
-                color: 'rgba(246, 244, 241, 0.6)',
                 maxWidth: '52ch',
               }}
             >
@@ -227,7 +226,7 @@ export default function ServiciosColor() {
                       className="font-neue shrink-0 mt-[0.35em]"
                       style={{
                         fontSize: 'clamp(0.6rem, 0.75vw, 0.7rem)',
-                        color: 'rgba(246, 244, 241, 0.2)',
+                        color: 'rgba(246, 244, 241, 1)',
                         letterSpacing: '0.15em',
                         lineHeight: 1,
                       }}
@@ -239,14 +238,14 @@ export default function ServiciosColor() {
                     {/* Name + tagline */}
                     <div className="min-w-0">
                       <h3
-                        className="font-primary text-cream uppercase leading-[0.9] tracking-tight"
+                        className="font-primary text-cream uppercase leading-[0.9] tracking-[0.04em]"
                         style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)' }}
                       >
                         {service.name}
                       </h3>
                       {service.tagline && (
                         <p
-                          className="font-neue text-orange uppercase tracking-widest mt-2"
+                          className="font-neue text-white uppercase tracking-widest mt-2"
                           style={{ fontSize: '10px', letterSpacing: '0.22em' }}
                         >
                           {service.tagline}
@@ -267,7 +266,7 @@ export default function ServiciosColor() {
                       className="font-secondaryleading-relaxed"
                       style={{
                         fontSize: 'clamp(0.85rem, 1.05vw, 0.95rem)',
-                        color: 'rgba(246, 244, 241, 0.6)',
+                        color: 'rgba(246, 244, 241, 1)',
                       }}
                     >
                       {service.desc}

@@ -134,7 +134,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
 
           {/* Eyebrow label */}
           <p
-            className="font-neue uppercase tracking-[0.32em] text-cream/40 mb-10"
+            className="font-neue uppercase tracking-[0.32em] text-cream mb-10"
             style={{ fontSize: '10px', ...fadeUp(visible, 0) }}
           >
             - {t('eyebrow')}
@@ -158,7 +158,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
               style={{
                 fontSize: 'clamp(3rem, 7.5vw, 6.5rem)',
                 color: 'transparent',
-                WebkitTextStroke: '1px rgba(246,244,241,0.35)',
+                WebkitTextStroke: '3px white',
                 ...fadeUp(visible, 230),
               }}
             >
@@ -194,7 +194,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
             style={fadeUp(visible, 460)}
           >
             <p
-              className="font-secondarytext-cream text-center mx-auto"
+              className="font-secondary text-cream text-center mx-auto"
               style={{
                 fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)',
                 lineHeight: 1.45,
@@ -203,7 +203,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
               }}
             >
               {t('quote1')}{' '}
-              <span style={{ color: 'rgba(246,244,241,0.55)' }}>
+              <span style={{ color: 'var(--color-cream)' }}>
                 {t('quote2')}
               </span>
             </p>
@@ -271,7 +271,7 @@ function PillarCard({
 
       {/* Number */}
       <span
-        className="font-neue text-cream/20 tabular-nums mb-4"
+        className="font-neue text-cream tabular-nums mb-4"
         style={{ fontSize: '11px', letterSpacing: '0.18em' }}
       >
         {pillar.n}
@@ -287,7 +287,7 @@ function PillarCard({
 
       {/* Description */}
       <p
-        className="font-secondary text-cream/55 leading-relaxed"
+        className="font-secondary text-cream leading-relaxed"
         style={{ fontSize: 'clamp(0.9rem, 1.1vw, 1rem)', maxWidth: '28ch' }}
       >
         {pillar.desc}

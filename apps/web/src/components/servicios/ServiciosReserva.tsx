@@ -51,7 +51,7 @@ export default async function ServiciosReserva() {
           {/* Title */}
           <h2
             id="eventos-title"
-            className="font-primary text-navy uppercase leading-[0.88] tracking-tight mb-5"
+            className="font-primary text-navy uppercase leading-[0.88] tracking-[0.04em] mb-5"
             style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)' }}
           >
             {tE('title')}
@@ -62,7 +62,7 @@ export default async function ServiciosReserva() {
 
           {/* Description */}
           <p
-            className="font-secondarytext-navy/60 leading-[1.78] mb-12"
+            className="font-secondary text-navy leading-[1.78] mb-12"
             style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)', maxWidth: '56ch' }}
           >
             {tE('description')}
@@ -237,7 +237,7 @@ export default async function ServiciosReserva() {
 
           {/* Subtitle */}
           <p
-            className="font-secondarytext-cream/55 leading-[1.75] mb-14"
+            className="font-secondary text-cream leading-[1.75] mb-14"
             style={{ fontSize: 'clamp(1rem, 1.25vw, 1.1rem)', maxWidth: '50ch' }}
           >
             {tR('body')}
@@ -277,7 +277,7 @@ export default async function ServiciosReserva() {
               href="https://wa.me/34644817835"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border border-cream/30 text-cream hover:border-cream hover:bg-cream/10 transition-colors duration-300 font-neue uppercase tracking-widest px-10 py-4"
+              className="group inline-flex items-center gap-3 border border-cream text-cream hover:border-cream hover:bg-cream transition-colors duration-300 font-neue uppercase tracking-widest px-10 py-4"
               style={{ fontSize: '11px', letterSpacing: '0.22em' }}
             >
               {/* WhatsApp SVG icon */}

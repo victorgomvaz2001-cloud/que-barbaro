@@ -177,7 +177,7 @@ export default function ServiciosMaquillaje() {
 
             {/* Eyebrow */}
             <p
-              className="maq-header-0 font-neue uppercase tracking-[0.3em] text-cream/40 mb-4"
+              className="maq-header-0 font-neue uppercase tracking-[0.3em] text-cream mb-4"
               style={{ fontSize: 'clamp(0.6rem, 0.8vw, 0.7rem)' }}
             >
               {t('eyebrow')}
@@ -186,7 +186,7 @@ export default function ServiciosMaquillaje() {
             {/* Title */}
             <h2
               id="maquillaje-title"
-              className="maq-header-1 font-primary uppercase text-cream leading-[0.88] tracking-tight"
+              className="maq-header-1 font-primary uppercase text-cream leading-[0.88] tracking-[0.04em]"
               style={{ fontSize: 'clamp(3rem, 9vw, 8rem)' }}
             >
               {t('title')}
@@ -202,7 +202,7 @@ export default function ServiciosMaquillaje() {
 
             {/* Intro */}
             <p
-              className="maq-header-2 font-secondarytext-cream leading-relaxed"
+              className="maq-header-2 font-secondary text-cream leading-relaxed"
               style={{
                 fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
                 maxWidth: '52ch',
@@ -246,7 +246,7 @@ export default function ServiciosMaquillaje() {
                   />
                   {/* Index number ghost */}
                   <span
-                    className="absolute bottom-4 left-5 font-primary text-cream/20 leading-none select-none pointer-events-none"
+                    className="absolute bottom-4 left-5 font-secondary text-cream/20 leading-none select-none pointer-events-none"
                     style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}
                     aria-hidden="true"
                   >

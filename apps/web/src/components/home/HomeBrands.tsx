@@ -126,7 +126,7 @@ export default async function HomeBrands({ backgroundImage }: HomeBrandsProps) {
                 />
               </div>
             </div>
-            <p className="font-neue uppercase text-[clamp(0.65rem,0.8vw,0.75rem)] text-cream/85 text-center tracking-[0.2em]">
+            <p className="font-neue uppercase text-[clamp(0.65rem,0.8vw,0.75rem)] text-cream text-center tracking-[0.2em]">
               {brand.phrase}
             </p>
           </div>

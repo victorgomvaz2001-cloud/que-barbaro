@@ -67,13 +67,13 @@ export default async function BlogPage() {
           </>
         )}
         <div className="relative z-10 mx-auto max-w-7xl">
-          <p className="mb-4 font-neue text-xs uppercase tracking-[0.25em] text-white/50">
+          <p className="mb-4 font-neue text-xs uppercase tracking-[0.25em] text-white">
             {t('eyebrow')}
           </p>
           <h1 className="font-primary max-w-3xl text-4xl uppercase tracking-wide text-white md:text-6xl">
             {t('heroTitle')}
           </h1>
-          <p className="mt-6 max-w-xl font-neue text-sm leading-relaxed text-white/70">
+          <p className="mt-6 max-w-xl font-neue text-md leading-relaxed text-white">
             {t('heroDescription')}
           </p>
         </div>
