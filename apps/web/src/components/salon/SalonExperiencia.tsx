@@ -111,7 +111,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(160deg, rgba(1,10,73,0.92) 0%, rgba(1,10,73,0.78) 55%, rgba(1,10,73,0.88) 100%)',
+              'rgba(0,0,0,0.2)',
           }}
           aria-hidden
         />
@@ -157,8 +157,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
               className="font-primary uppercase leading-[0.9] tracking-[0.08em]"
               style={{
                 fontSize: 'clamp(3rem, 7.5vw, 6.5rem)',
-                color: 'transparent',
-                WebkitTextStroke: '3px white',
+                color: 'cream',
                 ...fadeUp(visible, 230),
               }}
             >
