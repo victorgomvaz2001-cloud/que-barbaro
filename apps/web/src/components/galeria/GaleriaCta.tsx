@@ -20,7 +20,7 @@ export default async function GaleriaCta({ backgroundImage }: GaleriaCtaProps) {
             style={{ backgroundImage: `url("${backgroundImage}")`, opacity: 0.5 }}
             aria-hidden
           />
-          <div className="absolute inset-0 pointer-events-none bg-black/30" aria-hidden />
+          <div className="absolute inset-0 pointer-events-none bg-black/20" aria-hidden />
         </>
       )}
 
