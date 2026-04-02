@@ -179,7 +179,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
 
           {/* Body paragraph */}
           <p
-            className="font-secondary text-cream/70 leading-relaxed max-w-2xl mb-8"
+            className="font-secondary text-cream leading-relaxed max-w-2xl mb-8"
             style={{
               fontSize: 'clamp(1rem, 1.35vw, 1.15rem)',
               ...fadeUp(visible, 340),
@@ -194,7 +194,7 @@ export default function SalonExperiencia({ backgroundImage }: SalonExperienciaPr
             style={fadeUp(visible, 460)}
           >
             <p
-              className="font-secondary italic text-cream text-center mx-auto"
+              className="font-secondarytext-cream text-center mx-auto"
               style={{
                 fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)',
                 lineHeight: 1.45,

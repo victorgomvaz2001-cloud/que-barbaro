@@ -83,7 +83,7 @@ export default function FaqSection() {
             href="https://wa.me/34644817835"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-neue text-[clamp(0.9rem,1.3vw,1.05rem)] text-navy/50 hover:text-orange transition-colors duration-200 inline-flex items-center gap-2"
+            className="font-neue text-[clamp(0.9rem,1.3vw,1.05rem)] text-navy hover:text-orange transition-colors duration-200 inline-flex items-center gap-2"
           >
             {t('cta')}
           </a>

@@ -77,7 +77,7 @@ export default async function GaleriaCta({ backgroundImage }: GaleriaCtaProps) {
 
         {/* Description */}
         <p
-          className="font-secondary italic text-cream/55 leading-relaxed mb-14"
+          className="font-secondarytext-cream/55 leading-relaxed mb-14"
           style={{
             fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
             maxWidth: '50ch',

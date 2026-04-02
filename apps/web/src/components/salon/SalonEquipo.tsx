@@ -264,7 +264,7 @@ export default function SalonEquipo() {
           />
 
           <p
-            className="font-secondary italic text-navy/55 leading-relaxed"
+            className="font-secondarytext-navy/55 leading-relaxed"
             style={{
               fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
               maxWidth: '52ch',

@@ -66,7 +66,7 @@ export default async function CtaSection({ backgroundImage }: CtaSectionProps) {
             >
               {t('h2')}
             </h2>
-            <p className="mt-5 font-neue text-cream/50 uppercase tracking-[0.2em] text-[11px]">
+            <p className="mt-5 font-neuetext-cream uppercase tracking-[0.2em] text-[11px]">
               {t('subtitle')}
             </p>
           </div>
@@ -96,7 +96,7 @@ export default async function CtaSection({ backgroundImage }: CtaSectionProps) {
                 <span className="font-primary uppercase text-cream text-[clamp(0.9rem,2.5vw,1.25rem)] tracking-wide leading-none font-bold">
                   {channel.label}
                 </span>
-                <span className="font-neue font-medium text-cream/60 text-[11px] uppercase tracking-[0.2em] leading-none">
+                <span className="font-neue font-medium text-cream text-[11px] uppercase tracking-[0.2em] leading-none">
                   {channel.sublabel}
                 </span>
               </a>
@@ -121,7 +121,7 @@ export default async function CtaSection({ backgroundImage }: CtaSectionProps) {
               rel="noopener noreferrer"
               className={[
                 'flex-1 flex flex-col items-center justify-center gap-1 py-3',
-                'text-cream/60 transition-colors duration-200 active:bg-cream/10',
+                'text-cream transition-colors duration-200 active:bg-cream/10',
                 channel.id === 'whatsapp' ? 'hover:text-[#25D366]' : 'hover:text-cream',
               ].join(' ')}
               aria-label={`${channel.label} - ${channel.sublabel}`}

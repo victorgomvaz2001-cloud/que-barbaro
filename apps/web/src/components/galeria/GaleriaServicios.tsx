@@ -49,13 +49,13 @@ function Lightbox({
       onClick={onClose}
     >
       {/* Counter */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 font-neue text-cream/60 text-xs uppercase tracking-[0.2em]">
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 font-neue text-cream text-xs uppercase tracking-[0.2em]">
         {index + 1} {t('of')} {photos.length}
       </div>
 
       {/* Close */}
       <button
-        className="absolute top-4 right-5 text-cream/60 hover:text-cream text-2xl leading-none transition-colors"
+        className="absolute top-4 right-5 text-cream hover:text-cream text-2xl leading-none transition-colors"
         onClick={onClose}
         aria-label="Cerrar"
       >
@@ -64,7 +64,7 @@ function Lightbox({
 
       {/* Prev */}
       <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center text-cream/60 hover:text-cream transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center text-cream hover:text-cream transition-colors"
         onClick={(e) => { e.stopPropagation(); prev() }}
         aria-label="Anterior"
       >
@@ -91,7 +91,7 @@ function Lightbox({
 
       {/* Next */}
       <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center text-cream/60 hover:text-cream transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center text-cream hover:text-cream transition-colors"
         onClick={(e) => { e.stopPropagation(); next() }}
         aria-label="Siguiente"
       >

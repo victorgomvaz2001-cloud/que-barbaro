@@ -52,7 +52,7 @@ function Lightbox({
         {/* Category label */}
         {photo.category && (
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-            <span className="font-neue uppercase tracking-[0.22em] text-cream/50 text-[10px]">
+            <span className="font-neue uppercase tracking-[0.22em]text-cream text-[10px]">
               {photo.category}
             </span>
           </div>
@@ -61,7 +61,7 @@ function Lightbox({
 
       {/* Close button */}
       <button
-        className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 flex items-center justify-center text-cream/60 hover:text-cream transition-colors duration-200"
+        className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 flex items-center justify-center text-cream hover:text-cream transition-colors duration-200"
         onClick={onClose}
         aria-label="Cerrar"
       >
@@ -74,7 +74,7 @@ function Lightbox({
       {/* Prev button */}
       {index > 0 && (
         <button
-          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-cream/60 hover:text-cream transition-colors duration-200"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-cream hover:text-cream transition-colors duration-200"
           onClick={(e) => { e.stopPropagation(); onPrev() }}
           aria-label="Anterior"
         >
@@ -87,7 +87,7 @@ function Lightbox({
       {/* Next button */}
       {index < photos.length - 1 && (
         <button
-          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-cream/60 hover:text-cream transition-colors duration-200"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-cream hover:text-cream transition-colors duration-200"
           onClick={(e) => { e.stopPropagation(); onNext() }}
           aria-label="Siguiente"
         >

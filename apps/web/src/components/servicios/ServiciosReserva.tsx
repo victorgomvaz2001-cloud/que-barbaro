@@ -62,7 +62,7 @@ export default async function ServiciosReserva() {
 
           {/* Description */}
           <p
-            className="font-secondary italic text-navy/60 leading-[1.78] mb-12"
+            className="font-secondarytext-navy/60 leading-[1.78] mb-12"
             style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)', maxWidth: '56ch' }}
           >
             {tE('description')}
@@ -237,7 +237,7 @@ export default async function ServiciosReserva() {
 
           {/* Subtitle */}
           <p
-            className="font-secondary italic text-cream/55 leading-[1.75] mb-14"
+            className="font-secondarytext-cream/55 leading-[1.75] mb-14"
             style={{ fontSize: 'clamp(1rem, 1.25vw, 1.1rem)', maxWidth: '50ch' }}
           >
             {tR('body')}

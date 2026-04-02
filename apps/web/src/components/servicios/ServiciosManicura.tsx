@@ -123,7 +123,7 @@ function ServiceCard({
 
         {/* Description */}
         <p
-          className="font-secondary italic text-navy/60 leading-relaxed mb-5"
+          className="font-secondarytext-navy/60 leading-relaxed mb-5"
           style={{
             fontSize: 'clamp(0.875rem, 1.1vw, 0.975rem)',
             maxWidth: '34ch',
@@ -248,7 +248,7 @@ export default function ServiciosManicura() {
 
           {/* Intro */}
           <p
-            className="font-secondary italic text-navy/55 leading-relaxed"
+            className="font-secondarytext-navy/55 leading-relaxed"
             style={{
               fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
               maxWidth: '52ch',

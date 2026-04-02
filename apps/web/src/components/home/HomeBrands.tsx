@@ -80,7 +80,7 @@ export default async function HomeBrands({ backgroundImage }: HomeBrandsProps) {
       {/* ── Eyebrow label ───────────────────────────────────────────── */}
       <div className="relative z-10 flex items-center gap-5 px-8 md:px-20 pt-20">
         <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(246,244,241,0.3))' }} />
-        <p className="font-neue text-[9px] uppercase tracking-[0.45em] text-cream/55 shrink-0">
+        <p className="font-neue text-[9px] uppercase tracking-[0.45em] text-cream shrink-0">
           {t('eyebrow')}
         </p>
         <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(246,244,241,0.3))' }} />

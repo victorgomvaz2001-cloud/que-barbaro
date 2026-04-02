@@ -186,7 +186,7 @@ export default function ServiciosColor() {
 
             {/* Intro */}
             <p
-              className="color-intro font-secondary italic leading-relaxed"
+              className="color-intro font-secondaryleading-relaxed"
               style={{
                 fontSize: 'clamp(0.95rem, 1.25vw, 1.1rem)',
                 color: 'rgba(246, 244, 241, 0.6)',
@@ -264,7 +264,7 @@ export default function ServiciosColor() {
 
                     {/* Description */}
                     <p
-                      className="font-secondary italic leading-relaxed"
+                      className="font-secondaryleading-relaxed"
                       style={{
                         fontSize: 'clamp(0.85rem, 1.05vw, 0.95rem)',
                         color: 'rgba(246, 244, 241, 0.6)',

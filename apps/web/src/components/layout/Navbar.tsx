@@ -150,7 +150,7 @@ export default function Navbar() {
               key={sub.key}
               href={`/servicios#${sub.anchor}`}
               onClick={() => setServiciosOpen(false)}
-              className="font-secondary whitespace-nowrap text-[11px] uppercase tracking-[0.12em] text-cream/70 hover:text-cream transition-colors duration-150"
+              className="font-secondary whitespace-nowrap text-[11px] uppercase tracking-[0.12em] text-cream hover:text-cream transition-colors duration-150"
             >
               {tServices(sub.key)}
             </Link>

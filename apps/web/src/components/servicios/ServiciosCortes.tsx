@@ -112,7 +112,7 @@ function ServiceRow({
             className="font-secondary leading-[1.72] max-w-[52ch]"
             style={{
               fontSize: 'clamp(0.9rem, 1.1vw, 1rem)',
-              color: 'rgba(1,10,73,0.58)',
+              color: 'rgba(1,10,73,1)',
             }}
           >
             {service.desc}
@@ -240,7 +240,7 @@ export default function ServiciosCortes() {
 
           {/* Intro paragraph */}
           <p
-            className="font-secondary text-navy/65 leading-[1.8] max-w-[62ch]"
+            className="font-secondary text-navy leading-[1.8] max-w-[62ch]"
             style={{
               fontSize: 'clamp(1rem, 1.2vw, 1.1rem)',
               ...headerStyle(320),
@@ -265,7 +265,7 @@ export default function ServiciosCortes() {
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/50 to-transparent px-4 py-3">
-                <span className="font-neue uppercase text-[9px] tracking-[0.18em] text-cream/70">
+                <span className="font-neue uppercase text-[9px] tracking-[0.18em] text-cream">
                   {label}
                 </span>
               </div>

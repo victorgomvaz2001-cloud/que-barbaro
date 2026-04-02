@@ -126,7 +126,7 @@ export default function ServiciosHero({ backgroundImage }: ServiciosHeroProps) {
           {/* Body + location suffix */}
           <div className={`hero-animate hero-item-3 flex flex-col gap-3 md:flex-row md:items-end md:gap-12`}>
             <p
-              className={`font-secondary italic leading-relaxed ${backgroundImage ? 'text-cream/70' : 'text-navy/60'}`}
+              className={`font-secondaryleading-relaxed ${backgroundImage ? 'text-cream' : 'text-navy'}`}
               style={{
                 fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
                 maxWidth: '55ch',
@@ -136,7 +136,7 @@ export default function ServiciosHero({ backgroundImage }: ServiciosHeroProps) {
             </p>
 
             <span
-              className={`shrink-0 font-neue uppercase tracking-[0.18em] pb-[2px] ${backgroundImage ? 'text-cream/30' : 'text-navy/30'}`}
+              className={`shrink-0 font-neue uppercase tracking-[0.18em] pb-[2px] ${backgroundImage ? 'text-cream' : 'text-navy'}`}
               style={{ fontSize: 'clamp(0.6rem, 0.8vw, 0.7rem)' }}
               aria-hidden="true"
             >

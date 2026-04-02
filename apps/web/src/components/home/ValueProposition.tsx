@@ -21,17 +21,17 @@ export default async function ValueProposition({ backgroundImage }: ValueProposi
       )}
       <div className="relative z-10 mx-auto max-w-6xl px-8 py-24 md:py-32">
 
-        {/* ── Top row: H2 left + body right ─────────────────────────────── */}
-        <div className="flex flex-col md:flex-row md:items-end gap-10 md:gap-20">
+        {/* ── Header: Título arriba + body debajo ───────────────────────── */}
+        <div className="flex flex-col items-start gap-6 md:gap-8">
 
           <h2
-            className="flex-1 font-primary text-[clamp(2.8rem,6vw,5rem)] leading-[1] tracking-[0.04em] text-cream uppercase"
+            className="font-primary text-[clamp(2.8rem,6vw,5rem)] leading-[1] tracking-[0.04em] text-cream uppercase"
             style={{ whiteSpace: 'pre-line' }}
           >
             {t('h2')}
           </h2>
 
-          <p className="flex-1 font-secondary text-[clamp(1rem,1.4vw,1.175rem)] leading-[1.75] text-cream/70 md:pb-2">
+          <p className="font-secondary text-[clamp(1rem,1.4vw,1.175rem)] leading-[1.75] text-cream md:pb-2 max-w-[52ch]">
             {t('body')}
           </p>
 
@@ -55,7 +55,7 @@ export default async function ValueProposition({ backgroundImage }: ValueProposi
             <h3 className="font-primary text-[clamp(1.5rem,2.5vw,2rem)] leading-[1] tracking-[0.05em] text-cream uppercase">
               {t('title1')}
             </h3>
-            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
+            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream uppercase">
               {t('desc1')}
             </p>
           </div>
@@ -74,7 +74,7 @@ export default async function ValueProposition({ backgroundImage }: ValueProposi
             <h3 className="font-primary text-[clamp(1.5rem,2.5vw,2rem)] leading-[1] tracking-[0.05em] text-cream uppercase">
               {t('title2')}
             </h3>
-            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
+            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream uppercase">
               {t('desc2')}
             </p>
           </div>
@@ -90,7 +90,7 @@ export default async function ValueProposition({ backgroundImage }: ValueProposi
             <h3 className="font-primary text-[clamp(1.5rem,2.5vw,2rem)] leading-[1] tracking-[0.05em] text-cream uppercase">
               {t('title3')}
             </h3>
-            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream/60 uppercase">
+            <p className="font-neue text-[0.8rem] leading-[1.6] tracking-wide text-cream uppercase">
               {t('desc3')}
             </p>
           </div>

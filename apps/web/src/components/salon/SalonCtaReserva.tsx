@@ -84,10 +84,9 @@ export default async function SalonCtaReserva({ backgroundImage }: SalonCtaReser
 
         {/* Subtitle */}
         <p
-          className="font-secondary italic text-cream leading-relaxed mb-14"
+          className="font-secondary text-cream leading-relaxed mb-14"
           style={{
             fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
-            opacity: 0.55,
             maxWidth: '50ch',
           }}
         >
@@ -128,7 +127,6 @@ export default async function SalonCtaReserva({ backgroundImage }: SalonCtaReser
         {/* Bottom label - location whisper */}
         <p
           className="mt-10 font-neue uppercase tracking-[0.3em] text-cream text-[9px]"
-          style={{ opacity: 0.3 }}
         >
           {t('location')}
         </p>

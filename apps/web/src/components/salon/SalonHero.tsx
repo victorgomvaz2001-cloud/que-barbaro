@@ -157,7 +157,7 @@ export default function SalonHero({ backgroundImage }: SalonHeroProps) {
 
         {/* Body text */}
         <p
-          className="font-secondary italic text-cream/65 leading-relaxed max-w-lg"
+          className="font-secondary text-cream leading-relaxed max-w-lg"
           style={{
             fontSize: 'clamp(0.95rem, 1.35vw, 1.1rem)',
             ...anim(visible, 620, mounted),

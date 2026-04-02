@@ -84,7 +84,7 @@ export default async function ReservarCitaPage() {
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               WhatsApp
             </p>
-            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream">
               Mensaje directo
             </p>
           </div>
@@ -124,7 +124,7 @@ export default async function ReservarCitaPage() {
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               Instagram
             </p>
-            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream">
               Perfil oficial
             </p>
           </div>
@@ -158,7 +158,7 @@ export default async function ReservarCitaPage() {
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               TikTok
             </p>
-            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream">
               Perfil oficial
             </p>
           </div>
@@ -210,7 +210,7 @@ export default async function ReservarCitaPage() {
             <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
               Booksy
             </p>
-            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+            <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream">
               Reserva online
             </p>
           </div>

@@ -43,7 +43,7 @@ export default function TreatwellCard({ className = '' }: { className?: string }
         <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
           Treatwell
         </p>
-        <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream/60">
+        <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream">
           Reserva online
         </p>
       </div>

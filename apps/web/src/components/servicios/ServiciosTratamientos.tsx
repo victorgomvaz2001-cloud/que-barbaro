@@ -124,7 +124,7 @@ function ServiceCard({
 
       {/* Description */}
       <p
-        className="font-secondary italic text-navy/60 leading-relaxed flex-1 mb-6"
+        className="font-secondarytext-navy/60 leading-relaxed flex-1 mb-6"
         style={{ fontSize: 'clamp(0.9rem, 1.2vw, 1.02rem)', maxWidth: '36ch' }}
       >
         {service.desc}
@@ -255,9 +255,9 @@ export default function ServiciosTratamientos() {
             </h2>
           </div>
 
-          {/* Italic intro note */}
+          {/*intro note */}
           <p
-            className="font-secondary italic text-navy/50 mb-6 leading-relaxed"
+            className="font-secondarytext-navy/50 mb-6 leading-relaxed"
             style={{
               fontSize: 'clamp(0.9rem, 1.3vw, 1.05rem)',
               maxWidth: '50ch',

@@ -341,7 +341,7 @@ export default function SalonMarcas() {
                     {brand.products.map((product) => (
                       <span
                         key={product}
-                        className="font-neue uppercase text-cream/50 border border-cream/15 px-3 py-1"
+                        className="font-neue uppercasetext-cream border border-cream/15 px-3 py-1"
                         style={{
                           fontSize: 'clamp(0.55rem, 0.7vw, 0.64rem)',
                           letterSpacing: '0.18em',
@@ -355,7 +355,7 @@ export default function SalonMarcas() {
 
                 {/* Description */}
                 <p
-                  className="font-secondary italic text-cream/65 leading-relaxed"
+                  className="font-secondarytext-cream/65 leading-relaxed"
                   style={{
                     fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
                     maxWidth: '34ch',

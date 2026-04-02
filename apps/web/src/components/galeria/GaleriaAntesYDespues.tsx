@@ -123,7 +123,7 @@ function FlipCard({
       </div>
 
       {/* Service label */}
-      <p className="text-center font-neue uppercase tracking-[0.2em] text-cream/50 text-[10px] mt-3">
+      <p className="text-center font-neue uppercase tracking-[0.2em]text-cream text-[10px] mt-3">
         {pair.pairLabel}
       </p>
     </div>

@@ -114,7 +114,7 @@ export default function GaleriaEspacio() {
 
           {/* Description */}
           <p
-            className="font-secondary italic text-navy/55 leading-relaxed mt-4"
+            className="font-secondarytext-navy/55 leading-relaxed mt-4"
             style={{
               fontSize: 'clamp(1rem, 1.3vw, 1.1rem)',
               maxWidth: '48ch',

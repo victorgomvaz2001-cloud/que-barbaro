@@ -129,7 +129,7 @@ export default function GaleriaEventos() {
 
             {/* Description */}
             <p
-              className="font-secondary italic text-cream/65 leading-relaxed mt-6"
+              className="font-secondarytext-cream/65 leading-relaxed mt-6"
               style={{
                 fontSize: 'clamp(1rem, 1.2vw, 1.05rem)',
                 maxWidth: '40ch',
@@ -188,7 +188,7 @@ export default function GaleriaEventos() {
                 />
               )}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/50 to-transparent px-4 py-3">
-                <span className="font-neue uppercase text-[9px] tracking-[0.15em] text-cream/70">
+                <span className="font-neue uppercase text-[9px] tracking-[0.15em] text-cream">
                   {heroImg?.alt}
                 </span>
               </div>
@@ -209,7 +209,7 @@ export default function GaleriaEventos() {
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/50 to-transparent px-4 py-3">
-                  <span className="font-neue uppercase text-[9px] tracking-[0.15em] text-cream/70">
+                  <span className="font-neue uppercase text-[9px] tracking-[0.15em] text-cream">
                     {img.alt}
                   </span>
                 </div>

@@ -202,7 +202,7 @@ export default function ServiciosMaquillaje() {
 
             {/* Intro */}
             <p
-              className="maq-header-2 font-secondary italic text-cream/60 leading-relaxed"
+              className="maq-header-2 font-secondarytext-cream leading-relaxed"
               style={{
                 fontSize: 'clamp(0.9rem, 1.2vw, 1.05rem)',
                 maxWidth: '52ch',
@@ -280,7 +280,7 @@ export default function ServiciosMaquillaje() {
 
                   {/* Description */}
                   <p
-                    className="font-secondary text-cream/60 leading-relaxed flex-1"
+                    className="font-secondary text-cream leading-relaxed flex-1"
                     style={{ fontSize: 'clamp(0.85rem, 1.1vw, 0.95rem)' }}
                   >
                     {service.desc}
