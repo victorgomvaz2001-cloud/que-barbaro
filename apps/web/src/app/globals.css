@@ -9,6 +9,17 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-003E, U+0040-00BE, U+00C0-FFFF; /* excluye U+003F (?) y U+00BF (¿) — usan Minion Pro */
+}
+
+/* Minion Pro - interrogantes (siempre Regular, para no engrosar) */
+@font-face {
+  font-family: 'Minion Pro';
+  src: url('/fonts/MinionPro-Regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+003F, U+00BF; /* ? y ¿ */
 }
 
 /* Minion Pro - body/secondary */
@@ -109,6 +120,8 @@
 .prose-blog > * + * { margin-top: 1.5rem; }
 .prose-blog h1, .prose-blog h2, .prose-blog h3, .prose-blog h4 {
   font-family: 'Mahek Demo', Georgia, serif;
+  font-weight: 400;
+  font-synthesis: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: rgb(1, 10, 73);
