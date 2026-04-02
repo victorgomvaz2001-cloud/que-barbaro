@@ -95,3 +95,13 @@ export async function bulkRemove(req: Request, res: Response, next: NextFunction
     next(err)
   }
 }
+
+export async function bulkAssignCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const { ids, category } = req.body as { ids: string[]; category: string }
+    await blogService.bulkAssignCategory(ids, category)
+    res.status(204).send()
+  } catch (err) {
+    next(err)
+  }
+}

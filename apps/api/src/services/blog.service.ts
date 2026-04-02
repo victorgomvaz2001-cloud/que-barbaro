@@ -82,6 +82,10 @@ export class BlogService {
   async bulkDelete(ids: string[]) {
     await Blog.deleteMany({ _id: { $in: ids } })
   }
+
+  async bulkAssignCategory(ids: string[], category: string) {
+    await Blog.updateMany({ _id: { $in: ids } }, { category })
+  }
 }
 
 export const blogService = new BlogService()

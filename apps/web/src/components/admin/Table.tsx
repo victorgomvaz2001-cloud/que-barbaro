@@ -29,6 +29,8 @@ export interface TableProps<T extends object> {
   keyField?: string
   /** When provided, adds bulk delete support with checkboxes */
   onBulkDelete?: (ids: string[]) => Promise<void>
+  /** Additional bulk actions shown when rows are selected */
+  bulkActions?: { label: string; className?: string; onClick: (ids: string[]) => Promise<void> }[]
 }
 
 const PAGE_SIZES = [10, 25, 50] as const
@@ -182,6 +184,7 @@ export function Table<T extends object>({
   exportFileName = 'export',
   keyField = '_id',
   onBulkDelete,
+  bulkActions,
 }: TableProps<T>) {
   const [sortKey, setSortKey] = useState<string | null>(null)
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
@@ -223,13 +226,19 @@ export function Table<T extends object>({
     setPage(1)
   }
 
-  const colCount = columns.length + (actions ? 1 : 0) + (onBulkDelete ? 1 : 0)
+  const hasBulkCheckboxes = !!(onBulkDelete || bulkActions?.length)
+  const colCount = columns.length + (actions ? 1 : 0) + (hasBulkCheckboxes ? 1 : 0)
   const from = sorted.length === 0 ? 0 : (safePage - 1) * pageSize + 1
   const to = Math.min(safePage * pageSize, sorted.length)
 
   const allPaginatedSelected =
     paginated.length > 0 &&
     paginated.every((r) => selectedIds.has(coerce(getValue(r as Record<string, unknown>, keyField))))
+
+  async function runBulkAction(onClick: (ids: string[]) => Promise<void>) {
+    await onClick([...selectedIds])
+    setSelectedIds(new Set())
+  }
 
   return (
     <div className="space-y-3">
@@ -258,17 +267,27 @@ export function Table<T extends object>({
             <span className="hidden sm:inline text-gray-400">entries</span>
           </div>
 
-          {/* Bulk delete button */}
-          {onBulkDelete && selectedIds.size > 0 && (
-            <button
-              onClick={async () => {
-                await onBulkDelete([...selectedIds])
-                setSelectedIds(new Set())
-              }}
-              className="rounded bg-red-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-700 transition-colors"
-            >
-              Eliminar seleccionados ({selectedIds.size})
-            </button>
+          {/* Bulk action buttons */}
+          {selectedIds.size > 0 && (
+            <>
+              {onBulkDelete && (
+                <button
+                  onClick={() => runBulkAction(onBulkDelete)}
+                  className="rounded bg-red-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-red-700 transition-colors"
+                >
+                  Eliminar seleccionados ({selectedIds.size})
+                </button>
+              )}
+              {bulkActions?.map((action) => (
+                <button
+                  key={action.label}
+                  onClick={() => runBulkAction(action.onClick)}
+                  className={action.className ?? 'rounded bg-blue-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-700 transition-colors'}
+                >
+                  {action.label} ({selectedIds.size})
+                </button>
+              ))}
+            </>
           )}
         </div>
 
@@ -303,7 +322,7 @@ export function Table<T extends object>({
           <table className="w-full text-sm">
             <thead className="bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
               <tr>
-                {onBulkDelete && (
+                {hasBulkCheckboxes && (
                   <th className="w-8 px-3 py-3">
                     <input
                       type="checkbox"
@@ -360,7 +379,7 @@ export function Table<T extends object>({
                       key={rowKey}
                       className="transition-colors hover:bg-blue-50/50"
                     >
-                      {onBulkDelete && (
+                      {hasBulkCheckboxes && (
                         <td className="w-8 px-3 py-3" onClick={(e) => e.stopPropagation()}>
                           <input
                             type="checkbox"
@@ -414,7 +433,7 @@ export function Table<T extends object>({
                   key={rowKey}
                   className="p-4 transition-colors hover:bg-blue-50/50"
                 >
-                  {onBulkDelete && (
+                  {hasBulkCheckboxes && (
                     <div className="mb-2" onClick={(e) => e.stopPropagation()}>
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input
