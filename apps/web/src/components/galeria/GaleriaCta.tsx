@@ -10,7 +10,7 @@ export default async function GaleriaCta({ backgroundImage }: GaleriaCtaProps) {
 
   return (
     <section
-      className="relative w-full bg-navy overflow-hidden py-32"
+      className="relative w-full bg-black overflow-hidden py-32"
       aria-label={t('cta.title')}
     >
       {backgroundImage && (
