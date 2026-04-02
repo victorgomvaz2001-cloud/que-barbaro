@@ -119,14 +119,6 @@ export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps)
 
       </div>
 
-      {/* ── Bottom fade into cream ────────────────────────────────────────── */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-24 pointer-events-none z-20"
-        style={{
-          background: 'linear-gradient(to bottom, transparent 0%, #F6F4F1 100%)',
-        }}
-        aria-hidden
-      />
     </section>
   )
 }

@@ -29,10 +29,23 @@ export default async function ServiciosReserva() {
       ══════════════════════════════════════════════════════════════════════ */}
       <section
         id="eventos"
-        className="w-full bg-cream py-16 md:py-24"
+        className="relative w-full bg-cream overflow-hidden py-16 md:py-24"
         aria-labelledby="eventos-title"
       >
-        <div className="max-w-[1680px] mx-auto px-8 md:px-16 lg:px-24">
+        {/* ── Background image ──────────────────────────────────────────── */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/venusycupido.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.12,
+            zIndex: 0,
+          }}
+        />
+        <div className="relative z-10 max-w-[1680px] mx-auto px-8 md:px-16 lg:px-24">
 
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-5">
@@ -165,38 +178,13 @@ export default async function ServiciosReserva() {
       ══════════════════════════════════════════════════════════════════════ */}
       <section
         id="reservar"
-        className="relative w-full bg-navy overflow-hidden py-32"
+        className="relative w-full bg-cream overflow-hidden py-32"
         aria-labelledby="reservar-title"
       >
-        {/* ── Background image ──────────────────────────────────────────── */}
+        {/* Ghost watermark - bottom-right, navy at 2.8% opacity */}
         <div
           aria-hidden="true"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: 'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/venusycupido.jpg")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.7,
-            zIndex: 0,
-          }}
-        />
-
-        {/* ── Black overlay ─────────────────────────────────────────────── */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'rgba(0,0,0,0.35)',
-            zIndex: 0,
-          }}
-        />
-
-        {/* Ghost watermark - bottom-right, cream at 2.8% opacity */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute bottom-0 right-0 font-primary text-cream leading-none"
+          className="pointer-events-none select-none absolute bottom-0 right-0 font-primary text-navy leading-none"
           style={{
             fontSize: 'clamp(10rem, 26vw, 26rem)',
             opacity: 0.028,
@@ -229,7 +217,7 @@ export default async function ServiciosReserva() {
           {/* Large title */}
           <h2
             id="reservar-title"
-            className="font-primary text-cream uppercase leading-[0.88] tracking-[0.04em] mb-8"
+            className="font-primary text-navy uppercase leading-[0.88] tracking-[0.04em] mb-8"
             style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
           >
             {tR('title')}
@@ -237,7 +225,7 @@ export default async function ServiciosReserva() {
 
           {/* Subtitle */}
           <p
-            className="font-secondary text-cream leading-[1.75] mb-14"
+            className="font-secondary text-navy leading-[1.75] mb-14"
             style={{ fontSize: 'clamp(1rem, 1.25vw, 1.1rem)', maxWidth: '50ch' }}
           >
             {tR('body')}
@@ -249,7 +237,7 @@ export default async function ServiciosReserva() {
             {/* Primary - Reservar cita */}
             <Link
               href="https://wa.me/34644817835"
-              className="group inline-flex items-center gap-3 bg-cream text-navy hover:bg-orange hover:text-cream transition-colors duration-300 font-neue uppercase tracking-widest px-12 py-4"
+              className="group inline-flex items-center gap-3 bg-navy text-cream hover:bg-orange hover:text-cream transition-colors duration-300 font-neue uppercase tracking-widest px-12 py-4"
               style={{ fontSize: '11px', letterSpacing: '0.22em' }}
             >
               {tR('buttonPrimary')}
@@ -277,7 +265,7 @@ export default async function ServiciosReserva() {
               href="https://wa.me/34644817835"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border border-cream text-cream hover:border-cream hover:bg-cream transition-colors duration-300 font-neue uppercase tracking-widest px-10 py-4"
+              className="group inline-flex items-center gap-3 border border-navy text-navy hover:bg-navy hover:text-cream hover:border-navy transition-colors duration-300 font-neue uppercase tracking-widest px-10 py-4"
               style={{ fontSize: '11px', letterSpacing: '0.22em' }}
             >
               {/* WhatsApp SVG icon */}
