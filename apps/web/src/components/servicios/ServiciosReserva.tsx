@@ -29,7 +29,7 @@ export default async function ServiciosReserva() {
       ══════════════════════════════════════════════════════════════════════ */}
       <section
         id="eventos"
-        className="relative w-full bg-cream overflow-hidden py-16 md:py-24"
+        className="relative w-full bg-navy overflow-hidden py-16 md:py-24"
         aria-labelledby="eventos-title"
       >
         {/* ── Background image ──────────────────────────────────────────── */}
@@ -41,11 +41,15 @@ export default async function ServiciosReserva() {
             backgroundImage: 'url("https://cavidas-que-barbaro.s3.eu-north-1.amazonaws.com/inicio/venusycupido.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.12,
             zIndex: 0,
           }}
         />
-        <div className="relative z-10 max-w-[1680px] mx-auto px-8 md:px-16 lg:px-24">
+        {/* ── Black overlay ─────────────────────────────────────────────── */}
+        <div
+          aria-hidden="true"
+          style={{ position: 'absolute', inset: 0, background: 'black', opacity: 0.3, zIndex: 1 }}
+        />
+        <div className="relative z-20 max-w-[1680px] mx-auto px-8 md:px-16 lg:px-24">
 
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-5">
@@ -64,7 +68,7 @@ export default async function ServiciosReserva() {
           {/* Title */}
           <h2
             id="eventos-title"
-            className="font-primary text-navy uppercase leading-[0.88] tracking-[0.04em] mb-5"
+            className="font-primary text-cream uppercase leading-[0.88] tracking-[0.04em] mb-5"
             style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)' }}
           >
             {tE('title')}
@@ -75,7 +79,7 @@ export default async function ServiciosReserva() {
 
           {/* Description */}
           <p
-            className="font-secondary text-navy leading-[1.78] mb-12"
+            className="font-secondary text-cream leading-[1.78] mb-12"
             style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)', maxWidth: '56ch' }}
           >
             {tE('description')}
@@ -151,7 +155,7 @@ export default async function ServiciosReserva() {
           {/* WhatsApp CTA */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <p
-              className="font-neue uppercase tracking-[0.18em] text-navy/40"
+              className="font-neue uppercase tracking-[0.18em] text-cream/60"
               style={{ fontSize: '10px' }}
             >
               {tE('cta')}
