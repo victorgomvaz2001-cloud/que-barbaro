@@ -18,16 +18,15 @@ export default function TreatwellCard({ className = '' }: { className?: string }
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className={`group relative flex flex-col items-center text-center gap-3 px-6 py-8 bg-cream transition-colors duration-300 hover:bg-navy ${className}`}
+      className={`group relative flex flex-col items-center text-center gap-3 px-6 py-8 bg-transparent border border-white transition-colors duration-300 hover:bg-white/10 ${className}`}
     >
-      <span className="absolute top-0 left-0 right-0 h-[3px] bg-orange" />
       {/* Calendar + checkmark icon */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="34" height="34"
         viewBox="0 0 24 24"
         fill="none"
-        className="text-orange transition-colors duration-300 group-hover:text-cream"
+        className="text-white"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -40,17 +39,17 @@ export default function TreatwellCard({ className = '' }: { className?: string }
         <polyline points="9 16 11 18 15 14" stroke="currentColor" />
       </svg>
       <div>
-        <p className="font-primary text-[1.3rem] leading-none tracking-wide text-navy transition-colors duration-300 group-hover:text-cream mb-1">
+        <p className="font-primary text-[1.3rem] leading-none tracking-wide text-white mb-1">
           Treatwell
         </p>
-        <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-navy/50 transition-colors duration-300 group-hover:text-cream">
+        <p className="font-neue text-[10px] tracking-[0.14em] uppercase text-white">
           Reserva online
         </p>
       </div>
-      <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-navy/70 transition-colors duration-300 group-hover:text-cream/80">
+      <p className="font-secondary font-semibold text-[12px] tracking-[0.08em] text-white">
         treatwell.es
       </p>
-      <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-navy/40 transition-colors duration-300 group-hover:text-cream/50 border-b border-current pb-px">
+      <span className="font-neue font-bold text-[9px] uppercase tracking-[0.2em] text-white border-b border-current pb-px">
         Reservar ahora →
       </span>
     </a>
