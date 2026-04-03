@@ -40,8 +40,8 @@ export function Modal({ open, title, description, onClose, actions, children }: 
       />
 
       {/* Panel */}
-      <div className="relative z-10 w-full max-w-md rounded-xl bg-white shadow-2xl">
-        <div className="p-6">
+      <div className="relative z-10 flex max-h-[90vh] w-full max-w-md flex-col rounded-xl bg-white shadow-2xl">
+        <div className="overflow-y-auto p-6">
           <h2 id="modal-title" className="text-base font-semibold text-gray-900">
             {title}
           </h2>
@@ -50,7 +50,7 @@ export function Modal({ open, title, description, onClose, actions, children }: 
           )}
           {children && <div className="mt-4">{children}</div>}
         </div>
-        <div className="flex justify-end gap-2 border-t border-gray-100 px-6 py-4">
+        <div className="flex shrink-0 justify-end gap-2 border-t border-gray-100 px-6 py-4">
           {actions}
         </div>
       </div>

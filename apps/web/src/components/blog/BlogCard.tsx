@@ -10,7 +10,7 @@ function formatDate(iso: string) {
   })
 }
 
-export default function BlogCard({ post }: { post: IBlogPost }) {
+export default function BlogCard({ post, hasBg = false }: { post: IBlogPost; hasBg?: boolean }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group flex flex-col">
       {/* Image - 16:9 */}
@@ -36,17 +36,17 @@ export default function BlogCard({ post }: { post: IBlogPost }) {
           </span>
         )}
 
-        <h3 className="font-secondary line-clamp-2 text-xl uppercase leading-snug tracking-wide text-navy group-hover:opacity-70 transition-opacity md:text-2xl">
+        <h3 className={`font-secondary line-clamp-2 text-xl uppercase leading-snug tracking-wide group-hover:opacity-70 transition-opacity md:text-2xl ${hasBg ? 'text-white' : 'text-navy'}`}>
           {post.title}
         </h3>
 
         {post.excerpt && (
-          <p className="mt-2 line-clamp-3 font-neue text-sm leading-relaxed text-navy">
+          <p className={`mt-2 line-clamp-3 font-neue text-sm leading-relaxed ${hasBg ? 'text-white' : 'text-navy'}`}>
             {post.excerpt}
           </p>
         )}
 
-        <div className="mt-auto flex items-center gap-2 pt-4 font-neue text-xs uppercase tracking-widest text-navy/40">
+        <div className={`mt-auto flex items-center gap-2 pt-4 font-neue text-xs uppercase tracking-widest ${hasBg ? 'text-white/70' : 'text-navy/40'}`}>
           {post.author && <span>{post.author}</span>}
           {post.author && <span>·</span>}
           <span>{formatDate(post.publishedAt)}</span>

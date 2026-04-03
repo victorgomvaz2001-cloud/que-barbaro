@@ -75,7 +75,7 @@ export default function CategoryCarousel({ title, description, posts, background
           >
             {posts.map((post) => (
               <div key={post._id} className="w-[300px] shrink-0 md:w-[340px]">
-                <BlogCard post={post} />
+                <BlogCard post={post} hasBg={hasBg} />
               </div>
             ))}
           </div>
