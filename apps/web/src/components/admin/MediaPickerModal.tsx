@@ -760,7 +760,7 @@ export function MediaPickerModal({
                           <img src={item.url} alt={filename(item.key)} className="h-full w-full object-cover" loading="lazy" />
                           <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-1.5 opacity-0 transition-opacity group-hover:opacity-100">
                             <p className="truncate text-[10px] text-white">{filename(item.key)}</p>
-                            <p className="text-[9px] text-white/70">{formatBytes(item.size)}</p>
+                            <p className="text-[9px] text-white">{formatBytes(item.size)}</p>
                           </div>
                           {isSelected && (
                             <div className="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900">

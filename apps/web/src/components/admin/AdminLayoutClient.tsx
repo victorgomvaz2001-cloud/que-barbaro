@@ -51,7 +51,7 @@ export function AdminLayoutClient({
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="flex items-center px-4 py-1.5 text-sm text-white/70 hover:bg-white/10 hover:text-white"
+                          className="flex items-center px-4 py-1.5 text-sm text-white hover:bg-white/10 hover:text-white"
                         >
                           {group.links.length > 1 && (
                             <span className="mr-2 text-white/20">–</span>

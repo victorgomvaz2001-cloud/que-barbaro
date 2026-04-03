@@ -226,7 +226,7 @@ function CategorySection({
             <div className="flex items-center gap-3 mb-4">
               <span className="block shrink-0 w-2 h-2 rounded-full bg-orange" aria-hidden="true" />
               <p
-                className={`font-neue uppercase tracking-[0.22em] ${hasBg ? 'text-white/70' : 'text-navy/50'}`}
+                className={`font-neue uppercase tracking-[0.22em] ${hasBg ? 'text-white' : 'text-navy/50'}`}
                 style={{ fontSize: 'clamp(0.6rem, 0.9vw, 0.75rem)' }}
               >
                 {photos.length} {t('photos')}
@@ -241,7 +241,7 @@ function CategorySection({
           </div>
           {description && (
             <p
-              className={`font-secondary leading-relaxed max-w-sm md:text-right ${hasBg ? 'text-white/70' : 'text-navy'}`}
+              className={`font-secondary leading-relaxed max-w-sm md:text-right ${hasBg ? 'text-white' : 'text-navy'}`}
               style={{ fontSize: 'clamp(0.85rem, 1.1vw, 0.95rem)' }}
             >
               {description}

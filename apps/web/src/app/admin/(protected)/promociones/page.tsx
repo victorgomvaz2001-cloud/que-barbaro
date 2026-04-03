@@ -533,7 +533,7 @@ export default function PromocionesPage() {
                   <p className="text-xs font-semibold text-white leading-tight line-clamp-1">
                     {promotion.title.es}
                   </p>
-                  <p className="text-[10px] text-white/70 leading-tight line-clamp-1">
+                  <p className="text-[10px] text-white leading-tight line-clamp-1">
                     {promotion.description.es}
                   </p>
                 </div>
