@@ -104,19 +104,6 @@ export default async function GaleriaHero({ backgroundImage }: GaleriaHeroProps)
           {t('hero.description')}
         </p>
 
-        {/* Scroll CTA */}
-        <Link
-          href="#galeria-grid"
-          className="inline-flex items-center gap-3 font-neue uppercase tracking-[0.22em] text-cream hover:text-cream transition-colors duration-200"
-          style={{ fontSize: '9px' }}
-        >
-          {t('hero.allCategories')}
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <line x1="7" y1="1" x2="7" y2="13" />
-            <polyline points="3 9 7 13 11 9" />
-          </svg>
-        </Link>
-
       </div>
 
     </section>

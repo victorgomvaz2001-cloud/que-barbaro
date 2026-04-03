@@ -6,6 +6,7 @@ export interface IBlogCategory {
   descriptionEs: string
   descriptionEn: string
   order: number
+  backgroundImage?: string
   createdAt: string
   updatedAt: string
 }

@@ -91,6 +91,7 @@ export default async function BlogPage() {
             title={locale === 'es' ? category.nameEs : category.nameEn}
             description={locale === 'es' ? category.descriptionEs : category.descriptionEn}
             posts={postsByCategory.get(category.slug) ?? []}
+            backgroundImage={category.backgroundImage}
           />
         ))
       )}

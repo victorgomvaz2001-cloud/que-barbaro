@@ -5,6 +5,7 @@ import { apiClient } from '@/lib/api-client'
 import { Button } from '@/components/admin/Button'
 import { useToast } from '@/components/admin/Toast'
 import { Modal } from '@/components/admin/Modal'
+import { MediaPickerModal } from '@/components/admin/MediaPickerModal'
 import type { ApiResponse, IBlogCategory, IBlogCategoryCreate } from '@falcanna/types'
 
 const inputCls = 'mt-1 w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
@@ -42,6 +43,8 @@ export default function AdminBlogCategoriasPage() {
   const [form, setForm] = useState<IBlogCategoryCreate>(EMPTY_FORM)
   const [slugManual, setSlugManual] = useState(false)
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
+  const [backgroundImage, setBackgroundImage] = useState('')
+  const [bgPickerOpen, setBgPickerOpen] = useState(false)
 
   useEffect(() => {
     fetchCategories()
@@ -59,6 +62,7 @@ export default function AdminBlogCategoriasPage() {
   function openCreate() {
     setEditTarget(null)
     setForm(EMPTY_FORM)
+    setBackgroundImage('')
     setSlugManual(false)
     setModalOpen(true)
   }
@@ -73,6 +77,7 @@ export default function AdminBlogCategoriasPage() {
       descriptionEn: cat.descriptionEn,
       order: cat.order,
     })
+    setBackgroundImage(cat.backgroundImage ?? '')
     setSlugManual(true)
     setModalOpen(true)
   }
@@ -92,12 +97,13 @@ export default function AdminBlogCategoriasPage() {
     }
     setSaving(true)
     try {
+      const payload = { ...form, backgroundImage: backgroundImage || '' }
       if (editTarget) {
-        const res = await apiClient.put<ApiResponse<IBlogCategory>>(`/categories/admin/${editTarget._id}`, form)
+        const res = await apiClient.put<ApiResponse<IBlogCategory>>(`/categories/admin/${editTarget._id}`, payload)
         setCategories((prev) => prev.map((c) => (c._id === editTarget._id ? res.data : c)))
         success('Categoría actualizada correctamente')
       } else {
-        const res = await apiClient.post<ApiResponse<IBlogCategory>>('/categories/admin', form)
+        const res = await apiClient.post<ApiResponse<IBlogCategory>>('/categories/admin', payload)
         setCategories((prev) => [...prev, res.data])
         success('Categoría creada correctamente')
       }
@@ -350,6 +356,27 @@ export default function AdminBlogCategoriasPage() {
               placeholder="Brief description of the category in English…"
             />
           </div>
+          <div>
+            <label className={labelCls}>Imagen de fondo</label>
+            {backgroundImage ? (
+              <div className="relative mt-1 overflow-hidden rounded border border-gray-200 bg-gray-50" style={{ height: '100px' }}>
+                <img src={backgroundImage} alt="Fondo" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/40 opacity-0 hover:opacity-100 transition-opacity">
+                  <button type="button" onClick={() => setBgPickerOpen(true)} className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-700 hover:bg-gray-100">Cambiar</button>
+                  <button type="button" onClick={() => setBackgroundImage('')} className="rounded bg-red-500 px-2 py-1 text-xs font-medium text-white hover:bg-red-600">Eliminar</button>
+                </div>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setBgPickerOpen(true)}
+                className="mt-1 flex w-full items-center justify-center gap-2 rounded border-2 border-dashed border-gray-200 py-4 text-sm text-gray-400 hover:border-blue-400 hover:text-blue-500 transition-colors"
+              >
+                + Seleccionar imagen de fondo
+              </button>
+            )}
+          </div>
+
           {editTarget && (
             <div className="w-24">
               <label className={labelCls}>Orden</label>
@@ -364,6 +391,16 @@ export default function AdminBlogCategoriasPage() {
           )}
         </div>
       </Modal>
+
+      {bgPickerOpen && (
+        <MediaPickerModal
+          open
+          folder="blog"
+          onClose={() => setBgPickerOpen(false)}
+          onSelect={(url) => { setBackgroundImage(url); setBgPickerOpen(false) }}
+          onSelectMultiple={(urls) => { if (urls[0]) setBackgroundImage(urls[0]); setBgPickerOpen(false) }}
+        />
+      )}
     </div>
   )
 }

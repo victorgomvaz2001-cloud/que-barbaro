@@ -8,10 +8,12 @@ interface Props {
   title: string
   description: string
   posts: IBlogPost[]
+  backgroundImage?: string
 }
 
-export default function CategoryCarousel({ title, description, posts }: Props) {
+export default function CategoryCarousel({ title, description, posts, backgroundImage }: Props) {
   const trackRef = useRef<HTMLDivElement>(null)
+  const hasBg = !!backgroundImage
 
   function scroll(direction: 'left' | 'right') {
     const track = trackRef.current
@@ -21,22 +23,31 @@ export default function CategoryCarousel({ title, description, posts }: Props) {
   }
 
   return (
-    <section className="border-b border-navy/10 px-8 py-14 md:px-12">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative border-b border-navy/10 px-8 py-14 md:px-12 overflow-hidden">
+      {hasBg && (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </>
+      )}
+      <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header row */}
         <div className="mb-8 flex items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <h2 className="font-primary text-3xl uppercase tracking-wide text-navy md:text-4xl">
+            <h2 className={`font-primary text-3xl uppercase tracking-wide md:text-4xl ${hasBg ? 'text-white' : 'text-navy'}`}>
               {title}
             </h2>
-            <p className="mt-2 font-neue text-sm leading-relaxed text-navy/50">{description}</p>
+            <p className={`mt-2 font-neue text-sm leading-relaxed ${hasBg ? 'text-white' : 'text-navy/50'}`}>{description}</p>
           </div>
           {/* Arrow buttons */}
           <div className="flex shrink-0 gap-2">
             <button
               onClick={() => scroll('left')}
               aria-label="Anterior"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/20 text-navy transition-colors hover:border-navy hover:bg-navy hover:text-white"
+              className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors ${hasBg ? 'border-white/50 text-white hover:border-white hover:bg-white hover:text-navy' : 'border-navy/20 text-navy hover:border-navy hover:bg-navy hover:text-white'}`}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M10 3L5 8l5 5" strokeLinecap="round" strokeLinejoin="round" />
@@ -45,7 +56,7 @@ export default function CategoryCarousel({ title, description, posts }: Props) {
             <button
               onClick={() => scroll('right')}
               aria-label="Siguiente"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/20 text-navy transition-colors hover:border-navy hover:bg-navy hover:text-white"
+              className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors ${hasBg ? 'border-white/50 text-white hover:border-white hover:bg-white hover:text-navy' : 'border-navy/20 text-navy hover:border-navy hover:bg-navy hover:text-white'}`}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M6 3l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />

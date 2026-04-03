@@ -11,6 +11,7 @@ const categorySchema = new Schema<ICategoryDocument>(
     descriptionEs: { type: String, default: '' },
     descriptionEn: { type: String, default: '' },
     order: { type: Number, default: 0 },
+    backgroundImage: { type: String, default: '' },
   },
   { timestamps: true },
 )
