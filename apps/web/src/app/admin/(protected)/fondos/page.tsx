@@ -57,6 +57,13 @@ const PAGES = [
       { key: 'hero', label: 'Fondo de página' },
     ],
   },
+  {
+    slug: 'contacto',
+    label: 'Contacto',
+    sections: [
+      { key: 'hero', label: 'Fondo de página' },
+    ],
+  },
 ]
 
 /* ── Types ───────────────────────────────────────────────────────────────── */

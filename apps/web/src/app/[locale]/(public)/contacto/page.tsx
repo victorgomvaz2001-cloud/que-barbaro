@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 import { getLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import SEOHead from '@/components/SEOHead'
+import { getSectionBackgrounds } from '@/lib/getSectionBackgrounds'
 
 const SOCIAL = [
   {
@@ -33,19 +34,31 @@ const WhatsAppIcon = () => (
 )
 
 export default async function ContactoPage() {
-  const [locale, tFoot, t] = await Promise.all([
+  const [locale, tFoot, t, bg] = await Promise.all([
     getLocale(),
     getTranslations('footer'),
     getTranslations('contacto'),
+    getSectionBackgrounds('contacto'),
   ])
   const seoRoute = locale === 'es' ? '/contacto' : `/${locale}/contacto`
+  const heroImage = bg['hero'] ?? null
 
   return (
     <>
       <SEOHead route={seoRoute} fallback={{ title: 'Contacto - ¡Qué Bárbaro!' }} />
 
-      <div className="w-full px-6 md:px-10 py-16 md:py-20">
-        <div className="mx-auto w-full max-w-6xl flex flex-col gap-16 md:gap-20">
+      <div className="relative w-full px-6 md:px-10 py-16 md:py-20">
+        {heroImage && (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${heroImage})` }}
+              aria-hidden
+            />
+            <div className="absolute inset-0 bg-white/70" aria-hidden />
+          </>
+        )}
+        <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col gap-16 md:gap-20">
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section>
