@@ -37,7 +37,7 @@ function CategoryFormModal({
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setSaving(true)
-    await onSave({ slug, nameEs, nameEn, descriptionEs, descriptionEn, order, backgroundImage: backgroundImage || undefined })
+    await onSave({ slug, nameEs, nameEn, descriptionEs, descriptionEn, order, backgroundImage: backgroundImage || '' })
     setSaving(false)
   }
 
