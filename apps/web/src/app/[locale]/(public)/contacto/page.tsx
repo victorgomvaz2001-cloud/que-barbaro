@@ -55,17 +55,17 @@ export default async function ContactoPage() {
               style={{ backgroundImage: `url(${heroImage})` }}
               aria-hidden
             />
-            <div className="absolute inset-0 bg-white/70" aria-hidden />
+            <div className="absolute inset-0 bg-black/20" aria-hidden />
           </>
         )}
         <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col gap-16 md:gap-20">
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section>
-            <h1 className="font-primary text-[clamp(2.4rem,5.5vw,5rem)] uppercase leading-[0.95] text-navy mb-6 max-w-3xl">
+            <h1 className={`font-primary text-[clamp(2.4rem,5.5vw,5rem)] uppercase leading-[0.95] mb-6 max-w-3xl ${heroImage ? 'text-white' : 'text-navy'}`}>
               {t('title')}
             </h1>
-            <p className="max-w-2xl font-secondary text-lg md:text-xl leading-relaxed text-navy/75">
+            <p className={`max-w-2xl font-secondary text-lg md:text-xl leading-relaxed ${heroImage ? 'text-white' : 'text-navy/75'}`}>
               {t('intro')}
             </p>
           </section>
@@ -75,34 +75,34 @@ export default async function ContactoPage() {
 
             {/* ¿Dónde estamos? */}
             <section>
-              <h2 className="font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] text-navy mb-3">
+              <h2 className={`font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] mb-3 ${heroImage ? 'text-white' : 'text-navy'}`}>
                 {t('whereTitle')}
               </h2>
-              <p className="font-secondary text-base leading-relaxed text-navy/70 mb-5">
+              <p className={`font-secondary text-base leading-relaxed mb-5 ${heroImage ? 'text-white' : 'text-navy/70'}`}>
                 {t('whereText')}
               </p>
               <address className="not-italic">
-                <p className="font-secondary text-navy text-lg leading-relaxed">{tFoot('address')}</p>
-                <p className="font-secondary text-navy text-lg leading-relaxed">{tFoot('city')}</p>
+                <p className={`font-secondary text-lg leading-relaxed ${heroImage ? 'text-white' : 'text-navy'}`}>{tFoot('address')}</p>
+                <p className={`font-secondary text-lg leading-relaxed ${heroImage ? 'text-white' : 'text-navy'}`}>{tFoot('city')}</p>
               </address>
             </section>
 
             {/* Horarios */}
             <section>
-              <h2 className="font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] text-navy mb-3">
+              <h2 className={`font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] mb-3 ${heroImage ? 'text-white' : 'text-navy'}`}>
                 {t('hoursTitle')}
               </h2>
-              <p className="font-secondary text-base leading-relaxed text-navy/70 mb-5">
+              <p className={`font-secondary text-base leading-relaxed mb-5 ${heroImage ? 'text-white' : 'text-navy/70'}`}>
                 {t('hoursText')}
               </p>
               <div className="mb-5">
                 {(t.raw('schedule') as { days: string; hours: string }[]).map(({ days, hours }) => (
                   <div
                     key={days}
-                    className="flex items-baseline justify-between gap-4 border-b border-navy/8 py-3 first:border-t"
+                    className={`flex items-baseline justify-between gap-4 border-b py-3 first:border-t ${heroImage ? 'border-white/20' : 'border-navy/8'}`}
                   >
-                    <span className="font-neue text-sm text-navy/60 uppercase tracking-[0.12em]">{days}</span>
-                    <span className="font-neue text-sm text-navy tabular-nums shrink-0">{hours}</span>
+                    <span className={`font-neue text-sm uppercase tracking-[0.12em] ${heroImage ? 'text-white' : 'text-navy/60'}`}>{days}</span>
+                    <span className={`font-neue text-sm tabular-nums shrink-0 ${heroImage ? 'text-white' : 'text-navy'}`}>{hours}</span>
                   </div>
                 ))}
               </div>
@@ -120,15 +120,15 @@ export default async function ContactoPage() {
 
             {/* Teléfono y WhatsApp */}
             <section>
-              <h2 className="font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] text-navy mb-3">
+              <h2 className={`font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] mb-3 ${heroImage ? 'text-white' : 'text-navy'}`}>
                 {t('phoneTitle')}
               </h2>
-              <p className="font-secondary text-base leading-relaxed text-navy/70 mb-5">
+              <p className={`font-secondary text-base leading-relaxed mb-5 ${heroImage ? 'text-white' : 'text-navy/70'}`}>
                 {t('phoneText')}
               </p>
               <a
                 href={WHATSAPP_URL}
-                className="inline-flex items-center gap-2.5 font-secondary text-navy text-lg hover:text-orange transition-colors duration-200"
+                className={`inline-flex items-center gap-2.5 font-secondary text-lg hover:text-orange transition-colors duration-200 ${heroImage ? 'text-white' : 'text-navy'}`}
               >
                 <WhatsAppIcon />
                 {tFoot('phone')}
@@ -137,10 +137,10 @@ export default async function ContactoPage() {
 
             {/* Síguenos */}
             <section>
-              <h2 className="font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] text-navy mb-3">
+              <h2 className={`font-primary text-[clamp(1.6rem,3vw,2.4rem)] uppercase leading-[0.95] mb-3 ${heroImage ? 'text-white' : 'text-navy'}`}>
                 {t('followTitle')}
               </h2>
-              <p className="font-secondary text-base leading-relaxed text-navy/70 mb-5">
+              <p className={`font-secondary text-base leading-relaxed mb-5 ${heroImage ? 'text-white' : 'text-navy/70'}`}>
                 {t('followText')}
               </p>
               <div className="flex flex-col gap-2">
@@ -150,7 +150,7 @@ export default async function ContactoPage() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 font-secondary text-navy text-lg hover:text-orange transition-colors duration-200"
+                    className={`inline-flex items-center gap-2.5 font-secondary text-lg hover:text-orange transition-colors duration-200 ${heroImage ? 'text-white' : 'text-navy'}`}
                   >
                     {s.icon}
                     {s.name}
