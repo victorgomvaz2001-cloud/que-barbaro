@@ -13,15 +13,13 @@ const NAV_GROUPS = [
   {
     label: 'Blog',
     links: [
-      { href: '/admin/blog', label: 'Posts' },
-      { href: '/admin/blog/categorias', label: 'Categorías' },
+      { href: '/admin/blog', label: 'Blog' },
     ],
   },
   {
     label: 'Galería',
     links: [
-      { href: '/admin/galeria', label: 'Fotos' },
-      { href: '/admin/galeria/categorias', label: 'Categorías' },
+      { href: '/admin/galeria', label: 'Galería' },
     ],
   },
   {
