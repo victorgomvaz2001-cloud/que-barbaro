@@ -9,6 +9,7 @@ export interface IGalleryCategory {
   descriptionEn: string
   order: number
   active: boolean
+  backgroundImage?: string
   createdAt: string
   updatedAt: string
 }
@@ -21,6 +22,7 @@ export interface IGalleryCategoryCreate {
   descriptionEn?: string
   order?: number
   active?: boolean
+  backgroundImage?: string
 }
 
 export type IGalleryCategoryUpdate = Partial<IGalleryCategoryCreate>

@@ -10,8 +10,9 @@ const galleryCategorySchema = new Schema<IGalleryCategoryDocument>(
     nameEn:        { type: String, required: true },
     descriptionEs: { type: String, default: '' },
     descriptionEn: { type: String, default: '' },
-    order:         { type: Number, default: 0 },
-    active:        { type: Boolean, default: true },
+    order:           { type: Number, default: 0 },
+    active:          { type: Boolean, default: true },
+    backgroundImage: { type: String, default: '' },
   },
   { timestamps: true },
 )

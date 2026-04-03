@@ -108,9 +108,11 @@ function Lightbox({
 function CategoryCarousel({
   photos,
   onImageClick,
+  onDark = false,
 }: {
   photos: IGalleryPhoto[]
   onImageClick: (index: number) => void
+  onDark?: boolean
 }) {
   const [start, setStart] = useState(0)
   const VISIBLE = 3
@@ -134,13 +136,17 @@ function CategoryCarousel({
     return { photo: photos[idx]!, realIndex: idx }
   })
 
+  const arrowClass = onDark
+    ? 'border-white/30 text-white/60 hover:border-white hover:text-white'
+    : 'border-navy/20 text-navy/50 hover:border-navy hover:text-navy'
+
   return (
     <div className="relative flex items-center gap-3 md:gap-4">
       {/* Prev arrow */}
       <button
         onClick={prev}
         disabled={!canPrev}
-        className="shrink-0 flex h-10 w-10 items-center justify-center border border-navy/20 text-navy/50 hover:border-navy hover:text-navy transition-colors disabled:opacity-20 disabled:pointer-events-none"
+        className={`shrink-0 flex h-10 w-10 items-center justify-center border transition-colors disabled:opacity-20 disabled:pointer-events-none ${arrowClass}`}
         aria-label="Anterior"
       >
         <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
@@ -175,7 +181,7 @@ function CategoryCarousel({
       <button
         onClick={next}
         disabled={!canNext}
-        className="shrink-0 flex h-10 w-10 items-center justify-center border border-navy/20 text-navy/50 hover:border-navy hover:text-navy transition-colors disabled:opacity-20 disabled:pointer-events-none"
+        className={`shrink-0 flex h-10 w-10 items-center justify-center border transition-colors disabled:opacity-20 disabled:pointer-events-none ${arrowClass}`}
         aria-label="Siguiente"
       >
         <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
@@ -202,53 +208,63 @@ function CategorySection({
 
   const name        = locale === 'en' ? category.nameEn        : category.nameEs
   const description = locale === 'en' ? category.descriptionEn : category.descriptionEs
+  const hasBg       = !!category.backgroundImage
 
   return (
-    <div className="max-w-[1680px] mx-auto px-6 md:px-12 py-16 md:py-24 border-b border-navy/10 last:border-0">
-      {/* Header */}
-      <div className="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-12">
-        <div>
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-4">
-            <span className="block shrink-0 w-2 h-2 rounded-full bg-orange" aria-hidden="true" />
-            <p
-              className="font-neue text-navy/50 uppercase tracking-[0.22em]"
-              style={{ fontSize: 'clamp(0.6rem, 0.9vw, 0.75rem)' }}
+    <div
+      className={`relative border-b last:border-0 ${hasBg ? 'border-white/10' : 'border-navy/10 bg-white'}`}
+      style={hasBg ? { backgroundImage: `url(${category.backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+    >
+      {/* Dark overlay when background image is present */}
+      {hasBg && <div className="absolute inset-0 bg-black/25 pointer-events-none" aria-hidden="true" />}
+
+      <div className="relative max-w-[1680px] mx-auto px-6 md:px-12 py-16 md:py-24">
+        {/* Header */}
+        <div className="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-12">
+          <div>
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-4">
+              <span className="block shrink-0 w-2 h-2 rounded-full bg-orange" aria-hidden="true" />
+              <p
+                className={`font-neue uppercase tracking-[0.22em] ${hasBg ? 'text-white/70' : 'text-navy/50'}`}
+                style={{ fontSize: 'clamp(0.6rem, 0.9vw, 0.75rem)' }}
+              >
+                {photos.length} {t('photos')}
+              </p>
+            </div>
+            <h2
+              className={`font-primary uppercase leading-[0.9] tracking-[0.04em] ${hasBg ? 'text-white' : 'text-navy'}`}
+              style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)' }}
             >
-              {photos.length} {t('photos')}
-            </p>
+              {name}
+            </h2>
           </div>
-          <h2
-            className="font-primary text-navy uppercase leading-[0.9] tracking-[0.04em]"
-            style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)' }}
-          >
-            {name}
-          </h2>
+          {description && (
+            <p
+              className={`font-secondary leading-relaxed max-w-sm md:text-right ${hasBg ? 'text-white/70' : 'text-navy/60'}`}
+              style={{ fontSize: 'clamp(0.85rem, 1.1vw, 0.95rem)' }}
+            >
+              {description}
+            </p>
+          )}
         </div>
-        {description && (
-          <p
-            className="font-secondary text-navy/60 leading-relaxed max-w-sm md:text-right"
-            style={{ fontSize: 'clamp(0.85rem, 1.1vw, 0.95rem)' }}
-          >
-            {description}
-          </p>
+
+        {/* Carousel */}
+        <CategoryCarousel
+          photos={photos}
+          onImageClick={(idx) => setLightboxIndex(idx)}
+          onDark={hasBg}
+        />
+
+        {/* Lightbox */}
+        {lightboxIndex !== null && (
+          <Lightbox
+            photos={photos}
+            initialIndex={lightboxIndex}
+            onClose={() => setLightboxIndex(null)}
+          />
         )}
       </div>
-
-      {/* Carousel */}
-      <CategoryCarousel
-        photos={photos}
-        onImageClick={(idx) => setLightboxIndex(idx)}
-      />
-
-      {/* Lightbox */}
-      {lightboxIndex !== null && (
-        <Lightbox
-          photos={photos}
-          initialIndex={lightboxIndex}
-          onClose={() => setLightboxIndex(null)}
-        />
-      )}
     </div>
   )
 }
@@ -294,7 +310,7 @@ export default function GaleriaServicios() {
   if (loading || data.length === 0) return null
 
   return (
-    <section className="w-full bg-cream">
+    <section className="w-full">
       {data.map(({ category, photos }) => (
         <CategorySection
           key={category.slug}

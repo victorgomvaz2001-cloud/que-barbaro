@@ -24,22 +24,34 @@ function CategoryFormModal({
   onSave: (data: IGalleryCategoryCreate) => Promise<void>
   onClose: () => void
 }) {
-  const [slug,          setSlug]          = useState(category?.slug ?? '')
-  const [nameEs,        setNameEs]        = useState(category?.nameEs ?? '')
-  const [nameEn,        setNameEn]        = useState(category?.nameEn ?? '')
-  const [descriptionEs, setDescriptionEs] = useState(category?.descriptionEs ?? '')
-  const [descriptionEn, setDescriptionEn] = useState(category?.descriptionEn ?? '')
-  const [order,         setOrder]         = useState(category?.order ?? 0)
-  const [saving,        setSaving]        = useState(false)
+  const [slug,            setSlug]            = useState(category?.slug ?? '')
+  const [nameEs,          setNameEs]          = useState(category?.nameEs ?? '')
+  const [nameEn,          setNameEn]          = useState(category?.nameEn ?? '')
+  const [descriptionEs,   setDescriptionEs]   = useState(category?.descriptionEs ?? '')
+  const [descriptionEn,   setDescriptionEn]   = useState(category?.descriptionEn ?? '')
+  const [order,           setOrder]           = useState(category?.order ?? 0)
+  const [backgroundImage, setBackgroundImage] = useState(category?.backgroundImage ?? '')
+  const [bgPickerOpen,    setBgPickerOpen]    = useState(false)
+  const [saving,          setSaving]          = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setSaving(true)
-    await onSave({ slug, nameEs, nameEn, descriptionEs, descriptionEn, order })
+    await onSave({ slug, nameEs, nameEn, descriptionEs, descriptionEn, order, backgroundImage: backgroundImage || undefined })
     setSaving(false)
   }
 
   return (
+    <>
+      {bgPickerOpen && (
+        <MediaPickerModal
+          open
+          folder="gallery"
+          onClose={() => setBgPickerOpen(false)}
+          onSelect={(url) => { setBackgroundImage(url); setBgPickerOpen(false) }}
+          onSelectMultiple={(urls) => { if (urls[0]) setBackgroundImage(urls[0]); setBgPickerOpen(false) }}
+        />
+      )}
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={onClose}>
       <div className="w-full max-w-lg rounded-xl bg-white shadow-xl" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
@@ -109,6 +121,29 @@ function CategoryFormModal({
               className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             />
           </div>
+          {/* Background image */}
+          <div>
+            <label className="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wide">Imagen de fondo (opcional)</label>
+            {backgroundImage ? (
+              <div className="relative overflow-hidden rounded border border-gray-200 bg-gray-50" style={{ height: '100px' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={backgroundImage} alt="Fondo" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/40 opacity-0 hover:opacity-100 transition-opacity">
+                  <button type="button" onClick={() => setBgPickerOpen(true)} className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-700 hover:bg-gray-100">Cambiar</button>
+                  <button type="button" onClick={() => setBackgroundImage('')} className="rounded bg-red-500 px-2 py-1 text-xs font-medium text-white hover:bg-red-600">Eliminar</button>
+                </div>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setBgPickerOpen(true)}
+                className="flex w-full items-center justify-center gap-2 rounded border-2 border-dashed border-gray-200 py-4 text-sm text-gray-400 hover:border-blue-400 hover:text-blue-500 transition-colors"
+              >
+                + Seleccionar imagen de fondo
+              </button>
+            )}
+          </div>
+
           <div className="flex justify-end gap-3 pt-2">
             <Button type="button" variant="secondary" onClick={onClose}>Cancelar</Button>
             <Button type="submit" loading={saving}>{category ? 'Guardar cambios' : 'Crear categoría'}</Button>
@@ -116,6 +151,7 @@ function CategoryFormModal({
         </form>
       </div>
     </div>
+    </>
   )
 }
 
