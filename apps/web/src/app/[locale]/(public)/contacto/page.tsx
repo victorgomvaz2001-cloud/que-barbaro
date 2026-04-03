@@ -106,7 +106,7 @@ export default async function ContactoPage() {
                   </div>
                 ))}
               </div>
-              <p className="font-neue text-xs uppercase tracking-[0.18em] text-orange mb-6">
+              <p className="font-neue text-xs uppercase tracking-[0.18em] text-white mb-6">
                 {t('hoursNote')}
               </p>
               <a
