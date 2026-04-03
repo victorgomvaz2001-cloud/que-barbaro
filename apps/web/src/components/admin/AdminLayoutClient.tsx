@@ -8,12 +8,17 @@ interface NavLink {
   label: string
 }
 
+interface NavGroup {
+  label: string
+  links: NavLink[]
+}
+
 export function AdminLayoutClient({
   children,
-  navLinks,
+  navGroups,
 }: {
   children: React.ReactNode
-  navLinks: NavLink[]
+  navGroups: NavGroup[]
 }) {
   const router = useRouter()
 
@@ -35,15 +40,27 @@ export function AdminLayoutClient({
             </span>
           </div>
           <nav className="mt-2 flex-1 overflow-y-auto">
-            <ul>
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="flex items-center px-4 py-2 text-sm text-white/70 hover:bg-white/10 hover:text-white"
-                  >
-                    {link.label}
-                  </a>
+            <ul className="flex flex-col gap-1">
+              {navGroups.map((group) => (
+                <li key={group.label}>
+                  <span className="block px-4 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-white/30">
+                    {group.label}
+                  </span>
+                  <ul>
+                    {group.links.map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          className="flex items-center px-4 py-1.5 text-sm text-white/70 hover:bg-white/10 hover:text-white"
+                        >
+                          {group.links.length > 1 && (
+                            <span className="mr-2 text-white/20">–</span>
+                          )}
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
             </ul>
