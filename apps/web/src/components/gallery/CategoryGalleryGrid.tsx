@@ -108,7 +108,7 @@ export default function CategoryGalleryGrid({ photos, comingSoon = 'Próximament
               style={{ background: 'linear-gradient(to top, rgba(1,10,73,0.78) 0%, transparent 65%)' }}
             >
               {photo.alt && (
-                <span className="font-secondary text-cream/80 text-sm leading-tight block translate-y-1.5 group-hover:translate-y-0 transition-transform duration-300">
+                <span className="font-secondary text-cream text-sm leading-tight block translate-y-1.5 group-hover:translate-y-0 transition-transform duration-300">
                   {photo.alt}
                 </span>
               )}
@@ -190,7 +190,7 @@ export default function CategoryGalleryGrid({ photos, comingSoon = 'Próximament
                   </span>
                 )}
                 {selected.alt && (
-                  <span className="font-secondary text-white/45 text-sm italic">
+                  <span className="font-secondary text-white text-sm italic">
                     {selected.alt}
                   </span>
                 )}

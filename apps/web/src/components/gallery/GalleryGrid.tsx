@@ -169,7 +169,7 @@ export default function GalleryGrid({ initialPhotos, initialHasMore }: GalleryGr
                 </span>
               )}
               {photo.alt && (
-                <span className="font-secondary text-cream/80 text-sm leading-tight block translate-y-1.5 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                <span className="font-secondary text-cream text-sm leading-tight block translate-y-1.5 group-hover:translate-y-0 transition-transform duration-300 delay-100">
                   {photo.alt}
                 </span>
               )}
@@ -276,7 +276,7 @@ export default function GalleryGrid({ initialPhotos, initialHasMore }: GalleryGr
                   </span>
                 )}
                 {selected.alt && (
-                  <span className="font-secondary text-white/45 text-sm italic">
+                  <span className="font-secondary text-white text-sm italic">
                     {selected.alt}
                   </span>
                 )}

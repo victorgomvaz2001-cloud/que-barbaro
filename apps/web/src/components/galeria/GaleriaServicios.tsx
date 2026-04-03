@@ -241,7 +241,7 @@ function CategorySection({
           </div>
           {description && (
             <p
-              className={`font-secondary leading-relaxed max-w-sm md:text-right ${hasBg ? 'text-white/70' : 'text-navy/60'}`}
+              className={`font-secondary leading-relaxed max-w-sm md:text-right ${hasBg ? 'text-white/70' : 'text-navy'}`}
               style={{ fontSize: 'clamp(0.85rem, 1.1vw, 0.95rem)' }}
             >
               {description}
